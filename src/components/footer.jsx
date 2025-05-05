@@ -1,0 +1,173 @@
+// Footer.jsx
+import Link from 'next/link';
+import React from 'react';
+
+export default function Footer({ 
+  title = "Contact Us",
+  description = "Have a question or need assistance? We're here to help. Contact us today to learn more about how MAK GROUP can help you secure your financial future.",
+  address = "123 Main Street, Mumbai, Maharashtra 400001",
+  phone = "+91-123-456-7890",
+  email = "info@makgroup.com"
+}) {
+  return (
+    <footer className="w-full relative">
+      {/* White Contact Card Section */}
+      <div className="relative px-6 md:px-12 z-10">
+        <div className="max-w-6xl mx-auto bg-white border border-[#EBEBEB] rounded-[20px] p-10 md:p-12 relative">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-16">
+            {/* Left Content */}
+            <div className="md:w-7/12 mb-8 md:mb-0">
+              <h2 className="font-['Lexend'] text-[#221241] font-normal text-[32px] md:text-[36px] mb-6">
+                {title}
+              </h2>
+              <p className="font-['Lato'] text-[#000000D6] font-normal text-[18px] leading-7 max-w-xl">
+                {description}
+              </p>
+            </div>
+            
+            {/* Right Content - Send Message Button */}
+            <div className="md:w-5/12 flex justify-start md:justify-center">
+              <div className="bg-[#221241] rounded-full w-44 h-44 flex flex-col items-center justify-center text-center p-2">
+                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22 2L11 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span className="text-white text-lg mt-3 font-['Lexend']">Send Message</span>
+              </div>
+            </div>
+          </div>
+          
+          {/* Contact Info Links - Now with even spacing */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            {/* Address */}
+            <div className="flex items-start">
+              <div className="text-[#4EBA64] mr-4 mt-1">
+                <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 10.5C11.3807 10.5 12.5 9.38071 12.5 8C12.5 6.61929 11.3807 5.5 10 5.5C8.61929 5.5 7.5 6.61929 7.5 8C7.5 9.38071 8.61929 10.5 10 10.5Z" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M10 18.3333C11.6667 16.1667 16.6667 12.9 16.6667 8C16.6667 4.31811 13.6819 1.33333 10 1.33333C6.31811 1.33333 3.33333 4.31811 3.33333 8C3.33333 12.9 8.33333 16.1667 10 18.3333Z" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6">
+                {address}
+              </p>
+            </div>
+            
+            {/* Phone */}
+            <div className="flex items-start">
+              <div className="text-[#4EBA64] mr-4 mt-1">
+                <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M18.3333 14.1V16.6C18.3343 16.8321 18.2867 17.0618 18.1937 17.2744C18.1008 17.487 17.9644 17.6779 17.7934 17.8348C17.6224 17.9917 17.4204 18.1112 17.2005 18.1855C16.9806 18.2599 16.7477 18.2876 16.5167 18.2667C13.9523 17.9881 11.4891 17.0962 9.32498 15.6667C7.31151 14.3515 5.60443 12.6444 4.28915 10.631C2.85001 8.45523 1.95809 5.98067 1.68332 3.40834C1.66236 3.17767 1.68993 2.94513 1.76388 2.72555C1.83784 2.50598 1.95665 2.30422 2.11273 2.13329C2.26881 1.96236 2.45888 1.82588 2.67065 1.73265C2.88241 1.63941 3.11137 1.59132 3.34332 1.59167H5.84332C6.25465 1.58767 6.65362 1.73089 6.96854 1.99611C7.28346 2.26133 7.49084 2.63066 7.54999 3.03667C7.65331 3.82505 7.84331 4.59642 8.11665 5.33667C8.23174 5.63067 8.25714 5.95502 8.19011 6.26474C8.12309 6.57447 7.96709 6.85567 7.74165 7.0675L6.76665 8.0425C8.00081 10.1282 9.70414 11.8316 11.7897 13.0658L12.7647 12.0908C12.9765 11.8654 13.2577 11.7094 13.5674 11.6424C13.8772 11.5753 14.2015 11.6007 14.4955 11.7158C15.2358 11.9892 16.0071 12.1792 16.7955 12.2825C17.2062 12.3423 17.579 12.5529 17.8451 12.8721C18.1112 13.1914 18.254 13.5953 18.25 14.0108L18.3333 14.1Z" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6">
+                {phone}
+              </p>
+            </div>
+            
+            {/* Email */}
+            <div className="flex items-start">
+              <div className="text-[#4EBA64] mr-4 mt-1">
+                <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3.33332 3.33334H16.6667C17.5833 3.33334 18.3333 4.08334 18.3333 5.00001V15C18.3333 15.9167 17.5833 16.6667 16.6667 16.6667H3.33332C2.41666 16.6667 1.66666 15.9167 1.66666 15V5.00001C1.66666 4.08334 2.41666 3.33334 3.33332 3.33334Z" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  <path d="M18.3333 5L9.99999 10.8333L1.66666 5" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6">
+                {email}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Dark Purple Footer Section - Adjusted for 50% overlap */}
+      <div className="bg-[#221241] w-full pt-64 pb-12 px-6 md:px-22 mt-[-180px]">
+        <div className="max-w-7xl mx-auto">
+          {/* Modified grid with different column widths on desktop */}
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-8">
+            {/* Support Links - reduced to 1/6 on desktop */}
+            <div className="md:col-span-1">
+              <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
+                Support
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/contact" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                    Contact Us
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/terms" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                    Terms & Conditions
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Company Links - reduced to 1/6 on desktop */}
+            <div className="md:col-span-1">
+              <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
+                Company
+              </h3>
+              <ul className="space-y-2">
+                <li>
+                  <Link href="/" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                    Home
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                    About
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/services" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                    Services
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/team" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                    Our Team
+                  </Link>
+                </li>
+              </ul>
+            </div>
+            
+            {/* Newsletter Subscription - expanded to 4/6 on desktop */}
+            <div className="col-span-2 md:col-span-4 mt-6 md:mt-0">
+              <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
+                Subscribe Our Newsletter
+              </h3>
+              <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
+                <input 
+                  type="email" 
+                  placeholder="Email address" 
+                  className="bg-white bg-opacity-10 text-white px-4 py-2 rounded-full w-full md:w-[500px] focus:outline-none border border-white border-opacity-20"
+                  aria-label="Email address for newsletter"
+                />
+                <button 
+                  type="submit"
+                  className="bg-[#4EBA64] hover:bg-[#3da554] text-white px-6 py-2 rounded-full whitespace-nowrap text-sm w-1/3 sm:w-auto cursor-pointer transition-colors duration-200"
+                >
+                  Get Started
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          {/* Copyright */}
+          <div className="pt-8 border-t border-white border-opacity-20">
+            <p className="font-['Lato'] text-white text-opacity-60 text-center text-[14px]">
+              © {new Date().getFullYear()} MAK GROUP. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

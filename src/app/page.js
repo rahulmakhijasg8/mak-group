@@ -1,103 +1,147 @@
+"use client"
+
+import Link from "next/link";
 import Image from "next/image";
+import HeroSection from "@/components/hero";
+import SectionHeader from "@/components/heading";
+import TwoCardRow from "@/components/twocardrow";
+import SectionHeading from "@/components/stackedheading";
+import StatsGrid from "@/components/statsgrid";
+import TestimonialCarousel from "@/components/testimonialcarousal";
+import Footer from "@/components/footer";
+
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const insuranceCard = {
+    icon: <img src="/insurance-icon.svg" alt="Insurance" width={48} height={48} />,
+    title: "Insurance",
+    description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
+    primaryButtonText: "Book A Free Call Now",
+    primaryButtonLink: "/book-call",
+    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonLink: "https://wa.me/yourphonenumber"
+  };
+  
+  const investmentCard = {
+    icon: <img src="/investment-icon.svg" alt="Investments" width={48} height={48} />,
+    title: "Investments",
+    description: "Grow your wealth with our expertly managed investment portfolios tailored to your goals.",
+    primaryButtonText: "Book A Free Call Now",
+    primaryButtonLink: "/book-call",
+    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonLink: "https://wa.me/yourphonenumber"
+  };
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const statCards = [
+    {
+      iconSrc: "next.svg",
+      iconAlt: "Experience",
+      text: "15+ years of experience"
+    },
+    {
+      iconSrc: "next.svg",
+      iconAlt: "Clients",
+      text: "500+ satisfied clients"
+    },
+    {
+      iconSrc: "next.svg",
+      iconAlt: "Projects",
+      text: "100+ projects completed"
+    },
+    {
+      iconSrc: "next.svg",
+      iconAlt: "Awards",
+      text: "25+ industry awards"
+    },
+    {
+      iconSrc: "next.svg",
+      iconAlt: "Experts",
+      text: "30+ expert advisors"
+    }
+  ];
+
+  const testimonials = [
+    {
+      quote: "The team at MAK GROUP helped me find the perfect home loan for my needs. Their guidance and support made the process so easy.",
+      name: "Priyaj Patel",
+      location: "Bangalore",
+      avatarSrc: "vercel.jpg"
+    },
+    {
+      quote: "I was impressed by the professionalism and expertise shown by MAK GROUP when helping me with my financial planning.",
+      name: "Rahul Sharma",
+      location: "Mumbai",
+      avatarSrc: "vercel.jpg"
+    },
+    {
+      quote: "Working with MAK GROUP has transformed my business's financial strategy. Their advice was invaluable.",
+      name: "Anita Desai",
+      location: "Delhi",
+      avatarSrc: "vercel.jpg"
+    },
+    {
+      quote: "The investment options provided by MAK GROUP have significantly improved my portfolio performance.",
+      name: "Kiran Reddy",
+      location: "Hyderabad",
+      avatarSrc: "vercel.jpg"
+    },
+    {
+      quote: "Their personalized approach to insurance planning gave me peace of mind knowing my family is protected.",
+      name: "Vikram Singh",
+      location: "Pune",
+      avatarSrc: "vercel.jpg"
+    }
+  ];
+
+  return (
+    <div>
+      {/* <HeroSection  /> */}
+      <section className="w-full py-12 md:py-20 px-4 md:px-12">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
+        {/* Left Column */}
+        <div className="w-full md:w-1/2 flex flex-col justify-center">
+          <h1 className="font-['Lexend']  text-[#221241] font-normal text-[34px] md:text-[47px] lg:text-[47px] mb-4">
+            Your Trusted Partner for All Your Financial Needs
+          </h1>
+          
+          <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[20px] mb-8">
+            We provide innovative services that help businesses grow and succeed in today's competitive market. Our team of experts is dedicated to delivering high-quality solutions tailored to your specific needs.
+          </p>
+          
+          <div>
+            <Link 
+              href="/learn-more" 
+              className="inline-block px-6 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90"
+            >
+              Book A Free Call Now
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        
+        {/* Right Column with Image */}
+        <div className="w-full md:w-1/2 flex items-center justify-center">
+          <div className="w-full h-auto relative rounded-lg overflow-hidden">
+            <Image
+              src="/hero-image.jpg" // Replace with your actual image path
+              alt="Business solutions illustration"
+              width={600}
+              height={400}
+              className="w-full h-auto object-cover"
+              priority
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <SectionHeader title="Our Financial Solutions" description="Personalized services designed to meet you financial goals." />
+    <TwoCardRow card1={insuranceCard} card2={investmentCard} />
+    <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
+    <StatsGrid cards={statCards} />
+    <HeroSection title="Ready to Take Control of Your Financial Future?" description="We provide innovative services that help businesses grow and succeed in today's competitive market. Our team of experts is dedicated to delivering high-quality solutions tailored to your specific needs." 
+    primaryButtonText="Book A free Call Now" primaryButtonLink="#" imageSrc="/globe.svg" imageAlt="test" reverseLayout={true} secondaryButtonText="Chat with us on Whatsapp" secondaryButtonLink="#"  />
+    <SectionHeader title="Trusted by Clients Across Industries" description="Empowering You with Experience, Trust and Integrity" />
+    <TestimonialCarousel testimonials={testimonials} />
+    <Footer />
     </div>
   );
 }
