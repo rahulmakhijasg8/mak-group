@@ -1,6 +1,7 @@
 // Footer.jsx
 import Link from 'next/link';
 import React from 'react';
+import NewsletterForm from './NewsletterForm';
 
 export default function Footer({ 
   title = "Contact Us",
@@ -25,14 +26,14 @@ export default function Footer({
               </p>
             </div>
             
-            {/* Right Content - Send Message Button */}
+            {/* Right Content - Send Message Button - Reduced size for mobile */}
             <div className="md:w-5/12 flex justify-start md:justify-center">
-              <div className="bg-[#221241] rounded-full w-44 h-44 flex flex-col items-center justify-center text-center p-2">
-                <svg width="44" height="44" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <div className="bg-[#221241] rounded-full w-32 h-32 md:w-44 md:h-44 flex flex-col items-center justify-center text-center p-2">
+                <svg width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="md:w-[44px] md:h-[44px]">
                   <path d="M22 2L11 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className="text-white text-lg mt-3 font-['Lexend']">Send Message</span>
+                <span className="text-[#FFFFFF] font-[500] text-[15px] md:text-lg mt-2 md:mt-3 font-['Plus_Jakarta_Sans']">Send Message</span>
               </div>
             </div>
           </div>
@@ -143,27 +144,14 @@ export default function Footer({
               <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
                 Subscribe Our Newsletter
               </h3>
-              <form className="flex flex-col sm:flex-row gap-3" onSubmit={(e) => e.preventDefault()}>
-                <input 
-                  type="email" 
-                  placeholder="Email address" 
-                  className="bg-white bg-opacity-10 text-white px-4 py-2 rounded-full w-full md:w-[500px] focus:outline-none border border-white border-opacity-20"
-                  aria-label="Email address for newsletter"
-                />
-                <button 
-                  type="submit"
-                  className="bg-[#4EBA64] hover:bg-[#3da554] text-white px-6 py-2 rounded-full whitespace-nowrap text-sm w-1/3 sm:w-auto cursor-pointer transition-colors duration-200"
-                >
-                  Get Started
-                </button>
-              </form>
+              <NewsletterForm />
             </div>
           </div>
           
           {/* Copyright */}
           <div className="pt-8 border-t border-white border-opacity-20">
             <p className="font-['Lato'] text-white text-opacity-60 text-center text-[14px]">
-              © {new Date().getFullYear()} MAK GROUP. All rights reserved.
+              © {new Date().getFullYear()} TechDevs. All rights reserved.
             </p>
           </div>
         </div>

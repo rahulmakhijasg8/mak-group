@@ -14,14 +14,14 @@ export default function HeroSection({
 }) {
   return (
     <section className="w-full py-12 md:py-20 px-4 md:px-12">
-      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-8 md:gap-12`}>
+      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6  md:gap-12`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           <h1 className="font-['Lexend'] text-[#221241] font-normal text-[32px] md:text-[40px] lg:text-[48px] mb-4">
             {title}
           </h1>
           
-          <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[18px] mb-8">
+          <p className="font-['Lato'] whitespace-pre-wrap text-[#000000D6] font-normal text-[16px] md:text-[18px] mb-8">
             {description}
           </p>
           
@@ -48,13 +48,13 @@ export default function HeroSection({
         
         {/* Image Column */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="w-full h-auto relative rounded-lg overflow-hidden">
+          <div className="w-full md:h-[425px] relative rounded-[40px] md:rounded-[20px] overflow-hidden">
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={600}
-              height={400}
-              className="w-full h-auto object-cover"
+              width={500}
+              height={517}
+              className="w-full h-full object-cover"
               priority
             />
           </div>

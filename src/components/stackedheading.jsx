@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SectionHeading({ 
+export default function StackedHeading({ 
   title, 
   subtitle, 
   className = "",
@@ -19,7 +19,7 @@ export default function SectionHeading({
           {title}
         </h2>
         
-        <h3 className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[18px] max-w-[300px] sm:max-w-full mx-auto">
+        <h3 className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[18px] max-w-[300px] sm:max-w-full ">
           {subtitle}
         </h3>
       </div>

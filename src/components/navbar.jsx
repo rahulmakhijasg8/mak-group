@@ -96,14 +96,14 @@ export default function Navbar() {
             ${scrolled ? 'shadow-md sticky top-0 z-50' : ''}
           `}
         >
-          {/* Logo */}
+          {/* Logo - Responsive height (larger on desktop) */}
           <Link href="/" className="flex items-center">
             <Image
-              src="/Godara_Logo-01 1.png"
-              alt="Godara Logo"
-              height={44}
-              width={177}
-              className="h-11 w-auto"
+              src="/Mak Group Logo 1.svg"
+              alt="MAK GROUP Logo"
+              height={52}
+              width={208}
+              className="h-11 lg:h-13 w-auto"
             />
           </Link>
 
