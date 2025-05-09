@@ -2,7 +2,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-import NewsletterForm from './NewsletterForm';
+import NewsletterForm from './newsletterform';
 
 export default function Footer({ 
   title = "Contact Us",
