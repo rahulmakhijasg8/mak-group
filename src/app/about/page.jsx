@@ -11,29 +11,29 @@ import Footer from "@/components/footer";
 function about() {
   const statCards = [
     {
-      iconSrc: "next.svg",
-      iconAlt: "Experience",
-      text: "15+ years of experience"
+      iconSrc: "insurance-removebg-preview.png",
+      iconAlt: "Insurance",
+      text: "Insurance"
     },
     {
-      iconSrc: "next.svg",
-      iconAlt: "Clients",
-      text: "500+ satisfied clients"
+      iconSrc: "sm-removebg-preview.png",
+      iconAlt: "Stock Market",
+      text: "Stock Market"
     },
     {
-      iconSrc: "next.svg",
-      iconAlt: "Projects",
-      text: "100+ projects completed"
+      iconSrc: "finance-removebg-preview.png",
+      iconAlt: "Finance",
+      text: "Finance"
     },
     {
-      iconSrc: "next.svg",
-      iconAlt: "Awards",
-      text: "25+ industry awards"
+      iconSrc: "car.png",
+      iconAlt: "Car",
+      text: "Car"
     },
     {
-      iconSrc: "next.svg",
-      iconAlt: "Experts",
-      text: "30+ expert advisors"
+      iconSrc: "reale_state-removebg-preview.png",
+      iconAlt: "Real Estate",
+      text: "Real Estate"
     }
   ];
 
@@ -90,15 +90,15 @@ function about() {
 <StackedHeading title="Our Expertise" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement. With specialists in insurance, stock market investing, finance, real estate, and more, we have the skills and resources to handle all your financial needs." />
 <StatsGrid cards={statCards} />
 <SectionHeader title="Our Commitment to You" description="At MAK GROUP, our clients are at the heart of everything we do. We are committed to providing you with the highest level of service, support, and guidance, and to helping you achieve your financial goals." />
-<section className="bg-[#FAFAFA] max-w-7xl mx-auto rounded-[50px] py-12 md:py-16">
+<section className="bg-[#FAFAFA] w-[90%] md:w-6xl mx-auto rounded-[50px] border-[1px] border-[#EBEBEB] mt-15 py-6 md:py-16">
   <div className="max-w-6xl mx-auto px-4 md:px-12">
     <div className="mb-8">
-      <p className="font-['Lato'] text-[#4EBA64] text-lg">
+      <p className={`font-lato text-[#4EBA64] text-lg`}>
         When you work with us, you can expect :
       </p>
     </div>
     
-    <ul className="space-y-4 mb-8">
+    <ul className="space-y-4 pl-3 mb-8">
       <li className="flex items-start">
         <span className="text-[#000000] text-xl md:text-2xl mr-3 leading-none mt-0.5">•</span>
         <span className="font-['Lato'] text-[#000000D6]">Personalized attention and customized solutions</span>

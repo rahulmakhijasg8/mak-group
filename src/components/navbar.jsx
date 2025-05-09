@@ -7,8 +7,10 @@ import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
+  const servicesRef = useRef(null);
   const pathname = usePathname();
 
   // Handle scroll effect for navbar
@@ -36,24 +38,22 @@ export default function Navbar() {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, []);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  // Navigation links array for DRY code - now with separate About and Services
-  const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/about', label: 'About' },
-    { href: '/services', label: 'Services' },
-    { href: '/our-team', label: 'Our Team' },
-    { href: '/contact-us', label: 'Contact Us' },
+  
+  // Service links for dropdown
+  const serviceLinks = [
+    { href: '/financial-solutions', label: 'Financial Solutions' },
+    { href: '/real-estate', label: 'Real Estate' },
+    { href: '/cars', label: 'Cars' },
   ];
 
   // Function to check if a link is active
   const isActive = (href) => {
     if (href === '/') {
       return pathname === '/';
+    }
+    // Check if any services page is active
+    if (href === '/services') {
+      return serviceLinks.some(service => pathname.startsWith(service.href));
     }
     return pathname.startsWith(href);
   };
@@ -79,9 +79,17 @@ export default function Navbar() {
           font-weight: 400;
           color: #221241;
         }
+        
+        .dropdown-arrow {
+          transition: transform 0.3s ease;
+        }
+        
+        .dropdown-arrow.open {
+          transform: rotate(180deg);
+        }
       `}</style>
 
-      <div className="mt-6 sm:mt-8 md:mt-10">
+      <div className="mt-6 md:mb-3 sm:mt-8 md:mt-10">
         <nav 
           className={`
             w-full 
@@ -109,28 +117,128 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center justify-center">
-            {navLinks.map((link, index) => (
+            {/* Home link */}
+            <Link 
+              href="/" 
+              className={`
+                font-['Lexend'] 
+                text-base 
+                transition-all 
+                duration-300
+                no-underline 
+                hover:underline
+                nav-link
+                mr-9
+                ${isActive('/') 
+                  ? 'active' 
+                  : 'text-[#000000D6]'
+                }
+              `}
+            >
+              Home
+            </Link>
+            
+            {/* About link */}
+            <Link 
+              href="/about" 
+              className={`
+                font-['Lexend'] 
+                text-base 
+                transition-all 
+                duration-300
+                no-underline 
+                hover:underline
+                nav-link
+                mr-9
+                ${isActive('/about') 
+                  ? 'active' 
+                  : 'text-[#000000D6]'
+                }
+              `}
+            >
+              About
+            </Link>
+            
+            {/* Services Dropdown - Desktop */}
+            <div 
+              className="relative mr-9"
+              ref={servicesRef}
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
               <Link 
-                key={link.href}
-                href={link.href} 
+                href={serviceLinks[0].href}
                 className={`
                   font-['Lexend'] 
                   text-base 
                   transition-all 
                   duration-300
+                  flex items-center
+                  nav-link
+                  cursor-pointer
                   no-underline 
                   hover:underline
-                  nav-link
-                  ${index < navLinks.length - 1 ? 'mr-9' : ''}
-                  ${isActive(link.href) 
+                  ${isActive('/services') 
                     ? 'active' 
                     : 'text-[#000000D6]'
                   }
                 `}
               >
-                {link.label}
+                Services
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  className={`ml-1 h-4 w-4 dropdown-arrow ${servicesOpen ? 'open' : ''}`} 
+                  viewBox="0 0 20 20" 
+                  fill="currentColor"
+                >
+                  <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
               </Link>
-            ))}
+              
+              {/* Services Dropdown Content */}
+              {servicesOpen && (
+                <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                  <div className="py-2">
+                    {serviceLinks.map((service) => (
+                      <Link 
+                        key={service.href}
+                        href={service.href} 
+                        className={`
+                          block px-4 py-3 text-sm hover:bg-gray-50 
+                          font-['Lexend'] no-underline hover:underline
+                          ${pathname.startsWith(service.href) 
+                            ? 'font-medium text-[#221241]' 
+                            : 'text-[#000000D6]'
+                          }
+                        `}
+                      >
+                        {service.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+            
+            {/* Contact Us link */}
+            <Link 
+              href="/contact-us" 
+              className={`
+                font-['Lexend'] 
+                text-base 
+                transition-all 
+                duration-300
+                no-underline 
+                hover:underline
+                nav-link
+                ${isActive('/contact-us') 
+                  ? 'active' 
+                  : 'text-[#000000D6]'
+                }
+              `}
+            >
+              Contact Us
+            </Link>
             
             {/* Get Started Button */}
             <Link 
@@ -145,7 +253,7 @@ export default function Navbar() {
           <div className="relative lg:hidden" ref={menuRef}>
             <button 
               className="flex flex-col justify-center items-center w-8 h-8 focus:outline-none" 
-              onClick={toggleMenu}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
               aria-expanded={isMenuOpen}
             >
@@ -154,27 +262,103 @@ export default function Navbar() {
               <span className={`block w-6 h-0.5 bg-[#603812] mt-1.5 transition-all duration-300 ease-out ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`}></span>
             </button>
 
-            {/* Dropdown Menu */}
+            {/* Dropdown Menu (Mobile) */}
             {isMenuOpen && (
               <div className="absolute right-0 top-full mt-2 w-64 bg-white shadow-lg rounded-md border border-gray-200 z-50">
                 <div className="py-2">
-                  {navLinks.map((link) => (
-                    <Link 
-                      key={link.href}
-                      href={link.href} 
+                  {/* Home link */}
+                  <Link 
+                    href="/" 
+                    className={`
+                      block px-4 py-3 hover:bg-gray-50 no-underline hover:underline
+                      nav-link
+                      ${isActive('/') 
+                        ? 'active' 
+                        : 'text-[#000000D6]'
+                      }
+                    `}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Home
+                  </Link>
+                  
+                  {/* About link */}
+                  <Link 
+                    href="/about" 
+                    className={`
+                      block px-4 py-3 hover:bg-gray-50 no-underline hover:underline
+                      nav-link
+                      ${isActive('/about') 
+                        ? 'active' 
+                        : 'text-[#000000D6]'
+                      }
+                    `}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    About
+                  </Link>
+                  
+                  {/* Services Mobile Toggle - Simplified Implementation */}
+                  <div>
+                    {/* Services Header */}
+                    <div 
+                      onClick={() => setServicesOpen(!servicesOpen)}
                       className={`
-                        block px-4 py-3 hover:bg-gray-50 no-underline hover:underline
-                        nav-link
-                        ${isActive(link.href) 
-                          ? 'active' 
-                          : 'text-[#000000D6]'
-                        }
+                        block px-4 py-3 hover:bg-gray-50 cursor-pointer
+                        nav-link flex items-center justify-between
+                        ${isActive('/services') ? 'active' : 'text-[#000000D6]'}
                       `}
-                      onClick={() => setIsMenuOpen(false)}
                     >
-                      {link.label}
-                    </Link>
-                  ))}
+                      <span>Services</span>
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className={`ml-1 h-4 w-4 dropdown-arrow ${servicesOpen ? 'open' : ''}`}
+                        viewBox="0 0 20 20" 
+                        fill="currentColor"
+                      >
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    
+                    {/* Service Links */}
+                    {servicesOpen && (
+                      <div className="bg-gray-50 py-1">
+                        {serviceLinks.map((service) => (
+                          <Link 
+                            key={service.href}
+                            href={service.href} 
+                            className={`
+                              block px-8 py-3 hover:bg-gray-100 text-sm
+                              font-['Lexend'] no-underline hover:underline
+                              ${pathname.startsWith(service.href) 
+                                ? 'font-medium text-[#221241]' 
+                                : 'text-[#000000D6]'
+                              }
+                            `}
+                            onClick={() => setIsMenuOpen(false)}
+                          >
+                            {service.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Contact Us link */}
+                  <Link 
+                    href="/contact-us" 
+                    className={`
+                      block px-4 py-3 hover:bg-gray-50 no-underline hover:underline
+                      nav-link
+                      ${isActive('/contact-us') 
+                        ? 'active' 
+                        : 'text-[#000000D6]'
+                      }
+                    `}
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Contact Us
+                  </Link>
                 </div>
               </div>
             )}

@@ -8,7 +8,7 @@ export default function StatsGrid({ cards }) {
         {/* Mobile: Column layout with spacing */}
         <div className="flex flex-col md:hidden space-y-6">
           {Array.isArray(cards) && cards.map((card, index) => (
-            <div key={index} className="w-[85%] mx-auto">
+            <div key={index} className="w-[85%] flex justify-center mx-auto">
               <StatsCard 
                 iconSrc={card.iconSrc}
                 iconAlt={card.iconAlt}

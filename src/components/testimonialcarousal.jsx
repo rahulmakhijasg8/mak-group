@@ -1,4 +1,5 @@
-// TestimonialCarousel.jsx
+"use client"
+
 import { useRef } from 'react';
 import TestimonialCard from './TestimonialCard';
 
@@ -6,12 +7,12 @@ export default function TestimonialCarousel({ testimonials }) {
   const scrollContainerRef = useRef(null);
 
   return (
-    <section className="w-full py-8 md:py-12 px-6 md:px-12">
-      <div className="max-w-7xl mx-auto">
+    <section className="w-full py-8 md:py-12">
+      <div className="max-w-full">
         {/* Scrollable container */}
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto space-x-6 pb-6 -mx-4 px-4 snap-x scrollbar-hide"
+          className="flex overflow-x-auto space-x-6 pb-6 px-3  scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
           {Array.isArray(testimonials) && testimonials.map((testimonial, index) => (

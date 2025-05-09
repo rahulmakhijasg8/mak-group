@@ -9,7 +9,7 @@ export default function RECard({
     return (
       <div className="bg-white rounded-[20px] overflow-hidden shadow-md max-w-[280px] mx-auto w-full">
         {/* Image at the top */}
-        <div className="relative w-full p-3 h-48 overflow-hidden">
+        <div className="relative w-full p-5 md:p-4 h-48 overflow-hidden">
           <Image 
             src={imageSrc}
             alt={title}

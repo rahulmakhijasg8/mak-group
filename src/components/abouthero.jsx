@@ -8,7 +8,7 @@ const AboutHero = () => {
         className="absolute inset-0"
         style={{ 
           backgroundImage: "url('/Group 34.svg')",
-          backgroundSize: "500% cover", /* Shows more horizontal content on mobile */
+          // backgroundSize: "contain", /* Shows more horizontal content on mobile */
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           '@media (minWidth: 768px)': {
