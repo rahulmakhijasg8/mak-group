@@ -1,8 +1,8 @@
 // components/MultiStepForm/MultiStepForm.jsx
 "use client"
 import { useState, useRef } from 'react';
-import StepIndicator from './StepIndicator';
-import FormStep from './FormStep';
+import StepIndicator from './stepindicator';
+import FormStep from './formstep';
 import StackedHeading from '@/components/stackedheading';
 
 const MultiStepForm = ({ 
