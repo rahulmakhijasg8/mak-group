@@ -1,3 +1,4 @@
+"use client"
 import { useRef } from 'react';
 import ServiceCard from './greycard';
 

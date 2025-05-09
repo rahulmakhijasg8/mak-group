@@ -1,4 +1,5 @@
 // components/MultiStepForm/MultiStepForm.jsx
+"use client"
 import { useState, useRef } from 'react';
 import StepIndicator from './StepIndicator';
 import FormStep from './FormStep';
@@ -41,7 +42,7 @@ const MultiStepForm = ({
   
   return (
     <div>
-      <div className="bg-white max-w-6xl md:max-w-6xl md:mx-auto p-6 rounded-[50px]">
+      <div className="bg-white max-w-6xl md:max-w-6xl md:mx-auto p-6 md:p-12 rounded-[35px]">
         {/* Title & Subtitle using StackedHeading */}
         {(title || subtitle) && (
           <StackedHeading 

@@ -25,8 +25,8 @@ const GridItem = ({
               <Image 
                 src={icon} 
                 alt="" 
-                width={24} 
-                height={24}
+                width={500} 
+                height={500}
                 className="w-16 h-16"
               />
               </div>
@@ -51,8 +51,10 @@ const GridItem = ({
           <Image 
             src={imageSrc || '/placeholder.jpg'} 
             alt={imageAlt || title}
-            fill
-            className="object-cover"
+            height={500}
+            width={500}
+            cover='true'
+            className="h-full w-full object-fill"
           />
         </div>
       </div>
@@ -67,7 +69,7 @@ const LoanGridLayout = ({
   itemClassName = ""
 }) => {
   return (
-    <div className={`grid grid-cols-1 mt-15 px-8 md:px-20 md:grid-cols-3  md:gap-6 ${className}`}>
+    <div className={`grid grid-cols-1 mt-15 px-8 mb-20 md:px-20 md:grid-cols-3  md:gap-6 ${className}`}>
       {items.map((item, index) => (
         <div key={index} className={`mb-6 md:mb-0 ${itemClassName}`}>
           <GridItem {...item} />

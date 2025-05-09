@@ -25,8 +25,8 @@ const GridItem = ({
               <Image 
                 src={icon} 
                 alt="" 
-                width={24} 
-                height={24}
+                width={500} 
+                height={500}
                 className="w-16 h-16"
               />
             </div>
@@ -77,7 +77,7 @@ const FlexGridLayout = ({
   }
 
   return (
-    <div className={`px-8 md:px-20 w-full ${className}`}>
+    <div className={`px-8 mt-15 mb-15 md:px-15 w-full ${className}`}>
       {rows.map((row, rowIndex) => {
         // Determine grid columns for this specific row
         let rowGridCols;

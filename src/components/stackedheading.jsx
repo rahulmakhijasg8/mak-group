@@ -13,13 +13,13 @@ export default function StackedHeading({
   };
 
   return (
-    <div className={`w-full pt-8 md:pt-12 px-6 md:px-12 ${className}`}>
-      <div className={`max-w-3xl md:max-w-full ${alignmentClasses[align]}`}>
+    <div className={`w-full pt-8 md:pt-12  md:px-12 ${className}`}>
+      <div className={`max-w-full md:max-w-full ${alignmentClasses[align]}`}>
         <h2 className="font-['Lexend'] text-[#221241] font-normal text-[28px] md:text-[40px] leading-tight mb-4 max-w-[280px] sm:max-w-full mx-auto">
           {title}
         </h2>
         
-        <h3 className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[18px] max-w-[300px] sm:max-w-full mx-auto">
+        <h3 className="font-['Lato'] px-5 md:px-30 text-[#000000D6] font-normal text-[16px] md:text-[18px] max-w-full sm:max-w-full ">
           {subtitle}
         </h3>
       </div>

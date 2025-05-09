@@ -37,14 +37,14 @@ export default function HeroWithButtons({
   const backgroundColor = darkMode ? 'bg-[#221241]' : 'bg-[#FAFAFA]';
 
   return (
-    <div className={`w-full py-8 ${backgroundColor}`}>
+    <div className={`w-full md:my-20 pt-15 pb-10 md:py-25 ${backgroundColor}`}>
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           {/* Heading section */}
-          <div className="mb-6 w-[60%] md:mb-0 pl-6 md:pl-[calc(12px+2px)]">
+          <div className="mb-6 md:w-[60%] pr-10 md:mb-0 pl-6 md:pl-[calc(12px+2px)]">
             <div className="w-full">
               <div className="flex flex-col">
-                <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[28px] md:text-[40px] leading-tight mb-4 whitespace-nowrap`}>
+                <h2 className={`font-['Lexend'] ${titleColor} md:pr-60 font-normal text-[28px] md:text-[40px] leading-tight mb-8`}>
                   {title}
                 </h2>
                 
@@ -56,11 +56,11 @@ export default function HeroWithButtons({
           </div>
           
           {/* Buttons on the right */}
-          <div className="pl-6 md:pr-[calc(12px+2px)] flex flex-col gap-6">
+          <div className="pl-6 md:pr-[calc(12px+2px)] pr-10 flex flex-col gap-6">
             {/* Primary button with Calendar icon */}
             <Link 
               href={buttonLink}
-              className="inline-flex items-center px-5 py-2.5 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
             >
               <Calendar className="h-5 w-5 mr-3" />
               <span className="flex-grow text-center pr-3">{buttonText}</span>
@@ -70,7 +70,7 @@ export default function HeroWithButtons({
             {secondaryButtonText && secondaryButtonLink && (
               <Link 
                 href={secondaryButtonLink}
-                className="inline-flex items-center px-5 py-2.5 bg-[#FFFFFF] text-[#221241] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
+                className="inline-flex items-center px-5 py-4 bg-[#FFFFFF] text-[#221241] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
               >
                 <WhatsAppIcon className="h-5 w-5 mr-3" />
                 <span className="flex-grow text-center pr-3">{secondaryButtonText}</span>

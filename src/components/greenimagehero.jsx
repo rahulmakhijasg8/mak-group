@@ -25,7 +25,7 @@ export default function GreenImageHero({
         
         {/* Image Column with green background showing on top and right */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="relative w-[300px] h-[280px] md:w-[500px] md:h-[403px]">
+          <div className="relative w-[380px] h-[300px] md:w-[500px] md:h-[403px]">
             {/* Green background div that will show on top and right */}
             <div className="absolute left-4 bottom-4 inset-0 bg-[#4EBA64] rounded-[30px]"></div>
             
@@ -34,8 +34,8 @@ export default function GreenImageHero({
               <Image
                 src={imageSrc}
                 alt={imageAlt}
-                width={350}
-                height={350}
+                width={500}
+                height={500}
                 className="w-full h-full object-cover"
                 priority
               />

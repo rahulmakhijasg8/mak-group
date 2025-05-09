@@ -15,21 +15,21 @@ export default function Footer({
     <footer className="w-full mt-12 md:mt-18 relative">
       {/* White Contact Card Section */}
       <div className="relative px-6 md:px-12 z-10">
-        <div className="max-w-6xl mx-auto bg-white border-[1px] border-[#EBEBEB] rounded-[20px] p-10 md:p-12 relative">
+        <div className="max-w-6xl md:max-w-5xl mx-auto bg-white border-[1px] border-[#EBEBEB] rounded-[20px] p-10 md:p-12 relative">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-16">
             {/* Left Content */}
-            <div className="md:w-7/12 mb-8 md:mb-0">
+            <div className="md:w-8/12 mb-8 md:mb-0">
               <h2 className="font-['Lexend'] text-[#221241] font-normal text-[32px] md:text-[36px] mb-6">
                 {title}
               </h2>
-              <p className="font-['Lato'] text-[#000000D6] font-normal text-[18px] leading-7 max-w-xl">
+              <p className="font-['Lato'] text-[#000000D6] font-normal text-[18px] leading-7 max-w-full">
                 {description}
               </p>
             </div>
             
             {/* Right Content - Send Message Button - Reduced size for mobile */}
 
-<div className="md:w-5/12 flex justify-start md:justify-center">
+<div className="md:w-4/12 flex justify-start md:justify-center">
   <div className="bg-[#221241] rounded-full w-32 h-32 md:w-44 md:h-44 flex flex-col items-center justify-center text-center p-2">
     {/* Using Next.js Image component */}
     <Image 
@@ -54,7 +54,7 @@ export default function Footer({
                   <path d="M10 18.3333C11.6667 16.1667 16.6667 12.9 16.6667 8C16.6667 4.31811 13.6819 1.33333 10 1.33333C6.31811 1.33333 3.33333 4.31811 3.33333 8C3.33333 12.9 8.33333 16.1667 10 18.3333Z" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <p className="font-['Lato'] text-[#000000D6] md:pr-20 font-normal text-[16px] leading-6">
+              <p className="font-['Lato'] text-[#000000D6] md:pr-10 font-normal text-[16px] leading-6">
                 {address}
               </p>
             </div>

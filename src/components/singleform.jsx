@@ -1,4 +1,5 @@
 // components/SingleForm/SingleForm.jsx
+"use client"
 import React, { useState } from 'react';
 import StackedHeading from '@/components/stackedheading';
 
@@ -144,17 +145,19 @@ const SingleForm = ({
             className="pb-12" 
           />
         )}
+
+        
         
         {/* Group fields by their original step */}
         {config.steps.map((step, stepIndex) => (
           <div key={step.id} className="mb-8">
-            <div className="pb-6">
-              <h2 className="text-xl font-semibold text-gray-800">{step.title}</h2>
+            <div className="pb-0">
+              <h2 className="text-xl font-semibold mb-2 text-gray-800">{step.title}</h2>
               {step.subtitle && (
                 <p className="text-sm text-gray-600">{step.subtitle}</p>
               )}
             </div>
-            
+            <div className="h-px w-full bg-[#EBEBEB] mt-6 mb-8"></div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {step.fields.map(field => (
                 <div key={field.id} className="flex pb-2 flex-col">

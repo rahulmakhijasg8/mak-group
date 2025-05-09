@@ -14,7 +14,7 @@ import { Calendar } from "lucide-react";
 
 export default function Home() {
   const insuranceCard = {
-    icon: <img src="/insurance-removebg-preview.png" alt="Insurance" width={60} height={60} />,
+    icon: <Image src="/insurance-removebg-preview.png" alt="Insurance" width={60} height={60} />,
     title: "Insurance",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
     primaryButtonText: "Book A Free Call Now",
@@ -24,7 +24,7 @@ export default function Home() {
   };
   
   const investmentCard = {
-    icon: <img src="/sm-removebg-preview.png" alt="Investments" width={60} height={60} />,
+    icon: <Image src="/sm-removebg-preview.png" alt="Investments" width={60} height={60} />,
     title: "Investments",
     description: "Grow your wealth with our expertly managed investment portfolios tailored to your goals.",
     primaryButtonText: "Book A Free Call Now",
