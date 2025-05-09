@@ -1,12 +1,10 @@
 "use client";
 
-import MultiStepForm from '@/components/MultiStepForm/MultiStepForm';
+import MultiStepForm from '@/components/multistepform/multistepform';
 import SingleForm from '@/components/singleform';
 import React from 'react'
 import PropertyCarousel from '@/components/propertycardsection';
 import StackedHeading from '@/components/stackedheading';
-import LoanGridLayout from '@/components/loangrid';
-import BulletHeroSection from '@/components/bulletherosection';
 import HeroWithButtons from '@/components/herowithbuttons';
 import FlexGridLayout from '@/components/flexcardreusable';
 import GreenImageHero from '@/components/greenimagehero';

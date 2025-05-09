@@ -1,5 +1,5 @@
 // StatsGrid.jsx
-import StatsCard from './StatsCard';
+import StatsCard from './statscard';
 
 export default function StatsGrid({ cards }) {
   return (

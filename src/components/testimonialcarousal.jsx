@@ -1,7 +1,7 @@
 "use client"
 
 import { useRef } from 'react';
-import TestimonialCard from './TestimonialCard';
+import TestimonialCard from './testimonialcard';
 
 export default function TestimonialCarousel({ testimonials }) {
   const scrollContainerRef = useRef(null);
