@@ -119,7 +119,7 @@ export default function Home() {
         <div className="w-full md:w-1/2 pt-10 flex items-center justify-center">
           <div className="w-full md:w-[90%] h-[100%] relative rounded-[50px] overflow-hidden">
             <Image
-              src="/Group 27.svg" // Replace with your actual image path
+              src="/Group 27.png" // Replace with your actual image path
               alt="Business solutions illustration"
               width={600}
               height={600}
