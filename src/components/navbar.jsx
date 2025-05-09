@@ -12,6 +12,9 @@ export default function Navbar() {
   const menuRef = useRef(null);
   const servicesRef = useRef(null);
   const pathname = usePathname();
+  
+  // Add delay for dropdown closing
+  const closeTimeout = useRef(null);
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -36,14 +39,37 @@ export default function Navbar() {
     return () => {
       window.removeEventListener('scroll', handleScroll);
       document.removeEventListener('mousedown', handleClickOutside);
+      
+      // Clear any pending timeouts on unmount
+      if (closeTimeout.current) {
+        clearTimeout(closeTimeout.current);
+      }
     };
   }, []);
   
+  // Function to handle mouse enter for services dropdown
+  const handleServicesMouseEnter = () => {
+    // Clear any pending close timeout
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    setServicesOpen(true);
+  };
+  
+  // Function to handle mouse leave for services dropdown
+  const handleServicesMouseLeave = () => {
+    // Set a timeout to close the dropdown after a delay
+    closeTimeout.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 300); // 300ms delay gives user time to move to the dropdown
+  };
+  
   // Service links for dropdown
   const serviceLinks = [
-    { href: '/financial-solutions', label: 'Financial Solutions' },
-    { href: '/real-estate', label: 'Real Estate' },
-    { href: '/cars', label: 'Cars' },
+    { href: '/services/financial-solutions', label: 'Financial Solutions' },
+    { href: '/services/real-estate', label: 'Real Estate' },
+    { href: '/services/cars', label: 'Cars' },
   ];
 
   // Function to check if a link is active
@@ -86,6 +112,24 @@ export default function Navbar() {
         
         .dropdown-arrow.open {
           transform: rotate(180deg);
+        }
+        
+        /* Add dropdown hover area */
+        .services-dropdown-area {
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          padding-top: 20px;
+          z-index: 50;
+        }
+        
+        .services-dropdown-content {
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 0.375rem;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          overflow: hidden;
         }
       `}</style>
 
@@ -163,8 +207,8 @@ export default function Navbar() {
             <div 
               className="relative mr-9"
               ref={servicesRef}
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseEnter={handleServicesMouseEnter}
+              onMouseLeave={handleServicesMouseLeave}
             >
               <Link 
                 href={serviceLinks[0].href}
@@ -195,26 +239,32 @@ export default function Navbar() {
                 </svg>
               </Link>
               
-              {/* Services Dropdown Content */}
+              {/* Services Dropdown Content with better hover area */}
               {servicesOpen && (
-                <div className="absolute left-0 mt-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50">
-                  <div className="py-2">
-                    {serviceLinks.map((service) => (
-                      <Link 
-                        key={service.href}
-                        href={service.href} 
-                        className={`
-                          block px-4 py-3 text-sm hover:bg-gray-50 
-                          font-['Lexend'] no-underline hover:underline
-                          ${pathname.startsWith(service.href) 
-                            ? 'font-medium text-[#221241]' 
-                            : 'text-[#000000D6]'
-                          }
-                        `}
-                      >
-                        {service.label}
-                      </Link>
-                    ))}
+                <div 
+                  className="services-dropdown-area"
+                  onMouseEnter={handleServicesMouseEnter}
+                  onMouseLeave={handleServicesMouseLeave}
+                >
+                  <div className="services-dropdown-content w-56">
+                    <div className="py-2">
+                      {serviceLinks.map((service) => (
+                        <Link 
+                          key={service.href}
+                          href={service.href} 
+                          className={`
+                            block px-4 py-3 text-sm hover:bg-gray-50 
+                            font-['Lexend'] no-underline hover:underline
+                            ${pathname.startsWith(service.href) 
+                              ? 'font-medium text-[#221241]' 
+                              : 'text-[#000000D6]'
+                            }
+                          `}
+                        >
+                          {service.label}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 </div>
               )}
