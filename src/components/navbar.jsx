@@ -67,9 +67,12 @@ export default function Navbar() {
   
   // Service links for dropdown
   const serviceLinks = [
-    { href: '/services/financial-solutions', label: 'Financial Solutions' },
-    { href: '/services/real-estate', label: 'Real Estate' },
-    { href: '/services/cars', label: 'Cars' },
+    { href: 'real-estate', label: 'Real Estate' },
+    { href: 'cars', label: 'Cars' },
+    { href: 'sm-services', label: 'Stock Market Services' },
+    { href: 'finance-solutions', label: 'Finance Solutions' },
+    { href: 'insurance-solutions', label: 'Insurance Solutions' },
+    { href: 'medical-insurance', label: 'Medical Insurance' },
   ];
 
   // Function to check if a link is active
@@ -142,7 +145,7 @@ export default function Navbar() {
             justify-between 
             h-20
             px-4 sm:px-6 md:px-8 lg:px-12
-            bg-white
+            bg-transparent
             transition-all
             duration-300
             ${scrolled ? 'shadow-md sticky top-0 z-50' : ''}

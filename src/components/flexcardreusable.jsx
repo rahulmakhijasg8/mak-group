@@ -4,6 +4,28 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // GridItem component that can render either a card or an image
+const formatDescription = (text) => {
+  if (!text) return null;
+  
+  // Replace markdown bold with custom styled span tags
+  let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<span style="color: #0D4751; font-weight: 600;">$1</span>');
+  
+  // Split by newlines and wrap each paragraph
+  const paragraphs = formattedText.split('\n\n');
+  
+  return (
+    <div className="text-[#000000D6] font-[400] text-sm">
+      {paragraphs.map((paragraph, index) => (
+        <p 
+          key={index} 
+          className="mb-2 last:mb-0"
+          dangerouslySetInnerHTML={{ __html: paragraph }}
+        />
+      ))}
+    </div>
+  );
+};
+
 const GridItem = ({ 
   type = 'card', 
   icon,         
@@ -11,14 +33,15 @@ const GridItem = ({
   description,  
   imageSrc,     
   imageAlt,     
-  link = '#',    
+  link = '#', 
+  linkbtn = false,   
   accentColor = '#FF9F43' 
 }) => {
   // Card layout (like Home Loans example)
   if (type === 'card') {
     return (
-      <Link href={link} className="block h-full">
-        <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-[280px]">
+      // <Link href={link} className="block h-full">
+        <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-full overflow-auto">
           {/* Icon with accent color background */}
           {icon && (
             <div className='flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18'>
@@ -35,10 +58,19 @@ const GridItem = ({
           {/* Title */}
           <h3 className="text-lg font-[600] text-[#000000] mb-2">{title}</h3>
           
-          {/* Description */}
-          <p className="text-[#000000D6] font-[400] text-sm">{description}</p>
+          {/* Description with formatted content */}
+          <div className="description">
+          {formatDescription(description)}
+          {linkbtn && (
+            <div style={{ marginTop: '0.5rem' }}>
+              <a href={link} style={{ color: '#4EBA64',fontWeight: 400, textDecoration: 'underline' }}>
+                Learn More
+              </a>
+            </div>
+          )}
         </div>
-      </Link>
+        </div>
+      // </Link>
     );
   }
   

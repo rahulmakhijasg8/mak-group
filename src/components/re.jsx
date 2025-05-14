@@ -7,7 +7,7 @@ export default function RECard({
     link = "#"
   }) {
     return (
-      <div className="bg-white rounded-[20px] overflow-hidden shadow-md max-w-[280px] mx-auto w-full">
+      <div className="bg-white rounded-[20px] overflow-hidden h-full shadow-md max-w-[90%] md:max-w-[280px] mx-auto w-full">
         {/* Image at the top */}
         <div className="relative w-full p-5 md:p-4 h-48 overflow-hidden">
           <Image 

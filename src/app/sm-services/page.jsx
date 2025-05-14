@@ -97,7 +97,8 @@ function page() {
         primaryButtonText: "Start Trading",
         primaryButtonLink: "#",
         secondaryButtonText: "Chat with us on WhatsApp",
-        secondaryButtonLink: "https://wa.me/yourphonenumber"
+        secondaryButtonLink: "https://wa.me/yourphonenumber",
+        primaryButtonIconType: null
       };
       
       const mutualFunds = {
@@ -113,7 +114,7 @@ function page() {
       const carFormConfig = {
         steps: [
           {
-            id: "carDetails",
+            id: "personalDetails",
             title: "Personal Details",
             subtitle: "To open your account, simply provide:",
             fields: [
@@ -135,16 +136,37 @@ function page() {
     
               {
                 id: "email",
-                type: "text",
+                type: "email",
                 label: "Email",
-                placeholder: "Select car type",
+                placeholder: "write your email address",
                 required: true,
               },
               {
                 id: "pan card",
                 type: "text",
                 label: "Pan Card",
-                placeholder: "Provide Pan card number",
+                placeholder: "write your Pan card number",
+                required: true,
+              },
+              {
+                id: "cancelled cheque",
+                type: "file",
+                label: "Cancelled Cheque",
+                placeholder: "cancelled cheque details",
+                required: true,
+              },
+              {
+                id: "selfie",
+                type: "image",
+                label: "Selfie Photo",
+                placeholder: "upload your selfie",
+                required: true,
+              },
+              {
+                id: "signature",
+                type: "file",
+                label: "Signature on white paper",
+                placeholder: "upload your signature",
                 required: true,
               },
               // ...other fields
@@ -164,15 +186,15 @@ function page() {
         <StatsGrid cards={smstats} />
         <SectionHeader title="Our Stock Market Services" description="A Full Spectrum of Investment Options to Match Your Goals" />
         <TwoCardRow card1={equityTrading} card2={mutualFunds} />
-        <div className='flex flex-col justify-center items-center'>
+        {/* <div className='flex flex-col justify-center items-center'>
         <StackedHeading title="Expert Calls and Updates" subtitle="Stay ahead of the market with our expert calls and updates. Our team continuously analyzes market trends and individual stocks to provide you with timely recommendations on what to buy, when to buy, and when to sell." />
         <a 
   href='#'
-  className="flex items-center mb-15 justify-center text-center mt-12 px-2 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-[70%] md:w-[270px] mx-auto"
+  className="flex items-center mb-15 justify-center text-center mt-12 px-2 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] md:text-[14px] font-medium hover:bg-opacity-90 transition-all w-[85%] md:w-[270px] mx-auto"
 >
             <span>Subscribe to Our Expert Calls</span>
           </a>
-        </div>
+        </div> */}
 
         <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
@@ -182,7 +204,7 @@ function page() {
         <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
         Start Your Investment Journey with Ease
         </h3>
-      <SingleForm config={carFormConfig} onComplete={handleFormComplete}/>
+      <SingleForm config={carFormConfig} submitButtonText='Request Account Now' secondaryButtonText='Need Help? Chat with Us' secondaryButtonLink='#' onComplete={handleFormComplete}/>
     </div>
     <StackedHeading title="Why Invest in the Stock Market?" subtitle="The Smartest Way to Build Wealth Over Time" />
     <StatsGrid cards={investmentstats} />

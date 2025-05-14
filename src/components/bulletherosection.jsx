@@ -2,15 +2,15 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-// A custom bullet point component
-const BulletPoint = ({ title, description }) => (
-  <div className="flex items-start mb-8">
-    <span className="text-[#4EBA64] mr-2">•</span>
-    <span>
-      <span className="text-[#4EBA64]">{title}</span>
-      <span className="text-[#4EBA64]">: </span>
-      <span>{description}</span>
-    </span>
+// A custom bullet point component with lightMode support
+const BulletPoint = ({ title, description, lightMode = false }) => (
+  <div className="flex items-start mb-4">
+    <span className={`text-xl mr-2 ${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>•</span>
+    <div>
+      <span className={`font-bold ${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{title}</span>
+      {lightMode ? " " : <span className={`mx-2`}>:</span> }
+      <span className={`${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{description}</span>
+    </div>
   </div>
 );
 
@@ -23,65 +23,58 @@ export default function BulletHeroSection({
   imageAlt,
   reverseLayout = false,
   secondaryButtonText,
-  secondaryButtonLink
+  secondaryButtonLink,
+  lightMode = false
 }) {
   return (
     <section 
-      className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]"
+      className={`w-full py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
     >
-      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-30`}>
+      <div className={`container mx-auto px-4 md:px-6 flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
         {/* Content Column */}
-        <div className="w-full md:w-1/2 flex flex-col justify-center">
-          <h1 className="font-['Lexend'] text-[#FFFFFF] font-normal text-[32px] md:text-[40px] mb-4">
+        <div className="w-full md:w-1/2 mb-8 md:mb-0">
+          <h1 className={`text-3xl font-['Lexend'] leading-[100%] md:text-4xl lg:text-5xl font-bold mb-6 ${lightMode ? 'text-[#221241]' : 'text-white'}`}>
             {title}
           </h1>
           
-          <div className="font-['Lato'] text-[#B7C7E7] font-normal text-[16px] md:text-[18px] mb-8">
-            
+          <div className="mb-8">
             {/* Bullet points */}
             {bulletPoints.length > 0 && (
-              <div className="space-y-1">
+              <div className="space-y-2">
                 {bulletPoints.map((bullet, index) => (
                   <BulletPoint 
-                    key={index}
-                    title={bullet.title}
+                    key={index} 
+                    title={bullet.title} 
                     description={bullet.description}
+                    lightMode={lightMode}
                   />
                 ))}
               </div>
             )}
           </div>
           
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <Link 
-              href={primaryButtonLink} 
-              className="flex items-center px-6 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-auto"
-            >
-              <span className="flex-grow text-center pr-3">{primaryButtonText}</span>
+          <div className="flex flex-wrap gap-4">
+            {primaryButtonText && primaryButtonLink && (<Link href={primaryButtonLink} className="inline-block bg-[#4EBA64] font-['Lexend'] text-white py-4 md:py-3 text-center w-[70%] md:w-auto px-7 rounded-full hover:bg-[#3da953] transition-colors">
+              {primaryButtonText}
             </Link>
-            
+            )}
             {secondaryButtonText && secondaryButtonLink && (
-              <Link 
-                href={secondaryButtonLink} 
-                className="flex items-center px-4 py-2 bg-[#FFFFFF] text-[#221241] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-auto whitespace-nowrap"
-              >
-                <span className="mr-3">💬</span>
-                <span className="flex-grow text-center pr-3">{secondaryButtonText}</span>
+              <Link href={secondaryButtonLink} className="inline-block bg-transparent border-2 border-[#4EBA64] text-[#4EBA64] font-bold py-3 px-6 rounded-full hover:bg-[#4EBA64] hover:text-white transition-colors">
+                💬 {secondaryButtonText}
               </Link>
             )}
           </div>
         </div>
         
         {/* Image Column */}
-        <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="w-full h-full md:h-full mt-14 relative md:rounded-[20px] overflow-hidden">
+        <div className="w-full md:w-1/2">
+          <div className="relative w-full aspect-video md:aspect-square max-w-lg mx-auto">
             <Image
               src={imageSrc}
               alt={imageAlt}
-              width={500}
+              className="object-contain"
               height={500}
-              className="object-cover"
-              priority
+              width={500}
             />
           </div>
         </div>

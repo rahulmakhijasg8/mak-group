@@ -13,9 +13,9 @@ export default function StackedHeading({
   };
 
   return (
-    <div className={`w-full pt-8 md:pt-12  md:px-12 ${className}`}>
+    <div className={`w-full pt-8 md:pt-12 md:px-12 ${className}`}>
       <div className={`max-w-full md:max-w-full ${alignmentClasses[align]}`}>
-        <h2 className="font-['Lexend'] text-[#221241] font-normal text-[28px] md:text-[40px] leading-tight mb-4 max-w-[280px] sm:max-w-full mx-auto">
+        <h2 className="font-['Lexend'] text-[#221241] font-normal text-[28px] md:text-[44px] leading-tight mb-4 max-w-[280px] sm:max-w-full mx-auto">
           {title}
         </h2>
         

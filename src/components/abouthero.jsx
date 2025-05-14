@@ -2,18 +2,28 @@ import React from 'react';
 
 const AboutHero = () => {
   return (
-    <div className="relative w-full h-[400px] md:h-[350px] overflow-hidden">
-      {/* Background Image with mobile-specific adjustment */}
+    <div className="relative w-full h-[450px] md:h-[400px] overflow-hidden">
+      {/* Mobile background image (hidden on md screens and up) */}
       <div 
-        className="absolute inset-0"
+        className="absolute inset-0 block md:hidden"
         style={{ 
-          backgroundImage: "url('/Group 34.svg')",
-          // backgroundSize: "contain", /* Shows more horizontal content on mobile */
+          backgroundImage: "url('/Group 34 (1).svg')",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
-          '@media (minWidth: 768px)': {
-            backgroundSize: "cover" /* Standard size for desktop */
-          }
+          backgroundSize: "cover"
+        }}
+      >
+        {/* No additional overlay since image already has purple filter */}
+      </div>
+      
+      {/* Desktop background image (hidden on smaller than md screens) */}
+      <div 
+        className="absolute inset-0 hidden md:block"
+        style={{ 
+          backgroundImage: "url('/Group 34.svg')",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover"
         }}
       >
         {/* No additional overlay since image already has purple filter */}

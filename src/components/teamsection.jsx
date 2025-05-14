@@ -4,17 +4,18 @@ import TeamMemberCard from './teamembercard';
 const TeamSection = ({ teamMembers }) => {
   return (
     <section className="py-12 md:py-0 px-4">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         
-        {/* Grid container - switches from column on mobile to row on desktop */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10">
+        {/* Modified grid to ensure proper spacing */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mt-15 gap-8 md:gap-20">
           {teamMembers.map((member, index) => (
-            <TeamMemberCard 
-              key={index}
-              image={member.image}
-              name={member.name}
-              position={member.position}
-            />
+            <div className="flex justify-center md:justify-center" key={index}>
+              <TeamMemberCard 
+                image={member.image}
+                name={member.name}
+                position={member.position}
+              />
+            </div>
           ))}
         </div>
       </div>

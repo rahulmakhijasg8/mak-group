@@ -1,4 +1,4 @@
-import { Calendar } from 'lucide-react';
+import { Calendar, ArrowRight, Phone, Mail, Info } from 'lucide-react';
 
 // Custom WhatsApp icon component
 const WhatsAppIcon = ({ className }) => (
@@ -27,8 +27,31 @@ export default function ServiceCard({
   primaryButtonText,
   secondaryButtonText,
   primaryButtonLink,
-  secondaryButtonLink
+  secondaryButtonLink,
+  primaryButtonIconType = 'calendar' // New prop - can be 'calendar', 'arrow', 'none', etc.
 }) {
+  // Function to get the correct icon based on the iconType string
+  const getPrimaryButtonIcon = () => {
+    switch(primaryButtonIconType) {
+      case 'calendar':
+        return <Calendar className="h-5 w-5 ml-2" />;
+      case 'arrow':
+        return <ArrowRight className="h-5 w-5 ml-2" />;
+      case 'phone':
+        return <Phone className="h-5 w-5 ml-2" />;
+      case 'mail':
+        return <Mail className="h-5 w-5 ml-2" />;
+      case 'info':
+        return <Info className="h-5 w-5 ml-2" />;
+      case 'none':
+      default:
+        return null;
+    }
+  };
+  
+  // Get the icon based on the provided icon type
+  const primaryIcon = getPrimaryButtonIcon();
+  
   return (
     <div className="flex flex-col bg-[#FAFAFA] border border-[#EBEBEB] rounded-[34px] p-6 h-full w-full">
       {/* Icon */}
@@ -51,10 +74,10 @@ export default function ServiceCard({
         {primaryButtonText && primaryButtonLink && (
           <a 
             href={primaryButtonLink}
-            className="flex items-center justify-between px-4 py-2 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-[50%]"
+            className={`flex items-center px-4 py-2 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-[50%] ${primaryIcon ? 'justify-between' : 'justify-center'}`}
           >
             <span>{primaryButtonText}</span>
-            <Calendar className="h-5 w-5 ml-2" />
+            {primaryIcon}
           </a>
         )}
         

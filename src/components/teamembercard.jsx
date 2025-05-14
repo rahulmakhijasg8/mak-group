@@ -3,14 +3,14 @@ import Image from 'next/image';
 
 const TeamMemberCard = ({ image, name, position }) => {
   return (
-    <div className="flex flex-col items-center mx-auto max-w-[280px]">
+    <div className="flex flex-col items-center mx-auto md:mx-0">
       {/* Circle image container */}
-      <div className="w-[330px] md:w-[220px] h-[385px] md:h-[275px] mb-4 rounded-[34px] overflow-hidden border-2 border-[#EBEBEB]">
+      <div className="w-[350px] md:w-[280px] h-[430px] md:h-[375px] mb-4 rounded-[40px] md:rounded-[24px] overflow-hidden">
         <Image 
           src={image} 
           alt={name}
-          width={220}
-          height={220}
+          width={1000}
+          height={1000}
           className="w-full h-full object-cover"
         />
       </div>

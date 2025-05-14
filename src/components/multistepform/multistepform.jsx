@@ -48,7 +48,7 @@ const MultiStepForm = ({
           <StackedHeading 
             title={title} 
             subtitle={subtitle} 
-            align="left" 
+            align="center" 
             className="pb-12" 
           />
         )}
@@ -91,7 +91,7 @@ const MultiStepForm = ({
             // Simulate clicking the submit button in the FormStep
             triggerStepValidation();
           }}
-          className="px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
+          className=" px-12 md:px-8 md:py-3 py-4 text-[18px] md:text-[16px] bg-green-500 text-white rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
         >
           {currentStepIndex === config.steps.length - 1 ? 'Submit' : 'Next Step'}
         </button>

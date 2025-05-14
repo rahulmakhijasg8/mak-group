@@ -35,7 +35,14 @@ export default function BlueHeroSection({
 }) {
   return (
     <section 
-      className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]"
+      className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]" // Lighter background color
+      style={{
+        backgroundImage: "url('/greeneffect.svg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundBlendMode: 'soft-light', // This helps make the effect lighter
+      }}
     >
       <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-30`}>
         {/* Content Column */}
@@ -48,10 +55,10 @@ export default function BlueHeroSection({
             {description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
             <Link 
               href={primaryButtonLink} 
-              className="flex items-center px-4 py-2 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-auto"
+              className="flex items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[16px] font-medium hover:bg-opacity-90 transition-all w-[80%] md:w-full"
             >
               <Calendar className="h-5 w-5 mr-3" />
               <span className="flex-grow text-center pr-3">{primaryButtonText}</span>
@@ -60,7 +67,7 @@ export default function BlueHeroSection({
             {secondaryButtonText && secondaryButtonLink && (
               <Link 
                 href={secondaryButtonLink} 
-                className="flex items-center px-4 py-2 bg-[#FFFFFF] text-[#4EBA64] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-auto whitespace-nowrap"
+                className="flex items-center px-5 py-4 bg-[#FFFFFF] text-[#4EBA64] rounded-full font-['Lexend'] text-[15px] font-medium hover:bg-opacity-90 transition-all w-[90%] md:w-full whitespace-nowrap"
               >
                 <WhatsAppIcon className="h-5 w-5 mr-3" />
                 <span className="flex-grow text-center pr-3">{secondaryButtonText}</span>

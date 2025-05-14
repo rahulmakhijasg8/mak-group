@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function SectionHeader({ 
+export default function SectionHeader({
   title, 
   description, 
   className = "" 

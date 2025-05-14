@@ -1,7 +1,7 @@
 "use client";
 
-import MultiStepForm from '@/components/multistepform/multistepform';
 import SingleForm from '@/components/singleform';
+import InsuranceHero from '@/components/insurancehero';
 import React from 'react'
 import PropertyCarousel from '@/components/propertycardsection';
 import StackedHeading from '@/components/stackedheading';
@@ -25,74 +25,95 @@ function page() {
         subtitle: "Just share your car's details and our team will handle the rest.",
         fields: [
           {
-            id: "Brand",
+            id: "Carmake",
             type: "text",
-            label: "Brand",
-            placeholder: "Enter Brand Name",
+            label: "Car Make",
+            placeholder: "Name",
             required: true
           },
 
           {
-            id: "Number of years",
-            type: "number",
-            label: "Years",
-            placeholder: "Enter number of years",
+            id: "Car Model & Variant",
+            type: "text",
+            label: "Car Model & Variant",
+            placeholder: "what’s your car model and variant",
             required: true
           },
 
           {
-            id: "Type",
+            id: "Fuel Type",
             type: "select",
-            label: "Type",
-            placeholder: "Select car type",
+            label: "Fuel Type",
+            placeholder: "select fuel type",
             required: true,
             options: [
-              { value: "suv", label: "SUV" },
-              { value: "sedan", label: "Sedan" },
-              { value: "hatchback", label: "Hatchback" },
-              { value: "minivan", label: "Minivan" },
-              { value: "truck", label: "Truck" },
-              { value: "convertible", label: "Convertible" }
+              { value: "Petrol", label: "Petrol" },
+              { value: "Diesel", label: "Diesel" },
+              { value: "CNG", label: "CNG" },
             ]
           },
-          // ...other fields
+          {
+            id: "Transmission",
+            type: "select",
+            label: "Transmission",
+            placeholder: "select transmission",
+            required: true,
+            options: [
+              { value: "Petrol", label: "Petrol" },
+              { value: "Diesel", label: "Diesel" },
+              { value: "CNG", label: "CNG" },
+            ]
+          },
+          {
+            id: "Year of Manufacturing",
+            type: "select",
+            label: "Year of Manufacturing",
+            placeholder: "select year of manufacturing",
+            required: true,
+            options: [
+              { value: "Petrol", label: "Petrol" },
+              { value: "Diesel", label: "Diesel" },
+              { value: "CNG", label: "CNG" },
+            ]
+          },
+          {
+            id: "Kilometers Driven",
+            type: "select",
+            label: "Kilometers Driven",
+            placeholder: "select kilometers driven",
+            required: true,
+            options: [
+              { value: "Petrol", label: "Petrol" },
+              { value: "Diesel", label: "Diesel" },
+              { value: "CNG", label: "CNG" },
+            ]
+          },
+          {
+            id: "Ownership",
+            type: "select",
+            label: "Ownership",
+            placeholder: "select car ownership",
+            required: true,
+            options: [
+              { value: "Petrol", label: "Petrol" },
+              { value: "Diesel", label: "Diesel" },
+              { value: "CNG", label: "CNG" },
+            ]
+          },
+          {
+            id: "Location (City)",
+            type: "select",
+            label: "Location (City)",
+            placeholder: "select your city",
+            required: true,
+            options: [
+              { value: "Petrol", label: "Petrol" },
+              { value: "Diesel", label: "Diesel" },
+              { value: "CNG", label: "CNG" },
+            ]
+          },
         ],
       },
-      {fields: [
-        {
-          id: "Brand",
-          type: "text",
-          label: "Brand",
-          placeholder: "Enter Brand Name",
-          required: true
-        },
-
-        {
-          id: "Number of years",
-          type: "number",
-          label: "Years",
-          placeholder: "Enter number of years",
-          required: true
-        },
-
-        {
-          id: "Type",
-          type: "select",
-          label: "Type",
-          placeholder: "Select car type",
-          required: true,
-          options: [
-            { value: "suv", label: "SUV" },
-            { value: "sedan", label: "Sedan" },
-            { value: "hatchback", label: "Hatchback" },
-            { value: "minivan", label: "Minivan" },
-            { value: "truck", label: "Truck" },
-            { value: "convertible", label: "Convertible" }
-          ]
-        },
-        // ...other fields
-      ]
-    }
 
       // {
       //   id: "carDetails",
@@ -184,7 +205,8 @@ function page() {
     primaryButtonText: "Explore New Cars",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Chat with us on WhatsApp",
-    secondaryButtonLink: "https://wa.me/yourphonenumber"
+    secondaryButtonLink: "https://wa.me/yourphonenumber",
+    primaryButtonIconType:'none'
   };
   
   const usedCar = {
@@ -194,7 +216,8 @@ function page() {
     primaryButtonText: "Browse Used Cars",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Chat with us on WhatsApp",
-    secondaryButtonLink: "https://wa.me/yourphonenumber"
+    secondaryButtonLink: "https://wa.me/yourphonenumber",
+    primaryButtonIconType: 'none'
   };
 
   const statCards = [
@@ -256,6 +279,11 @@ function page() {
 
   return (
     <div className='flex-col justify-center'>
+      <InsuranceHero greentitle="Medical Insurance:" title="Protecting Your Health and Finances"
+    description="At MAK GROUP, we offer a wide range of services to cater to all your car-related needs. Whether you're looking to buy a new or used car, sell your existing vehicle, or secure a car loan or insurance, we've got you covered."
+    imageSrc="/Rectangle 43.jpg"
+    imageAlt="Cars"
+    reverseLayout={false} />
       <GreenImageHero 
     title="Cars – Buying, Selling, Loans & Insurance"
     description="At MAK GROUP, we offer a wide range of services to cater to all your car-related needs. Whether you're looking to buy a new or used car, sell your existing vehicle, or secure a car loan or insurance, we've got you covered."
@@ -273,16 +301,16 @@ function page() {
         <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
         Get the Best Value with Our Quick & Easy Process
         </h3>
-      <MultiStepForm config={carFormConfig} onComplete={handleFormComplete}/>
+      <SingleForm config={carFormConfig} onComplete={handleFormComplete}/>
     </div>
     <HeroSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
-                  primaryButtonText="Apply for a Car Loan" reverseLayout={true} primaryButtonLink="#" />
+                  primaryButtonText="Apply for a Car Loan" paddingY={0} primaryButtonIconType='gamepad' secondaryButtonLink="#" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[70%] w-[100%]' primaryButtonLink="#" />
     <HeroSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."
-                  primaryButtonText="Get a Car Insurance Quote" reverseLayout={false} primaryButtonLink="#" />
+                  primaryButtonText="Get a Car Insurance Quote" paddingY={0} useRegularImgTag={true} primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="#" imageContainerClass='h-[70%] w-[100%]' />
     <PropertyCarousel
   title="Featured Cars"
   subtitle="Browse our collection of premium vehicles"
-  buttonText="View All Cars"
+  buttonText="View More Cars"
   buttonLink="/cars"
   items={[
     {

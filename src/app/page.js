@@ -134,7 +134,7 @@ export default function Home() {
     <TwoCardRow card1={insuranceCard} card2={investmentCard} />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
     <StatsGrid cards={statCards} />
-    <HeroSection title="Ready to Take Control of Your Financial Future?" description="Let’s work together to plan, protect, and grow your wealth. Schedule your free consultation now." 
+    <HeroSection title="Ready to Take Control of Your Financial Future?" imageContainerClass="w-[120%] h-[100%]" description="Let’s work together to plan, protect, and grow your wealth. Schedule your free consultation now." 
     primaryButtonText="Book A free Call Now" primaryButtonLink="#" imageSrc="/Group 46.svg" imageAlt="test" reverseLayout={true} secondaryButtonText="Chat with us on Whatsapp" secondaryButtonLink="#"  />
     <SectionHeader title="Trusted by Clients Across Industries" description="Empowering You with Experience, Trust and Integrity" />
     <TestimonialCarousel testimonials={testimonials} />

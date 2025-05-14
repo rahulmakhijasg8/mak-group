@@ -46,7 +46,7 @@ export default function PropertyCarousel({
           <div className="pl-6 md:pr-[calc(12px+2px)]">
             <Link 
               href={buttonLink}
-              className="inline-flex items-center px-5 py-2.5 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center px-5 py-4 md:py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
             >
               {buttonText}
             </Link>

@@ -28,7 +28,7 @@ export default function FaqItem({ question, answer, isOpen, onClick }) {
             className="animate-slideDown bg-[#FAFAFA] px-4 pb-5"
             style={{ animationDuration: '500ms' }}
           >
-            <p className="font-['Lato'] text-[#000000D6] text-base">
+            <p style={{ whiteSpace: 'pre-wrap' }} className="font-['Lato'] text-[#000000D6] text-base">
               {answer}
             </p>
           </div>

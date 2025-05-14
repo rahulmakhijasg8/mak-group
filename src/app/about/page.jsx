@@ -40,23 +40,23 @@ function about() {
   const teamMembers = [
     {
       image: "/Rectangle 4363.svg",
-      name: "Thomas Zekki",
-      position: "HEAD RESEARCHER"
+      name: "Kumar S. Makhija",
+      position: "Director"
     },
     {
       image: "/Rectangle 4363.svg",
-      name: "Jane Smith",
-      position: "FINANCIAL ADVISOR"
+      name: "Pinak S. Aroskar",
+      position: "Director for Loans/Fnancing"
     },
     {
       image: "/Rectangle 4363.svg",
-      name: "Michael Chen",
-      position: "INVESTMENT SPECIALIST"
+      name: "Ankita K. Makhija",
+      position: ""
     },
     {
       image: "/Rectangle 4363.svg",
-      name: "Sarah Johnson",
-      position: "CUSTOMER RELATIONS"
+      name: "Arnesh K. Makhija",
+      position: ""
     }
   ];
 
@@ -72,11 +72,12 @@ function about() {
   imageAlt="test" 
   reverseLayout={true} 
   secondaryButtonText="Chat with us on Whatsapp" 
-  secondaryButtonLink="#"  
+  secondaryButtonLink="#"
+  imageContainerClass="h-[80%] md:w-[95%]"
 />
 
 <BlueHeroSection 
-  title="Our Philosophy" 
+  title="Our Philosophy"
   description={"At MAK GROUP, we believe that everyone deserves access to quality financial services and advice. We are committed to building long-term relationships with our clients based on trust, transparency, and mutual respect.\n\nOur approach is simple: we take the time to understand your unique needs, goals, and aspirations, and then work with you to develop customized solutions that help you achieve them. Whether you're looking to protect your family with insurance, grow your wealth through investments, or finance your dream home or car, we're here to help."} 
   primaryButtonText="Book A free Call Now" 
   primaryButtonLink="#" 
