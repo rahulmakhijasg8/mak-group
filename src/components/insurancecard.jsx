@@ -33,7 +33,7 @@ const InsuranceCard = ({
       </h3>
 
       {/* Description */}
-      <div className="text-center px-6">
+      <div className="text-center px-2">
         {description}
       </div>
     </div>

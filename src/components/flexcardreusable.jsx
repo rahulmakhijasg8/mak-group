@@ -10,18 +10,38 @@ const formatDescription = (text) => {
   // Replace markdown bold with custom styled span tags
   let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<span style="color: #0D4751; font-weight: 600;">$1</span>');
   
-  // Split by newlines and wrap each paragraph
+  // Process bullet points - add specific inline styles
+  formattedText = formattedText.replace(
+    /^[•-]\s*(.*?)$/gm, 
+    '<div style="display: flex; margin-bottom: 4px;"><span style="color: #0D4751; font-weight: bold; margin-right: 8px; width: 16px; flex-shrink: 0;">•</span><span>$1</span></div>'
+  );
+  
+  // Split by double newlines and wrap each paragraph
   const paragraphs = formattedText.split('\n\n');
   
   return (
     <div className="text-[#000000D6] font-[400] text-sm">
-      {paragraphs.map((paragraph, index) => (
-        <p 
-          key={index} 
-          className="mb-2 last:mb-0"
-          dangerouslySetInnerHTML={{ __html: paragraph }}
-        />
-      ))}
+      {paragraphs.map((paragraph, index) => {
+        // Check if this paragraph contains bullet points
+        if (paragraph.includes('style="display: flex;')) {
+          return (
+            <div 
+              key={index} 
+              style={{ marginBottom: '10px' }}
+              dangerouslySetInnerHTML={{ __html: paragraph }} 
+            />
+          );
+        }
+        
+        // Regular paragraph
+        return (
+          <p 
+            key={index} 
+            style={{ marginBottom: '12px' }}
+            dangerouslySetInnerHTML={{ __html: paragraph }}
+          />
+        );
+      })}
     </div>
   );
 };
@@ -63,7 +83,7 @@ const GridItem = ({
           {formatDescription(description)}
           {linkbtn && (
             <div style={{ marginTop: '0.5rem' }}>
-              <a href={link} style={{ color: '#4EBA64',fontWeight: 400, textDecoration: 'underline' }}>
+              <a href={link} target='_blank' style={{ color: '#4EBA64',fontWeight: 400, textDecoration: 'underline' }}>
                 Learn More
               </a>
             </div>
@@ -77,14 +97,14 @@ const GridItem = ({
   // Image layout (like Investment example)
   return (
     <Link href={link} className="block h-full">
-      <div className="bg-white rounded-[40px] md:rounded-[20px] h-[280px] overflow-hidden">
+      <div className="bg-white rounded-[40px] md:rounded-[20px] h-full overflow-hidden">
         {/* Main image */}
         <div className="relative w-full h-full">
           <Image 
             src={imageSrc || '/placeholder.jpg'} 
             alt={imageAlt || title}
             fill
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
       </div>

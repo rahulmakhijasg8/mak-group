@@ -65,7 +65,7 @@ function about() {
         <AboutHero />
         <HeroSection 
   title="Our Story" 
-  description={"MAK GROUP was founded in [year] with a simple mission: to provide comprehensive financial solutions that help our clients achieve their goals. From our humble beginnings as a small insurance brokerage, we have grown into a full-service financial firm offering a wide range of products and services.\n\nOver the years, we have built a reputation for excellence, integrity, and customer service. Today, we are proud to serve over 400 clients, including many high net worth individuals, and manage assets worth over 500 crores."} 
+  description={"MAK Group was founded in 1952 with a clear vision: to support our clients in achieving their financial and lifestyle goals through trusted, comprehensive solutions. We started off in the automobile industry, specializing in the buying and selling of cars. As our clients’ needs evolved, so did we—expanding into insurance, the stock market, loans, and real estate.\n\nFrom these dynamic beginnings, we have grown into a full-service financial firm, offering a wide range of products and services under one roof. Over the years, we’ve earned a reputation for excellence, integrity, and personalized service. Today, we proudly serve over 400 clients—including many high-net-worth individuals—and manage assets worth over 500 crores."} 
   primaryButtonText="Book A free Call Now" 
   primaryButtonLink="#" 
   imageSrc="/Rectangle 28.jpg" 
@@ -78,7 +78,7 @@ function about() {
 
 <BlueHeroSection 
   title="Our Philosophy"
-  description={"At MAK GROUP, we believe that everyone deserves access to quality financial services and advice. We are committed to building long-term relationships with our clients based on trust, transparency, and mutual respect.\n\nOur approach is simple: we take the time to understand your unique needs, goals, and aspirations, and then work with you to develop customized solutions that help you achieve them. Whether you're looking to protect your family with insurance, grow your wealth through investments, or finance your dream home or car, we're here to help."} 
+  description={"At MAK Group, we believe that everyone deserves access to reliable, high-quality financial guidance. Our commitment lies in building lasting relationships with our clients—grounded in trust, transparency, and mutual respect.\n\nWe take a personalized approach to every client engagement. By understanding your unique goals, needs, and aspirations, we craft tailored solutions designed to help you achieve long-term success. Whether it's protecting your family with the right insurance, growing your wealth through strategic investments, financing your dream home or car, navigating the stock market, or exploring opportunities in real estate—MAK Group is here to guide you every step of the way."} 
   primaryButtonText="Book A free Call Now" 
   primaryButtonLink="#" 
   imageSrc="/Group 49.svg" 
@@ -102,7 +102,7 @@ function about() {
     <ul className="space-y-4 pl-3 mb-8">
       <li className="flex items-start">
         <span className="text-[#000000] text-xl md:text-2xl mr-3 leading-none mt-0.5">•</span>
-        <span className="font-['Lato'] text-[#000000D6]">Personalized attention and customized solutions</span>
+        <span className="font-['Lato'] text-[#000000D6]">Personalized attention and tailored solutions</span>
       </li>
       
       <li className="flex items-start">
@@ -112,7 +112,7 @@ function about() {
       
       <li className="flex items-start">
         <span className="text-[#000000] text-xl md:text-2xl mr-3 leading-none mt-0.5">•</span>
-        <span className="font-['Lato'] text-[#000000D6]">Access to a wide range of products and services</span>
+        <span className="font-['Lato'] text-[#000000D6]">Access to a wide range of financial products and services</span>
       </li>
       
       <li className="flex items-start">

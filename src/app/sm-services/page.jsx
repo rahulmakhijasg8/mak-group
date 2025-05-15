@@ -70,7 +70,7 @@ function page() {
       const smFaqs = [
         {
           question: "What is the minimum amount required to start investing in the stock market?",
-          answer: "You can schedule a property viewing by contacting our customer service team through our website, calling our office, or using the 'Schedule Viewing' button on any property listing. We typically arrange viewings within 24-48 hours of your request."
+          answer: "You can start investing in the stock market with as little as ₹10. This low entry barrier makes stock market investing accessible to everyone, regardless of their financial situation. Many platforms now offer fractional share ownership and small-ticket investments through various instruments like SIPs (Systematic Investment Plans), making it possible to begin your investment journey with minimal capital. This democratization of investing allows even beginners to gain practical experience and gradually build their portfolio as they become more comfortable with market dynamics."
         },
         {
           question: "How do I open a Demat and trading account with MAK GROUP?",
@@ -78,15 +78,15 @@ function page() {
         },
         {
           question: "What are the charges for trading in the stock market?",
-          answer: "Yes, we charge a standard brokerage fee of one month's rent for residential properties and 2% of the annual rent for commercial properties. This fee covers all our services including property search, viewings, paperwork, and move-in support."
+          answer: "Account opening is completely free. However, there are several standard charges that apply to your trading activities. These include brokerage fees for executing your trades, Securities Transaction Tax (STT) which is a government levy on stock transactions, stamp duty charges that vary by state, Goods and Services Tax (GST), and service tax on various aspects of trading services. All these charges are transparently disclosed and are industry-standard across brokerage platforms. Understanding these fees is important for calculating your net returns and planning your investment strategy effectively."
         },
         {
           question: "How can I monitor my stock market investments?",
-          answer: "The rental process typically takes 3-7 days from application to move-in. This includes property selection, documentation verification, agreement preparation, and key handover. The timeline may vary depending on property availability and documentation readiness."
+          answer: "You will receive a mobile application free of cost for monitoring your investments. This user-friendly app provides real-time tracking of your portfolio performance, with features including live market updates, detailed transaction history, profit/loss analysis, and customizable alerts for price movements. The platform also offers comprehensive dashboards with visual representations of your investment distribution and performance metrics. These digital tools ensure you always have instant access to your investment status, empowering you to make informed decisions based on current market conditions."
         },
         {
           question: "Can I invest in the stock market if I am not an Indian resident?",
-          answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
+          answer: "Yes, you can invest in the Indian stock market even if you are not a resident of India. Non-Resident Indians (NRIs) can invest through either an NRE (Non-Resident External) account or an NRO (Non-Resident Ordinary) account, subject to certain trading conditions and regulatory requirements. These specialized accounts are designed to accommodate foreign investors while ensuring compliance with India's foreign exchange regulations. Different tax implications may apply to NRI investors, and some investment categories might have restrictions or require additional approvals as per RBI and SEBI guidelines."
         }
       ];
 

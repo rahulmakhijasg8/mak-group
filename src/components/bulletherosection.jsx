@@ -5,11 +5,17 @@ import Image from 'next/image';
 // A custom bullet point component with lightMode support
 const BulletPoint = ({ title, description, lightMode = false }) => (
   <div className="flex items-start mb-4">
-    <span className={`text-xl mr-2 ${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>•</span>
-    <div>
-      <span className={`font-bold ${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{title}</span>
-      {lightMode ? " " : <span className={`mx-2`}>:</span> }
-      <span className={`${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{description}</span>
+    <span className={`text-xl flex-shrink-0 ${lightMode ? 'text-[#000000D6]' : 'text-white'}`} style={{ width: '20px', minWidth: '20px' }}>•</span>
+    <div className="flex-1">
+      {title ? (
+        <>
+          <span className={`font-bold ${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{title}</span>
+          {lightMode ? " " : <span className={`mx-2`}>:</span>}
+          <span className={`${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{description}</span>
+        </>
+      ) : (
+        <span className={`${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{description}</span>
+      )}
     </div>
   </div>
 );

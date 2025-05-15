@@ -9,7 +9,7 @@ export default function GridItemsSection({ cards, cardWidth, page}) {
         {/* Mobile: Column layout with spacing */}
         <div className="flex flex-col md:hidden space-y-6">
           {Array.isArray(cards) && cards.map((card, index) => (
-            <div key={index} className={`w-[90%] h-[250px] flex justify-center mx-auto`}>
+            <div key={index} className={`w-[100%] h-auto flex justify-center mx-auto`}>
               <InsuranceCard
                 icon={card.icon}
                 title={card.title}
@@ -25,7 +25,7 @@ export default function GridItemsSection({ cards, cardWidth, page}) {
         {/* Desktop: Row layout with spacing */}
         <div className={`hidden md:flex justify-center flex-row ${page === 'life' ? 'space-x-20' : 'space-x-5'}`}>
           {Array.isArray(cards) && cards.map((card, index) => (
-            <div key={index} className={`${page === 'life' ? 'w-[28%]' : 'w-[30%]'} h-[280px] `}>
+            <div key={index} className={`${page === 'life' ? 'w-[25%]' : 'md:w-[31%]'} h-auto `}>
               <InsuranceCard
                 icon={card.icon}
                 title={card.title}

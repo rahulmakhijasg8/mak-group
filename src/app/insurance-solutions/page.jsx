@@ -22,51 +22,43 @@ function page() {
           icon: '/Medical_Insurance-removebg-preview.png',
           title: 'Medical Insurance',
           description: 'Safeguard your health and finances with our comprehensive medical insurance plans. From individual to family floater plans, we have options to suit every need and budget.',
-          link: '#'
+          link: 'medical-insurance',
+          linkbtn:true
         },
         {
   type: 'card',
   icon: '/Vehicle_Insurance-removebg-preview.png',
   title: 'Vehicle Insurance',
-  description: 'Keep your vehicles secure on the road with our vehicle insurance offerings.\n\n• **Comprehensive Coverage**: Protection against accidents, theft, and natural disasters\n\n• **Multiple Vehicle Types**: Coverage for cars, bikes, and commercial vehicles\n\n• **Add-on Options**: Customize with roadside assistance and engine protection\n\n• **Quick Claims**: Hassle-free and efficient claim processing',
-  link: '#',
-  linkbtn:true
+  description: 'Keep your vehicles secure on the road with our vehicle insurance offerings. We provide coverage for cars, bikes, and commercial vehicles, with add-on options for enhanced protection.',
+  link: 'vehicle-insurance',
+  linkbtn:true,
 },
         {
           type: 'card',
           title: 'Life Insurance',
           icon: '/Life_Insurance-removebg-preview.png',
           description:"Ensure your family's financial security with our life insurance solutions. Choose from term insurance, endowment plans, ULIPs, and more, tailored to your unique requirements.",
-          link: '#'
+          link: 'life-insurance',
+          linkbtn:true
         },
         {
             type: 'card',
             title: 'Travel Insurance',
             icon:'/Travel_Insurance_-removebg-preview.png',
             description:"Travel with peace of mind knowing you're covered against unexpected emergencies. Our travel insurance plans offer medical coverage, trip cancellation, baggage loss, and more.",
-            link: '#'
+            link: 'travel-insurance',
+            linkbtn:true
           },
           {
             type: 'card',
             title: 'Commercial Insurance',
             icon:'/Commercial_Insurance-removebg-preview.png',
             description:"Protect your business assets and operations with our commercial insurance options. From property to liability coverage, we help you safeguard your enterprise against potential risks.",
-            link: '#'
+            link: 'commercial-insurance',
+            linkbtn:true
           },
         // Additional items...
       ];
-
-      const equityTrading = {
-        icon: <img src="/equity_trading-removebg-preview.png" alt="Equity Trading" width={60} height={60} />,
-        title: "Equity Trading",
-        description: "Invest in NSE & BSE-listed companies with expert guidance.",
-      };
-      
-      const mutualFunds = {
-        icon: <img src="/mf-removebg-preview 1.png" alt="Investments" width={60} height={60} />,
-        title: "Mutual Funds",
-        description: "Diversify your portfolio with curated fund schemes.",
-      };
 
       const statCards = [
         {
@@ -166,91 +158,14 @@ const WhatsAppIcon = ({ className }) => (
     }
   ];
 
-  const lifeInsuranceCards = [
-  {
-    title: "Term Life Insurance",
-    imageSrc: "/images/term-life.jpg",
-    description: "Affordable coverage for a fixed term. Ideal for income replacement or loan protection."
-  },
-  {
-    title: "Whole Life Insurance",
-    imageSrc: "/images/whole-life.jpg",
-    description: "Lifetime protection with cash value accumulation. Premiums remain level over time."
-  },
-  {
-    title: "ULIP Plans",
-    imageSrc: "/images/ulip.jpg",
-    description: "Investment + insurance bundled together. Flexible premium payment and fund switching."
-  }
-];
-
   return (
     <div>
-      <AsymmetricCardRows firstRowCard1={mutualFunds} firstRowCard2={equityTrading} secondRowCard1={mutualFunds} secondRowCard2={equityTrading} />
-      <BulletHeroSection imageSrc="/financial.svg" primaryButtonText="Aply for a Loan Now" primaryButtonLink="#" imageAlt="test" title="Benefits of MAK GROUP’s Life Insurance Plans" bulletPoints={[
-        {
-          title: "Maximum Tenure",
-          description: "We offer loan tenures up to the maximum allowed by the lending institutions, giving you the flexibility to repay at your own pace."
-        },
-        {
-          title: "No Foreclosure Charges",
-          description: "We believe in transparency and do not charge any foreclosure fees if you choose to prepay your loan."
-        },
-        {
-          title: "No ITR Required",
-          description: "We understand that not everyone files an Income Tax Return (ITR). We offer loan options that do not require ITR, making the process more accessible."
-        },
-        {
-          title: "No ITR Required",
-          description: "We understand that not everyone files an Income Tax Return (ITR). We offer loan options that do not require ITR, making the process more accessible."
-        },
-        {
-          title: "No ITR Required",
-          description: "We understand that not everyone files an Income Tax Return (ITR). We offer loan options that do not require ITR, making the process more accessible."
-        }
-      ]}
-      lightMode={true} />
-
-      <RESection title="Types of Life Insurance Investments" subtitle="Choose a Plan That Matches Your Life Stage & Goals"
-                  page='life' cards={lifeInsuranceCards} />
-
-      <GridItemsSection
-  cards={[
-    {
-      icon: '/icons/loan.svg',
-      title: 'Financial Protection',
-      description: 'Secure your family in case of life’s unforeseen events.',
-    },
-    {
-      icon: '/icons/car.svg',
-      title: 'Financial Planning',
-      description: 'Protect your loved ones while working toward your goals.',
-    },
-    {
-      icon: '/icons/support.svg',
-      title: 'Tax-Free Savings',
-      description: 'Enjoy guaranteed, tax-efficient returns.',
-    },
-  ]}
-  cardWidth={{ mobile: '90%', desktop: '28%', page:'commercial'}} // Responsive width
-/>
-
         <GreenImageHero title="Protect What Matters Most with MAK GROUP" description="At MAK GROUP, we understand that life is full of uncertainties. That's why we offer a wide range of insurance solutions to help you protect your health, wealth, and everything in between. Our experienced team works with leading insurance providers to bring you the best coverage options at competitive prices."
          imageSrc="/Rectangle 52.jpg" imageAlt="insurance solutions" />
          <SectionHeader title="Our Insurance Offerings" description="Personalized Protection for Every Area of Your Life" />
          <FlexGridLayout itemsPerRow={3} items={insuranceItems} />
          <StackedHeading title="Why Choose MAK GROUP for Your Insurance Needs?" subtitle="Expert Advice. Transparent Service. Trusted Coverage."/>
          <StatsGrid cards={statCards} />
-         <HeroWithButtons
-  title="Get a Free Insurance Quote"
-  subtitle="Discover how MAK GROUP can help you protect what matters most. Submit your details and receive a tailored quote from our experts."
-  buttonText="Get a Free quote Now"
-  buttonLink="/cars"
-  secondaryButtonText="Whatsapp Our Team"
-  secondaryButtonLink="/contact"
-  darkMode={true}
-  primaryButtonIconType='quote'
-/>
 <SectionHeader title="Trusted by Clients Across Industries" description="Empowering You with Experience, Trust, and Integrity." />
 <TestimonialCarousel testimonials={testimonials} />
 <FaqSection faqs={insuranceFaqs} />

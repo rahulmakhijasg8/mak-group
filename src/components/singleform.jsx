@@ -1,7 +1,9 @@
 "use client"
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import { Calendar, ArrowRight, Phone, Mail, Info, Upload, Image as ImageIcon, X } from 'lucide-react';
 import StackedHeading from '@/components/stackedheading';
-import { Calendar, ArrowRight, Phone, Mail, Info, Upload, Image, X } from 'lucide-react';
 
 // Custom Quote icon component
 const QuoteIcon = ({ className }) => (
@@ -24,7 +26,27 @@ const GamepadIcon = ({ className }) => (
     className={className}
     fill="none"
   >
-    <path d="M19.5425 10.3897C18.7679 9.23288 17.9217 8.34812 17.1027 7.81004C17.295 7.51816 17.3974 7.17621 17.3971 6.82665C17.3971 6.09329 16.9549 5.46165 16.3234 5.18321L16.9891 3.44677C17.0933 3.17504 17.4102 2.34798 16.9366 1.7303C16.4603 1.10907 15.606 1.19776 14.9822 1.26254C14.8354 1.27777 14.6969 1.29216 14.5996 1.29352C14.1295 1.29948 13.859 1.12121 13.5167 0.895038C13.1653 0.662772 12.7299 0.375006 12.1097 0.375006C12.1009 0.375006 12.092 0.3751 12.0832 0.375194C11.449 0.366381 11.005 0.659585 10.6483 0.895178C10.3059 1.12135 10.0343 1.30041 9.56566 1.29357C9.46816 1.29221 9.32959 1.27782 9.18287 1.26258C8.55897 1.1978 7.70477 1.10912 7.22842 1.73035C6.7548 2.34798 7.07177 3.17504 7.17597 3.44687L7.84164 5.18326C7.21014 5.46169 6.76797 6.09333 6.76797 6.82665C6.76769 7.14664 6.85349 7.46082 7.01636 7.73626C6.16173 8.26519 5.27223 9.17827 4.46125 10.3897C3.11059 12.4072 2.33594 14.7234 2.33594 16.7445C2.33594 18.7492 3.09508 20.4285 4.53133 21.6009C6.17683 22.9441 8.69036 23.6251 12.0021 23.6251C15.3139 23.6251 17.8273 22.9441 19.4728 21.6009C20.9091 20.4286 21.6682 18.7494 21.6682 16.7447C21.6682 14.7235 20.8935 12.4073 19.5426 10.3898L19.5425 10.3897ZM9.03761 2.66129C9.21653 2.67985 9.38556 2.69743 9.54634 2.69968C10.4492 2.71257 11.0123 2.3401 11.4233 2.0686C11.7153 1.8758 11.8669 1.7813 12.0572 1.7813C12.0611 1.7813 12.065 1.7813 12.069 1.7814L12.0832 1.78168L12.0974 1.7814C12.2926 1.77812 12.4441 1.87173 12.7414 2.06823C13.1524 2.33987 13.7143 2.71149 14.619 2.69968C14.7795 2.69743 14.9485 2.6799 15.1274 2.66129C15.3017 2.64319 15.5931 2.61296 15.7715 2.62491C15.7587 2.69448 15.7317 2.79802 15.676 2.94348L14.8757 5.03129H9.28937L8.48903 2.94352C8.4333 2.79802 8.40634 2.69448 8.39355 2.62491C8.57214 2.61287 8.86333 2.64319 9.03761 2.66129ZM8.56328 7.21576C8.35239 7.21576 8.17417 7.03758 8.17417 6.82665C8.17417 6.61571 8.35239 6.43754 8.56328 6.43754H15.6017C15.8126 6.43754 15.9909 6.61571 15.9909 6.82665C15.9909 7.03758 15.8126 7.21576 15.6017 7.21576H8.56328ZM18.5836 20.5115C17.1957 21.6444 14.9813 22.2188 12.0021 22.2188C9.02294 22.2188 6.80847 21.6443 5.42059 20.5114C4.30689 19.6023 3.74219 18.3349 3.74219 16.7445C3.74219 15.0206 4.44784 12.9375 5.6298 11.172C6.75058 9.49791 7.9653 8.62201 8.58592 8.62201H15.417C16.038 8.62201 17.2531 9.49796 18.3741 11.1721C19.5562 12.9376 20.2619 15.0208 20.2619 16.7447C20.2619 18.3351 19.6972 19.6024 18.5835 20.5115H18.5836ZM14.6131 13.0433L10.5259 18.6268C10.4606 18.7161 10.3751 18.7887 10.2764 18.8388C10.1778 18.8888 10.0686 18.9148 9.958 18.9146C9.81386 18.9146 9.66841 18.8705 9.5432 18.7788C9.22984 18.5495 9.16178 18.1095 9.39119 17.7961L13.4784 12.2127C13.7078 11.8993 14.1478 11.8313 14.4611 12.0607C14.7745 12.29 14.8425 12.73 14.6131 13.0434V13.0433ZM14.3514 15.0341C13.4362 15.0341 12.6916 15.7793 12.6916 16.6953V17.2547C12.6916 18.1699 13.4362 18.9145 14.3514 18.9145C15.2665 18.9145 16.0125 18.1699 16.0125 17.2547V16.6953C16.0125 15.7793 15.2673 15.0341 14.3514 15.0341ZM14.6063 17.2547C14.6063 17.3921 14.4895 17.5083 14.3514 17.5083C14.2139 17.5083 14.0978 17.3921 14.0978 17.2547V16.6953C14.0978 16.5571 14.214 16.4404 14.3514 16.4404C14.4895 16.4404 14.6063 16.5571 14.6063 16.6953V17.2547ZM11.3127 14.1454V13.586C11.3127 12.67 10.5675 11.9248 9.65153 11.9248C8.73555 11.9248 7.99038 12.67 7.99038 13.586V14.1454C7.99038 15.0614 8.73555 15.8065 9.65153 15.8065C10.5675 15.8065 11.3127 15.0613 11.3127 14.1454ZM9.39662 14.1454V13.586C9.39662 13.4478 9.51334 13.3311 9.65153 13.3311C9.78972 13.3311 9.90644 13.4478 9.90644 13.586V14.1454C9.90644 14.2836 9.78972 14.4003 9.65153 14.4003C9.51334 14.4003 9.39662 14.2836 9.39662 14.1454Z" fill="currentColor"/>
+    <path d="M19.5425 10.3897C18.7679 9.23288 17.9217 8.34812 17.1027 7.81004C17.295 7.51816 17.3974 7.17621 17.3971 6.82665C17.3971 6.09329 16.9549 5.46165 16.3234 5.18321L16.9891 3.44677C17.0933 3.17504 17.4102 2.34798 16.9366 1.7303C16.4603 1.10907 15.606 1.19776 14.9822 1.26254C14.8354 1.27777 14.6969 1.29216 14.5996 1.29352C14.1295 1.29948 13.859 1.12121 13.5167 0.895038C13.1653 0.662772 12.7299 0.375006 12.1097 0.375006C12.1009 0.375006 12.092 0.3751 12.0832 0.375194C11.449 0.366381 11.005 0.659585 10.6483 0.895178C10.3059 1.12135 10.0343 1.30041 9.56566 1.29357C9.46816 1.29221 9.32959 1.27782 9.18287 1.26258C8.55897 1.1978 7.70477 1.10912 7.22842 1.73035C6.7548 2.34798 7.07177 3.17504 7.17597 3.44687L7.84164 5.18326C7.21014 5.46169 6.76797 6.09333 6.76797 6.82665C6.76769 7.14664 6.85349 7.46082 7.01636 7.73626C6.16173 8.26519 5.27223 9.17827 4.46125 10.3897C3.11059 12.4072 2.33594 14.7234 2.33594 16.7445C2.33594 18.7492 3.09508 20.4285 4.53133 21.6009C6.17683 22.9441 8.69036 23.6251 12.0021 23.6251C15.3139 23.6251 17.8273 22.9441 19.4728 21.6009C20.9091 20.4286 21.6682 18.7494 21.6682 16.7447C21.6682 14.7235 20.8935 12.4073 19.5426 10.3898L19.5425 10.3897ZM9.03761 2.66129C9.21653 2.67985 9.38556 2.69743 9.54634 2.69968C10.4492 2.71257 11.0123 2.3401 11.4233 2.0686C11.7153 1.8758 11.8669 1.7813 12.0572 1.7813C12.0611 1.7813 12.065 1.7813 12.069 1.7814L12.0832 1.78168L12.0974 1.7814C12.2926 1.77812 12.4441 1.87173 12.7414 2.06823C13.1524 2.33987 13.7143 2.71149 14.619 2.69968C14.7795 2.69743 14.9485 2.6799 15.1274 2.66129C15.3017 2.64319 15.5931 2.61296 15.7715 2.62491C15.7587 2.69448 15.7317 2.79802 15.676 2.94348L14.8757 5.03129H9.28937L8.48903 2.94352C8.4333 2.79802 8.40634 2.69448 8.39355 2.62491C8.57214 2.61287 8.86333 2.64319 9.03761 2.66129ZM8.56328 7.21576C8.35239 7.21576 8.17417 7.03758 8.17417 6.82665C8.17417 6.61571 8.35239 6.43754 8.56328 6.43754H15.6017C15.8126 6.43754 15.9909 6.61571 15.9909 6.82665C15.9909 7.03758 15.8126 7.21576 15.6017 7.21576H8.56328ZM18.5836 20.5115C17.1957 21.6444 14.9813 22.2188 12.0021 22.2188C9.02294 22.2188 6.80847 21.6443 5.42059 20.5114C4.30689 19.6023 3.74219 18.3349 3.74219 16.7445C3.74219 15.0206 4.44784 12.9375 5.6298 11.172C6.75058 9.49791 7.9653 8.62201 8.58592 8.62201H15.417C16.038 8.62201 17.2531 9.49796 18.3741 11.1721C19.5562 12.9376 20.2619 15.0208 20.2619 16.7447C20.2619 18.3351 19.6972 19.6024 18.5835 20.5115H18.5836Z" fill="currentColor"/>
+  </svg>
+);
+
+// Custom WhatsApp icon component
+const WhatsAppIcon = ({ className }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    viewBox="0 0 24 24" 
+    className={className}
+    fill="none"
+  >
+    <g clipPath="url(#clip0_309_3730)">
+      <path d="M17.5071 14.3081L17.4981 14.3831C15.2991 13.2871 15.0691 13.1411 14.7851 13.5671C14.5881 13.8621 14.0141 14.5311 13.8411 14.7291C13.6661 14.9241 13.4921 14.9391 13.1951 14.8041C12.8951 14.6541 11.9321 14.3391 10.7921 13.3191C9.90414 12.5241 9.30814 11.5491 9.13214 11.2491C8.83914 10.7431 9.45214 10.6711 10.0101 9.61515C10.1101 9.40515 10.0591 9.24015 9.98514 9.09115C9.91014 8.94115 9.31314 7.47115 9.06314 6.88515C8.82314 6.30115 8.57614 6.37515 8.39114 6.37515C7.81514 6.32515 7.39414 6.33315 7.02314 6.71915C5.40914 8.49315 5.81614 10.3231 7.19714 12.2691C9.91114 15.8211 11.3571 16.4751 14.0011 17.3831C14.7151 17.6101 15.3661 17.5781 15.8811 17.5041C16.4551 17.4131 17.6481 16.7831 17.8971 16.0781C18.1521 15.3731 18.1521 14.7881 18.0771 14.6531C18.0031 14.5181 17.8071 14.4431 17.5071 14.3081Z" fill="currentColor"/>
+      <path d="M20.52 3.44943C12.831 -3.98357 0.106 1.40743 0.101 11.8934C0.101 13.9894 0.65 16.0334 1.696 17.8384L0 24.0004L6.335 22.3484C14.24 26.6184 23.996 20.9484 24 11.8994C24 8.72343 22.76 5.73443 20.505 3.48843L20.52 3.44943ZM22.002 11.8664C21.996 19.4994 13.617 24.2664 6.99 20.3704L6.63 20.1564L2.88 21.1314L3.885 17.4864L3.646 17.1114C-0.478 10.5464 4.26 1.96643 12.072 1.96643C13.3766 1.96315 14.6688 2.21866 15.874 2.71816C17.0791 3.21766 18.1733 3.95124 19.093 4.87643C20.0178 5.79001 20.7513 6.87864 21.2507 8.07878C21.7502 9.27892 22.0056 10.5665 22.002 11.8664Z" fill="currentColor"/>
+    </g>
+    <defs>
+      <clipPath id="clip0_309_3730">
+        <rect width="24" height="24" fill="white"/>
+      </clipPath>
+    </defs>
   </svg>
 );
 
@@ -36,6 +58,7 @@ const SingleForm = ({
   // Button customization
   submitButtonText = "Submit",
   submitButtonIconType = "none", // Options: 'calendar', 'arrow', 'mail', 'phone', 'info', 'quote', 'gamepad', 'none'
+  submitButtonAlign = "center", // Options: 'left', 'center', 'right'
   secondaryButtonText = null,
   secondaryButtonLink = null,
   // File upload config
@@ -49,6 +72,10 @@ const SingleForm = ({
   const [errors, setErrors] = useState({});
   const [uploadedFiles, setUploadedFiles] = useState({});
   const fileInputRefs = useRef({});
+  const textAreaRefs = useRef({});
+  
+  // Check if a field is a textarea to handle special layout
+  const isTextArea = (field) => field.type === 'textarea';
   
   // Combine all steps and fields into a flat structure
   const allFields = config.steps.flatMap(step => step.fields);
@@ -66,10 +93,55 @@ const SingleForm = ({
     }
   };
 
+  // Handle text area change and auto-resize
+  const handleTextAreaChange = (fieldId, e) => {
+    const { value } = e.target;
+    handleChange(fieldId, value);
+    
+    // Auto-resize textarea
+    adjustTextAreaHeight(fieldId);
+  };
+
+  // Function to adjust textarea height based on content
+  const adjustTextAreaHeight = (fieldId) => {
+    const textArea = textAreaRefs.current[fieldId];
+    if (textArea) {
+      // Reset height to calculate correct scrollHeight
+      textArea.style.height = 'auto';
+      // Set new height based on content
+      textArea.style.height = `${Math.max(100, textArea.scrollHeight)}px`;
+    }
+  };
+
+  // Adjust height for all textareas when form data changes
+  useEffect(() => {
+    Object.keys(textAreaRefs.current).forEach(fieldId => {
+      if (formData[fieldId] !== undefined) {
+        adjustTextAreaHeight(fieldId);
+      }
+    });
+  }, [formData]);
+
   // Email validation function
   const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex ? regex.test(email) : false;
+  };
+  
+  // Date validation function
+  const validateDate = (dateString, minDate, maxDate) => {
+    if (!dateString) return false;
+    
+    const date = new Date(dateString);
+    
+    // Check if date is valid
+    if (isNaN(date.getTime())) return false;
+    
+    // Check if date is within range (if provided)
+    if (minDate && date < new Date(minDate)) return false;
+    if (maxDate && date > new Date(maxDate)) return false;
+    
+    return true;
   };
   
   const validateForm = () => {
@@ -84,10 +156,17 @@ const SingleForm = ({
           newErrors[field.id] = "Please enter a valid email address";
         }
       }
+      // Date validation
+      else if (field.type === 'date' && field.required) {
+        if (!value) {
+          newErrors[field.id] = `${field.label} is required`;
+        } else if (!validateDate(value, field.minDate, field.maxDate)) {
+          newErrors[field.id] = `Please enter a valid date`;
+        }
+      }
       // File upload validation
-      else if (field.type === 'file' || field.type === 'image') {
-        // Check if files are uploaded when required
-        if (field.required && (!uploadedFiles[field.id] || uploadedFiles[field.id].length === 0)) {
+      else if ((field.type === 'file' || field.type === 'image') && field.required) {
+        if (!uploadedFiles[field.id] || uploadedFiles[field.id].length === 0) {
           newErrors[field.id] = `${field.label} is required`;
         }
       }
@@ -107,7 +186,7 @@ const SingleForm = ({
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-  
+
   const handleSubmit = () => {
     if (validateForm()) {
       // Combine form data with uploaded files
@@ -120,7 +199,6 @@ const SingleForm = ({
     }
   };
 
-  // Handle file upload
   // Handle file upload
   const handleFileUpload = (fieldId, files) => {
     const field = allFields.find(f => f.id === fieldId);
@@ -223,6 +301,8 @@ const SingleForm = ({
         return <QuoteIcon className="h-5 w-5 mr-2" />;
       case 'gamepad':
         return <GamepadIcon className="h-5 w-5 mr-2" />;
+      case 'whatsapp':
+        return <WhatsAppIcon className="h-5 w-5 mr-2" />;
       case 'none':
       default:
         return null;
@@ -231,6 +311,19 @@ const SingleForm = ({
   
   // Get the icon based on the provided icon type
   const submitIcon = getButtonIcon(submitButtonIconType);
+
+  // Get button alignment class
+  const getButtonAlignmentClass = () => {
+    switch(submitButtonAlign) {
+      case 'left':
+        return 'justify-start pl-6 md:pl-10'; // Add padding to align with form content
+      case 'right':
+        return 'justify-end pr-6 md:pr-10'; // Add padding for right alignment consistency
+      case 'center':
+      default:
+        return 'justify-center';
+    }
+  };
   
   // Render field based on type
   const renderField = (field) => {
@@ -264,6 +357,29 @@ const SingleForm = ({
             style={{ boxShadow: '0px 2px 6px 0px rgba(19, 18, 66, 0.07)' }}
           />
         );
+      case 'date':
+        // Get min and max dates if specified
+        const minDate = field.minDate || '';
+        const maxDate = field.maxDate || '';
+        
+        return (
+          <div className="w-[95%] relative">
+            <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
+              <Calendar className="h-5 w-5 text-[#4EBA64]" />
+            </div>
+            <input
+              type="date"
+              value={value}
+              onChange={e => handleChange(field.id, e.target.value)}
+              min={minDate}
+              max={maxDate}
+              className={`w-full px-3 py-4 pl-10 border text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer ${
+                errorMessage ? 'border-red-500' : 'border-gray-300'
+              }`}
+              style={{ boxShadow: '0px 2px 6px 0px rgba(19, 18, 66, 0.07)' }}
+            />
+          </div>
+        );
       case 'select':
         return (
           <div className="relative w-[95%]">
@@ -287,6 +403,19 @@ const SingleForm = ({
             </div>
           </div>
         );
+      case 'textarea':
+        return (
+          <textarea
+            ref={el => textAreaRefs.current[field.id] = el}
+            value={value}
+            onChange={e => handleTextAreaChange(field.id, e)}
+            placeholder={field.placeholder || ''}
+            className={`w-full px-3 py-4 border text-sm placeholder:text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none min-h-[130px] ${
+              errorMessage ? 'border-red-500' : 'border-gray-300'
+            }`}
+            style={{ boxShadow: '0px 2px 6px 0px rgba(19, 18, 66, 0.07)' }}
+          />
+        );
       case 'number':
         return (
           <input
@@ -309,7 +438,7 @@ const SingleForm = ({
         const fileType = isImageUpload ? 'images' : 'documents';
         const acceptedTypes = acceptedFileTypes[fileType].join(',');
         const files = uploadedFiles[field.id] || [];
-        const icon = isImageUpload ? <Image className="h-5 w-5 mr-2" /> : <Upload className="h-5 w-5 mr-2" />;
+        const icon = isImageUpload ? <ImageIcon className="h-5 w-5 mr-2" /> : <Upload className="h-5 w-5 mr-2" />;
         
         return (
           <div className="w-[95%]">
@@ -337,7 +466,6 @@ const SingleForm = ({
               </span>
             </div>
             
-            {/* Preview uploaded files */}
             {files.length > 0 && (
               <div className="mt-3 space-y-2 max-h-60 overflow-y-auto">
                 {files.map((file, index) => (
@@ -374,6 +502,63 @@ const SingleForm = ({
         return <div>Unsupported field type: {field.type}</div>;
     }
   };
+
+  // Get the grid columns class based on fieldsPerRow property
+  const getGridColumnsClass = (fieldsPerRow = 3) => {
+    switch(fieldsPerRow) {
+      case 1:
+        return 'grid-cols-1';
+      case 2:
+        return 'grid-cols-1 md:grid-cols-2';
+      case 4:
+        return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4';
+      case 3:
+      default:
+        return 'grid-cols-1 md:grid-cols-3';
+    }
+  };
+
+  // Render fields in a step, handling textareas differently
+  const renderFields = (fields, fieldsPerRow = 3) => {
+    // Create a new array to store the result
+    const renderedFields = [];
+    
+    // First pass: render all non-textarea fields in the grid
+    const gridFields = fields.filter(field => !isTextArea(field));
+    if (gridFields.length > 0) {
+      renderedFields.push(
+        <div key="grid-fields" className={`grid ${getGridColumnsClass(fieldsPerRow)} md:gap-x-10 gap-y-6`}>
+          {gridFields.map(field => (
+            <div key={field.id} className="flex pb-2 flex-col">
+              <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
+                {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
+              </label>
+              {renderField(field)}
+              {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    
+    // Second pass: render all textarea fields full width, each in its own row
+    const textareaFields = fields.filter(field => isTextArea(field));
+    if (textareaFields.length > 0) {
+      textareaFields.forEach(field => {
+        renderedFields.push(
+          <div key={field.id} className="flex pb-2 flex-col mt-6 w-full">
+            <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
+              {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
+            </label>
+            {renderField(field)}
+            {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
+          </div>
+        );
+      });
+    }
+    
+    return renderedFields;
+  };
   
   return (
     <div>
@@ -387,8 +572,6 @@ const SingleForm = ({
             className="pb-12" 
           />
         )}
-
-        
         
         {/* Group fields by their original step */}
         {config.steps.map((step, stepIndex) => (
@@ -399,30 +582,24 @@ const SingleForm = ({
                 <p className="text-sm text-gray-600">{step.subtitle}</p>
               )}
             </div>
-            <div className="h-px w-full bg-[#EBEBEB] mt-6 mb-8"></div>
-            <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-10 gap-y-6">
-              {step.fields.map(field => (
-                <div key={field.id} className="flex pb-2 flex-col">
-                  <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
-                    {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
-                  </label>
-                  {renderField(field)}
-                  {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
-                </div>
-              ))}
-            </div>
             
-            {/* Add divider between steps */}
-            {stepIndex < config.steps.length - 1 && (
-              <div className="h-px w-full bg-[#EBEBEB] my-6"></div>
+            {/* Show divider if this is not the first step */}
+            {stepIndex > 0 && (
+              <div className="h-px w-full bg-[#EBEBEB] mt-6 mb-8"></div>
             )}
+            
+            {/* Add space between step title and form fields */}
+            <div className="mb-8"></div>
+            
+            {/* Render fields with special handling for textareas */}
+            {renderFields(step.fields, step.fieldsPerRow)}
           </div>
         ))}
       </div>
       
-      {/* Action buttons in grey space - fixed centered buttons */}
-      <div className="mt-8 flex flex-col items-center justify-center md:flex-row md:justify-center gap-4 max-w-6xl mx-auto">
-        {/* Secondary button (optional) - centered text link */}
+      {/* Action buttons */}
+      <div className={`mt-8 flex flex-col md:flex-row ${getButtonAlignmentClass()} gap-4 max-w-6xl mx-auto`}>
+        {/* Secondary button (optional) */}
         {secondaryButtonText && secondaryButtonLink && (
           <a
             href={secondaryButtonLink}
@@ -432,11 +609,11 @@ const SingleForm = ({
           </a>
         )}
         
-        {/* Submit button - centered on mobile and desktop, icon BEFORE text */}
+        {/* Submit button - aligned based on submitButtonAlign prop */}
         <button
           type="button"
           onClick={handleSubmit}
-          className={`px-3 md:px-8 py-4 md:py-3 w-[60%] md:w-auto mx-auto md:mx-0 bg-green-500 font-['Lexend'] text-white rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center ${submitIcon ? 'justify-center' : 'justify-center'}`}
+          className={`px-3 md:px-8 py-4 md:py-3 w-[60%] md:w-auto mx-auto md:mx-0 bg-green-500 font-['Lexend'] text-white rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center`}
         >
           {submitIcon}
           <span>{submitButtonText}</span>

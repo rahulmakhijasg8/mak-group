@@ -251,7 +251,7 @@ function page() {
   const carFaqs = [
     {
       question: "What documents do I need to provide to sell my car?",
-      answer: "You can schedule a property viewing by contacting our customer service team through our website, calling our office, or using the 'Schedule Viewing' button on any property listing. We typically arrange viewings within 24-48 hours of your request."
+      answer: "To sell your car, you'll need to provide essential documentation that establishes ownership and vehicle details. This includes your car's Registration Certificate (RC), which is the primary proof of ownership and registration status. You'll also need to disclose the current kilometer reading (KM) of your vehicle as it significantly impacts the value assessment. Additionally, clear and comprehensive photographs of your car from multiple angles (exterior, interior, engine bay, etc.) are required to help potential buyers evaluate the vehicle's condition accurately before scheduling an in-person inspection."
     },
     {
       question: "Can I trade in my old car while buying a new one?",
@@ -259,15 +259,15 @@ function page() {
     },
     {
       question: "How long does it take to get a car loan approved?",
-      answer: "Yes, we charge a standard brokerage fee of one month's rent for residential properties and 2% of the annual rent for commercial properties. This fee covers all our services including property search, viewings, paperwork, and move-in support."
+      answer: "Our car loan approval process is remarkably efficient with same-day approval available for both salaried individuals and self-employed applicants. This streamlined processing timeline applies equally regardless of your employment status, provided all required documentation is submitted correctly. Our specialized systems allow us to verify your eligibility quickly, enabling fast decisions so you can proceed with your vehicle purchase without unnecessary delays."
     },
     {
       question: "What is the maximum tenure for a car loan?",
-      answer: "The rental process typically takes 3-7 days from application to move-in. This includes property selection, documentation verification, agreement preparation, and key handover. The timeline may vary depending on property availability and documentation readiness."
+      answer: "We offer flexible financing options with car loans available for a maximum tenure of up to 7 years. This extended repayment period allows you to manage your monthly budget effectively by spreading the cost over a longer timeframe, resulting in lower monthly payments. The loan tenure you select should balance your monthly payment comfort level with the total interest paid over the life of the loan, and our financial advisors can help you determine the optimal arrangement for your financial situation."
     },
     {
       question: "Can I buy a used car with a loan?",
-      answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
+      answer: "Yes, we provide comprehensive financing solutions for both used car purchases and refinancing of existing vehicles. Our used car loans offer competitive interest rates and flexible terms similar to new car financing, with adjustments based on the vehicle's age and condition. Additionally, our refinancing options allow current car owners to leverage their vehicle's equity to secure better interest rates, extend loan terms, or adjust monthly payments to better suit their financial needs."
     }
   ];
 
@@ -279,11 +279,6 @@ function page() {
 
   return (
     <div className='flex-col justify-center'>
-      <InsuranceHero greentitle="Medical Insurance:" title="Protecting Your Health and Finances"
-    description="At MAK GROUP, we offer a wide range of services to cater to all your car-related needs. Whether you're looking to buy a new or used car, sell your existing vehicle, or secure a car loan or insurance, we've got you covered."
-    imageSrc="/Rectangle 43.jpg"
-    imageAlt="Cars"
-    reverseLayout={false} />
       <GreenImageHero 
     title="Cars – Buying, Selling, Loans & Insurance"
     description="At MAK GROUP, we offer a wide range of services to cater to all your car-related needs. Whether you're looking to buy a new or used car, sell your existing vehicle, or secure a car loan or insurance, we've got you covered."
@@ -368,40 +363,6 @@ function page() {
 <StatsGrid cards={statCards} />
 <FaqSection faqs={carFaqs} />
 <Footer title='Get Started with MAK GROUP Cars' description="Contact us today to discuss your car buying, selling, loan, or insurance needs. Our team is ready to assist you every step of the way." />
-<div className='flex flex-col items-center'>
-<StackedHeading title="Expert Calls and Updates" subtitle="Stay ahead of the market with our expert calls and updates.Our team continuously analyzes market trends and individual stocks to provide you with timely recommendations on what to buy, when to buy, and when to sell." />
-<button className="px-6 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2"
-        >
-          Subscribe to Our Expert Calls
-        </button>
-        </div>
-
-
-
-    <HeroWithButtons
-  title="Get a Free Insurance Quote"
-  subtitle="Discover how MAK GROUP can help you protect what matters most. Submit your details and receive a tailored quote from our experts."
-  buttonText="Get a Free quote Now"
-  buttonLink="/cars"
-  secondaryButtonText="Whatsapp Our Team"
-  secondaryButtonLink="/contact"
-  darkMode={true}
-/>
-
-<FlexGridLayout 
-          items={[serviceItems[0]]} 
-          itemsPerRow={1}
-        />
-
-<FlexGridLayout 
-          items={[serviceItems.slice(0,2)]} 
-          itemsPerRow={2}
-        />
-
-<FlexGridLayout 
-          items={serviceItems} 
-          itemsPerRow={2}
-        />
 
     </div>
   )

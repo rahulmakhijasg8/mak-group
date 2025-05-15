@@ -110,14 +110,16 @@ export default function HeroWithButtons({
           
           {/* Buttons on the right */}
           <div className="pl-6 md:pr-[calc(12px+2px)] flex items-center pr-10 flex flex-col gap-6">
-            {/* Primary button with icon */}
-            <Link 
-              href={buttonLink}
-              className={`inline-flex w-[80%] md:w-auto items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all ${primaryIcon ? '' : 'justify-center'}`}
-            >
-              {primaryIcon}
-              <span className={`${primaryIcon ? 'flex-grow text-center pr-3' : 'text-center'}`}>{buttonText}</span>
-            </Link>
+            {/* Primary button with icon - only shown when provided */}
+            {buttonText && buttonLink && (
+              <Link 
+                href={buttonLink}
+                className={`inline-flex w-[80%] md:w-auto items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all ${primaryIcon ? '' : 'justify-center'}`}
+              >
+                {primaryIcon}
+                <span className={`${primaryIcon ? 'flex-grow text-center pr-3' : 'text-center'}`}>{buttonText}</span>
+              </Link>
+            )}
             
             {/* Secondary button with WhatsApp icon - only shown when provided */}
             {secondaryButtonText && secondaryButtonLink && (

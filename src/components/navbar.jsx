@@ -73,6 +73,10 @@ export default function Navbar() {
     { href: 'finance-solutions', label: 'Finance Solutions' },
     { href: 'insurance-solutions', label: 'Insurance Solutions' },
     { href: 'medical-insurance', label: 'Medical Insurance' },
+    { href: 'vehicle-insurance', label: 'Vehicle Insurance' },
+    { href: 'life-insurance', label: 'Life Insurance' },
+    { href: 'travel-insurance', label: 'Travel Insurance' },
+    { href: 'commercial-insurance', label: 'Commercial Insurance' },
   ];
 
   // Function to check if a link is active

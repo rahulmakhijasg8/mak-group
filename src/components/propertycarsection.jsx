@@ -10,6 +10,11 @@ export default function RESection({
 // const card = page === 'commercial' ? <LICard /> : <RECard />;
 
 {
+  // Determine grid columns class based on page type
+  const gridColumnsClass = page === 'life' 
+    ? "grid grid-cols-1 md:mt-[20px] md:grid-cols-4 gap-6 md:gap-4" 
+    : "grid grid-cols-1 md:mt-[20px] md:grid-cols-3 gap-6 md:gap-0";
+
   return (
     <section className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]">
       <div className="max-w-7xl mx-auto">
@@ -48,13 +53,13 @@ export default function RESection({
       </div>
     </section>}
         
-        {/* Cards Container - Row on desktop, Column on mobile */}
-        <div className="grid grid-cols-1 md:mt-[20px] md:grid-cols-3 gap-6 md:gap-0">
+        {/* Cards Container - Using dynamic grid class based on page type */}
+        <div className={gridColumnsClass}>
           {cards.map((card, index) => (
-  page === 'life'
-  ? <LICard key={index} {...card} />
-    : <RECard key={index} {...card} />
-))}
+            page === 'life'
+            ? <LICard key={index} {...card} />
+            : <RECard key={index} {...card} />
+          ))}
         </div>
       </div>
     </section>
