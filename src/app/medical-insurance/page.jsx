@@ -49,9 +49,10 @@ function page() {
             const carFormConfig = {
     steps: [
       {
-        id: "carDetails",
+        id: "personalDetails",
         title: "Personal Details",
         subtitle: "Let us help you find the perfect coverage in minutes.",
+        fieldsPerRow: 1,
         fields: [
           {
             id: "name",

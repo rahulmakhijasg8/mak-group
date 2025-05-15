@@ -10,6 +10,8 @@ const FormStep = forwardRef(({
   isFirstStep, 
   isLastStep,
   hideButtons = false,
+  // Field layout configuration
+  fieldsPerRow = 3, // Default to 3 fields per row, can be overridden per step
   // File upload config
   maxFileSize = 5, // Maximum file size in MB
   acceptedFileTypes = {
@@ -22,6 +24,7 @@ const FormStep = forwardRef(({
   const [uploadedFiles, setUploadedFiles] = useState({});
   const fileInputRefs = useRef({});
   const dateInputRefs = useRef({});
+  const textAreaRefs = useRef({});
   
   // Expose methods to parent component
   useImperativeHandle(ref, () => ({
@@ -40,6 +43,26 @@ const FormStep = forwardRef(({
         delete newErrors[fieldId];
         return newErrors;
       });
+    }
+  };
+
+  // Handle text area change and auto-resize
+  const handleTextAreaChange = (fieldId, e) => {
+    const { value } = e.target;
+    handleChange(fieldId, value);
+    
+    // Auto-resize textarea
+    adjustTextAreaHeight(fieldId);
+  };
+
+  // Function to adjust textarea height based on content
+  const adjustTextAreaHeight = (fieldId) => {
+    const textArea = textAreaRefs.current[fieldId];
+    if (textArea) {
+      // Reset height to calculate correct scrollHeight
+      textArea.style.height = 'auto';
+      // Set new height based on content
+      textArea.style.height = `${Math.max(100, textArea.scrollHeight)}px`;
     }
   };
 
@@ -228,11 +251,28 @@ const FormStep = forwardRef(({
     </svg>
   );
   
+  // Check if a field is a textarea to handle special layout
+  const isTextArea = (field) => field.type === 'textarea';
+  
+  // Get the grid columns class based on fieldsPerRow property
+  const getGridColumnsClass = (fieldsPerRowValue = 3) => {
+    switch(fieldsPerRowValue) {
+      case 1:
+        return 'grid-cols-1';
+      case 2:
+        return 'grid-cols-1 md:grid-cols-2';
+      case 4:
+        return 'grid-cols-1 md:grid-cols-2 lg:grid-cols-4';
+      case 3:
+      default:
+        return 'grid-cols-1 md:grid-cols-3';
+    }
+  };
+  
   // Render field based on type
   const renderField = (field) => {
     const value = stepData[field.id] || formData[field.id] || '';
     const errorMessage = errors[field.id];
-    
     switch(field.type) {
       case 'text':
         return (
@@ -305,6 +345,19 @@ const FormStep = forwardRef(({
               <DropdownIcon />
             </div>
           </div>
+        );
+      case 'textarea':
+        return (
+          <textarea
+            ref={el => textAreaRefs.current[field.id] = el}
+            value={value}
+            onChange={e => handleTextAreaChange(field.id, e)}
+            placeholder={field.placeholder || ''}
+            className={`w-full px-3 py-4 border text-sm placeholder:text-sm rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 resize-none min-h-[130px] ${
+              errorMessage ? 'border-red-500' : 'border-gray-300'
+            }`}
+            style={{ boxShadow: '0px 2px 6px 0px rgba(19, 18, 66, 0.07)' }}
+          />
         );
       case 'number':
         return (
@@ -393,6 +446,51 @@ const FormStep = forwardRef(({
         return <div>Unsupported field type: {field.type}</div>;
     }
   };
+
+  // Render fields with special handling for textareas
+  const renderFields = () => {
+    // Get fieldsPerRow from step config or use default
+    const fieldsPerRowValue = step.fieldsPerRow || fieldsPerRow;
+    
+    // Create a new array to store the result
+    const renderedFields = [];
+    
+    // First pass: render all non-textarea fields in the grid
+    const gridFields = step.fields.filter(field => !isTextArea(field));
+    if (gridFields.length > 0) {
+      renderedFields.push(
+        <div key="grid-fields" className={`grid ${getGridColumnsClass(fieldsPerRowValue)} md:gap-x-10 gap-y-6`}>
+          {gridFields.map(field => (
+            <div key={field.id} className="flex pb-2 flex-col">
+              <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
+                {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
+              </label>
+              {renderField(field)}
+              {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
+            </div>
+          ))}
+        </div>
+      );
+    }
+    
+    // Second pass: render all textarea fields full width, each in its own row
+    const textareaFields = step.fields.filter(field => isTextArea(field));
+    if (textareaFields.length > 0) {
+      textareaFields.forEach(field => {
+        renderedFields.push(
+          <div key={field.id} className="flex pb-2 flex-col mt-6 w-full">
+            <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
+              {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
+            </label>
+            {renderField(field)}
+            {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
+          </div>
+        );
+      });
+    }
+    
+    return renderedFields;
+  };
   
   return (
     <div id={`form-step-${step.id}`}>
@@ -403,17 +501,8 @@ const FormStep = forwardRef(({
         )}
       </div>
       
-      <div className="grid grid-cols-1 md:grid-cols-3 md:gap-x-10 gap-y-6">
-        {step.fields.map(field => (
-          <div key={field.id} className="flex pb-2 flex-col">
-            <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
-              {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
-            </label>
-            {renderField(field)}
-            {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
-          </div>
-        ))}
-      </div>
+      {/* Render fields with special handling for textareas */}
+      {renderFields()}
       
       {/* Only render buttons if hideButtons is false */}
       {!hideButtons && (

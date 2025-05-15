@@ -9,7 +9,9 @@ const MultiStepForm = ({
   config, 
   onComplete,
   title,
-  subtitle
+  subtitle,
+  // Add default fieldsPerRow at the form level
+  defaultFieldsPerRow = 3
 }) => {
   const [currentStepIndex, setCurrentStepIndex] = useState(0);
   const [formData, setFormData] = useState({});
@@ -71,6 +73,7 @@ const MultiStepForm = ({
           isFirstStep={currentStepIndex === 0}
           isLastStep={currentStepIndex === config.steps.length - 1}
           hideButtons={true} // Add prop to hide buttons in FormStep
+          fieldsPerRow={currentStep.fieldsPerRow || defaultFieldsPerRow} // Pass fieldsPerRow to FormStep
         />
       </div>
       
