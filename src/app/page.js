@@ -10,6 +10,7 @@ import StatsGrid from "@/components/statsgrid";
 import TestimonialCarousel from "@/components/testimonialcarousal";
 import Footer from "@/components/footer";
 import { Calendar } from "lucide-react";
+import Navbar from "@/components/navbar";
 
 
 export default function Home() {
@@ -90,7 +91,13 @@ export default function Home() {
 
   return (
     <div>
-      {/* <HeroSection  /> */}
+      <div className='w-full' style={{
+              backgroundImage: "url('/insuranceherobg.png')", // Fixed background image path
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}>
+              <Navbar/>
       <section className="w-full py-12 md:py-20 px-4 md:px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
         {/* Left Column */}
@@ -130,6 +137,7 @@ export default function Home() {
         </div>
       </div>
     </section>
+    </div>
     <SectionHeader title="Our Financial Solutions" description="Personalized services designed to meet you financial goals." />
     <TwoCardRow card1={insuranceCard} card2={investmentCard} />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />

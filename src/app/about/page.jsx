@@ -7,6 +7,7 @@ import StatsGrid from "@/components/statsgrid";
 import SectionHeader from "@/components/heading";
 import TeamSection from "@/components/teamsection";
 import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 function about() {
   const statCards = [
@@ -62,6 +63,7 @@ function about() {
 
   return (
     <div>
+      <Navbar/>
         <AboutHero />
         <HeroSection 
   title="Our Story" 

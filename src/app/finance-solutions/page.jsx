@@ -7,6 +7,7 @@ import StatsGrid from '@/components/statsgrid';
 import FaqSection from '@/components/FAQSection';
 import Footer from '@/components/footer';
 import BulletHeroSection from '@/components/bulletherosection';
+import Navbar from '@/components/navbar';
 
 
 function page() {
@@ -166,6 +167,7 @@ function page() {
 
   return (
     <div>
+      <Navbar/>
     <GreenImageHero 
   title="Empowering Your Financial Goals, One Loan at a Time"
   description="At MAK GROUP, we understand that financial needs vary from person to person. That's why we offer a wide range of loan products to cater to your unique requirements, whether you're looking to buy your dream home, purchase a car, expand your business, or meet personal expenses."

@@ -12,6 +12,7 @@ import GridItemsSection from '@/components/insurancecardsec'
 import RESection from '@/components/propertycarsection'
 import BulletHeroSection from '@/components/bulletherosection'
 import AsymmetricCardRows from '@/components/twocardtworows'
+import Navbar from '@/components/navbar'
 
 
 function page() {
@@ -160,6 +161,7 @@ const WhatsAppIcon = ({ className }) => (
 
   return (
     <div>
+      <Navbar/>
         <GreenImageHero title="Protect What Matters Most with MAK GROUP" description="At MAK GROUP, we understand that life is full of uncertainties. That's why we offer a wide range of insurance solutions to help you protect your health, wealth, and everything in between. Our experienced team works with leading insurance providers to bring you the best coverage options at competitive prices."
          imageSrc="/Rectangle 52.jpg" imageAlt="insurance solutions" />
          <SectionHeader title="Our Insurance Offerings" description="Personalized Protection for Every Area of Your Life" />

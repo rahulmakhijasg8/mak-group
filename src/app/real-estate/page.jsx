@@ -8,6 +8,7 @@ import StatsGrid from '@/components/statsgrid';
 import TestimonialCarousel from '@/components/testimonialcarousal';
 import SectionHeader from '@/components/heading';
 import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
 
 
 function services() {
@@ -102,7 +103,9 @@ function services() {
   ];
 
   return (
-    <div><GreenImageHero 
+    <div>
+      <Navbar/>
+      <GreenImageHero 
     title="Real Estate Services"
     description="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement. With specialists in insurance, stock market investing, finance, real estate, and more, we have the skills and resources to handle all your financial needs."
     imageSrc="/Rectangle 37.jpg"

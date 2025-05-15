@@ -188,8 +188,13 @@ function page() {
 
   return (
     <div>
-      <div>
-        {/* <Navbar/> */}
+      <div className='w-full' style={{
+        backgroundImage: "url('/insuranceherobg.png')", // Fixed background image path
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}>
+        <Navbar/>
         <InsuranceHero greentitle="Medical Insurance:" title="Protecting Your Health and Finances"
             description="At MAK GROUP, we offer a wide range of services to cater to all your car-related needs. Whether you're looking to buy a new or used car, sell your existing vehicle, or secure a car loan or insurance, we've got you covered."
             imageSrc="/Rectangle 53.jpg"

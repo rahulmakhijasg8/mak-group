@@ -7,6 +7,7 @@ import StatsGrid from '@/components/statsgrid';
 import SingleForm from '@/components/singleform';
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
+import Navbar from '@/components/navbar'
 
 
 function page() {
@@ -140,11 +141,19 @@ function page() {
 
   return (
     <div>
+      <div className='w-full' style={{
+                    backgroundImage: "url('/insuranceherobg.png')", // Fixed background image path
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                  }}>
+                    <Navbar/>
         <InsuranceHero greentitle="Vehicle Insurance:" title="Protecting Your Ride with MAK GROUP"
                     description="As a vehicle owner, it's crucial to safeguard your investment and protect yourself from potential financial liabilities. MAK GROUP offers comprehensive vehicle insurance coverage to give you peace of mind on the road."
                     imageSrc="/Rectangle 54.jpg"
                     imageAlt="vehicle-insurance"
                     reverseLayout={false} />
+        </div>
         <StackedHeading title="Know Your Coverage" subtitle="Understand the Protection We Offer" />
         <FlexGridLayout itemsPerRow={2} items={coverageItems} />
         <StackedHeading title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />

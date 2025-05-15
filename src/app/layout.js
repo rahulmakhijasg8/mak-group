@@ -18,7 +18,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${lato.variable}`}>
       <body>
-      <Navbar />
+      {/* <Navbar /> */}
         {children}
       </body>
     </html>

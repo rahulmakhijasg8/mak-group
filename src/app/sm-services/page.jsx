@@ -8,6 +8,7 @@ import TwoCardRow from '@/components/twocardrow'
 import SingleForm from '@/components/singleform'
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
+import Navbar from '@/components/navbar'
 
 
 function page() {
@@ -180,6 +181,7 @@ function page() {
           };
   return (
     <div>
+      <Navbar/>
         <GreenImageHero title="Stock Market Services" description="At MAK GROUP, we offer comprehensive stock market services as sub-brokers with IIFL Securities. Our experienced team, with over 15 years of expertise, is committed to providing you with the best and most customized service and guidance to help you navigate the stock market with confidence."
                         imageSrc="/Rectangle 50.jpg" imageAlt="Stck Market Bull" />
         <StackedHeading title="Why Choose MAK GROUP for Your Stock Market Investments?" subtitle="Trusted by Over 400 Clients. Powered by Experience." />

@@ -7,6 +7,7 @@ import BulletHeroSection from '@/components/bulletherosection'
 import HeroWithButtons from '@/components/herowithbuttons'
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
+import Navbar from '@/components/navbar'
 
 function page() {
 
@@ -72,8 +73,16 @@ function page() {
 
   return (
     <div>
+      <div className='w-full' style={{
+                    backgroundImage: "url('/insuranceherobg.png')", // Fixed background image path
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                  }}>
+                    <Navbar/>
         <InsuranceHero greentitle="Travel Insurance:" title="Safeguarding Your Business with MAK GROUP" description="Running a business comes with its share of risks and uncertainties. MAK GROUP offers a wide range of commercial insurance solutions to protect your venture from potential losses and liabilities, allowing you to focus on growing your business with peace of mind."
                             imageAlt="Commercial Insurance" imageSrc="/Rectangle 57.jpg"/>
+        </div>
         <StackedHeading title="Protect Your Business Assets" subtitle="Comprehensive Coverage for Your Property, Goods, and Equipment" />
         <GridItemsSection
           cards={[

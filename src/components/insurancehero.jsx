@@ -11,12 +11,6 @@ export default function InsuranceHero({
   return (
     <section 
       className="w-full py-12 md:py-20 px-4 mb-4 md:mb-20 md:px-12 relative"
-      style={{
-        backgroundImage: "url('/insuranceherobg.png')", // Fixed background image path
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      }}
     >
       
       <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-20 relative z-10`}>

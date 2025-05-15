@@ -5,6 +5,7 @@ import GreenImageHero from '@/components/greenimagehero'
 import SectionHeader from '@/components/heading'
 import Footer from '@/components/footer'
 import SingleForm from '@/components/singleform'
+import Navbar from '@/components/navbar'
 
 function page() {
 
@@ -66,6 +67,7 @@ function page() {
 
   return (
     <div>
+      <Navbar/>
         <GreenImageHero title="Your Financial Success Starts with a Conversation" description="Whether you have questions about our services, need a personalized consultation, or just want to explore your options — the MAK GROUP team is here for you. Reach out to us today!" 
         imageSrc="/Rectangle 58.jpg" imageAlt="contact us" />
         <SectionHeader title="Quick Contact Information" description="Reach us easily through any method you prefer" />

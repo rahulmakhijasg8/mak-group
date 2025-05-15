@@ -14,6 +14,7 @@ import HeroSection from "@/components/hero.jsx";
 import StatsGrid from '@/components/statsgrid';
 import FaqSection from '@/components/FAQSection';
 import Footer from '@/components/footer';
+import Navbar from '@/components/navbar';
 
 function page() {
 
@@ -279,6 +280,7 @@ function page() {
 
   return (
     <div className='flex-col justify-center'>
+      <Navbar/>
       <GreenImageHero 
     title="Cars – Buying, Selling, Loans & Insurance"
     description="At MAK GROUP, we offer a wide range of services to cater to all your car-related needs. Whether you're looking to buy a new or used car, sell your existing vehicle, or secure a car loan or insurance, we've got you covered."

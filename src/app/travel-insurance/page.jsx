@@ -8,6 +8,7 @@ import FaqSection from '@/components/FAQSection';
 import Footer from '@/components/footer';
 import AsymmetricCardRows from '@/components/twocardtworows';
 import SingleForm from '@/components/singleform';
+import Navbar from '@/components/navbar';
 
 
 function page() {
@@ -110,8 +111,16 @@ function page() {
 
   return (
     <div>
+      <div className='w-full' style={{
+                    backgroundImage: "url('/insuranceherobg.png')", // Fixed background image path
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    backgroundRepeat: 'no-repeat',
+                  }}>
+                    <Navbar/>
         <InsuranceHero greentitle="Travel Insurance:" title="Explore the World Worry-Free with MAK GROUP" description="Embark on your adventures with confidence, knowing that you're protected against unforeseen circumstances. MAK GROUP's travel insurance plans offer comprehensive coverage to ensure that you can travel anywhere around the world without a worry on your mind."
                     imageAlt="Travel Insurance" imageSrc="/Rectangle 56.jpg"/>
+        </div>
         <StackedHeading title="Why You Need Travel Insurance?" subtitle="Stay Protected Against Unexpected Events Abroad" />
         <AsymmetricCardRows firstRowCard1={personalLiability} firstRowCard2={lossordelay} secondRowCard1={trip_cancellation} secondRowCard2={medicalProtection} />
         <BulletHeroSection imageSrc="/travel-insurance.png" primaryButtonText="Get Insured Today" primaryButtonLink="#" imageAlt="travel-insurance" title="Benefits of MAK GROUP's Travel Insurance" bulletPoints={[
