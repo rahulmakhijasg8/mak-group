@@ -1,41 +1,32 @@
 "use client";
 
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import Loading from './loader';
 
-export default function LoadingProvider({ children }) {
-  const [isLoading, setIsLoading] = useState(true);
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  useEffect(() => {
-    // Show loading state when route changes
-    setIsLoading(true);
-
-    const handleComplete = () => {
-      // Set minimum loading time to avoid flicker
-      setTimeout(() => {
-        setIsLoading(false);
-      }, 800);
-    };
-
-    // If document is already loaded
-    if (document.readyState === 'complete') {
-      handleComplete();
-    } else {
-      // Wait for load event
-      window.addEventListener('load', handleComplete);
-      return () => window.removeEventListener('load', handleComplete);
-    }
-  }, [pathname, searchParams]); // Re-run when route changes
-
+// A simple wrapper component that doesn't use any hooks that need Suspense
+function LoadingWrapper({ children, isVisible }) {
   return (
     <>
-      {isLoading && <Loading />}
-      <div className={isLoading ? 'hidden' : 'block'}>
+      {isVisible && <Loading />}
+      <div className={isVisible ? 'hidden' : 'block'}>
         {children}
       </div>
     </>
+  );
+}
+
+// The inner component that uses hooks that require Suspense
+function ClientNavLoader({ children }) {
+  // This will render only on the client side
+  // No need for usePathname, useSearchParams, or state management here
+  return <LoadingWrapper isVisible={false}>{children}</LoadingWrapper>;
+}
+
+// The main export is a Suspense boundary that renders the client component
+export default function LoadingProvider({ children }) {
+  return (
+    <Suspense fallback={<Loading />}>
+      <ClientNavLoader>{children}</ClientNavLoader>
+    </Suspense>
   );
 }
