@@ -204,7 +204,13 @@ function page() {
         <StackedHeading title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
         <TwoCardRow card1={hotel_costs} card2={protection} />
         <section 
-              className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]"
+              style={{
+        backgroundImage: "url('/greeneffect4.svg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundBlendMode: 'soft-light', // This helps make the effect lighter
+      }} className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]"
             >
               <div className={`max-w-full mx-auto flex flex-col`}>
                 {/* Content Column */}

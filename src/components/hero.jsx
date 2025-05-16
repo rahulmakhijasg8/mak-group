@@ -60,7 +60,7 @@ export default function HeroSection({
   secondaryButtonLink,
   primaryButtonIconType = 'calendar', // Button icon type
   imageContainerClass = "", // Custom class for image container
-  paddingY = 12 // New prop for vertical padding with default value of 12
+  paddingClass = "md:py-12", // Default padding class that can be overridden
 }) {
   // Function to get the correct icon based on the iconType string
   const getPrimaryButtonIcon = () => {
@@ -89,7 +89,7 @@ export default function HeroSection({
   const primaryIcon = getPrimaryButtonIcon();
 
   return (
-    <section className={`w-full py-12 md:py-${paddingY} px-4 md:px-12`}>
+    <section className={`w-full px-4 md:px-12 py-12 ${paddingClass}`}>
       <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-12`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">

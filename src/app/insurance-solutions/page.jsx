@@ -168,6 +168,16 @@ const WhatsAppIcon = ({ className }) => (
          <FlexGridLayout itemsPerRow={3} items={insuranceItems} />
          <StackedHeading title="Why Choose MAK GROUP for Your Insurance Needs?" subtitle="Expert Advice. Transparent Service. Trusted Coverage."/>
          <StatsGrid cards={statCards} />
+         <HeroWithButtons
+           title="Get a Free Insurance Quote"
+           subtitle="Discover how MAK GROUP can help you protect what matters most. Submit your details and receive a tailored quote from our experts."
+           buttonText="Get a Free Quote Now"
+           buttonLink="#"
+           primaryButtonIconType='quote'
+           secondaryButtonText="Whatsapp Our Team"
+           secondaryButtonLink="#"
+           darkMode={true}
+         />
 <SectionHeader title="Trusted by Clients Across Industries" description="Empowering You with Experience, Trust, and Integrity." />
 <TestimonialCarousel testimonials={testimonials} />
 <FaqSection faqs={insuranceFaqs} />

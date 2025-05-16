@@ -34,7 +34,13 @@ export default function BulletHeroSection({
 }) {
   return (
     <section 
-      className={`w-full py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
+     style={{
+        backgroundImage: "url('/greeneffect3.svg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundBlendMode: 'soft-light', // This helps make the effect lighter
+      }} className={`w-full py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
     >
       <div className={`container mx-auto px-4 md:px-6 flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
         {/* Content Column */}

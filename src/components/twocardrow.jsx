@@ -11,16 +11,16 @@ export default function TwoCardRow({ card1, card2 }) {
         {/* Fixed two-card scrollable container */}
         <div 
           ref={scrollContainerRef}
-          className="flex overflow-x-auto space-x-6 md:space-x-12 pb-6 -mx-4 px-4 snap-x scrollbar-hide"
+          className="flex overflow-x-auto space-x-6 md:space-x-12 pb-6 -mx-4 px-4 scrollbar-hide"
           style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
         >
-          {/* First Card - Always 75% on mobile, 50% on desktop */}
-          <div className="snap-start flex-shrink-0 w-[75%] md:w-[calc(50%-24px)]">
+          {/* First Card - Increased from 75% to 85% on mobile */}
+          <div className="flex-shrink-0 w-[85%] md:w-[calc(50%-24px)]">
             <ServiceCard {...card1} />
           </div>
           
-          {/* Second Card - Always 75% on mobile, 50% on desktop */}
-          <div className="snap-start flex-shrink-0 w-[75%] md:w-[calc(50%-24px)]">
+          {/* Second Card - Increased from 75% to 85% on mobile */}
+          <div className="flex-shrink-0 w-[85%] md:w-[calc(50%-24px)]">
             <ServiceCard {...card2} />
           </div>
         </div>

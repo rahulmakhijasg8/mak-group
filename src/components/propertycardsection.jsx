@@ -23,7 +23,13 @@ export default function PropertyCarousel({
   const subtitleColor = darkMode ? "text-[#B7C7E7]" : "text-[#000000D6]";
 
   return (
-    <section className={`w-full py-12 md:py-20 ${bgColor}`}>
+    <section style={{
+        backgroundImage: "url('/greeneffect.svg')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        backgroundBlendMode: 'soft-light', // This helps make the effect lighter
+      }}  className={`w-full py-12 md:py-20 ${bgColor}`}>
       <div className="">
         {/* Header Section with precise alignment */}
         <div className="flex flex-col mr-16 md:mx-16 md:flex-row md:items-center md:justify-between mb-12">
@@ -65,7 +71,7 @@ export default function PropertyCarousel({
             }
           `}</style>
           {items.map((item, index) => (
-            <div key={index} className="snap-start">
+            <div key={index} className="">
               {type === "property" ? (
                 <PropertyListingCard {...item} />
               ) : (

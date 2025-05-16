@@ -18,7 +18,7 @@ export default function TestimonialCarousel({ testimonials }) {
           {Array.isArray(testimonials) && testimonials.map((testimonial, index) => (
             <div 
               key={index} 
-              className="snap-start flex-shrink-0 w-[85%] md:w-[400px]"
+              className="flex-shrink-0 w-[85%] md:w-[400px]"
             >
               <TestimonialCard 
                 quote={testimonial.quote}

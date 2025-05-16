@@ -1,6 +1,6 @@
 import { Lato } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar.jsx";
+import LoadingProvider from "@/components/loaderprovider";
 
 export const metadata = {
   title: "Create Next App",
@@ -18,8 +18,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${lato.variable}`}>
       <body>
-      {/* <Navbar /> */}
+      <LoadingProvider>
         {children}
+      </LoadingProvider>
       </body>
     </html>
   );

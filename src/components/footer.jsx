@@ -99,7 +99,7 @@ export default function Footer({
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/contact" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                  <Link href="/contact-us" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
                     Contact Us
                   </Link>
                 </li>
@@ -135,11 +135,6 @@ export default function Footer({
                 <li>
                   <Link href="/services" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
                     Services
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/team" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
-                    Our Team
                   </Link>
                 </li>
               </ul>

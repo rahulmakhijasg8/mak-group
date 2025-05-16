@@ -120,8 +120,11 @@ function page() {
       <HeroWithButtons
   title="Ready to Protect Your Loved Ones?"
   subtitle="Don't leave your family's future to chance. Contact MAK GROUP for a free life insurance quote tailored to your needs. Our experts will help you choose the right plan to secure your loved ones' financial well-being."
+  buttonText="Get a Free Quote Now"
+  buttonLink="#"
+  primaryButtonIconType='quote'
   secondaryButtonText="Whatsapp Our Team"
-  secondaryButtonLink="/contact"
+  secondaryButtonLink="#"
   darkMode={true}
 />
 <FaqSection faqs={insuranceFaqs} />

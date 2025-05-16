@@ -75,7 +75,7 @@ function about() {
   reverseLayout={true} 
   secondaryButtonText="Chat with us on Whatsapp" 
   secondaryButtonLink="#"
-  imageContainerClass="h-[80%] md:w-[95%]"
+  imageContainerClass="h-[80%] md:w-[100%]"
 />
 
 <BlueHeroSection 
@@ -97,7 +97,7 @@ function about() {
   <div className="max-w-6xl mx-auto px-4 md:px-12">
     <div className="mb-8">
       <p className={`font-lato text-[#4EBA64] text-lg`}>
-        When you work with us, you can expect :
+        When you work with us, you can expect&nbsp;:
       </p>
     </div>
     

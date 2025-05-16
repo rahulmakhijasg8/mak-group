@@ -80,7 +80,7 @@ function page() {
                     backgroundRepeat: 'no-repeat',
                   }}>
                     <Navbar/>
-        <InsuranceHero greentitle="Travel Insurance:" title="Safeguarding Your Business with MAK GROUP" description="Running a business comes with its share of risks and uncertainties. MAK GROUP offers a wide range of commercial insurance solutions to protect your venture from potential losses and liabilities, allowing you to focus on growing your business with peace of mind."
+        <InsuranceHero greentitle="Commercial Insurance:" title="Safeguarding Your Business with MAK GROUP" description="Running a business comes with its share of risks and uncertainties. MAK GROUP offers a wide range of commercial insurance solutions to protect your venture from potential losses and liabilities, allowing you to focus on growing your business with peace of mind."
                             imageAlt="Commercial Insurance" imageSrc="/Rectangle 57.jpg"/>
         </div>
         <StackedHeading title="Protect Your Business Assets" subtitle="Comprehensive Coverage for Your Property, Goods, and Equipment" />
@@ -135,7 +135,7 @@ function page() {
               ]}
               lightMode={true} />
     <HeroWithButtons title="Tailored Insurance Plans to Match Your Business Needs" subtitle="Don't let unforeseen risks jeopardize your business. Contact MAK GROUP for a free commercial insurance quote tailored to your specific requirements. Our experts will guide you through the process and help you choose the best coverage for your business."
-      darkMode={true} buttonText="Request a Free Quote" buttonLink="#" secondaryButtonText="Whatsapp Our Team" secondaryButtonLink="#" />
+      darkMode={true} primaryButtonIconType='quote' buttonText="Request a Free Quote" buttonLink="#" secondaryButtonText="Whatsapp Our Team" secondaryButtonLink="#" />
       <FaqSection faqs={insuranceFaqs} />
       <Footer title='Get Started with MAK GROUP Commercial Insurance' description="Safeguard your business from potential risks and liabilities with MAK GROUP's comprehensive commercial insurance solutions. Get in touch with us today to discuss your needs and find the perfect coverage for your venture." />
     </div>

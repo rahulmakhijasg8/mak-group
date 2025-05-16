@@ -34,15 +34,15 @@ export default function ServiceCard({
   const getPrimaryButtonIcon = () => {
     switch(primaryButtonIconType) {
       case 'calendar':
-        return <Calendar className="h-5 w-5 ml-2" />;
+        return <Calendar className="h-5 w-5 ml-2 flex-shrink-0" />;
       case 'arrow':
-        return <ArrowRight className="h-5 w-5 ml-2" />;
+        return <ArrowRight className="h-5 w-5 ml-2 flex-shrink-0" />;
       case 'phone':
-        return <Phone className="h-5 w-5 ml-2" />;
+        return <Phone className="h-5 w-5 ml-2 flex-shrink-0" />;
       case 'mail':
-        return <Mail className="h-5 w-5 ml-2" />;
+        return <Mail className="h-5 w-5 ml-2 flex-shrink-0" />;
       case 'info':
-        return <Info className="h-5 w-5 ml-2" />;
+        return <Info className="h-5 w-5 ml-2 flex-shrink-0" />;
       case 'none':
       default:
         return null;
@@ -64,17 +64,17 @@ export default function ServiceCard({
         {title}
       </h3>
       
-      {/* Description - Line clamp for 2 lines */}
+      {/* Description - Line clamp for 5 lines */}
       <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[18px] mb-4 flex-grow line-clamp-5 min-h-[56px]">
         {description}
       </p>
       
-      {/* Buttons */}
+      {/* Buttons - Added flex-wrap to allow buttons to stack on very small screens */}
       <div className="flex flex-col sm:flex-row gap-3 mt-auto w-full">
         {primaryButtonText && primaryButtonLink && (
           <a 
             href={primaryButtonLink}
-            className={`flex items-center px-4 py-2 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-[50%] ${primaryIcon ? 'justify-between' : 'justify-center'}`}
+            className={`flex items-center px-4 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-[50%] ${primaryIcon ? 'justify-between' : 'justify-center'}`}
           >
             <span>{primaryButtonText}</span>
             {primaryIcon}
@@ -84,10 +84,10 @@ export default function ServiceCard({
         {secondaryButtonText && secondaryButtonLink && (
           <a 
             href={secondaryButtonLink}
-            className="flex items-center justify-between px-4 py-2 bg-transparent text-[#25D366] border border-[#25D366] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-5 transition-all w-full sm:w-[50%] whitespace-nowrap"
+            className="flex items-center px-4 py-3 bg-transparent text-[#25D366] border border-[#25D366] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-5 transition-all w-full sm:w-[50%]"
           >
-            <span className="mr-1 flex-1">{secondaryButtonText}</span>
-            <WhatsAppIcon className="h-4 md:h-5 w-4 md:w-5 flex-shrink-0 ml-0" />
+            <span className="mr-3">{secondaryButtonText}</span>
+            <WhatsAppIcon className="h-5 w-5 flex-shrink-0 ml-auto" />
           </a>
         )}
       </div>
