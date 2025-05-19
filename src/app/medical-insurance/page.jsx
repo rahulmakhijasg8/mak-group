@@ -1,3 +1,5 @@
+"use client"
+
 import React from 'react'
 import InsuranceHero from '@/components/insurancehero'
 import StackedHeading from '@/components/stackedheading'
@@ -46,7 +48,7 @@ function page() {
               }
             ]
 
-            const carFormConfig = {
+            const medicalInsuranceFormConfig = {
     steps: [
       {
         id: "personalDetails",
@@ -55,83 +57,64 @@ function page() {
         fieldsPerRow: 1,
         fields: [
           {
-            id: "name",
+            id: "personName",
             type: "text",
             label: "Name",
             placeholder: "Enter your name",
             required: true
           },
-
           {
-            id: "contact",
+            id: "contactNumber",
             type: "number",
             label: "Contact Number",
             placeholder: "Your phone number",
             required: true
           },
-
           {
-            id: "Dob",
+            id: "dateOfBirth",
             type: "date",
             label: "Date of Birth",
             placeholder: "Your DOB",
             required: true,
           },
-          // ...other fields
         ],
       },
-      {fields: [
-        {
-          id: "Brand",
-          type: "text",
-          label: "Brand",
-          placeholder: "Enter Brand Name",
-          required: true
-        },
-
-        {
-          id: "Number of years",
-          type: "number",
-          label: "Years",
-          placeholder: "Enter number of years",
-          required: true
-        },
-
-        {
-          id: "Type",
-          type: "select",
-          label: "Type",
-          placeholder: "Select car type",
-          required: true,
-          options: [
-            { value: "suv", label: "SUV" },
-            { value: "sedan", label: "Sedan" },
-            { value: "hatchback", label: "Hatchback" },
-            { value: "minivan", label: "Minivan" },
-            { value: "truck", label: "Truck" },
-            { value: "convertible", label: "Convertible" }
-          ]
-        },
-        // ...other fields
-      ]
-    }
-
-      // {
-      //   id: "carDetails",
-      //   title: "Car Details",
-      //   subtitle: "Just share your car's details and our team will handle the rest.",
-      //   fields: [
-      //     {
-      //       id: "carMake",
-      //       type: "text",
-      //       label: "Car Make",
-      //       placeholder: "Enter car make",
-      //       required: true
-      //     },
-      //     // ...other fields
-      //   ]
-      // },
-      // ...other steps
+      {
+        id: "insuranceDetails",
+        title: "Insurance Details",
+        subtitle: "Tell us about your insurance needs",
+        fields: [
+          {
+            id: "insuranceBrand",
+            type: "text",
+            label: "Brand",
+            placeholder: "Enter Insurer/Brand Name",
+            required: true
+          },
+          {
+            id: "coveragePeriod",
+            type: "number",
+            label: "Years of Coverage",
+            placeholder: "Enter number of years",
+            required: true
+          },
+          {
+            id: "insuranceType",
+            type: "select",
+            label: "Plan Type",
+            placeholder: "Select plan type",
+            required: true,
+            options: [
+              { value: "individual", label: "Individual" },
+              { value: "family", label: "Family" },
+              { value: "senior", label: "Senior Citizen" },
+              { value: "critical", label: "Critical Illness" },
+              { value: "maternity", label: "Maternity" },
+              { value: "group", label: "Group Health" }
+            ]
+          },
+        ]
+      }
     ]
   };
 
@@ -185,6 +168,11 @@ function page() {
       answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
     }
   ];
+
+  const handleFormComplete = (formData) => {
+    console.log("Form submitted with data:", formData);
+    // You can add additional processing here if needed
+  };
 
   return (
     <div>
@@ -262,7 +250,18 @@ function page() {
         <h3 className="font-['Lato'] px-5 md:px-80 pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
         Interested in learning more about how our medical insurance plans can protect you and your family? Get a free quote today by providing us with the following details:
         </h3>
-        <MultiStepForm config={carFormConfig} />
+        <MultiStepForm 
+          config={medicalInsuranceFormConfig}
+          onComplete={handleFormComplete}
+          // Add email configuration
+          emailConfig={{
+            type: 'Medical Insurance Quote',
+            subject: 'New Medical Insurance Quote Request',
+            recipient: 'access.techdevs@gmail.com',
+            successMessage: 'Your medical insurance quote request has been submitted successfully! Our team will contact you soon with personalized options.',
+            errorMessage: 'There was an error submitting your request. Please try again or contact our support team directly.'
+          }}
+        />
         </div>
         <StackedHeading title="Why Choose MAK GROUP for Medical Insurance?" subtitle="A partner you can rely on — before, during, and after your coverage starts." />
         <StatsGrid cards={statCards} />

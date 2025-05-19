@@ -1,12 +1,9 @@
 "use client";
 
 import SingleForm from '@/components/singleform';
-import InsuranceHero from '@/components/insurancehero';
 import React from 'react'
 import PropertyCarousel from '@/components/propertycardsection';
 import StackedHeading from '@/components/stackedheading';
-import HeroWithButtons from '@/components/herowithbuttons';
-import FlexGridLayout from '@/components/flexcardreusable';
 import GreenImageHero from '@/components/greenimagehero';
 import SectionHeader from '@/components/heading';
 import TwoCardRow from '@/components/twocardrow';
@@ -15,8 +12,24 @@ import StatsGrid from '@/components/statsgrid';
 import FaqSection from '@/components/FAQSection';
 import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
+import FormStatusMessage from '@/components/FormStatusMessage';
+import useFormSubmission from '@/hooks/useFormSubmission';
+
 
 function page() {
+
+  const { 
+    handleFormSubmit, 
+    submitStatus, 
+    resetStatus 
+  } = useFormSubmission({
+    formType: 'Car Sell',
+    emailSubject: 'New Car Sell Request',
+    emailRecipient: 'access.techdevs@gmail.com', // Or use environment variable
+    submittingMessage: 'Submitting your car details...',
+    successMessage: 'Your car details have been submitted successfully! We will contact you soon.',
+    errorMessage: 'There was an error submitting your car details. Please try again or contact support.'
+  });
 
   const carFormConfig = {
     steps: [
@@ -272,12 +285,6 @@ function page() {
     }
   ];
 
-  const handleFormComplete = (formData) => {
-    console.log("Form submitted with data:", formData);
-    // Submit to your API or process the data here
-    alert("Form submitted successfully!");
-  };
-
   return (
     <div className='flex-col justify-center'>
       <Navbar/>
@@ -298,8 +305,29 @@ function page() {
         <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
         Get the Best Value with Our Quick & Easy Process
         </h3>
-      <SingleForm config={carFormConfig} onComplete={handleFormComplete}/>
-    </div>
+      {submitStatus?.type === 'success' ? (
+    <FormStatusMessage 
+      status={submitStatus} 
+      onReset={resetStatus} 
+    />
+  ) : (
+    <>
+      {/* Show loading/error status above the form */}
+      {submitStatus && (
+        <FormStatusMessage status={submitStatus} />
+      )}
+      
+      {/* Your SingleForm component */}
+      <SingleForm 
+        config={carFormConfig} 
+        onComplete={handleFormSubmit}
+        submitButtonText="Submit Car Details"
+        submitButtonIconType="mail"
+        submitButtonAlign="center"
+      />
+    </>
+  )}
+</div>
     <HeroSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
                   primaryButtonText="Apply for a Car Loan" paddingClass='md:pt-30 md:pb-8' primaryButtonIconType='gamepad' secondaryButtonLink="#" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
     <HeroSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."

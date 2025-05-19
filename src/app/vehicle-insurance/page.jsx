@@ -8,6 +8,8 @@ import SingleForm from '@/components/singleform';
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
+import FormStatusMessage from '@/components/FormStatusMessage';
+import useFormSubmission from '@/hooks/useFormSubmission';
 
 
 function page() {
@@ -62,6 +64,19 @@ function page() {
         }
       ];
 
+      const { 
+    handleFormSubmit, 
+    submitStatus, 
+    resetStatus 
+  } = useFormSubmission({
+    formType: 'Vehicle Insurance Quote',
+    emailSubject: 'New Vehicle Insurance Quote Request',
+    emailRecipient: 'access.techdevs@gmail.com',
+    submittingMessage: 'Submitting your insurance quote request...',
+    successMessage: 'Your insurance quote request has been submitted successfully! Our team will get back to you soon.',
+    errorMessage: 'There was an error submitting your request. Please try again or contact our support team.'
+  });
+
       const carFormConfig = {
         steps: [
           {
@@ -109,13 +124,7 @@ function page() {
               // ...other fields
             ]},
         ]}
-
-        const handleFormComplete = (formData) => {
-            console.log("Form submitted with data:", formData);
-            // Submit to your API or process the data here
-            alert("Form submitted successfully!");
-          };
-
+        
         const insuranceFaqs = [
     {
       question: "Is third-party liability insurance mandatory?",
@@ -166,7 +175,28 @@ function page() {
                 <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
                 Don't leave your vehicle unprotected. Reach out to MAK GROUP for a free vehicle insurance quote. Simply provide us with the following details:
                 </h3>
-              <SingleForm config={carFormConfig} submitButtonText='Request Quote' submitButtonIconType='whatsapp' onComplete={handleFormComplete}/>
+              {/* Show success message or form */}
+        {submitStatus?.type === 'success' ? (
+          <FormStatusMessage 
+            status={submitStatus} 
+            onReset={resetStatus} 
+          />
+        ) : (
+          <>
+            {/* Show loading/error status above the form */}
+            {submitStatus && (
+              <FormStatusMessage status={submitStatus} />
+            )}
+            
+            {/* Your SingleForm component */}
+            <SingleForm 
+              config={carFormConfig} 
+              onComplete={handleFormSubmit} // Changed from handleFormComplete
+              submitButtonText='Request Quote' 
+              submitButtonIconType='whatsapp'
+            />
+          </>
+        )}
             </div>
 
         <FaqSection faqs={insuranceFaqs} />

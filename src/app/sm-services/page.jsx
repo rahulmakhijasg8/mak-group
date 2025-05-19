@@ -9,6 +9,8 @@ import SingleForm from '@/components/singleform'
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
+import FormStatusMessage from '@/components/FormStatusMessage';
+import useFormSubmission from '@/hooks/useFormSubmission';
 
 
 function page() {
@@ -52,17 +54,17 @@ function page() {
           text: "Ownership in growing companies"
         },
         {
-          iconSrc: "risk-removebg-preview.png",
+          iconSrc: "/risk-removebg-preview.png",
           iconAlt: "Risk",
           text: "Flexibility for all risk appetites"
         },
         {
-          iconSrc: "liquididty-removebg-preview.png",
+          iconSrc: "/liquidity-removebg-preview.png",
           iconAlt: "Liquididty",
           text: "Liquidity – easy to buy and sell shares"
         },
         {
-          iconSrc: "diversion-removebg-preview.png",
+          iconSrc: "/diversion-removebg-preview 1.png",
           iconAlt: "Investment options",
           text: "Diversified investment options"
         }
@@ -111,6 +113,23 @@ function page() {
         secondaryButtonText: "Chat with us on WhatsApp",
         secondaryButtonLink: "https://wa.me/yourphonenumber"
       };
+
+      const { 
+  handleFormSubmit, 
+  submitStatus, 
+  resetStatus 
+} = useFormSubmission({
+  formType: 'Demat Account',
+  emailSubject: 'New Demat Account Request',
+  emailRecipient: 'access.techdevs@gmail.com',
+  
+  // Status messages for different stages
+  submittingMessage: 'Preparing your account request...',
+  fileProcessingMessage: 'Processing your documents, this may take a moment...',
+  emailSendingMessage: 'Sending your account request, almost done...',
+  successMessage: 'Your account request has been submitted successfully! We will contact you soon.',
+  errorMessage: 'There was an error submitting your request. Please try again or contact our support team.'
+});
 
       const carFormConfig = {
         steps: [
@@ -174,11 +193,6 @@ function page() {
             ]},
         ]}
 
-        const handleFormComplete = (formData) => {
-            console.log("Form submitted with data:", formData);
-            // Submit to your API or process the data here
-            alert("Form submitted successfully!");
-          };
   return (
     <div>
       <Navbar/>
@@ -206,7 +220,29 @@ function page() {
         <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
         Start Your Investment Journey with Ease
         </h3>
-      <SingleForm config={carFormConfig} submitButtonText='Request Account Now' secondaryButtonText='Need Help? Chat with Us' secondaryButtonLink='#' onComplete={handleFormComplete}/>
+      {/* Show status message if present */}
+        {submitStatus?.type === 'success' ? (
+          <FormStatusMessage 
+            status={submitStatus} 
+            onReset={resetStatus} 
+          />
+        ) : (
+          <>
+            {/* Show loading/error status above the form */}
+            {submitStatus && (
+              <FormStatusMessage status={submitStatus} />
+            )}
+            
+            {/* Your SingleForm component */}
+            <SingleForm 
+              config={carFormConfig} 
+              onComplete={handleFormSubmit}
+              submitButtonText='Request Account Now' 
+              secondaryButtonText='Need Help? Chat with Us' 
+              secondaryButtonLink='#'
+            />
+          </>
+        )}
     </div>
     <StackedHeading title="Why Invest in the Stock Market?" subtitle="The Smartest Way to Build Wealth Over Time" />
     <StatsGrid cards={investmentstats} />

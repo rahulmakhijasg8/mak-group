@@ -73,6 +73,9 @@ const SingleForm = ({
   const [uploadedFiles, setUploadedFiles] = useState({});
   const fileInputRefs = useRef({});
   const textAreaRefs = useRef({});
+
+
+  
   
   // Check if a field is a textarea to handle special layout
   const isTextArea = (field) => field.type === 'textarea';
@@ -187,17 +190,95 @@ const SingleForm = ({
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
-      // Combine form data with uploaded files
-      const combinedData = {
+  // components/singleform.jsx (Only showing the relevant parts to modify)
+
+// Add this function inside your SingleForm component
+const prepareFormDataWithFiles = async (formData) => {
+  // Create a copy to avoid modifying the original
+  const processedData = { ...formData };
+  const filePromises = [];
+  
+  // Process file fields from uploads
+  if (formData.files) {
+    Object.keys(formData.files).forEach(fieldId => {
+      const files = formData.files[fieldId];
+      
+      if (files && files.length > 0) {
+        // Convert each file to include base64 data
+        files.forEach(file => {
+          const promise = new Promise((resolve) => {
+            const reader = new FileReader();
+            reader.onload = () => {
+              // Get the base64 data without the prefix
+              const base64Data = reader.result.split(',')[1]; 
+              
+              // Add file to processed data
+              if (!processedData[fieldId]) {
+                processedData[fieldId] = {
+                  name: file.name,
+                  type: file.type,
+                  size: file.size,
+                  data: base64Data
+                };
+              } else if (Array.isArray(processedData[fieldId])) {
+                // Multiple files case
+                processedData[fieldId].push({
+                  name: file.name,
+                  type: file.type,
+                  size: file.size,
+                  data: base64Data
+                });
+              } else {
+                // Convert to array for multiple files
+                processedData[fieldId] = [{
+                  name: file.name,
+                  type: file.type,
+                  size: file.size,
+                  data: base64Data
+                }];
+              }
+              
+              resolve();
+            };
+            
+            reader.readAsDataURL(file);
+          });
+          
+          filePromises.push(promise);
+        });
+      }
+    });
+  }
+  
+  // Wait for all file reading to complete
+  await Promise.all(filePromises);
+  
+  return processedData;
+};
+
+// Update the handleSubmit function
+const handleSubmit = async () => {
+  if (validateForm()) {
+    try {
+      // Show processing state if needed
+      // ...
+      
+      // Process form data with files
+      const processedData = await prepareFormDataWithFiles({
         ...formData,
         files: uploadedFiles
-      };
+      });
       
-      onComplete && onComplete(combinedData);
+      // Pass the processed data to the onComplete callback
+      onComplete && onComplete(processedData);
+    } catch (error) {
+      console.error("Error processing form data:", error);
+      // Handle error if needed
     }
-  };
+  }
+};
+
+// The rest of the component remains the same
 
   // Handle file upload
   const handleFileUpload = (fieldId, files) => {

@@ -6,6 +6,9 @@ import SectionHeader from '@/components/heading'
 import Footer from '@/components/footer'
 import SingleForm from '@/components/singleform'
 import Navbar from '@/components/navbar'
+import FormStatusMessage from '@/components/FormStatusMessage';
+import useFormSubmission from '@/hooks/useFormSubmission';
+
 
 function Page() {
   const carFormConfig = {
@@ -50,11 +53,18 @@ function Page() {
     ]
   }
 
-  const handleFormComplete = (formData) => {
-    console.log("Form submitted with data:", formData);
-    // Submit to your API or process the data here
-    alert("Form submitted successfully!");
-  };
+  const { 
+    handleFormSubmit, 
+    submitStatus, 
+    resetStatus 
+  } = useFormSubmission({
+    formType: 'Contact Form',
+    emailSubject: 'New Contact Form Submission',
+    emailRecipient: 'access.techdevs@gmail.com',
+    submittingMessage: 'Sending your message...',
+    successMessage: 'Your message has been sent successfully! We will get back to you shortly.',
+    errorMessage: 'There was an error sending your message. Please try again or contact us directly.'
+  });
 
   return (
     <div>
@@ -88,13 +98,31 @@ function Page() {
           
           {/* Second column - Contact Form (60% width) */}
           <div className="w-full md:w-3/5 md:-mt-12 px-4 md:px-6">
-            <SingleForm 
-              config={carFormConfig} 
-              submitButtonAlign='left'  
-              submitButtonText="Send Message" 
-              submitButtonIconType='none' 
-              onComplete={handleFormComplete}
-            />
+            {submitStatus?.type === 'success' ? (
+              <div className="mt-12">
+                <FormStatusMessage 
+                  status={submitStatus} 
+                  onReset={resetStatus} 
+                />
+              </div>
+            ) : (
+              <>
+                {/* Show loading/error status above the form */}
+                {submitStatus && (
+                  <div className="mt-4 mb-2">
+                    <FormStatusMessage status={submitStatus} />
+                  </div>
+                )}
+                
+                <SingleForm 
+                  config={carFormConfig} 
+                  submitButtonAlign='left'  
+                  submitButtonText="Send Message" 
+                  submitButtonIconType='none' 
+                  onComplete={handleFormSubmit}
+                />
+              </>
+            )}
           </div>
         </div>
       </div>

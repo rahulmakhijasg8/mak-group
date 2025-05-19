@@ -9,6 +9,8 @@ import Footer from '@/components/footer';
 import AsymmetricCardRows from '@/components/twocardtworows';
 import SingleForm from '@/components/singleform';
 import Navbar from '@/components/navbar';
+import FormStatusMessage from '@/components/FormStatusMessage';
+import useFormSubmission from '@/hooks/useFormSubmission';
 
 
 function page() {
@@ -36,6 +38,20 @@ function page() {
         title: "Medical Protection",
         description: " International hospital costs can be tremendously high, even for basic day-care treatment. MAK GROUP's travel insurance covers your medical expenses, giving you peace of mind while traveling.",
       };
+
+
+      const { 
+    handleFormSubmit, 
+    submitStatus, 
+    resetStatus 
+  } = useFormSubmission({
+    formType: 'Travel Insurance Quote',
+    emailSubject: 'New Travel Insurance Quote Request',
+    emailRecipient: 'access.techdevs@gmail.com',
+    submittingMessage: 'Submitting your travel insurance quote request...',
+    successMessage: 'Your travel insurance quote request has been submitted successfully! Our team will get back to you soon.',
+    errorMessage: 'There was an error submitting your request. Please try again or contact our support team.'
+  });
 
       const carFormConfig = {
         steps: [
@@ -77,13 +93,6 @@ function page() {
               // ...other fields
             ]},
         ]}
-
-        const handleFormComplete = (formData) => {
-            console.log("Form submitted with data:", formData);
-            // Submit to your API or process the data here
-            alert("Form submitted successfully!");
-          };
-
 
         const insuranceFaqs = [
     {
@@ -155,7 +164,42 @@ function page() {
                 <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
                 Don't let worries hold you back from exploring the world. Get a free travel insurance quote from MAK GROUP today. Simply provide us with your travel details, including:
                 </h3>
-              <SingleForm config={carFormConfig} submitButtonText='Request a Quote' submitButtonIconType='whatsapp' onComplete={handleFormComplete}/>
+              <div>
+      {/* ... existing code ... */}
+
+      <div className='bg-[#EBEBEB] w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
+        <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
+          Get a Free Travel Insurance Quote 
+        </h2>
+        
+        <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
+          Don't let worries hold you back from exploring the world. Get a free travel insurance quote from MAK GROUP today. Simply provide us with your travel details, including:
+        </h3>
+        
+        {/* Show success message or form */}
+        {submitStatus?.type === 'success' ? (
+          <FormStatusMessage 
+            status={submitStatus} 
+            onReset={resetStatus} 
+          />
+        ) : (
+          <>
+            {/* Show loading/error status above the form */}
+            {submitStatus && (
+              <FormStatusMessage status={submitStatus} />
+            )}
+            
+            {/* Your SingleForm component */}
+            <SingleForm 
+              config={carFormConfig} 
+              onComplete={handleFormSubmit} // Changed from handleFormComplete
+              submitButtonText='Request a Quote' 
+              submitButtonIconType='whatsapp'
+            />
+          </>
+        )}
+      </div>
+      </div>
             </div>
         <FaqSection faqs={insuranceFaqs} />
         <Footer title="Get Started with MAK GROUP Travel Insurance" description="Travel the world with confidence, knowing that MAK GROUP's travel insurance has got you covered. Get in touch with us today to secure your peace of mind on your next adventure."/>
