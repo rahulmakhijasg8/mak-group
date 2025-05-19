@@ -77,14 +77,14 @@ function page() {
               },
     
               {
-                id: "nooftravellers",
+                id: "no of travellers",
                 type: "number",
                 label: "Number Of Travellers",
                 placeholder: "No of travellers",
                 required: true,
               },
               {
-                id: "ageoftravellers",
+                id: "age of travellers",
                 type: "text",
                 label: "Age Of Travellers",
                 placeholder: "Ages of travellers",
