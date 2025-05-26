@@ -10,10 +10,10 @@ export default function InsuranceHero({
 }) {
   return (
     <section 
-      className="w-full py-12 md:py-20 px-4 mb-4 md:mb-20 md:px-12 relative"
+      className="w-full py-12 md:py-20 px-4 mb-4 md:mb-20 md:px-20 relative"
     >
       
-      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-20 relative z-10`}>
+      <div className={`flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-20 relative z-10`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           <h1 className="font-['Lexend'] text-[#221241] font-normal text-[32px] md:text-[40px] lg:text-[48px] mb-4">
@@ -27,7 +27,7 @@ export default function InsuranceHero({
         
         {/* Image Column with green background showing on top and right */}
         <div className="w-full md:w-1/2 flex items-center justify-center">
-          <div className="relative w-[365px] h-[300px] md:w-[500px] md:h-[403px]">
+          <div className="relative w-[395px] h-[300px] md:w-[500px] md:h-[403px]">
             {/* Image container with white border, offset to show green on top and right */}
             <div className="absolute top-3 right-0 md:right-3 left-0 bottom-0 rounded-[30px] overflow-hidden">
               <Image

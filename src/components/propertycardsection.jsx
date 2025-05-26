@@ -31,55 +31,105 @@ export default function PropertyCarousel({
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
       }}  className={`w-full py-12 md:py-20 ${bgColor}`}>
       <div className="">
-        {/* Header Section with precise alignment */}
-        <div className="flex flex-col mr-16 md:mx-16 md:flex-row md:items-center md:justify-between mb-12">
-          {/* StackedHeading aligned with first card */}
-          <div className="mb-6 md:mb-0 pl-6 md:pl-[calc(12px+2px)]">
-            <div className="w-full">
-              <div className="flex flex-col">
-                <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[28px] md:text-[40px] leading-tight mb-4 whitespace-nowrap`}>
-                  {title}
-                </h2>
-                
-                <h3 className={`font-['Lato'] ${subtitleColor} font-normal text-[16px] md:text-[18px]`}>
-                  {subtitle}
-                </h3>
+        
+        {/* Mobile Layout: Original design */}
+        <div className="md:hidden">
+          {/* Header Section with precise alignment */}
+          <div className="flex flex-col mr-16 md:mx-16 md:flex-row md:items-center md:justify-between mb-12">
+            {/* StackedHeading aligned with first card */}
+            <div className="mb-6 md:mb-0 pl-6 pr-4 md:pl-[calc(12px+2px)]">
+              <div className="w-full">
+                <div className="flex flex-col">
+                  <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[28px] md:text-[40px] leading-tight mb-4`}>
+                    {title}
+                  </h2>
+                  
+                  <h3 className={`font-['Lato'] ${subtitleColor} font-normal text-[16px] md:text-[18px]`}>
+                    {subtitle}
+                  </h3>
+                </div>
               </div>
+            </div>
+            
+            {/* Button on the right */}
+            <div className="pl-6 md:pr-[calc(12px+2px)]">
+              <Link 
+                href={buttonLink}
+                className="inline-flex items-center px-5 py-4 md:py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all"
+              >
+                {buttonText}
+              </Link>
             </div>
           </div>
           
-          {/* Button on the right */}
-          <div className="pl-6 md:pr-[calc(12px+2px)]">
+          {/* Carousel container */}
+          <div 
+            ref={carouselRef}
+            className="flex overflow-x-auto pb-6 scrollbar-hide gap-4 pl-6 md:pl-16 pr-4 md:pr-[calc(12px+2px)]"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            <style jsx>{`
+              .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
+            {items.map((item, index) => (
+              <div key={index} className="">
+                {type === "property" ? (
+                  <PropertyListingCard {...item} />
+                ) : (
+                  <CarListingCard {...item} />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Desktop Layout: Stacked design */}
+        <div className="hidden md:block">
+          {/* Stacked heading for desktop */}
+          <div className="text-center mx-auto mb-8 px-12">
+            <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[44px] leading-tight mb-4`}>
+              {title}
+            </h2>
+            <h3 className={`font-['Lato'] px-30 ${subtitleColor} font-normal text-[18px]`}>
+              {subtitle}
+            </h3>
+          </div>
+
+          {/* Carousel for desktop */}
+          <div 
+            ref={carouselRef}
+            className="flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-16 pr-4 mb-[46px]"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
+            <style jsx>{`
+              .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
+            {items.map((item, index) => (
+              <div key={index} className="">
+                {type === "property" ? (
+                  <PropertyListingCard {...item} />
+                ) : (
+                  <CarListingCard {...item} />
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* Centered button below carousel for desktop */}
+          <div className="flex justify-center">
             <Link 
               href={buttonLink}
-              className="inline-flex items-center px-5 py-4 md:py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
+              className="inline-flex items-center px-5 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
             >
               {buttonText}
             </Link>
           </div>
         </div>
-        
-        {/* Carousel container */}
-        <div 
-          ref={carouselRef}
-          className="flex overflow-x-auto pb-6 scrollbar-hide gap-4 pl-6 md:pl-16 pr-4 md:pr-[calc(12px+2px)]"
-          style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-        >
-          <style jsx>{`
-            .scrollbar-hide::-webkit-scrollbar {
-              display: none;
-            }
-          `}</style>
-          {items.map((item, index) => (
-            <div key={index} className="">
-              {type === "property" ? (
-                <PropertyListingCard {...item} />
-              ) : (
-                <CarListingCard {...item} />
-              )}
-            </div>
-          ))}
-        </div>
+
       </div>
     </section>
   );

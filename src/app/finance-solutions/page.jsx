@@ -198,7 +198,7 @@ function page() {
       imageSrc="/financial.svg"
       imageAlt="Financial services illustration"
     />
-    <StackedHeading title="Why Choose MAK GROUP?" subtitle="Financing Made Simple, Fast, and Transparent" />
+    <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP?" subtitle="Financing Made Simple, Fast, and Transparent" />
     <StatsGrid cards={statCards} />
     <FaqSection faqs={loanFaqs} />
     <Footer title='Get Started with MAK GROUP Finance Solutions' description='For any further questions or inquiries, please feel free to contact our team. We are here to help you with all your financing needs.' />

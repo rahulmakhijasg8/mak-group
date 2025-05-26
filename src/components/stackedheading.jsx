@@ -4,22 +4,45 @@ export default function StackedHeading({
   title, 
   subtitle, 
   className = "",
-  align = "center" // 'center', 'left', or 'right'
+  mobileAlign = "left",   // Mobile alignment: 'center', 'left', or 'right'
+  desktopAlign = "center", // Desktop alignment: 'center', 'left', or 'right'
+  titleColor = "text-[#221241]", // Default title color
+  subtitleColor = "text-[#000000D6]" // Default subtitle color
 }) {
-  const alignmentClasses = {
-    center: "text-center mx-auto",
+  // Mobile alignment classes
+  const mobileAlignmentClasses = {
+    center: "text-center px-[23px]",
     left: "text-left",
-    right: "text-right ml-auto"
+    right: "text-right"
   };
+
+  // Desktop alignment classes
+  const desktopAlignmentClasses = {
+    center: "md:text-center md:mx-auto",
+    left: "md:text-left",
+    right: "md:text-right md:ml-auto"
+  };
+
+  // Title margin classes
+  const titleMarginClasses = {
+    center: "mx-auto",
+    left: "",
+    right: "ml-auto"
+  };
+
+  // Combine mobile and desktop classes
+  const containerClasses = `${mobileAlignmentClasses[mobileAlign]} ${desktopAlignmentClasses[desktopAlign]}`;
+  const titleMobileMargin = mobileAlign === 'center' ? 'mx-auto' : mobileAlign === 'right' ? 'ml-auto' : '';
+  const titleDesktopMargin = desktopAlign === 'center' ? 'md:mx-auto' : desktopAlign === 'right' ? 'md:ml-auto' : '';
 
   return (
     <div className={`w-full pt-8 md:pt-12 md:px-12 ${className}`}>
-      <div className={`max-w-full md:max-w-full ${alignmentClasses[align]}`}>
-        <h2 className="font-['Lexend'] text-[#221241] font-normal text-[28px] md:text-[44px] leading-tight mb-4 max-w-[280px] sm:max-w-full mx-auto">
+      <div className={`max-w-full md:max-w-full ${containerClasses}`}>
+        <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[28px] md:text-[44px] leading-tight mb-4 px-5 sm:max-w-full ${titleMobileMargin} ${titleDesktopMargin}`}>
           {title}
         </h2>
         
-        <h3 className="font-['Lato'] px-5 md:px-30 text-[#000000D6] font-normal text-[16px] md:text-[18px] max-w-full sm:max-w-full ">
+        <h3 className={`font-['Lato'] px-5 md:px-30 ${subtitleColor} font-normal text-[16px] md:text-[18px] max-w-full sm:max-w-full`}>
           {subtitle}
         </h3>
       </div>

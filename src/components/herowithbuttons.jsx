@@ -97,7 +97,7 @@ export default function HeroWithButtons({
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
       }} className={`w-full md:my-20 pt-15 pb-10 md:py-25 ${backgroundColor}`}>
-      <div className="max-w-7xl mx-auto">
+      <div className="md:mx-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           {/* Heading section */}
           <div className="mb-6 md:w-[60%] pr-10 md:mb-0 pl-6 md:pl-[calc(12px+2px)]">
@@ -115,12 +115,12 @@ export default function HeroWithButtons({
           </div>
           
           {/* Buttons on the right */}
-          <div className="pl-0 md:pr-[calc(12px+2px)] flex justify-center items-center pr-0 flex flex-col gap-6">
+          <div className="pl-0 flex justify-center items-center pr-0 flex flex-col gap-6">
             {/* Primary button with icon - only shown when provided */}
             {buttonText && buttonLink && (
               <Link 
                 href={buttonLink}
-                className={`inline-flex w-[80%] md:w-full items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all `}
+                className={`inline-flex w-[85%] md:w-[300px] items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all `}
               >
                 {primaryIcon}
                 <span className={`${primaryIcon ? 'pr-3' : 'text-center'}`}>{buttonText}</span>
@@ -131,7 +131,7 @@ export default function HeroWithButtons({
             {secondaryButtonText && secondaryButtonLink && (
               <Link 
                 href={secondaryButtonLink}
-                className="inline-flex w-[80%] md:w-full items-center px-5 py-4 bg-[#FFFFFF] text-[#4EBA64] rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all"
+                className="inline-flex w-[85%] md:w-[300px] items-center px-5 py-4 bg-[#FFFFFF] text-[#4EBA64] rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all"
               >
                 <WhatsAppIcon className="h-5 w-5 mr-3" />
                 <span className="pr-3">{secondaryButtonText}</span>

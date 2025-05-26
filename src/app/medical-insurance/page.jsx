@@ -189,59 +189,53 @@ function page() {
             imageAlt="insurance"
             reverseLayout={false} />
       </div>
-        <StackedHeading title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
+        <StackedHeading mobileAlign='center' title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
         <TwoCardRow card1={hotel_costs} card2={protection} />
         <section 
-              style={{
+      style={{
         backgroundImage: "url('/greeneffect4.svg')",
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]"
-            >
-              <div className={`max-w-full mx-auto flex flex-col`}>
-                {/* Content Column */}
-                <div className="w-full flex flex-col justify-center">
-                  <section className="w-full pt-4 md:pt-6">
-              <div className="max-w-full">
-                <div className="flex flex-col md:flex-row md:items-center">
-                  {/* Title Column - Extreme left on desktop */}
-                  <div className="w-full md:w-full mb-6 md:mb-0">
-                    <h2 className="font-['Lexend'] text-[#FFFFFF] md:pr-[300px] font-normal text-[30px] md:text-[32px] lg:text-[36px] leading-tight max-w-full">
-                      Key Benefits of Our Medical Insurance Products
-                    </h2>
+      }} 
+      className="w-full py-12 md:py-20 px-2 md:px-12 bg-[#221241]"
+    >
+      <div className={`max-w-full mx-auto flex flex-col`}>
+        {/* Content Column */}
+        <div className="w-full flex flex-col justify-center">
+          
+          {/* Replace the custom title/subtitle section with StackedHeading */}
+          <StackedHeading
+            title="Key Benefits of Our Medical Insurance Products"
+            subtitle="Designed for peace of mind, every step of the way."
+            className="pt-4 md:pt-6" // Custom spacing for this section
+            mobileAlign="left"
+            desktopAlign="center"
+            // Override colors for dark theme
+            titleColor="text-[#FFFFFF]"
+            subtitleColor="text-[#B7C7E7]"
+          />
+          
+          <div className="font-['Lato'] text-[#B7C7E7] mt-15 ml-3 font-normal text-[18px] md:text-[20px] mb-8">
+            {/* Bullet points */}
+            {bulletPoints.length > 0 && (
+              <div className="space-y-1">
+                {bulletPoints.map((bullet, index) => (
+                  <div key={index} className="flex items-start pr-2 mb-8">
+                    <span className="text-[#4EBA64] mr-2">•</span>
+                    <div className="flex flex-col">
+                      <span className="text-[#4EBA64]">{bullet.title}</span>
+                      <span className="mt-2 md:mt-1 text-[16px] md:text-[18px]">{bullet.description}</span>
+                    </div>
                   </div>
-                  
-                  {/* Description Column - Extreme right on desktop */}
-                  <div className="w-full md:w-5/12">
-                    <p className="font-['Lexend'] text-[#B7C7E7] font-normal text-[18x] md:text-[16px] max-w-md">
-                      Designed for peace of mind, every step of the way.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
-            </section>
-                  
-                  <div className="font-['Lato'] text-[#B7C7E7] mt-15 ml-3 font-normal text-[18px] md:text-[20px] mb-8">
-          {/* Bullet points */}
-          {bulletPoints.length > 0 && (
-            <div className="space-y-1">
-              {bulletPoints.map((bullet, index) => (
-                <div key={index} className="flex items-start pr-2 mb-8">
-                  <span className="text-[#4EBA64] mr-2">•</span>
-                  <div className="flex flex-col">
-                    <span className="text-[#4EBA64]">{bullet.title}</span>
-                    <span className="mt-2 md:mt-1 text-[16px] md:text-[18px]">{bullet.description}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
+            )}
+          </div>
         </div>
-                </div>
-              </div>
-            </section>
+      </div>
+    </section>
         <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Get a Free Quote 
@@ -263,7 +257,7 @@ function page() {
           }}
         />
         </div>
-        <StackedHeading title="Why Choose MAK GROUP for Medical Insurance?" subtitle="A partner you can rely on — before, during, and after your coverage starts." />
+        <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Medical Insurance?" subtitle="A partner you can rely on — before, during, and after your coverage starts." />
         <StatsGrid cards={statCards} />
         <FaqSection faqs={Faqs} />
         <Footer title='Get Started with MAK GROUP Medical Insurance' description='For more information or if you have any other questions, please feel free to reach out to us'/>

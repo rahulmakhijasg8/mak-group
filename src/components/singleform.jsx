@@ -61,6 +61,9 @@ const SingleForm = ({
   submitButtonAlign = "center", // Options: 'left', 'center', 'right'
   secondaryButtonText = null,
   secondaryButtonLink = null,
+  // Padding customization
+  paddingMobile = "p-6", // Default mobile padding (e.g., "p-6", "p-4", "px-6 py-8")
+  paddingDesktop = "md:p-10", // Default desktop padding (e.g., "md:p-10", "md:px-12 md:py-8")
   // File upload config
   maxFileSize = 5, // Maximum file size in MB
   acceptedFileTypes = {
@@ -643,7 +646,7 @@ const handleSubmit = async () => {
   
   return (
     <div>
-      <div className="bg-white max-w-6xl md:max-w-6xl md:mx-auto p-6 md:p-10 rounded-[34px]">
+      <div className={`bg-white max-w-6xl md:max-w-6xl md:mx-auto ${paddingMobile} ${paddingDesktop} rounded-[34px]`}>
         {/* Title & Subtitle using StackedHeading */}
         {(title || subtitle) && (
           <StackedHeading 

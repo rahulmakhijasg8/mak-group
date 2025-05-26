@@ -163,16 +163,16 @@ function page() {
                     imageAlt="vehicle-insurance"
                     reverseLayout={false} />
         </div>
-        <StackedHeading title="Know Your Coverage" subtitle="Understand the Protection We Offer" />
+        <StackedHeading mobileAlign='center' title="Know Your Coverage" subtitle="Understand the Protection We Offer" />
         <FlexGridLayout itemsPerRow={2} items={coverageItems} />
-        <StackedHeading title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />
+        <StackedHeading className='md:px-20' mobileAlign='center' title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />
         <StatsGrid cards={statCards} />
         <div className='bg-[#EBEBEB] w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
               <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
               Get a Free Quote Today 
                 </h2>
                 
-                <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
+                <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center md:px-80 text-[16px] md:text-[18px] w-full ">
                 Don't leave your vehicle unprotected. Reach out to MAK GROUP for a free vehicle insurance quote. Simply provide us with the following details:
                 </h3>
               {/* Show success message or form */}

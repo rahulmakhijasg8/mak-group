@@ -130,7 +130,7 @@ function page() {
         <InsuranceHero greentitle="Travel Insurance:" title="Explore the World Worry-Free with MAK GROUP" description="Embark on your adventures with confidence, knowing that you're protected against unforeseen circumstances. MAK GROUP's travel insurance plans offer comprehensive coverage to ensure that you can travel anywhere around the world without a worry on your mind."
                     imageAlt="Travel Insurance" imageSrc="/Rectangle 56.jpg"/>
         </div>
-        <StackedHeading title="Why You Need Travel Insurance?" subtitle="Stay Protected Against Unexpected Events Abroad" />
+        <StackedHeading mobileAlign='center' title="Why You Need Travel Insurance?" subtitle="Stay Protected Against Unexpected Events Abroad" />
         <AsymmetricCardRows firstRowCard1={personalLiability} firstRowCard2={lossordelay} secondRowCard1={trip_cancellation} secondRowCard2={medicalProtection} />
         <BulletHeroSection imageSrc="/travel-insurance.png" primaryButtonText="Get Insured Today" primaryButtonLink="#" imageAlt="travel-insurance" title="Benefits of MAK GROUP's Travel Insurance" bulletPoints={[
                 {
@@ -156,23 +156,14 @@ function page() {
               ]}
               lightMode={false} />
 
-        <div className='bg-[#EBEBEB] w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
-              <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
-              Get a Free Travel Insurance Quote 
-                </h2>
-                
-                <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
-                Don't let worries hold you back from exploring the world. Get a free travel insurance quote from MAK GROUP today. Simply provide us with your travel details, including:
-                </h3>
-              <div>
-      {/* ... existing code ... */}
+        <div className='bg-[#FAFAFA] w-full pt-0 pb-16 mt-10 md:mt-30 px-4 '>
 
-      <div className='bg-[#EBEBEB] w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
+      <div className='w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
         <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
           Get a Free Travel Insurance Quote 
         </h2>
         
-        <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
+        <h3 className="font-['Lato'] pb-8 md:px-45 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
           Don't let worries hold you back from exploring the world. Get a free travel insurance quote from MAK GROUP today. Simply provide us with your travel details, including:
         </h3>
         
@@ -198,7 +189,6 @@ function page() {
             />
           </>
         )}
-      </div>
       </div>
             </div>
         <FaqSection faqs={insuranceFaqs} />

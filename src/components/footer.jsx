@@ -7,12 +7,12 @@ import NewsletterForm from './newsletterform';
 export default function Footer({ 
   title = "Contact Us",
   description = "Have a question or need assistance? We're here to help. Contact us today to learn more about how MAK GROUP can help you secure your financial future.",
-  address = "123 Main Street, Mumbai, Maharashtra 400001",
+  address = "702, Amore Edge, S.V. Road, Khar West, Mumbai 400052",
   phone = "+91-123-456-7890",
   email = "info@makgroup.com"
 }) {
   return (
-    <footer className="w-full mt-12 md:mt-18 relative">
+    <footer className="w-full mt-12 md:mt-[100px] relative">
       {/* White Contact Card Section */}
       <div className="relative px-6 md:px-12 z-10">
         <div className="max-w-6xl md:max-w-5xl mx-auto bg-white border-[1px] border-[#EBEBEB] rounded-[20px] p-10 md:p-12 relative">

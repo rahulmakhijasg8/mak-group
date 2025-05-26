@@ -205,7 +205,7 @@ function services() {
     // Add more properties...
   ]}
 />
-<SectionHeader title="Trusted by Clients Across Industries" description="Empowering You with Experience, Trust, and Integrity." />
+<StackedHeading className='md:mt-[75px]' title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust, and Integrity." />
 <TestimonialCarousel testimonials={testimonials} />
 
 <FaqSection

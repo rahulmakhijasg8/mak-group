@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Calendar, ArrowRight, Phone, Mail, Info } from 'lucide-react';
-import localFont from 'next/font/local'
 
 // Custom WhatsApp icon component
 const WhatsAppIcon = ({ className }) => (
@@ -61,6 +60,7 @@ export default function HeroSection({
   primaryButtonIconType = 'calendar', // Button icon type
   imageContainerClass = "", // Custom class for image container
   paddingClass = "md:py-12", // Default padding class that can be overridden
+  darkMode = false, // New dark mode prop
 }) {
   // Function to get the correct icon based on the iconType string
   const getPrimaryButtonIcon = () => {
@@ -88,23 +88,38 @@ export default function HeroSection({
   // Get the icon based on the provided icon type
   const primaryIcon = getPrimaryButtonIcon();
 
+  // Define conditional styling based on dark mode
+  const sectionStyle = darkMode ? {
+    backgroundImage: "url('/greeneffect.svg')",
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundBlendMode: 'soft-light',
+  } : {};
+
   return (
-    <section className={`w-full px-4 md:px-12 py-12 ${paddingClass}`}>
-      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-12`}>
+    <section 
+      className={`w-full px-4 md:px-12 py-12 ${paddingClass} ${darkMode ? 'bg-[#221241] relative' : ''}`}
+      style={sectionStyle}
+    >
+      {/* Optional overlay for better text contrast in dark mode */}
+      {darkMode && <div className="absolute inset-0 bg-[#221241] bg-opacity-40"></div>}
+      
+      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-12 ${darkMode ? 'relative z-10' : ''}`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
-          <h1 className="font-['Lexend'] text-[#221241] font-normal text-[32px] md:text-[40px] lg:text-[48px] mb-4">
+          <h1 className={`font-['Lexend'] ${darkMode ? 'text-[#FFFFFF]' : 'text-[#221241]'} font-normal text-[32px] md:text-[40px] lg:text-[48px] mb-4 ${darkMode ? 'leading-tight' : ''}`}>
             {title}
           </h1>
           
-          <p className={`font-['Lato'] whitespace-pre-wrap text-[#000000D6] font-[500] text-[16px] md:text-[18px] mb-8`}>
+          <p className={`font-['Lato'] whitespace-pre-wrap ${darkMode ? 'text-[#FFFFFF]' : 'text-[#000000D6]'} font-[500] text-[16px] md:text-[18px] mb-8 ${darkMode ? 'leading-relaxed' : ''}`}>
             {description}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-8 md:w-full">
             <Link 
               href={primaryButtonLink} 
-              className={`flex items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all md:w-fit w-fit ${primaryIcon ? '' : 'justify-center'}`}
+              className={`flex items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all md:w-fit w-fit ${darkMode ? 'hover:scale-105 duration-300 shadow-lg' : ''} ${primaryIcon ? '' : 'justify-center'}`}
             >
               {primaryIcon}
               <span className={`text-[16px] md:text-[14px] ${primaryIcon ? 'flex-grow text-center pr-3' : 'text-center'}`}>{primaryButtonText}</span>
@@ -113,7 +128,11 @@ export default function HeroSection({
             {secondaryButtonText && secondaryButtonLink && (
               <Link 
                 href={secondaryButtonLink} 
-                className="flex items-center px-5 py-4 bg-[#FAFAFA] text-[#4EBA64] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-5 transition-all md:w-fit w-fit"
+                className={`flex items-center px-5 py-4 ${
+                  darkMode 
+                    ? 'bg-white bg-opacity-10 text-[#4EBA64] border border-white border-opacity-20 hover:bg-opacity-20 hover:scale-105 shadow-lg' 
+                    : 'bg-[#FAFAFA] text-[#4EBA64] hover:bg-opacity-5'
+                } rounded-full font-['Lexend'] text-[14px] font-medium transition-all ${darkMode ? 'duration-300' : ''} md:w-fit w-fit`}
               >
                 <WhatsAppIcon className="h-5 w-5 mr-3" />
                 <span className="flex-grow text-center pr-3">{secondaryButtonText}</span>
@@ -124,7 +143,7 @@ export default function HeroSection({
         
         {/* Image Column */}
         <div className="w-full md:w-1/2 flex items-center">
-          <div className={`${imageContainerClass} rounded-[40px] md:rounded-[20px] overflow-hidden`}>
+          <div className={`${imageContainerClass} rounded-[40px] md:rounded-[40px] overflow-hidden`}>
             <Image
               src={imageSrc}
               alt={imageAlt}

@@ -83,7 +83,7 @@ function page() {
         <InsuranceHero greentitle="Commercial Insurance:" title="Safeguarding Your Business with MAK GROUP" description="Running a business comes with its share of risks and uncertainties. MAK GROUP offers a wide range of commercial insurance solutions to protect your venture from potential losses and liabilities, allowing you to focus on growing your business with peace of mind."
                             imageAlt="Commercial Insurance" imageSrc="/Rectangle 57.jpg"/>
         </div>
-        <StackedHeading title="Protect Your Business Assets" subtitle="Comprehensive Coverage for Your Property, Goods, and Equipment" />
+        <StackedHeading mobileAlign='center' title="Protect Your Business Assets" subtitle="Comprehensive Coverage for Your Property, Goods, and Equipment" />
         <GridItemsSection
           cards={[
             {
@@ -104,7 +104,7 @@ function page() {
           ]}
           cardWidth={{ mobile: '95%', desktop: '38%'}} page='commercial' // Responsive width
         />
-    <StackedHeading title="Safeguard Your Employees and Contractors" subtitle="Comprehensive Coverage for Your Workforce" />
+    <StackedHeading mobileAlign='center' title="Safeguard Your Employees and Contractors" subtitle="Comprehensive Coverage for Your Workforce" />
     <FlexGridLayout itemsPerRow={2} items={commgridItems} />
     <BulletHeroSection imageSrc="/travel-hero.png" imageAlt="travel insurance" title="Benefits of MAK GROUP's Commercial Insurance"
      bulletPoints={[

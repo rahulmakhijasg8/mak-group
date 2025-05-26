@@ -4,17 +4,17 @@ import Image from 'next/image';
 
 // A custom bullet point component with lightMode support
 const BulletPoint = ({ title, description, lightMode = false }) => (
-  <div className="flex items-start mb-4">
+  <div className="flex items-start">
     <span className={`text-xl flex-shrink-0 ${lightMode ? 'text-[#000000D6]' : 'text-white'}`} style={{ width: '20px', minWidth: '20px' }}>•</span>
     <div className="flex-1">
       {title ? (
         <>
           <span className={`font-bold ${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{title}</span>
           {lightMode ? " " : <span className={`mx-2`}>:</span>}
-          <span className={`${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{description}</span>
+          <span className={`${lightMode ? 'text-[#000000D6]' : 'text-[#FFFFFF]'}`}>{description}</span>
         </>
       ) : (
-        <span className={`${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{description}</span>
+        <span className={`md:text-[20px] ${lightMode ? 'text-[#000000D6]' : 'text-[#B7C7E7] md:text-[#FFFFFF] font-[400]'}`}>{description}</span>
       )}
     </div>
   </div>
@@ -45,14 +45,14 @@ export default function BulletHeroSection({
       <div className={`container mx-auto px-4 md:px-6 flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
-          <h1 className={`text-3xl font-['Lexend'] leading-[100%] md:text-4xl lg:text-5xl font-bold mb-6 ${lightMode ? 'text-[#221241]' : 'text-white'}`}>
+          <h1 className={`text-3xl font-['Lexend'] pr-15 md:pr-0 leading-[100%] md:text-4xl lg:text-5xl mb-6 ${lightMode ? 'text-[#221241]' : 'text-[#FFFFFF] font-[400]'}`}>
             {title}
           </h1>
           
           <div className="mb-8">
             {/* Bullet points */}
             {bulletPoints.length > 0 && (
-              <div className="space-y-2">
+              <div className="space-y-[26px] md:space-y-[24px] pr-10 md:pr-0">
                 {bulletPoints.map((bullet, index) => (
                   <BulletPoint 
                     key={index} 

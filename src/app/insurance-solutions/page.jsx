@@ -164,9 +164,9 @@ const WhatsAppIcon = ({ className }) => (
       <Navbar/>
         <GreenImageHero title="Protect What Matters Most with MAK GROUP" description="At MAK GROUP, we understand that life is full of uncertainties. That's why we offer a wide range of insurance solutions to help you protect your health, wealth, and everything in between. Our experienced team works with leading insurance providers to bring you the best coverage options at competitive prices."
          imageSrc="/Rectangle 52.jpg" imageAlt="insurance solutions" />
-         <SectionHeader title="Our Insurance Offerings" description="Personalized Protection for Every Area of Your Life" />
+         <StackedHeading title="Our Insurance Offerings" subtitle="Personalized Protection for Every Area of Your Life" />
          <FlexGridLayout itemsPerRow={3} items={insuranceItems} />
-         <StackedHeading title="Why Choose MAK GROUP for Your Insurance Needs?" subtitle="Expert Advice. Transparent Service. Trusted Coverage."/>
+         <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Your Insurance Needs?" subtitle="Expert Advice. Transparent Service. Trusted Coverage."/>
          <StatsGrid cards={statCards} />
          <HeroWithButtons
            title="Get a Free Insurance Quote"
@@ -178,7 +178,7 @@ const WhatsAppIcon = ({ className }) => (
            secondaryButtonLink="#"
            darkMode={true}
          />
-<SectionHeader title="Trusted by Clients Across Industries" description="Empowering You with Experience, Trust, and Integrity." />
+<StackedHeading className='md:pt-[0px] pt-[60px]' title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust, and Integrity." />
 <TestimonialCarousel testimonials={testimonials} />
 <FaqSection faqs={insuranceFaqs} />
 <Footer title='Get Started with MAK GROUP Comprehensive Insurance' description="For more information or if you have any other questions, please don't hesitate to reach out to us."/>

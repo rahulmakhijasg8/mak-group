@@ -295,7 +295,7 @@ function page() {
     imageAlt="Cars"
     reverseLayout={false}
   />
-      <SectionHeader title="Buy New or Certified Used Cars" description="Explore Our Trusted Network of Vehicles at the Best Prices" />
+      <StackedHeading  title="Buy New or Certified Used Cars" subtitle="Explore Our Trusted Network of Vehicles at the Best Prices" />
       <TwoCardRow card1={newCar} card2={usedCar} />
       <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
