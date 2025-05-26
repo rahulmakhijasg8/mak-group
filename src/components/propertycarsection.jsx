@@ -1,6 +1,6 @@
 import RECard from './re';
 import LICard from './lifeinsurancecard';
-import StackedHeading from './StackedHeading'; // Import your StackedHeading component
+import StackedHeading from './stackedHeading'; // Import your StackedHeading component
 
 export default function RESection({
   title,
