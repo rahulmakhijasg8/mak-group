@@ -23,28 +23,24 @@ function Page() {
             id: "name",
             type: "text",
             label: "Full Name",
-            placeholder: "Your name",
             required: true
           },
           {
             id: "mail",
             type: "email",
             label: "Email Address",
-            placeholder: "Your email address",
             required: true
           },
           {
             id: "phone number",
             type: "number",
             label: "Phone Number",
-            placeholder: "your phone no",
             required: true,
           },
           {
             id: "message",
             type: "textarea",
             label: "Message",
-            placeholder: "your message",
             required: true,
           },
           // ...other fields
@@ -103,7 +99,7 @@ function Page() {
           <div className="w-full md:w-3/5 px-4 md:px-6">
             {/* Desktop heading for the form section - only shows on desktop */}
             <div className="hidden md:block mt-5 md:mt-0">
-              <h2 className="font-['Lexend'] text-[#221241] pl-6 md:pl-10 font-normal text-[28px] md:text-[36px] leading-tight">
+              <h2 className="font-['Lexend'] text-[#221241] pl-6 md:pl-4 font-normal text-[28px] md:text-[36px] leading-tight">
                 Contact Us
               </h2>
             </div>

@@ -10,6 +10,7 @@ import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import FormStatusMessage from '@/components/FormStatusMessage';
 import useFormSubmission from '@/hooks/useFormSubmission';
+import Image from 'next/image'
 
 
 function page() {
@@ -96,29 +97,30 @@ function page() {
                 id: "Contact Number",
                 type: "number",
                 label: "Contact Number",
-                placeholder: "your contact number",
-                required: true
+                placeholder: "Your Contact Number",
+                required: true,
+                isPhone: true
               },
     
               {
                 id: "vehicleNumber",
                 type: "number",
                 label: "Vehicle Registration Number",
-                placeholder: "your vehicle registration number",
+                placeholder: "Your Vehicle Registration No.",
                 required: true,
               },
               {
                 id: "vehicleMake",
                 type: "text",
                 label: "Vehicle Make & Model",
-                placeholder: "Vehicle make and model",
+                placeholder: "Vehicle Make And Model",
                 required: true,
               },
               {
                 id: "Manufacturing date",
                 type: "date",
                 label: "Manufacturing Date",
-                placeholder: "Manufacturing date of vehicle",
+                placeholder: "Manufacturing Date Of Vehicle",
                 required: true,
               },
               // ...other fields
@@ -163,6 +165,22 @@ function page() {
                     imageAlt="vehicle-insurance"
                     reverseLayout={false} />
         </div>
+        <div className="w-full object-cover h-[81px] md:h-[162px]">
+        <Image 
+          src="/gblockermobile.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="block md:hidden"
+        />
+        <Image 
+          src="/gblocker.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="hidden md:block"
+        />
+      </div>
         <StackedHeading mobileAlign='center' title="Know Your Coverage" subtitle="Understand the Protection We Offer" />
         <FlexGridLayout itemsPerRow={2} items={coverageItems} />
         <StackedHeading className='md:px-20' mobileAlign='center' title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />

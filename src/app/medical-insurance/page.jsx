@@ -9,6 +9,7 @@ import StatsGrid from '@/components/statsgrid'
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
+import Image from 'next/image'
 
 
 function page() {
@@ -60,15 +61,16 @@ function page() {
             id: "personName",
             type: "text",
             label: "Name",
-            placeholder: "Enter your name",
+            placeholder: "Enter Your Name",
             required: true
           },
           {
             id: "contactNumber",
             type: "number",
             label: "Contact Number",
-            placeholder: "Your phone number",
-            required: true
+            placeholder: "Your Phone Number",
+            required: true,
+            isPhone: true
           },
           {
             id: "dateOfBirth",
@@ -95,14 +97,14 @@ function page() {
             id: "coveragePeriod",
             type: "number",
             label: "Years of Coverage",
-            placeholder: "Enter number of years",
+            placeholder: "Enter Number Of Years",
             required: true
           },
           {
             id: "insuranceType",
             type: "select",
             label: "Plan Type",
-            placeholder: "Select plan type",
+            placeholder: "Select Plan Yype",
             required: true,
             options: [
               { value: "individual", label: "Individual" },
@@ -188,6 +190,22 @@ function page() {
             imageSrc="/Rectangle 53.jpg"
             imageAlt="insurance"
             reverseLayout={false} />
+      </div>
+      <div className="w-full object-cover h-[81px] md:h-[162px]">
+        <Image 
+          src="/gblockermobile.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="block md:hidden"
+        />
+        <Image 
+          src="/gblocker.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="hidden md:block"
+        />
       </div>
         <StackedHeading mobileAlign='center' title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
         <TwoCardRow card1={hotel_costs} card2={protection} />

@@ -150,43 +150,44 @@ function page() {
                 id: "Contact Number",
                 type: "number",
                 label: "Contact Number",
-                placeholder: "write your contact number",
-                required: true
+                placeholder: "Write Your Contact Number",
+                required: true,
+                isPhone: true
               },
     
               {
                 id: "email",
                 type: "email",
                 label: "Email",
-                placeholder: "write your email address",
+                placeholder: "Write Your Email Address",
                 required: true,
               },
               {
                 id: "pan card",
                 type: "text",
                 label: "Pan Card",
-                placeholder: "write your Pan card number",
+                placeholder: "Write Your Pan Card Number",
                 required: true,
               },
               {
                 id: "cancelled cheque",
                 type: "file",
                 label: "Cancelled Cheque",
-                placeholder: "cancelled cheque details",
+                placeholder: "Cancelled Cheque Pdf",
                 required: true,
               },
               {
                 id: "selfie",
                 type: "image",
-                label: "Selfie Photo",
-                placeholder: "upload your selfie",
+                label: "Passport Size Photo",
+                placeholder: "Upload Your Photo",
                 required: true,
               },
               {
                 id: "signature",
                 type: "file",
-                label: "Signature on white paper",
-                placeholder: "upload your signature",
+                label: "Signature",
+                placeholder: "Upload Your Signature",
                 required: true,
               },
               // ...other fields
@@ -200,7 +201,7 @@ function page() {
                         imageSrc="/Rectangle 50.jpg" imageAlt="Stck Market Bull" />
         <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Your Stock Market Investments?" subtitle="Trusted by Over 400 Clients. Powered by Experience." />
         <StatsGrid cards={smstats} />
-        <SectionHeader title="Our Stock Market Services" description="A Full Spectrum of Investment Options to Match Your Goals" />
+        <StackedHeading mobileAlign='left' title="Our Stock Market Services" subtitle="A Full Spectrum of Investment Options to Match Your Goals" />
         <TwoCardRow card1={equityTrading} card2={mutualFunds} />
         {/* <div className='flex flex-col justify-center items-center'>
         <StackedHeading title="Expert Calls and Updates" subtitle="Stay ahead of the market with our expert calls and updates. Our team continuously analyzes market trends and individual stocks to provide you with timely recommendations on what to buy, when to buy, and when to sell." />

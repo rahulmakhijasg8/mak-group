@@ -140,7 +140,7 @@ export default function Navbar() {
         }
       `}</style>
 
-      <div className="pt-6 md:mb-3 sm:pt-8 md:pt-10">
+      <div className="pt-2 md:mb-3 md:pt-4">
         <nav 
           className={`
             w-full 

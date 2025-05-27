@@ -98,47 +98,62 @@ export default function Home() {
               backgroundRepeat: 'no-repeat',
             }}>
               <Navbar/>
-      <section className="w-full py-12 md:py-20 px-4 md:px-12">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row gap-8 md:gap-12">
-        {/* Left Column */}
-        <div className="w-full md:w-1/2 md:pr-18 flex flex-col justify-center">
-          <h1 className="font-['Lexend']  text-[#221241] font-normal text-[34px] md:text-[54px] mb-4">
-            Your Trusted Partner for All Your Financial Needs
-          </h1>
-          
-          <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[20px] mb-8">
-          At MAK GROUP, we provide comprehensive solutions for insurance, stock market investments, finance, cars, and real estate. With over 15 years of experience and a dedicated team of experts, we are committed to helping you achieve your financial goals.
-          </p>
-          
-          <div>
-
-<Link 
-  href="/learn-more" 
-  className="inline-flex items-center justify-center gap-2 px-10 py-5 md:px-7 md:py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90 text-[18px] md:text-lg w-auto"
->
-  <Calendar className="h-6 w-6" />
-  Book A Free Call Now
-</Link>
-          </div>
-        </div>
-        
-        {/* Right Column with Image */}
-        <div className="w-full md:w-1/2 pt-10 flex items-center justify-center">
-          <div className="w-full md:w-[90%] h-[100%] relative rounded-[50px] overflow-hidden">
-            <Image
-              src="/Group 27.png" // Replace with your actual image path
-              alt="Business solutions illustration"
-              width={600}
-              height={600}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
-        </div>
+      <section className="w-full py-12 md:py-20 px-4 md:px-14">
+  <div className="flex flex-col md:flex-row gap-6 md:gap-20">
+    {/* Left Column */}
+    <div className="w-full md:w-1/2 md:pr-18 flex flex-col justify-center">
+      <h1 className="font-['Lexend'] text-[#221241] font-normal text-[34px] md:text-[54px] mb-4 tracking-[0.6] leading-tight md:leading-[1.3]">
+        Your Trusted Partner for All Your Financial Needs
+      </h1>
+      
+      <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[20px] mb-8 tracking-normal leading-relaxed md:leading-[1.6]">
+        At MAK GROUP, we provide comprehensive solutions for insurance, stock market investments, finance, cars, and real estate. With over 15 years of experience and a dedicated team of experts, we are committed to helping you achieve your financial goals.
+      </p>
+      
+      <div>
+        <Link 
+          href="/learn-more" 
+          className="inline-flex items-center justify-center gap-2 px-10 py-5 md:px-7 md:py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90 text-[18px] md:text-lg w-auto tracking-normal"
+        >
+          <Calendar className="h-6 w-6" />
+          Book A Free Call Now
+        </Link>
       </div>
-    </section>
     </div>
-    <SectionHeading title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
+    
+    {/* Right Column with Image */}
+    <div className="w-full md:w-1/2 pt-10 flex items-center justify-center">
+      <div className="w-full md:w-[90%] h-[100%] relative rounded-[50px] overflow-hidden">
+        <Image
+          src="/Group 27.png" // Replace with your actual image path
+          alt="Business solutions illustration"
+          width={600}
+          height={600}
+          className="w-full h-full object-cover"
+          priority
+        />
+      </div>
+    </div>
+  </div>
+</section>
+    </div>
+    <div className="w-full object-cover h-[81px] md:h-[162px]">
+  <Image 
+    src="/blockermobile.svg" 
+    alt="Description of image"
+    width={2000}
+    height={1000}
+    className="block md:hidden"
+  />
+  <Image 
+    src="/blocker.svg" 
+    alt="Description of image"
+    width={2000}
+    height={1000}
+    className="hidden md:block"
+  />
+</div>
+    <SectionHeading className="mt-[60px] md:mt-[100px]" title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
     <TwoCardRow card1={insuranceCard} card2={investmentCard} />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
     <StatsGrid cards={statCards} />

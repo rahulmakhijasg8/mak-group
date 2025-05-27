@@ -150,6 +150,14 @@ const SingleForm = ({
     return true;
   };
   
+  // Phone number validation function
+  const validatePhoneNumber = (phone) => {
+    // Remove any non-digit characters
+    const cleanPhone = phone.replace(/\D/g, '');
+    // Check if it's exactly 10 digits
+    return cleanPhone.length === 10;
+  };
+  
   const validateForm = () => {
     const newErrors = {};
     
@@ -160,6 +168,12 @@ const SingleForm = ({
       if (field.type === 'email' && value) {
         if (!validateEmail(value)) {
           newErrors[field.id] = "Please enter a valid email address";
+        }
+      }
+      // Phone number validation (for number fields that are phone numbers)
+      else if (field.type === 'number' && field.isPhone && value) {
+        if (!validatePhoneNumber(value)) {
+          newErrors[field.id] = "Please enter a valid 10-digit phone number";
         }
       }
       // Date validation

@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 import InsuranceHero from '@/components/insurancehero'
 import StackedHeading from '@/components/stackedheading'
 import GridItemsSection from '@/components/insurancecardsec'
@@ -83,6 +84,22 @@ function page() {
         <InsuranceHero greentitle="Commercial Insurance:" title="Safeguarding Your Business with MAK GROUP" description="Running a business comes with its share of risks and uncertainties. MAK GROUP offers a wide range of commercial insurance solutions to protect your venture from potential losses and liabilities, allowing you to focus on growing your business with peace of mind."
                             imageAlt="Commercial Insurance" imageSrc="/Rectangle 57.jpg"/>
         </div>
+        <div className="w-full object-cover h-[81px] md:h-[162px]">
+        <Image 
+          src="/gblockermobile.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="block md:hidden"
+        />
+        <Image 
+          src="/gblocker.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="hidden md:block"
+        />
+      </div>
         <StackedHeading mobileAlign='center' title="Protect Your Business Assets" subtitle="Comprehensive Coverage for Your Property, Goods, and Equipment" />
         <GridItemsSection
           cards={[

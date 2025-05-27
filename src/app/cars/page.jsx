@@ -5,7 +5,6 @@ import React from 'react'
 import PropertyCarousel from '@/components/propertycardsection';
 import StackedHeading from '@/components/stackedheading';
 import GreenImageHero from '@/components/greenimagehero';
-import SectionHeader from '@/components/heading';
 import TwoCardRow from '@/components/twocardrow';
 import HeroSection from "@/components/hero.jsx";
 import StatsGrid from '@/components/statsgrid';
@@ -50,7 +49,7 @@ function page() {
             id: "Car Model & Variant",
             type: "text",
             label: "Car Model & Variant",
-            placeholder: "what’s your car model and variant",
+            placeholder: "What’s Your Car Model And Variant",
             required: true
           },
 
@@ -58,7 +57,7 @@ function page() {
             id: "Fuel Type",
             type: "select",
             label: "Fuel Type",
-            placeholder: "select fuel type",
+            placeholder: "Select Fuel Type",
             required: true,
             options: [
               { value: "Petrol", label: "Petrol" },
@@ -70,7 +69,7 @@ function page() {
             id: "Transmission",
             type: "select",
             label: "Transmission",
-            placeholder: "select transmission",
+            placeholder: "Select Transmission",
             required: true,
             options: [
               { value: "Petrol", label: "Petrol" },
@@ -82,7 +81,7 @@ function page() {
             id: "Year of Manufacturing",
             type: "select",
             label: "Year of Manufacturing",
-            placeholder: "select year of manufacturing",
+            placeholder: "Select Year Of Manufacturing",
             required: true,
             options: [
               { value: "Petrol", label: "Petrol" },
@@ -94,7 +93,7 @@ function page() {
             id: "Kilometers Driven",
             type: "select",
             label: "Kilometers Driven",
-            placeholder: "select kilometers driven",
+            placeholder: "Select Kilometers Driven",
             required: true,
             options: [
               { value: "Petrol", label: "Petrol" },
@@ -106,7 +105,7 @@ function page() {
             id: "Ownership",
             type: "select",
             label: "Ownership",
-            placeholder: "select car ownership",
+            placeholder: "Select Car Ownership",
             required: true,
             options: [
               { value: "Petrol", label: "Petrol" },
@@ -118,7 +117,7 @@ function page() {
             id: "Location (City)",
             type: "select",
             label: "Location (City)",
-            placeholder: "select your city",
+            placeholder: "Select Your City",
             required: true,
             options: [
               { value: "Petrol", label: "Petrol" },

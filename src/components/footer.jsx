@@ -15,7 +15,7 @@ export default function Footer({
     <footer className="w-full mt-12 md:mt-[100px] relative">
       {/* White Contact Card Section */}
       <div className="relative px-6 md:px-12 z-10">
-        <div className="max-w-6xl md:max-w-5xl mx-auto bg-white border-[1px] border-[#EBEBEB] rounded-[20px] p-10 md:p-12 relative">
+        <div className="max-w-[100%] md:max-w-[80%] mx-auto bg-white border-[2px] border-[#221241] rounded-[20px] p-10 md:p-12 relative">
           <div className="flex flex-col md:flex-row md:items-center justify-between mb-16">
             {/* Left Content */}
             <div className="md:w-8/12 mb-8 md:mb-0">
@@ -89,7 +89,7 @@ export default function Footer({
       
       {/* Dark Purple Footer Section - Adjusted for 50% overlap */}
       <div className="bg-[#221241] w-full pt-64 pb-12 px-6 md:px-22 mt-[-180px]">
-        <div className="max-w-7xl mx-auto">
+        <div className=" mx-auto">
           {/* Modified grid with different column widths on desktop */}
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-8">
             {/* Support Links - reduced to 1/6 on desktop */}
@@ -158,8 +158,8 @@ export default function Footer({
       rel="noopener noreferrer"
       className="hover:text-white hover:underline transition-colors duration-300"
     >
-      TechDevs
-    </a>. All rights reserved.
+      MAKGroup
+    </a>. All rights reserved. TechDevs
   </p>
 </div>
         </div>

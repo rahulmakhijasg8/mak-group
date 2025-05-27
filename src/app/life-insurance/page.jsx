@@ -8,6 +8,7 @@ import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import HeroWithButtons from '@/components/herowithbuttons'
+import Image from 'next/image'
 
 
 function page() {
@@ -70,6 +71,22 @@ function page() {
         <InsuranceHero greentitle="Life Insurance:" title="Secure Your Family's Future with MAK GROUP" description="Life is full of uncertainties, and it's essential to ensure that your loved ones are financially protected even in your absence. MAK GROUP offers comprehensive life insurance solutions to help you safeguard your family's future and achieve your financial goals."
             imageAlt="Life Insurance" imageSrc="/Rectangle 55.jpg"/>
         </div>
+        <div className="w-full object-cover h-[81px] md:h-[162px]">
+        <Image 
+          src="/gblockermobile.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="block md:hidden"
+        />
+        <Image 
+          src="/gblocker.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="hidden md:block"
+        />
+      </div>
         <StackedHeading mobileAlign='center' className='px-2' title="Why Choose Life Insurance?" subtitle="More Than Protection — It's a Smart Financial Strategy" />
         <GridItemsSection
   cards={[

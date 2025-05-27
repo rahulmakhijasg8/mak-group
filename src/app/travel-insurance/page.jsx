@@ -11,6 +11,7 @@ import SingleForm from '@/components/singleform';
 import Navbar from '@/components/navbar';
 import FormStatusMessage from '@/components/FormStatusMessage';
 import useFormSubmission from '@/hooks/useFormSubmission';
+import Image from 'next/image';
 
 
 function page() {
@@ -64,7 +65,7 @@ function page() {
                 id: "destination",
                 type: "text",
                 label: "Destination",
-                placeholder: "Your destination",
+                placeholder: "Your Destination",
                 required: true
               },
     
@@ -72,7 +73,7 @@ function page() {
                 id: "travel dates",
                 type: "text",
                 label: "Travel Dates",
-                placeholder: "Your travel dates",
+                placeholder: "Your Travel Dates",
                 required: true
               },
     
@@ -80,14 +81,14 @@ function page() {
                 id: "no of travellers",
                 type: "number",
                 label: "Number Of Travellers",
-                placeholder: "No of travellers",
+                placeholder: "No Of Travellers",
                 required: true,
               },
               {
                 id: "age of travellers",
                 type: "text",
                 label: "Age Of Travellers",
-                placeholder: "Ages of travellers",
+                placeholder: "Ages Of Travellers",
                 required: true,
               },
               // ...other fields
@@ -130,6 +131,22 @@ function page() {
         <InsuranceHero greentitle="Travel Insurance:" title="Explore the World Worry-Free with MAK GROUP" description="Embark on your adventures with confidence, knowing that you're protected against unforeseen circumstances. MAK GROUP's travel insurance plans offer comprehensive coverage to ensure that you can travel anywhere around the world without a worry on your mind."
                     imageAlt="Travel Insurance" imageSrc="/Rectangle 56.jpg"/>
         </div>
+        <div className="w-full object-cover h-[81px] md:h-[162px]">
+        <Image 
+          src="/gblockermobile.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="block md:hidden"
+        />
+        <Image 
+          src="/gblocker.svg" 
+          alt="Description of image"
+          width={2000}
+          height={1000}
+          className="hidden md:block"
+        />
+      </div>
         <StackedHeading mobileAlign='center' title="Why You Need Travel Insurance?" subtitle="Stay Protected Against Unexpected Events Abroad" />
         <AsymmetricCardRows firstRowCard1={personalLiability} firstRowCard2={lossordelay} secondRowCard1={trip_cancellation} secondRowCard2={medicalProtection} />
         <BulletHeroSection imageSrc="/travel-insurance.png" primaryButtonText="Get Insured Today" primaryButtonLink="#" imageAlt="travel-insurance" title="Benefits of MAK GROUP's Travel Insurance" bulletPoints={[
