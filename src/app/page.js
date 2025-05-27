@@ -99,7 +99,7 @@ export default function Home() {
             }}>
               <Navbar/>
       <section className="w-full py-12 md:py-20 px-4 md:px-14">
-  <div className="flex flex-col md:flex-row gap-6 md:gap-20">
+  <div className="flex flex-col md:flex-row gap-6 md:gap-14">
     {/* Left Column */}
     <div className="w-full md:w-1/2 md:pr-18 flex flex-col justify-center">
       <h1 className="font-['Lexend'] text-[#221241] font-normal text-[34px] md:text-[54px] mb-4 tracking-[0.6] leading-tight md:leading-[1.3]">
@@ -122,13 +122,13 @@ export default function Home() {
     </div>
     
     {/* Right Column with Image */}
-    <div className="w-full md:w-1/2 pt-10 flex items-center justify-center">
-      <div className="w-full md:w-[90%] h-[100%] relative rounded-[50px] overflow-hidden">
+    <div className="w-full md:w-1/2 pt-10 md:pt-0 flex items-center justify-center">
+      <div className="w-full md:w-[100%] h-[100%] relative rounded-[50px] overflow-hidden">
         <Image
           src="/Group 27.png" // Replace with your actual image path
           alt="Business solutions illustration"
-          width={600}
-          height={600}
+          width={1000}
+          height={1000}
           className="w-full h-full object-cover"
           priority
         />
