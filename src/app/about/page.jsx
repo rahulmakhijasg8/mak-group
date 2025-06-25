@@ -40,22 +40,22 @@ function about() {
 
   const teamMembers = [
     {
-      image: "/Rectangle 4363.svg",
+      image: "/KumarMakhija.jpeg",
       name: "Kumar S. Makhija",
       position: "Director"
     },
     {
-      image: "/Rectangle 4363.svg",
+      image: "/PinakAroskar.jpeg",
       name: "Pinak S. Aroskar",
       position: "Director for Loans/Fnancing"
     },
     {
-      image: "/Rectangle 4363.svg",
+      image: "/AnkitaMakhija.jpeg",
       name: "Ankita K. Makhija",
       position: ""
     },
     {
-      image: "/Rectangle 4363.svg",
+      image: "/ArneshMakhija.jpeg",
       name: "Arnesh K. Makhija",
       position: ""
     }

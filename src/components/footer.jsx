@@ -1,7 +1,9 @@
+'use client';
+
 // Footer.jsx
 import Link from 'next/link';
 import Image from 'next/image';
-import React from 'react';
+import React, { useState, useRef } from 'react';
 import NewsletterForm from './newsletterform';
 
 export default function Footer({ 
@@ -11,6 +13,40 @@ export default function Footer({
   phone = "+91-123-456-7890",
   email = "info@makgroup.com"
 }) {
+  // State for dropdown
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const closeTimeout = useRef(null);
+
+  // Service links array (same as in navbar)
+  const serviceLinks = [
+    { href: 'real-estate', label: 'Real Estate' },
+    { href: 'cars', label: 'Cars' },
+    { href: 'sm-services', label: 'Stock Market Services' },
+    { href: 'finance-solutions', label: 'Finance Solutions' },
+    { href: 'insurance-solutions', label: 'Insurance Solutions' },
+    { href: 'medical-insurance', label: 'Medical Insurance' },
+    { href: 'vehicle-insurance', label: 'Vehicle Insurance' },
+    { href: 'life-insurance', label: 'Life Insurance' },
+    { href: 'travel-insurance', label: 'Travel Insurance' },
+    { href: 'commercial-insurance', label: 'Commercial Insurance' },
+  ];
+
+  // Function to handle mouse enter for services dropdown
+  const handleServicesMouseEnter = () => {
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    setServicesOpen(true);
+  };
+  
+  // Function to handle mouse leave for services dropdown
+  const handleServicesMouseLeave = () => {
+    closeTimeout.current = setTimeout(() => {
+      setServicesOpen(false);
+    }, 300);
+  };
+
   return (
     <footer className="w-full mt-12 md:mt-[100px] relative">
       {/* White Contact Card Section */}
@@ -28,20 +64,19 @@ export default function Footer({
             </div>
             
             {/* Right Content - Send Message Button - Reduced size for mobile */}
-
-<div className="md:w-4/12 flex justify-start md:justify-center">
-  <div className="bg-[#221241] rounded-full w-32 h-32 md:w-44 md:h-44 flex flex-col items-center justify-center text-center p-2">
-    {/* Using Next.js Image component */}
-    <Image 
-      src="/Frame.svg" 
-      alt="Send Message Icon" 
-      width={36} 
-      height={36}
-      className="md:w-[44px] md:h-[44px]"
-    />
-    <span className="text-[#FFFFFF] font-[500] text-[15px] md:text-lg mt-2 md:mt-3 font-['Plus_Jakarta_Sans']">Send Message</span>
-  </div>
-</div>
+            <div className="md:w-4/12 flex justify-start md:justify-center">
+              <div className="bg-[#221241] rounded-full w-32 h-32 md:w-44 md:h-44 flex flex-col items-center justify-center text-center p-2">
+                {/* Using Next.js Image component */}
+                <Image 
+                  src="/Frame.svg" 
+                  alt="Send Message Icon" 
+                  width={36} 
+                  height={36}
+                  className="md:w-[44px] md:h-[44px]"
+                />
+                <span className="text-[#FFFFFF] font-[500] text-[15px] md:text-lg mt-2 md:mt-3 font-['Plus_Jakarta_Sans']">Send Message</span>
+              </div>
+            </div>
           </div>
           
           {/* Contact Info Links - Now with even spacing */}
@@ -89,7 +124,7 @@ export default function Footer({
       
       {/* Dark Purple Footer Section - Adjusted for 50% overlap */}
       <div className="bg-[#221241] w-full pt-64 pb-12 px-6 md:px-22 mt-[-180px]">
-        <div className=" mx-auto">
+        <div className="mx-auto">
           {/* Modified grid with different column widths on desktop */}
           <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-8">
             {/* Support Links - reduced to 1/6 on desktop */}
@@ -99,43 +134,81 @@ export default function Footer({
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/contact-us" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                  <Link href="/contact-us" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                     Contact Us
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                  <Link href="/privacy" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                  <Link href="/terms" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                     Terms & Conditions
                   </Link>
                 </li>
               </ul>
             </div>
             
-            {/* Company Links - reduced to 1/6 on desktop */}
-            <div className="md:col-span-1">
+            {/* Company Links with Services Dropdown - reduced to 1/6 on desktop */}
+            <div className="md:col-span-1 relative">
               <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
                 Company
               </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                  <Link href="/" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
+                  <Link href="/about" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px]">
-                    Services
-                  </Link>
+                  {/* Services with Dropdown */}
+                  <div 
+                    className="relative"
+                    onMouseEnter={handleServicesMouseEnter}
+                    onMouseLeave={handleServicesMouseLeave}
+                  >
+                    <div className="flex items-center cursor-pointer">
+                      <Link href="/services" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
+                        Services
+                      </Link>
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        className={`ml-1 h-3 w-3 transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`}
+                        viewBox="0 0 20 20" 
+                        fill="currentColor"
+                      >
+                        <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    
+                    {/* Services Dropdown */}
+                    {servicesOpen && (
+                      <div 
+                        className="absolute bottom-full left-0 mb-2 w-56 bg-white border border-gray-200 rounded-md shadow-lg z-50"
+                        onMouseEnter={handleServicesMouseEnter}
+                        onMouseLeave={handleServicesMouseLeave}
+                      >
+                        <div className="py-2">
+                          {serviceLinks.map((service) => (
+                            <Link 
+                              key={service.href}
+                              href={service.href} 
+                              className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 hover:text-gray-900 font-['Lato'] transition-colors duration-200"
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </li>
               </ul>
             </div>
@@ -151,17 +224,17 @@ export default function Footer({
           
           {/* Copyright */}
           <div className="pt-8 border-t border-white border-opacity-20">
-  <p className="font-['Lato'] text-white text-opacity-60 text-center text-[14px]">
-    © {new Date().getFullYear()} <a 
-      href="https://www.techdevs.in/" 
-      target="_blank" 
-      rel="noopener noreferrer"
-      className="hover:text-white hover:underline transition-colors duration-300"
-    >
-      MAKGroup
-    </a>. All rights reserved. TechDevs
-  </p>
-</div>
+            <p className="font-['Lato'] text-white text-opacity-60 text-center text-[14px]">
+              © {new Date().getFullYear()} <a 
+                href="https://www.techdevs.in/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-white hover:underline transition-colors duration-300"
+              >
+                MAKGroup
+              </a>. All rights reserved. TechDevs
+            </p>
+          </div>
         </div>
       </div>
     </footer>

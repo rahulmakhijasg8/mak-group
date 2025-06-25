@@ -96,6 +96,8 @@ export default function Home() {
               backgroundSize: 'cover',
               backgroundPosition: 'center',
               backgroundRepeat: 'no-repeat',
+              backgroundBlendMode: "darken",
+              opacity: 100
             }}>
               <Navbar/>
       <section className="w-full py-12 md:py-20 px-4 md:px-14">

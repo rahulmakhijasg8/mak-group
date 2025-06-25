@@ -317,28 +317,51 @@ const FormStep = forwardRef(({
           />
         );
       case 'date':
-        // Get min and max dates if specified
-        const minDate = field.minDate || '';
-        const maxDate = field.maxDate || '';
-        
-        return (
-          <div className="w-[95%] relative">
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 z-10 pointer-events-none">
-              <Calendar className="h-5 w-5 text-[#4EBA64]" />
-            </div>
-            <input
-              type="date"
-              value={value}
-              onChange={e => handleChange(field.id, e.target.value)}
-              min={minDate}
-              max={maxDate}
-              className={`w-full px-3 py-4 pl-10 border text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer ${
-                errorMessage ? 'border-red-500' : 'border-gray-300'
-              }`}
-              style={{ boxShadow: '0px 2px 6px 0px rgba(19, 18, 66, 0.07)' }}
-            />
-          </div>
-        );
+  // Get min and max dates if specified
+  const minDate = field.minDate || '';
+  const maxDate = field.maxDate || '';
+  
+  // Create a ref for the date input to trigger click
+  const dateInputRef = useRef(null);
+  
+  // Function to open date picker when left icon is clicked
+  const openDatePicker = () => {
+    if (dateInputRef.current) {
+      dateInputRef.current.showPicker?.() || dateInputRef.current.focus();
+    }
+  };
+  
+  return (
+    <div className="w-[95%] relative">
+      <div 
+        className="absolute left-3 top-1/2 -translate-y-1/2 z-10 cursor-pointer"
+        onClick={openDatePicker}
+      >
+        <Calendar className="h-5 w-5 text-[#4EBA64]" />
+      </div>
+      <input
+        ref={dateInputRef}
+        type="date"
+        value={value}
+        onChange={e => handleChange(field.id, e.target.value)}
+        min={minDate}
+        max={maxDate}
+        className={`w-full px-3 py-4 pl-10 border text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 cursor-pointer hide-date-icon ${
+          errorMessage ? 'border-red-500' : 'border-gray-300'
+        }`}
+        style={{ boxShadow: '0px 2px 6px 0px rgba(19, 18, 66, 0.07)' }}
+      />
+      <style jsx>{`
+        .hide-date-icon::-webkit-calendar-picker-indicator {
+          display: none;
+        }
+        .hide-date-icon::-webkit-inner-spin-button,
+        .hide-date-icon::-webkit-outer-spin-button {
+          display: none;
+        }
+      `}</style>
+    </div>
+  );
       case 'select':
         return (
           <div className="relative w-[95%]">
