@@ -125,7 +125,7 @@ export default function Home() {
     
     {/* Right Column with Image */}
     <div className="w-full md:w-1/2 pt-10 md:pt-0 flex items-center justify-center">
-      <div className="w-full md:w-[100%] h-[100%] md:h-[70%] [@media(min-width:776px)_and_(max-width:817px)]:h-[35%] [@media(min-width:818px)_and_(max-width:903px)]:h-[45%] [@media(min-width:904px)_and_(max-width:995px)]:h-[50%] [@media(min-width:941px)_and_(max-width:995px)]:h-[55%] [@media(min-width:971px)_and_(max-width:995px)]:h-[60%] lg:h-[70%] relative rounded-[50px]">
+      <div className="w-full md:w-[100%] h-[100%] md:h-[70%] [@media(min-width:776px)_and_(max-width:817px)]:h-[35%] [@media(min-width:818px)_and_(max-width:903px)]:h-[45%] [@media(min-width:904px)_and_(max-width:995px)]:h-[50%] [@media(min-width:941px)_and_(max-width:995px)]:h-[55%] [@media(min-width:971px)_and_(max-width:995px)]:h-[60%] lg:h-[100%] relative rounded-[50px]">
         <Image
           src="/Group 27.png" // Replace with your actual image path
           alt="Business solutions illustration"
