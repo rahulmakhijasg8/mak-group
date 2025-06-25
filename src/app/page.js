@@ -101,9 +101,9 @@ export default function Home() {
             }}>
               <Navbar/>
       <section className="w-full py-12 md:py-20 px-4 md:px-14">
-  <div className="flex flex-col md:flex-row gap-6 md:gap-14">
+  <div className="flex flex-col md:flex-row gap-0 md:gap-0">
     {/* Left Column */}
-    <div className="w-full md:w-1/2 md:pr-18 flex flex-col justify-center">
+    <div className="w-full md:w-1/2 md:pr-6 flex flex-col justify-center">
       <h1 className="font-['Lexend'] text-[#221241] font-normal text-[34px] md:text-[54px] mb-4 tracking-[0.6] leading-tight md:leading-[1.3]">
         Your Trusted Partner for All Your Financial Needs
       </h1>
@@ -125,7 +125,7 @@ export default function Home() {
     
     {/* Right Column with Image */}
     <div className="w-full md:w-1/2 pt-10 md:pt-0 flex items-center justify-center">
-      <div className="w-full md:w-[100%] h-[100%] relative rounded-[50px] overflow-hidden">
+      <div className="w-full md:w-[100%] h-[100%] md:h-[70%] [@media(min-width:776px)_and_(max-width:817px)]:h-[35%] [@media(min-width:818px)_and_(max-width:903px)]:h-[45%] [@media(min-width:904px)_and_(max-width:995px)]:h-[50%] [@media(min-width:941px)_and_(max-width:995px)]:h-[55%] [@media(min-width:971px)_and_(max-width:995px)]:h-[60%] lg:h-[70%] relative rounded-[50px]">
         <Image
           src="/Group 27.png" // Replace with your actual image path
           alt="Business solutions illustration"
