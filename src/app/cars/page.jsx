@@ -31,121 +31,142 @@ function page() {
   });
 
   const carFormConfig = {
-    steps: [
-      {
-        id: "carDetails",
-        title: "Car Details",
-        subtitle: "Just share your car's details and our team will handle the rest.",
-        fields: [
-          {
-            id: "Carmake",
-            type: "text",
-            label: "Car Make",
-            placeholder: "Name",
-            required: true
-          },
-
-          {
-            id: "Car Model & Variant",
-            type: "text",
-            label: "Car Model & Variant",
-            placeholder: "What’s Your Car Model And Variant",
-            required: true
-          },
-
-          {
-            id: "Fuel Type",
-            type: "select",
-            label: "Fuel Type",
-            placeholder: "Select Fuel Type",
-            required: true,
-            options: [
-              { value: "Petrol", label: "Petrol" },
-              { value: "Diesel", label: "Diesel" },
-              { value: "CNG", label: "CNG" },
-            ]
-          },
-          {
-            id: "Transmission",
-            type: "select",
-            label: "Transmission",
-            placeholder: "Select Transmission",
-            required: true,
-            options: [
-              { value: "Petrol", label: "Petrol" },
-              { value: "Diesel", label: "Diesel" },
-              { value: "CNG", label: "CNG" },
-            ]
-          },
-          {
-            id: "Year of Manufacturing",
-            type: "select",
-            label: "Year of Manufacturing",
-            placeholder: "Select Year Of Manufacturing",
-            required: true,
-            options: [
-              { value: "Petrol", label: "Petrol" },
-              { value: "Diesel", label: "Diesel" },
-              { value: "CNG", label: "CNG" },
-            ]
-          },
-          {
-            id: "Kilometers Driven",
-            type: "select",
-            label: "Kilometers Driven",
-            placeholder: "Select Kilometers Driven",
-            required: true,
-            options: [
-              { value: "Petrol", label: "Petrol" },
-              { value: "Diesel", label: "Diesel" },
-              { value: "CNG", label: "CNG" },
-            ]
-          },
-          {
-            id: "Ownership",
-            type: "select",
-            label: "Ownership",
-            placeholder: "Select Car Ownership",
-            required: true,
-            options: [
-              { value: "Petrol", label: "Petrol" },
-              { value: "Diesel", label: "Diesel" },
-              { value: "CNG", label: "CNG" },
-            ]
-          },
-          {
-            id: "Location (City)",
-            type: "select",
-            label: "Location (City)",
-            placeholder: "Select Your City",
-            required: true,
-            options: [
-              { value: "Petrol", label: "Petrol" },
-              { value: "Diesel", label: "Diesel" },
-              { value: "CNG", label: "CNG" },
-            ]
-          },
-        ],
-      },
-
-      // {
-      //   id: "carDetails",
-      //   title: "Car Details",
-      //   subtitle: "Just share your car's details and our team will handle the rest.",
-      //   fields: [
-      //     {
-      //       id: "carMake",
-      //       type: "text",
-      //       label: "Car Make",
-      //       placeholder: "Enter car make",
-      //       required: true
-      //     },
-      //     // ...other fields
-      //   ]
-      // },
-      // ...other steps
-    ]
-  };
+  steps: [
+    {
+      id: "carDetails",
+      title: "Car Details",
+      subtitle: "Just share your car's details and our team will handle the rest.",
+      fields: [
+        {
+          id: "Carmake",
+          type: "text",
+          label: "Car Make",
+          placeholder: "Enter car make (e.g., Maruti, Honda, Hyundai)",
+          required: true
+        },
+        {
+          id: "Car Model & Variant",
+          type: "text",
+          label: "Car Model & Variant",
+          placeholder: "Enter car model and variant (e.g., Swift VXI, City ZX)",
+          required: true
+        },
+        {
+          id: "Fuel Type",
+          type: "select",
+          label: "Fuel Type",
+          placeholder: "Select Fuel Type",
+          required: true,
+          options: [
+            { value: "Petrol", label: "Petrol" },
+            { value: "Diesel", label: "Diesel" },
+            { value: "CNG", label: "CNG" },
+            { value: "Electric", label: "Electric" },
+            { value: "Hybrid", label: "Hybrid" }
+          ]
+        },
+        {
+          id: "Transmission",
+          type: "select",
+          label: "Transmission",
+          placeholder: "Select Transmission",
+          required: true,
+          options: [
+            { value: "Manual", label: "Manual" },
+            { value: "Automatic", label: "Automatic" },
+            { value: "AMT", label: "AMT (Automated Manual)" },
+            { value: "CVT", label: "CVT (Continuously Variable)" }
+          ]
+        },
+        {
+          id: "Year of Manufacturing",
+          type: "select",
+          label: "Year of Manufacturing",
+          placeholder: "Select Year Of Manufacturing",
+          required: true,
+          options: [
+            { value: "2024", label: "2024" },
+            { value: "2023", label: "2023" },
+            { value: "2022", label: "2022" },
+            { value: "2021", label: "2021" },
+            { value: "2020", label: "2020" },
+            { value: "2019", label: "2019" },
+            { value: "2018", label: "2018" },
+            { value: "2017", label: "2017" },
+            { value: "2016", label: "2016" },
+            { value: "2015", label: "2015" },
+            { value: "2014", label: "2014" },
+            { value: "2013", label: "2013" },
+            { value: "2012", label: "2012" },
+            { value: "2011", label: "2011" },
+            { value: "2010", label: "2010" },
+            { value: "Before 2010", label: "Before 2010" }
+          ]
+        },
+        {
+          id: "Kilometers Driven",
+          type: "select",
+          label: "Kilometers Driven",
+          placeholder: "Select Kilometers Driven",
+          required: true,
+          options: [
+            { value: "0-10,000", label: "0 - 10,000 km" },
+            { value: "10,000-25,000", label: "10,000 - 25,000 km" },
+            { value: "25,000-50,000", label: "25,000 - 50,000 km" },
+            { value: "50,000-75,000", label: "50,000 - 75,000 km" },
+            { value: "75,000-1,00,000", label: "75,000 - 1,00,000 km" },
+            { value: "1,00,000-1,50,000", label: "1,00,000 - 1,50,000 km" },
+            { value: "1,50,000-2,00,000", label: "1,50,000 - 2,00,000 km" },
+            { value: "Above 2,00,000", label: "Above 2,00,000 km" }
+          ]
+        },
+        {
+          id: "Ownership",
+          type: "select",
+          label: "Ownership",
+          placeholder: "Select Car Ownership",
+          required: true,
+          options: [
+            { value: "First Owner", label: "First Owner" },
+            { value: "Second Owner", label: "Second Owner" },
+            { value: "Third Owner", label: "Third Owner" },
+            { value: "Fourth Owner or More", label: "Fourth Owner or More" }
+          ]
+        },
+        {
+          id: "Location (City)",
+          type: "select",
+          label: "Location (City)",
+          placeholder: "Select Your City",
+          required: true,
+          options: [
+            { value: "Mumbai", label: "Mumbai" },
+            { value: "Delhi", label: "Delhi" },
+            { value: "Bangalore", label: "Bangalore" },
+            { value: "Hyderabad", label: "Hyderabad" },
+            { value: "Chennai", label: "Chennai" },
+            { value: "Kolkata", label: "Kolkata" },
+            { value: "Pune", label: "Pune" },
+            { value: "Ahmedabad", label: "Ahmedabad" },
+            { value: "Surat", label: "Surat" },
+            { value: "Jaipur", label: "Jaipur" },
+            { value: "Lucknow", label: "Lucknow" },
+            { value: "Kanpur", label: "Kanpur" },
+            { value: "Nagpur", label: "Nagpur" },
+            { value: "Indore", label: "Indore" },
+            { value: "Thane", label: "Thane" },
+            { value: "Bhopal", label: "Bhopal" },
+            { value: "Visakhapatnam", label: "Visakhapatnam" },
+            { value: "Vadodara", label: "Vadodara" },
+            { value: "Ghaziabad", label: "Ghaziabad" },
+            { value: "Ludhiana", label: "Ludhiana" },
+            { value: "Other", label: "Other" }
+          ]
+        }
+      ]
+    }
+  ]
+};
 
   const loangridItems = [
     // Card items (like Home Loans)
