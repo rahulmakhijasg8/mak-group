@@ -164,10 +164,6 @@ function page() {
     {
       question: "How do I file a claim for medical expenses?",
       answer: "For Cashless Claims (at Network Hospitals):\nIf you're getting treated at a network (cashless) hospital, please carry the following basic documents:\n\nPAN Card and Aadhaar Card\nCancelled Cheque (for any refunds, if needed)\nInsurance Policy Copy (soft copy is acceptable)\nOur team will help coordinate with the hospital and insurer to ensure a smooth cashless process.\n\nFor Reimbursement Claims (Non-Network Hospitals):\nIf you are admitted to a non-network hospital, don't worry—we offer complete in-house claim processing.\nJust provide us with all original bills, receipts, and relevant medical documents, and we will handle the entire reimbursement process on your behalf."
-    },
-    {
-      question: "Can I buy a used car with a loan?",
-      answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
     }
   ];
 

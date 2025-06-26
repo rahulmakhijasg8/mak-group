@@ -3,8 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import HeroSection from "@/components/hero.jsx";
-import SectionHeader from "@/components/heading";
-import TwoCardRow from "@/components/twocardrow";
+import FiveCardRow from "@/components/twocardrow";
 import SectionHeading from "@/components/stackedheading";
 import StatsGrid from "@/components/statsgrid";
 import TestimonialCarousel from "@/components/testimonialcarousal";
@@ -14,7 +13,8 @@ import Navbar from "@/components/navbar";
 
 
 export default function Home() {
-  const insuranceCard = {
+  const cardsArray = [
+  {
     icon: <Image src="/insurance-removebg-preview.png" alt="Insurance" width={60} height={60} />,
     title: "Insurance",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
@@ -22,17 +22,44 @@ export default function Home() {
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Chat with us on WhatsApp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
-  };
-  
-  const investmentCard = {
+  },
+  {
     icon: <Image src="/sm-removebg-preview.png" alt="Investments" width={60} height={60} />,
-    title: "Investments",
+    title: "Stock Market",
+    description: "Invest wisely in the stock market with guidance from our highly experienced sub-brokers at IIFL Securities.",
+    primaryButtonText: "Book A Free Call Now",
+    primaryButtonLink: "/book-call",
+    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonLink: "https://wa.me/yourphonenumber"
+  },
+  {
+    icon: <Image src="/car.png" alt="Insurance" width={60} height={60} />,
+    title: "Cars",
+    description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
+    primaryButtonText: "Book A Free Call Now",
+    primaryButtonLink: "/book-call",
+    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonLink: "https://wa.me/yourphonenumber"
+  },
+  {
+    icon: <Image src="/loan_products-removebg-preview.png" alt="Investments" width={60} height={60} />,
+    title: "Loans",
     description: "Grow your wealth with our expertly managed investment portfolios tailored to your goals.",
     primaryButtonText: "Book A Free Call Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Chat with us on WhatsApp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
-  };
+  },
+  {
+    icon: <Image src="/liquidity-removebg-preview.png" alt="Insurance" width={60} height={60} />,
+    title: "Investment",
+    description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
+    primaryButtonText: "Book A Free Call Now",
+    primaryButtonLink: "/book-call",
+    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonLink: "https://wa.me/yourphonenumber"
+  }
+];
 
   const statCards = [
     {
@@ -109,7 +136,7 @@ export default function Home() {
       </h1>
       
       <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] md:text-[20px] mb-8 tracking-normal leading-relaxed md:leading-[1.6]">
-        At MAK GROUP, we provide comprehensive solutions for insurance, stock market investments, finance, cars, and real estate. With over 15 years of experience and a dedicated team of experts, we are committed to helping you achieve your financial goals.
+        At MAK GROUP, we provide comprehensive solutions for insurance, stock market investments, finance, cars, and real estate. With over 60 years of experience and a dedicated team of experts, we are committed to helping you achieve your financial goals.
       </p>
       
       <div>
@@ -156,7 +183,7 @@ export default function Home() {
   />
 </div>
     <SectionHeading className="mt-[60px] md:mt-[100px]" title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
-    <TwoCardRow card1={insuranceCard} card2={investmentCard} />
+    <FiveCardRow cards={cardsArray} />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
     <StatsGrid cards={statCards} />
     <HeroSection title="Ready to Take Control of Your Financial Future?" darkMode={true} imageContainerClass="w-[120%] h-[100%]" description="Let’s work together to plan, protect, and grow your wealth. Schedule your free consultation now." 

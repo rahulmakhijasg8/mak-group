@@ -22,7 +22,7 @@ export default function Footer({
     { href: 'real-estate', label: 'Real Estate' },
     { href: 'cars', label: 'Cars' },
     { href: 'sm-services', label: 'Stock Market Services' },
-    { href: 'finance-solutions', label: 'Finance Solutions' },
+    { href: 'finance-solutions', label: 'Loans/Financing' },
     { href: 'insurance-solutions', label: 'Insurance Solutions' },
     { href: 'medical-insurance', label: 'Medical Insurance' },
     { href: 'vehicle-insurance', label: 'Vehicle Insurance' },
@@ -175,9 +175,9 @@ export default function Footer({
                     onMouseLeave={handleServicesMouseLeave}
                   >
                     <div className="flex items-center cursor-pointer">
-                      <Link href="/services" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
+                      <p  className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                         Services
-                      </Link>
+                      </p>
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className={`ml-1 h-3 w-3 transition-transform duration-300 ${servicesOpen ? 'rotate-180' : ''}`}

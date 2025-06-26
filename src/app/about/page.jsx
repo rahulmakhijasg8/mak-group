@@ -47,17 +47,17 @@ function about() {
     {
       image: "/PinakAroskar.jpeg",
       name: "Pinak S. Aroskar",
-      position: "Director for Loans/Fnancing"
+      position: "Director for Loans/Financing"
     },
     {
       image: "/AnkitaMakhija.jpeg",
       name: "Ankita K. Makhija",
-      position: ""
+      position: "Business Development Officer"
     },
     {
       image: "/ArneshMakhija.jpeg",
       name: "Arnesh K. Makhija",
-      position: ""
+      position: "Business Development Officer"
     }
   ];
 

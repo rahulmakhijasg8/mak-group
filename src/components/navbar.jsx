@@ -70,7 +70,7 @@ export default function Navbar() {
     { href: 'real-estate', label: 'Real Estate' },
     { href: 'cars', label: 'Cars' },
     { href: 'sm-services', label: 'Stock Market Services' },
-    { href: 'finance-solutions', label: 'Finance Solutions' },
+    { href: 'finance-solutions', label: 'Loans/Financing' },
     { href: 'insurance-solutions', label: 'Insurance Solutions' },
     { href: 'medical-insurance', label: 'Medical Insurance' },
     { href: 'vehicle-insurance', label: 'Vehicle Insurance' },
