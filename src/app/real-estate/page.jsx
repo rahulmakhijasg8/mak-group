@@ -162,48 +162,53 @@ function services() {
   buttonLink="/properties"
 
   items={[
-    {
-      price: "Rs. 1.5 Crore",
-      title: "Apartment",
-      imageSrc: "/Rectangle 35.jpg",
-      location: "Mumbai",
-      beds: "2 Beds",
-      area: "1,200 sq. ft."
-    },
-    {
-      price: "Rs. 1.5 Crore",
-      title: "Apartment",
-      imageSrc: "/Rectangle 35.jpg",
-      location: "Mumbai",
-      beds: "2 Beds",
-      area: "1,200 sq. ft."
-    },
-    {
-      price: "Rs. 1.5 Crore",
-      title: "Apartment",
-      imageSrc: "/Rectangle 35.jpg",
-      location: "Mumbai",
-      beds: "2 Beds",
-      area: "1,200 sq. ft."
-    },
-    {
-      price: "Rs. 1.5 Crore",
-      title: "Apartment",
-      imageSrc: "/Rectangle 35.jpg",
-      location: "Mumbai",
-      beds: "2 Beds",
-      area: "1,200 sq. ft."
-    },
-    {
-      price: "Rs. 1.5 Crore",
-      title: "Apartment",
-      imageSrc: "/Rectangle 35.jpg",
-      location: "Mumbai",
-      beds: "2 Beds",
-      area: "1,200 sq. ft."
-    },
-    // Add more properties...
-  ]}
+  {
+    price: "Rs. 1.5 Crore",
+    title: "Apartment",
+    imageSrc: "/Rectangle 35.jpg",
+    location: "Mumbai",
+    beds: "2 Beds",
+    area: "1,200 sq. ft.",
+    type: "Sale"
+  },
+  {
+    price: "Rs. 35,000/month",
+    title: "Apartment",
+    imageSrc: "/Rectangle 35.jpg",
+    location: "Mumbai",
+    beds: "2 Beds",
+    area: "1,200 sq. ft.",
+    type: "Rent"
+  },
+  {
+    price: "Rs. 2.2 Crore",
+    title: "Apartment",
+    imageSrc: "/Rectangle 35.jpg",
+    location: "Mumbai",
+    beds: "2 Beds",
+    area: "1,200 sq. ft.",
+    type: "Sale"
+  },
+  {
+    price: "Rs. 42,000/month",
+    title: "Apartment",
+    imageSrc: "/Rectangle 35.jpg",
+    location: "Mumbai",
+    beds: "2 Beds",
+    area: "1,200 sq. ft.",
+    type: "Rent"
+  },
+  {
+    price: "Rs. 1.8 Crore",
+    title: "Apartment",
+    imageSrc: "/Rectangle 35.jpg",
+    location: "Mumbai",
+    beds: "2 Beds",
+    area: "1,200 sq. ft.",
+    type: "Sale"
+  },
+  // Add more properties...
+]}
 />
 <StackedHeading className='md:mt-[75px]' title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust, and Integrity." />
 <TestimonialCarousel testimonials={testimonials} />

@@ -11,54 +11,62 @@ const GridItem = ({
   description,   // description text (for cards)
   imageSrc,      // main image URL (for image type)
   imageAlt,      // image alt text
-  link = '#',    // link URL
+  link,          // link URL (optional - no default)
   accentColor = '#FF9F43' // color for the icon background (for cards)
 }) => {
-  // Card layout (like Home Loans example)
-  if (type === 'card') {
-    return (
-      <Link href={link} className="block h-full">
-        <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] md:max-w-[400px] p-5 md:p-6 h-[280px]">
-          {/* Icon with accent color background */}
-            {icon && (
-                <div className='flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18'>
-              <Image 
-                src={icon} 
-                alt="" 
-                width={500} 
-                height={500}
-                className="w-16 h-16"
-              />
-              </div>
-            )}
-          
-          {/* Title */}
-          <h3 className="text-lg font-[600] text-[#000000] mb-2">{title}</h3>
-          
-          {/* Description */}
-          <p className="text-[#000000D6] font-[400] text-sm">{description}</p>
-        </div>
-      </Link>
-    );
-  }
-  
-  // Image layout (like Investment example)
-  return (
-    <Link href={link} className="block h-full">
-      <div className="bg-white rounded-[40px] md:rounded-[20px] h-[280px] max-w-[400px] overflow-hidden">
-        {/* Main image */}
-        <div className="relative w-full h-full">
+  // Card content
+  const cardContent = (
+    <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] md:max-w-[400px] p-5 md:p-6 h-[280px]">
+      {/* Icon with accent color background */}
+      {icon && (
+        <div className='flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18'>
           <Image 
-            src={imageSrc || '/placeholder.jpg'} 
-            alt={imageAlt || title}
+            src={icon} 
+            alt="" 
+            width={500} 
             height={500}
-            width={500}
-            cover='true'
-            className="h-full w-full object-fill"
+            className="w-16 h-16"
           />
         </div>
+      )}
+      
+      {/* Title */}
+      <h3 className="text-lg font-[600] text-[#000000] mb-2">{title}</h3>
+      
+      {/* Description */}
+      <p className="text-[#000000D6] font-[400] text-sm">{description}</p>
+    </div>
+  );
+
+  // Image content
+  const imageContent = (
+    <div className="bg-white rounded-[40px] md:rounded-[20px] h-[280px] max-w-[400px] overflow-hidden">
+      {/* Main image */}
+      <div className="relative w-full h-full">
+        <Image 
+          src={imageSrc || '/placeholder.jpg'} 
+          alt={imageAlt || title}
+          height={500}
+          width={500}
+          cover='true'
+          className="h-full w-full object-fill"
+        />
       </div>
+    </div>
+  );
+
+  // Choose content based on type
+  const content = type === 'card' ? cardContent : imageContent;
+  
+  // If link is provided, wrap in Link, otherwise just return the content
+  return link ? (
+    <Link href={link} className="block h-full">
+      {content}
     </Link>
+  ) : (
+    <div className="block h-full">
+      {content}
+    </div>
   );
 };
 

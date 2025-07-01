@@ -4,7 +4,7 @@ import React from 'react'
 import InsuranceHero from '@/components/insurancehero'
 import StackedHeading from '@/components/stackedheading'
 import TwoCardRow from '@/components/twocardrow'
-import MultiStepForm from '@/components/multistepform/multistepform'
+import SingleForm from '@/components/singleform'
 import StatsGrid from '@/components/statsgrid'
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
@@ -80,42 +80,6 @@ function page() {
             required: true,
           },
         ],
-      },
-      {
-        id: "insuranceDetails",
-        title: "Insurance Details",
-        subtitle: "Tell us about your insurance needs",
-        fields: [
-          {
-            id: "insuranceBrand",
-            type: "text",
-            label: "Brand",
-            placeholder: "Enter Insurer/Brand Name",
-            required: true
-          },
-          {
-            id: "coveragePeriod",
-            type: "number",
-            label: "Years of Coverage",
-            placeholder: "Enter Number Of Years",
-            required: true
-          },
-          {
-            id: "insuranceType",
-            type: "select",
-            label: "Plan Type",
-            placeholder: "Select Plan Yype",
-            required: true,
-            options: [
-              { value: "individual", label: "Individual" },
-              { value: "family", label: "Family" },
-              { value: "senior", label: "Senior Citizen" },
-              { value: "critical", label: "Critical Illness" },
-              { value: "maternity", label: "Maternity" },
-              { value: "group", label: "Group Health" }
-            ]
-          },
-        ]
       }
     ]
   };
@@ -258,7 +222,7 @@ function page() {
         <h3 className="font-['Lato'] px-5 md:px-80 pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
         Interested in learning more about how our medical insurance plans can protect you and your family? Get a free quote today by providing us with the following details:
         </h3>
-        <MultiStepForm 
+        <SingleForm 
           config={medicalInsuranceFormConfig}
           onComplete={handleFormComplete}
           // Add email configuration

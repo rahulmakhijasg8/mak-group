@@ -76,7 +76,7 @@ function page() {
         },
         {
           question: "How do I open a Demat and trading account with MAK GROUP?",
-          answer: "To open a Demat and trading account with MAK GROUP, simply provide us with the required details and documents listed in the \"Open Your Free Demat Account\" section above. Our team will guide you through the account opening process."
+          answer: "To open a Demat and trading account with IIFL Securities, simply provide us with the required details and documents listed in the \"Open Your Free Demat Account\" section above. Our team will guide you through the account opening process."
         },
         {
           question: "What are the charges for trading in the stock market?",
@@ -131,72 +131,85 @@ function page() {
 });
 
       const carFormConfig = {
-        steps: [
-          {
-            id: "personalDetails",
-            title: "Personal Details",
-            subtitle: "To open your account, simply provide:",
-            fields: [
-              {
-                id: "Name",
-                type: "text",
-                label: "Name",
-                placeholder: "Enter Your Name",
-                required: true
-              },
-    
-              {
-                id: "Contact Number",
-                type: "number",
-                label: "Contact Number",
-                placeholder: "Write Your Contact Number",
-                required: true,
-                isPhone: true
-              },
-    
-              {
-                id: "email",
-                type: "email",
-                label: "Email",
-                placeholder: "Write Your Email Address",
-                required: true,
-              },
-              {
-                id: "pan card",
-                type: "text",
-                label: "Pan Card",
-                placeholder: "Write Your Pan Card Number",
-                required: true,
-              },
-              {
-                id: "cancelled cheque",
-                type: "file",
-                label: "Cancelled Cheque",
-                placeholder: "Cancelled Cheque Pdf",
-                required: true,
-              },
-              {
-                id: "selfie",
-                type: "image",
-                label: "Passport Size Photo",
-                placeholder: "Upload Your Photo",
-                required: true,
-              },
-              {
-                id: "signature",
-                type: "file",
-                label: "Signature",
-                placeholder: "Upload Your Signature",
-                required: true,
-              },
-              // ...other fields
-            ]},
+  steps: [
+    {
+      id: "personalDetails",
+      title: "Personal Details",
+      subtitle: "To open your account, simply provide:",
+      fields: [
+        {
+          id: "Name",
+          type: "text",
+          label: "Name",
+          placeholder: "Enter Your Name",
+          required: true
+        },
+        {
+          id: "Contact Number",
+          type: "number",
+          label: "Contact Number",
+          placeholder: "Write Your Contact Number",
+          required: true,
+          isPhone: true
+        },
+        {
+          id: "email",
+          type: "email",
+          label: "Email",
+          placeholder: "Write Your Email Address",
+          required: true,
+        },
+        {
+          id: "pan card",
+          type: "text",
+          label: "Pan Card Number",
+          placeholder: "Write Your Pan Card Number",
+          required: true,
+        },
+        {
+          id: "pan card file",
+          type: "file",
+          label: "Pan Card",
+          placeholder: "Upload Pan Card PDF/Image",
+          required: true,
+        },
+        {
+          id: "aadhaar card",
+          type: "file",
+          label: "Aadhaar Card",
+          placeholder: "Upload Aadhaar Card PDF/Image",
+          required: true,
+        },
+        {
+          id: "cancelled cheque",
+          type: "file",
+          label: "Cancelled Cheque",
+          placeholder: "Cancelled Cheque PDF",
+          required: true,
+        },
+        {
+          id: "selfie",
+          type: "image",
+          label: "Passport Size Photo",
+          placeholder: "Upload Your Photo",
+          required: true,
+        },
+        {
+          id: "signature",
+          type: "file",
+          label: "Signature",
+          placeholder: "Upload Your Signature",
+          required: true,
+        }
+      ]
+    }
+  
         ]}
 
   return (
     <div>
       <Navbar/>
-        <GreenImageHero title="Stock Market Services" description="At MAK GROUP, we offer comprehensive stock market services as sub-brokers with IIFL Securities. Our experienced team, with over 15 years of expertise, is committed to providing you with the best and most customized service and guidance to help you navigate the stock market with confidence."
+        <GreenImageHero title="Stock Market Services" description="At MAK GROUP, we offer comprehensive stock market services as a franchise (sub-brokers) of IIFL Securities. Our experienced team, with over 15 years of expertise, is committed to providing you with the best and most customized service and guidance to help you navigate the stock market with confidence."
                         imageSrc="/Rectangle 50.jpg" imageAlt="Stck Market Bull" />
         <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Your Stock Market Investments?" subtitle="Trusted by Over 400 Clients. Powered by Experience." />
         <StatsGrid cards={smstats} />
@@ -214,7 +227,7 @@ function page() {
 
         <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
-      Open Your Free Demat Account 
+      Open Your Free IIFL Demat Account 
         </h2>
         
         <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">

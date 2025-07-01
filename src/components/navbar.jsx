@@ -8,6 +8,7 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [insuranceSubmenuOpen, setInsuranceSubmenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
   const servicesRef = useRef(null);
@@ -28,8 +29,24 @@ export default function Navbar() {
 
     // Close dropdown when clicking outside
     const handleClickOutside = (event) => {
+      // Don't close if clicking on a link - let navigation happen
+      if (event.target.closest('a')) {
+        return;
+      }
+      
+      // Don't close if clicking on a button inside the menu
+      if (event.target.closest('button') && menuRef.current && menuRef.current.contains(event.target)) {
+        return;
+      }
+      
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setIsMenuOpen(false);
+        setServicesOpen(false);
+        setInsuranceSubmenuOpen(false);
+      }
+      if (servicesRef.current && !servicesRef.current.contains(event.target)) {
+        setServicesOpen(false);
+        setInsuranceSubmenuOpen(false);
       }
     };
 
@@ -45,7 +62,7 @@ export default function Navbar() {
         clearTimeout(closeTimeout.current);
       }
     };
-  }, []);
+  }, []); // Remove dependency array issues
   
   // Function to handle mouse enter for services dropdown
   const handleServicesMouseEnter = () => {
@@ -62,22 +79,47 @@ export default function Navbar() {
     // Set a timeout to close the dropdown after a delay
     closeTimeout.current = setTimeout(() => {
       setServicesOpen(false);
-    }, 300); // 300ms delay gives user time to move to the dropdown
+      setInsuranceSubmenuOpen(false);
+    }, 300);
+  };
+
+  // Function to handle insurance submenu
+  const handleInsuranceMouseEnter = () => {
+    // Clear any pending close timeout
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    setInsuranceSubmenuOpen(true);
+  };
+
+  const handleInsuranceMouseLeave = () => {
+    // Don't immediately close submenu, let the main services handler manage it
+    closeTimeout.current = setTimeout(() => {
+      setInsuranceSubmenuOpen(false);
+    }, 300);
   };
   
-  // Service links for dropdown
-  const serviceLinks = [
-    { href: 'real-estate', label: 'Real Estate' },
-    { href: 'cars', label: 'Cars' },
-    { href: 'sm-services', label: 'Stock Market Services' },
-    { href: 'finance-solutions', label: 'Loans/Financing' },
-    { href: 'insurance-solutions', label: 'Insurance Solutions' },
-    { href: 'medical-insurance', label: 'Medical Insurance' },
-    { href: 'vehicle-insurance', label: 'Vehicle Insurance' },
-    { href: 'life-insurance', label: 'Life Insurance' },
-    { href: 'travel-insurance', label: 'Travel Insurance' },
-    { href: 'commercial-insurance', label: 'Commercial Insurance' },
+  // Main service links (only 5)
+  const mainServiceLinks = [
+    { href: '/real-estate', label: 'Real Estate' },
+    { href: '/cars', label: 'Cars' },
+    { href: '/sm-services', label: 'Stock Market Services' },
+    { href: '/finance-solutions', label: 'Loans/Financing' },
+    { href: '/insurance-solutions', label: 'Insurance Solutions', hasSubmenu: true },
   ];
+
+  // Insurance sub-links
+  const insuranceLinks = [
+    { href: '/medical-insurance', label: 'Medical Insurance' },
+    { href: '/vehicle-insurance', label: 'Vehicle Insurance' },
+    { href: '/life-insurance', label: 'Life Insurance' },
+    { href: '/travel-insurance', label: 'Travel Insurance' },
+    { href: '/commercial-insurance', label: 'Commercial Insurance' },
+  ];
+
+  // All service links for mobile and active state checking
+  const allServiceLinks = [...mainServiceLinks.filter(link => !link.hasSubmenu), ...insuranceLinks];
 
   // Function to check if a link is active
   const isActive = (href) => {
@@ -86,7 +128,7 @@ export default function Navbar() {
     }
     // Check if any services page is active
     if (href === '/services') {
-      return serviceLinks.some(service => pathname.startsWith(service.href));
+      return allServiceLinks.some(service => pathname.startsWith(service.href));
     }
     return pathname.startsWith(href);
   };
@@ -136,7 +178,28 @@ export default function Navbar() {
           border: 1px solid #e5e7eb;
           border-radius: 0.375rem;
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-          overflow: hidden;
+          overflow: visible;
+        }
+
+        .insurance-submenu {
+          position: absolute;
+          left: 100%;
+          top: 0;
+          width: 220px;
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 0.375rem;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+          margin-left: 4px;
+          z-index: 60;
+        }
+
+        .insurance-item {
+          position: relative;
+        }
+
+        .insurance-item:hover .insurance-submenu {
+          display: block;
         }
       `}</style>
 
@@ -152,7 +215,7 @@ export default function Navbar() {
             bg-transparent
             transition-all
             duration-300
-            ${scrolled ? 'shadow-md sticky top-0 z-50' : ''}
+            ${scrolled ? 'shadow-md sticky top-0 z-50 bg-white' : ''}
           `}
         >
           {/* Logo - Responsive height (larger on desktop) */}
@@ -160,9 +223,9 @@ export default function Navbar() {
             <Image
               src="/Mak Group Logo 1.svg"
               alt="MAK GROUP Logo"
-              height={52}
+              height={208}
               width={208}
-              className="h-11 lg:h-13 w-auto"
+              className="h-11 lg:h-16 w-auto"
             />
           </Link>
 
@@ -210,15 +273,14 @@ export default function Navbar() {
               About
             </Link>
             
-            {/* Services Dropdown - Desktop */}
+            {/* Services Dropdown - Desktop (NOT CLICKABLE) */}
             <div 
               className="relative mr-9"
               ref={servicesRef}
               onMouseEnter={handleServicesMouseEnter}
               onMouseLeave={handleServicesMouseLeave}
             >
-              <Link 
-                href={serviceLinks[0].href}
+              <button 
                 className={`
                   font-['Lexend'] 
                   text-base 
@@ -227,8 +289,10 @@ export default function Navbar() {
                   flex items-center
                   nav-link
                   cursor-pointer
-                  no-underline 
                   hover:underline
+                  bg-transparent
+                  border-none
+                  outline-none
                   ${isActive('/services') 
                     ? 'active' 
                     : 'text-[#000000D6]'
@@ -244,7 +308,7 @@ export default function Navbar() {
                 >
                   <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                 </svg>
-              </Link>
+              </button>
               
               {/* Services Dropdown Content with better hover area */}
               {servicesOpen && (
@@ -255,21 +319,82 @@ export default function Navbar() {
                 >
                   <div className="services-dropdown-content w-56">
                     <div className="py-2">
-                      {serviceLinks.map((service) => (
-                        <Link 
-                          key={service.href}
-                          href={service.href} 
-                          className={`
-                            block px-4 py-3 text-sm hover:bg-gray-50 
-                            font-['Lexend'] no-underline hover:underline
-                            ${pathname.startsWith(service.href) 
-                              ? 'font-medium text-[#221241]' 
-                              : 'text-[#000000D6]'
-                            }
-                          `}
-                        >
-                          {service.label}
-                        </Link>
+                      {mainServiceLinks.map((service, index) => (
+                        <div key={service.label || index} className="relative">
+                          {service.hasSubmenu ? (
+                            // Insurance Solutions with submenu
+                            <div
+                              className="insurance-item relative"
+                              onMouseEnter={handleInsuranceMouseEnter}
+                              onMouseLeave={handleInsuranceMouseLeave}
+                            >
+                              <Link 
+                                href={service.href}
+                                className={`
+                                  flex items-center justify-between px-4 py-3 text-sm hover:bg-gray-50 cursor-pointer
+                                  font-['Lexend'] no-underline hover:underline
+                                  ${insuranceLinks.some(link => pathname.startsWith(link.href)) || pathname.startsWith(service.href)
+                                    ? 'font-[400] text-[#221241]' 
+                                    : 'font-[300] text-[#000000D6]'
+                                  }
+                                `}
+                              >
+                                <span>{service.label}</span>
+                                <svg 
+                                  xmlns="http://www.w3.org/2000/svg" 
+                                  className="h-4 w-4" 
+                                  viewBox="0 0 20 20" 
+                                  fill="currentColor"
+                                >
+                                  <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                                </svg>
+                              </Link>
+                              
+                              {/* Insurance Submenu */}
+                              {insuranceSubmenuOpen && (
+                                <div 
+                                  className="insurance-submenu"
+                                  onMouseEnter={handleInsuranceMouseEnter}
+                                  onMouseLeave={handleInsuranceMouseLeave}
+                                >
+                                  <div className="py-2">
+                                    {insuranceLinks.map((insurance) => (
+                                      <Link 
+                                        key={insurance.href}
+                                        href={insurance.href} 
+                                        className={`
+                                          block px-4 py-3 text-sm hover:bg-gray-50 
+                                          font-['Lexend'] no-underline hover:underline
+                                          ${pathname.startsWith(insurance.href) 
+                                            ? 'font-[400] text-[#221241]' 
+                                            : 'font-[300] text-[#000000D6]'
+                                          }
+                                        `}
+                                      >
+                                        {insurance.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+                            </div>
+                          ) : (
+                            // Regular service links
+                            <Link 
+                              href={service.href} 
+                              className={`
+                                block px-4 py-3 text-sm hover:bg-gray-50 
+                                font-['Lexend'] no-underline hover:underline
+                                ${pathname.startsWith(service.href) 
+                                  ? 'font-[400] text-[#221241]' 
+                                  : 'font-[300] text-[#000000D6]'
+                                }
+                              `}
+                            >
+                              {service.label}
+                            </Link>
+                          )}
+                        </div>
                       ))}
                     </div>
                   </div>
@@ -355,14 +480,15 @@ export default function Navbar() {
                     About
                   </Link>
                   
-                  {/* Services Mobile Toggle - Simplified Implementation */}
+                  {/* Services Mobile Toggle - Shows nested structure */}
                   <div>
                     {/* Services Header */}
-                    <div 
+                    <button 
                       onClick={() => setServicesOpen(!servicesOpen)}
                       className={`
-                        block px-4 py-3 hover:bg-gray-50 cursor-pointer
+                        w-full text-left px-4 py-3 hover:bg-gray-50 cursor-pointer
                         nav-link flex items-center justify-between
+                        bg-transparent border-none outline-none
                         ${isActive('/services') ? 'active' : 'text-[#000000D6]'}
                       `}
                     >
@@ -375,27 +501,105 @@ export default function Navbar() {
                       >
                         <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
                       </svg>
-                    </div>
+                    </button>
                     
-                    {/* Service Links */}
+                    {/* Service Links - Mobile shows nested structure */}
                     {servicesOpen && (
                       <div className="bg-gray-50 py-1">
-                        {serviceLinks.map((service) => (
-                          <Link 
-                            key={service.href}
-                            href={service.href} 
-                            className={`
-                              block px-8 py-3 hover:bg-gray-100 text-sm
-                              font-['Lexend'] no-underline hover:underline
-                              ${pathname.startsWith(service.href) 
-                                ? 'font-medium text-[#221241]' 
-                                : 'text-[#000000D6]'
-                              }
-                            `}
-                            onClick={() => setIsMenuOpen(false)}
-                          >
-                            {service.label}
-                          </Link>
+                        {mainServiceLinks.map((service) => (
+                          <div key={service.label}>
+                            {service.hasSubmenu ? (
+                              // Insurance Solutions with submenu for mobile
+                              <div>
+                                {/* Mobile: Add click handler to toggle submenu while still being a link */}
+                                <div onClick={(e) => {
+                                  // Check if clicking on the arrow area (right side)
+                                  const rect = e.currentTarget.getBoundingClientRect();
+                                  const clickX = e.clientX - rect.left;
+                                  const arrowAreaStart = rect.width - 40; // Approximate arrow area
+                                  
+                                  if (clickX > arrowAreaStart) {
+                                    // Clicked on arrow - toggle submenu
+                                    e.preventDefault();
+                                    e.stopPropagation();
+                                    setInsuranceSubmenuOpen(!insuranceSubmenuOpen);
+                                  }
+                                  // Otherwise, let the Link handle navigation
+                                }}>
+                                  <Link
+                                    href={service.href}
+                                    className={`
+                                      w-full text-left px-8 py-3 hover:bg-gray-100 text-sm cursor-pointer
+                                      font-['Lexend'] flex items-center justify-between no-underline hover:underline
+                                      ${insuranceLinks.some(link => pathname.startsWith(link.href)) || pathname.startsWith(service.href)
+                                        ? 'font-[400] text-[#221241]' 
+                                        : 'font-[300] text-[#000000D6]'
+                                      }
+                                    `}
+                                    onClick={() => {
+                                      setIsMenuOpen(false);
+                                    }}
+                                  >
+                                    <span>{service.label}</span>
+                                    <svg 
+                                      xmlns="http://www.w3.org/2000/svg" 
+                                      className={`h-4 w-4 transition-transform duration-300 ${insuranceSubmenuOpen ? 'rotate-180' : ''}`}
+                                      viewBox="0 0 20 20" 
+                                      fill="currentColor"
+                                      onClick={(e) => {
+                                        e.preventDefault();
+                                        e.stopPropagation();
+                                        setInsuranceSubmenuOpen(!insuranceSubmenuOpen);
+                                      }}
+                                    >
+                                      <path fillRule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" />
+                                    </svg>
+                                  </Link>
+                                </div>
+                                
+                                {/* Insurance submenu items */}
+                                {insuranceSubmenuOpen && (
+                                  <div className="bg-gray-100 py-1">
+                                    {insuranceLinks.map((insurance) => (
+                                      <Link 
+                                        key={insurance.href}
+                                        href={insurance.href} 
+                                        className={`
+                                          block px-12 py-3 hover:bg-gray-200 text-sm
+                                          font-['Lexend'] no-underline hover:underline
+                                          ${pathname.startsWith(insurance.href) 
+                                            ? 'font-[400] text-[#221241]' 
+                                            : 'font-[300] text-[#000000D6]'
+                                          }
+                                        `}
+                                        onClick={() => {
+                                          setIsMenuOpen(false);
+                                        }}
+                                      >
+                                        {insurance.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ) : (
+                              // Regular service links
+                              <Link 
+                                href={service.href} 
+                                className={`
+                                  block px-8 py-3 hover:bg-gray-100 text-sm
+                                  font-['Lexend'] no-underline hover:underline
+                                  ${pathname.startsWith(service.href) 
+                                    ? 'font-[400] text-[#221241]' 
+                                    : 'font-[300] text-[#000000D6]'
+                                  }
+                                `}
+                                onClick={() => setIsMenuOpen(false)}
+                              >
+                                {service.label}
+                              </Link>
+                            )}
+                          </div>
                         ))}
                       </div>
                     )}

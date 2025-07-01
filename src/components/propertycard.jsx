@@ -6,7 +6,8 @@ export default function PropertyListingCard({
   imageSrc,
   location,
   beds,
-  area
+  area,
+  type = "Sale" // New prop: "Sale" or "Rent"
 }) {
   return (
     <div className="bg-white rounded-[20px] overflow-hidden min-w-[240px] h-[320px] w-[300px] mx-2">
@@ -22,9 +23,20 @@ export default function PropertyListingCard({
       </div>
       
       {/* Content Area */}
-      <div className="px-5 pb-4">
+      <div className="px-5 pb-4 relative">
+        {/* Sale/Rent Badge on card content area */}
+        <div className={`
+          absolute top-[0px] right-4 px-3 py-1 rounded-full text-xs font-medium font-['Lexend']
+          ${type === "Rent" 
+            ? "bg-[#FF6B6B] text-white" 
+            : "bg-[#4EBA64] text-white"
+          }
+        `}>
+          {type === "Rent" ? "For Rent" : "For Sale"}
+        </div>
+
         {/* Price - before the title */}
-        <p className="font-['Lexend'] text-[#4EBA64] text-sm font-medium mb-1">
+        <p className="font-['Lexend'] text-[#4EBA64] text-sm font-medium mb-1 mt-2">
           {price}
         </p>
         

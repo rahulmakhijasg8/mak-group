@@ -62,6 +62,21 @@ function page() {
             subtitle: "Our experts will help you choose the best travel insurance plan to suit your needs and budget.",
             fields: [
               {
+            id: "personName",
+            type: "text",
+            label: "Name",
+            placeholder: "Enter Your Name",
+            required: true
+          },
+          {
+            id: "contactNumber",
+            type: "number",
+            label: "Contact Number",
+            placeholder: "Your Phone Number",
+            required: true,
+            isPhone: true
+          },
+              {
                 id: "destination",
                 type: "text",
                 label: "Destination",
@@ -202,7 +217,7 @@ function page() {
               config={carFormConfig} 
               onComplete={handleFormSubmit} // Changed from handleFormComplete
               submitButtonText='Request a Quote' 
-              submitButtonIconType='whatsapp'
+              submitButtonIconType='mail'
             />
           </>
         )}

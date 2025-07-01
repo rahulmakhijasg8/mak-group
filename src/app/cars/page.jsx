@@ -38,6 +38,21 @@ function page() {
       subtitle: "Just share your car's details and our team will handle the rest.",
       fields: [
         {
+            id: "personName",
+            type: "text",
+            label: "Name",
+            placeholder: "Enter Your Name",
+            required: true
+          },
+          {
+            id: "contactNumber",
+            type: "number",
+            label: "Contact Number",
+            placeholder: "Your Phone Number",
+            required: true,
+            isPhone: true
+          },
+        {
           id: "Carmake",
           type: "text",
           label: "Car Make",
@@ -351,7 +366,7 @@ function page() {
     <HeroSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
                   primaryButtonText="Apply for a Car Loan" paddingClass='md:pt-30 md:pb-8' primaryButtonIconType='gamepad' secondaryButtonLink="#" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
     <HeroSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."
-                  primaryButtonText="Get a Car Insurance Quote" paddingClass='md:pb-30' primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="#" imageContainerClass='h-[370px] w-[100%]' />
+                  primaryButtonText="Get a Car Insurance Quote" paddingClass='md:pb-30' primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="/vehicle-insurance" imageContainerClass='h-[370px] w-[100%]' />
     <PropertyCarousel
   title="Browse Featured Used Cars"
   subtitle="Handpicked, Certified Vehicles with Verified History"

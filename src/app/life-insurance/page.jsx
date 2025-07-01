@@ -111,7 +111,7 @@ function page() {
 
 <RESection title="Types of Life Insurance Investments" subtitle="Choose a Plan That Matches Your Life Stage & Goals"
                   page='life' cards={lifeInsuranceCards} />
-<BulletHeroSection imageSrc="/life-insurance.png" primaryButtonText="Apply for a Loan Now" primaryButtonLink="#" imageAlt="test" title="Benefits of MAK GROUP’s Life Insurance Plans" bulletPoints={[
+<BulletHeroSection imageSrc="/life-insurance.png" primaryButtonText="Get Insured Now" primaryButtonLink="#" imageAlt="test" title="Benefits of MAK GROUP’s Life Insurance Plans" bulletPoints={[
         {
           title: "",
           description: "Customizable plans to suit your specific needs and budget"

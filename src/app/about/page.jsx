@@ -11,32 +11,37 @@ import Navbar from "@/components/navbar";
 
 function about() {
   const statCards = [
-    {
-      iconSrc: "insurance-removebg-preview.png",
-      iconAlt: "Insurance",
-      text: "Insurance"
-    },
-    {
-      iconSrc: "sm-removebg-preview.png",
-      iconAlt: "Stock Market",
-      text: "Stock Market"
-    },
-    {
-      iconSrc: "finance-removebg-preview.png",
-      iconAlt: "Finance",
-      text: "Finance"
-    },
-    {
-      iconSrc: "car.png",
-      iconAlt: "Car",
-      text: "Car"
-    },
-    {
-      iconSrc: "reale_state-removebg-preview.png",
-      iconAlt: "Real Estate",
-      text: "Real Estate"
-    }
-  ];
+  {
+    iconSrc: "insurance-removebg-preview.png",
+    iconAlt: "Insurance",
+    text: "Insurance",
+    link: "/insurance-solutions"
+  },
+  {
+    iconSrc: "sm-removebg-preview.png",
+    iconAlt: "Stock Market",
+    text: "Stock Market",
+    link: "/sm-services"
+  },
+  {
+    iconSrc: "finance-removebg-preview.png",
+    iconAlt: "Finance",
+    text: "Finance",
+    link: "/finance-solutions"
+  },
+  {
+    iconSrc: "car.png",
+    iconAlt: "Car",
+    text: "Car",
+    link: "/cars"
+  },
+  {
+    iconSrc: "reale_state-removebg-preview.png",
+    iconAlt: "Real Estate",
+    text: "Real Estate",
+    link: "/real-estate"
+  }
+];
 
   const teamMembers = [
     {
@@ -52,12 +57,12 @@ function about() {
     {
       image: "/AnkitaMakhija.jpeg",
       name: "Ankita K. Makhija",
-      position: "Business Development Officer"
+      position: "Partner"
     },
     {
       image: "/ArneshMakhija.jpeg",
       name: "Arnesh K. Makhija",
-      position: "Business Development Officer"
+      position: "Partner"
     }
   ];
 

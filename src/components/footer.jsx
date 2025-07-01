@@ -10,8 +10,8 @@ export default function Footer({
   title = "Contact Us",
   description = "Have a question or need assistance? We're here to help. Contact us today to learn more about how MAK GROUP can help you secure your financial future.",
   address = "702, Amore Edge, S.V. Road, Khar West, Mumbai 400052",
-  phone = "+91-123-456-7890",
-  email = "info@makgroup.com"
+  phone = "+91-8591353530",
+  email = "contact@makgroup.co.in"
 }) {
   // State for dropdown
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -81,7 +81,7 @@ export default function Footer({
           
           {/* Contact Info Links - Now with even spacing */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            {/* Address */}
+            {/* Address - Now clickable */}
             <div className="flex mb-4 items-start">
               <div className="text-[#4EBA64] mr-4 mt-1">
                 <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -89,24 +89,32 @@ export default function Footer({
                   <path d="M10 18.3333C11.6667 16.1667 16.6667 12.9 16.6667 8C16.6667 4.31811 13.6819 1.33333 10 1.33333C6.31811 1.33333 3.33333 4.31811 3.33333 8C3.33333 12.9 8.33333 16.1667 10 18.3333Z" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <p className="font-['Lato'] text-[#000000D6] md:pr-10 font-normal text-[16px] leading-6">
+              <a 
+                href="https://www.google.com/maps?ll=19.066175,72.837508&z=17&t=m&hl=en&gl=IN&mapclient=embed&cid=17486866551807270920"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-['Lato'] text-[#000000D6] md:pr-10 font-normal text-[16px] leading-6 hover:text-[#4EBA64] transition-colors duration-300 hover:underline"
+              >
                 {address}
-              </p>
+              </a>
             </div>
             
-            {/* Phone */}
+            {/* Phone - Now clickable */}
             <div className="flex mb-4 items-start">
               <div className="text-[#4EBA64] mr-4 mt-1">
                 <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M18.3333 14.1V16.6C18.3343 16.8321 18.2867 17.0618 18.1937 17.2744C18.1008 17.487 17.9644 17.6779 17.7934 17.8348C17.6224 17.9917 17.4204 18.1112 17.2005 18.1855C16.9806 18.2599 16.7477 18.2876 16.5167 18.2667C13.9523 17.9881 11.4891 17.0962 9.32498 15.6667C7.31151 14.3515 5.60443 12.6444 4.28915 10.631C2.85001 8.45523 1.95809 5.98067 1.68332 3.40834C1.66236 3.17767 1.68993 2.94513 1.76388 2.72555C1.83784 2.50598 1.95665 2.30422 2.11273 2.13329C2.26881 1.96236 2.45888 1.82588 2.67065 1.73265C2.88241 1.63941 3.11137 1.59132 3.34332 1.59167H5.84332C6.25465 1.58767 6.65362 1.73089 6.96854 1.99611C7.28346 2.26133 7.49084 2.63066 7.54999 3.03667C7.65331 3.82505 7.84331 4.59642 8.11665 5.33667C8.23174 5.63067 8.25714 5.95502 8.19011 6.26474C8.12309 6.57447 7.96709 6.85567 7.74165 7.0675L6.76665 8.0425C8.00081 10.1282 9.70414 11.8316 11.7897 13.0658L12.7647 12.0908C12.9765 11.8654 13.2577 11.7094 13.5674 11.6424C13.8772 11.5753 14.2015 11.6007 14.4955 11.7158C15.2358 11.9892 16.0071 12.1792 16.7955 12.2825C17.2062 12.3423 17.579 12.5529 17.8451 12.8721C18.1112 13.1914 18.254 13.5953 18.25 14.0108L18.3333 14.1Z" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6">
+              <a 
+                href={`tel:${phone}`}
+                className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6 hover:text-[#4EBA64] transition-colors duration-300 hover:underline"
+              >
                 {phone}
-              </p>
+              </a>
             </div>
             
-            {/* Email */}
+            {/* Email - Now clickable */}
             <div className="flex items-start">
               <div className="text-[#4EBA64] mr-4 mt-1">
                 <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -114,9 +122,12 @@ export default function Footer({
                   <path d="M18.3333 5L9.99999 10.8333L1.66666 5" stroke="#4EBA64" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
-              <p className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6">
+              <a 
+                href={`mailto:${email}`}
+                className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6 hover:text-[#4EBA64] transition-colors duration-300 hover:underline"
+              >
                 {email}
-              </p>
+              </a>
             </div>
           </div>
         </div>

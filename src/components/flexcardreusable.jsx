@@ -59,39 +59,49 @@ const GridItem = ({
 }) => {
   // Card layout (like Home Loans example)
   if (type === 'card') {
-    return (
-      // <Link href={link} className="block h-full">
-        <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-full overflow-auto">
-          {/* Icon with accent color background */}
-          {icon && (
-            <div className='flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18'>
-              <Image 
-                src={icon} 
-                alt="" 
-                width={500} 
-                height={500}
-                className="w-16 h-16"
-              />
-            </div>
-          )}
-          
-          {/* Title */}
-          <h3 className="text-lg font-[600] text-[#000000] mb-2">{title}</h3>
-          
-          {/* Description with formatted content */}
-          <div className="description">
+    const cardContent = (
+      <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-full overflow-auto transition-transform duration-200 hover:scale-[1.02]">
+        {/* Icon with accent color background */}
+        {icon && (
+          <div className='flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18'>
+            <Image 
+              src={icon} 
+              alt="" 
+              width={500} 
+              height={500}
+              className="w-16 h-16"
+            />
+          </div>
+        )}
+        
+        {/* Title */}
+        <h3 className="text-lg font-[600] text-[#000000] mb-2">{title}</h3>
+        
+        {/* Description with formatted content */}
+        <div className="description">
           {formatDescription(description)}
           {linkbtn && (
             <div style={{ marginTop: '0.5rem' }}>
-              <a href={link} target='_blank' style={{ color: '#4EBA64',fontWeight: 400, textDecoration: 'underline' }}>
+              <span style={{ color: '#4EBA64', fontWeight: 400, textDecoration: 'underline' }}>
                 Learn More
-              </a>
+              </span>
             </div>
           )}
         </div>
-        </div>
-      // </Link>
+      </div>
     );
+
+    // If linkbtn is true and link is provided, make the whole card clickable
+    if (linkbtn && link && link !== '#') {
+      return (
+        <a href={link} target='_blank' className="block h-full cursor-pointer">
+          {cardContent}
+        </a>
+      );
+    }
+
+    // Otherwise, return non-clickable card
+    return cardContent;
   }
   
   // Image layout (like Investment example)

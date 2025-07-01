@@ -19,7 +19,6 @@ function page() {
           icon: '/HOME 1.png',
           title: 'Home Loans',
           description: 'Turn your dream of homeownership into a reality with our competitive home loan options. We offer attractive interest rates, flexible features, and hassle-free processing.',
-          link: '#',
           accentColor: '#FF9F43'
         },
         {
@@ -27,7 +26,6 @@ function page() {
           icon: '/car l.png',
           title: 'Car Loans',
           description: 'Get behind the wheel of your dream car with our car loan offerings. We have partnered with leading banks and financial institutions to provide you with the best deals and seamless financing.',
-          link: '#',
           accentColor: '#4EBA64'
         },
         // Image item (like Investment)
@@ -35,8 +33,7 @@ function page() {
           type: 'image',
           title: 'INVESTMENT',
           imageSrc: '/Rectangle 59.jpg',
-          imageAlt: 'Investment options on laptop screen',
-          link: '/products/investments'
+          imageAlt: 'Investment options on laptop screen'
         },
         // More items to complete the grid...
         {
@@ -44,7 +41,6 @@ function page() {
           icon: '/secured l.png',
           title: 'Secured Loans',
           description: 'Leverage your assets to secure the funds you need. Our secured loan options include loans against property, gold loans, and more.',
-          link: '#',
           accentColor: '#55A5FF'
         },
         {
@@ -52,7 +48,6 @@ function page() {
             icon: '/us-removebg-preview (1).png',
             title: 'Unscured Loans',
             description: 'Meet your financial needs without pledging any collateral. We offer unsecured loans with minimum documentation and quick disbursal.',
-            link: '#',
             accentColor: '#55A5FF'
           },
           {
@@ -60,7 +55,6 @@ function page() {
             icon: '/personal_loan-removebg-preview.png',
             title: 'Personal Loans',
             description: 'From unexpected expenses to planned celebrations, our personal loans are designed to help you meet your financial goals with ease.',
-            link: '#',
             accentColor: '#55A5FF'
           },
           {
@@ -68,7 +62,6 @@ function page() {
             icon: '/Business Loans.png',
             title: 'Business Loans',
             description: 'Fuel your business growth with our business loan options. We offer loans for working capital, equipment purchase, expansion, and more.',
-            link: '#',
             accentColor: '#55A5FF'
           },
           {
@@ -76,7 +69,6 @@ function page() {
             icon: '/working capital.png',
             title: 'Working Capital',
             description: 'Ensure smooth cash flow for your business with our working capital solutions. We provide overdraft facilities, cash credit, and more to help you manage your day-to-day operations.',
-            link: '#',
             accentColor: '#55A5FF'
           },
           {
@@ -84,22 +76,19 @@ function page() {
             icon: '/Bank Guarantee.png',
             title: 'Bank Guarantee',
             description: 'Secure your business transactions with our bank guarantee services. We assist in obtaining performance guarantees, financial guarantees, and other types of bank guarantees.',
-            link: '#',
             accentColor: '#55A5FF'
           },
           {
             type: 'image',
             title: 'INVESTMENT',
             imageSrc: '/Rectangle 60.jpg',
-            imageAlt: 'Investment options on laptop screen',
-            link: '/products/investments'
+            imageAlt: 'Investment options on laptop screen'
           },
           {
             type: 'card',
             icon: '/Cash Credit (CC).png',
             title: 'Cash Credit (CC)',
             description: 'Meet your short-term business requirements with our cash credit facilities. We offer flexible limits and competitive interest rates.',
-            link: '#',
             accentColor: '#55A5FF'
           },
           {
@@ -107,7 +96,6 @@ function page() {
             icon: '/sp-removebg-preview.png',
             title: 'Surrogate Products',
             description: 'Explore alternative financing options with our surrogate products. We offer innovative solutions tailored to your specific needs.',
-            link: '#',
             accentColor: '#55A5FF'
           },
         // Add more items to fill the 3x4 grid (12 items total)
@@ -174,6 +162,7 @@ function page() {
   imageSrc="/Rectangle 51.jpg"
   imageAlt="Loans"
   reverseLayout={false}
+  primaryButtonText="Chat with us on Whatsapp" primaryButtonIconType='whatsapp' primaryButtonLink="#"
 />
     <SectionHeader title="Explore Our Loan Solutions" description="Loans Designed to Fit Every Stage of Life and Business" />
     <LoanGridLayout items={loangridItems} />
