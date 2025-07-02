@@ -118,6 +118,16 @@ function page() {
               title: 'Transport',
               description: "Ensure the safety of your goods and cargo during transportation with MAK GROUP's Marine Insurance product.",
             },
+            {
+  icon: '/financial_protection.png',
+  title: 'Cyber Protection',
+  description: 'Protect your business from cyber threats, data breaches, hacking attempts, and online fraud. Coverage includes financial losses from cyber attacks, data recovery costs, and business interruption due to cyber incidents.',
+},
+{
+  icon: '/Commercial_Insurance-removebg-preview.png',
+  title: 'Trade Credit',
+  description: 'Minimize the impact of customer payment defaults on your business. Coverage against bad debts, insolvency, and debtor defaults to maintain steady cash flow.',
+}
           ]}
           cardWidth={{ mobile: '95%', desktop: '38%'}} page='commercial' // Responsive width
         />

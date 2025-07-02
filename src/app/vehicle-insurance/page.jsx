@@ -102,13 +102,49 @@ function page() {
                 isPhone: true
               },
     
-              {
-                id: "vehicleNumber",
-                type: "text",
-                label: "Vehicle Registration Number",
-                placeholder: "Eg. MH-01-XY-0000",
-                required: true,
-              },
+              // Updated field configuration with Indian vehicle registration validation
+{
+  id: "vehicleNumber",
+  type: "text",
+  label: "Vehicle Registration Number",
+  placeholder: "Eg. MH-01-XY-0000",
+  required: true,
+  validation: (value) => {
+    if (!value) return null; // Required validation is handled separately
+    
+    // Indian vehicle registration number regex pattern
+    // Format: XX-00-XX-0000 or XX00XX0000 (with or without hyphens)
+    // XX = State code (2 letters)
+    // 00 = District code (2 digits)  
+    // XX = Series (1-2 letters)
+    // 0000 = Unique number (4 digits)
+    
+    const indianVehicleRegex = /^[A-Z]{2}[-\s]?[0-9]{2}[-\s]?[A-Z]{1,2}[-\s]?[0-9]{4}$/i;
+    
+    // Remove spaces and convert to uppercase for validation
+    const cleanValue = value.replace(/\s+/g, '').toUpperCase();
+    
+    // Check if it matches the pattern
+    if (!indianVehicleRegex.test(cleanValue)) {
+      return "Please enter a valid Indian vehicle registration number (e.g., MH-01-XY-0000)";
+    }
+    
+    // Additional validation: Check if state code exists (optional)
+    const stateCodes = [
+      'AP', 'AR', 'AS', 'BR', 'CG', 'GA', 'GJ', 'HR', 'HP', 'JK', 'JH', 
+      'KA', 'KL', 'MP', 'MH', 'MN', 'ML', 'MZ', 'NL', 'OD', 'PB', 'RJ', 
+      'SK', 'TN', 'TS', 'TR', 'UP', 'UK', 'WB', 'AN', 'CH', 'DN', 'DD', 
+      'DL', 'LD', 'PY'
+    ];
+    
+    const stateCode = cleanValue.substring(0, 2);
+    if (!stateCodes.includes(stateCode)) {
+      return "Please enter a valid Indian state code (e.g., MH, DL, KA, etc.)";
+    }
+    
+    return null; // No error
+  }
+},
               {
                 id: "vehicleMake",
                 type: "text",
