@@ -370,8 +370,6 @@ function page() {
     <PropertyCarousel
   title="Browse Featured Used Cars"
   subtitle="Handpicked, Certified Vehicles with Verified History"
-  buttonText="View More Cars"
-  buttonLink="/cars"
   items={[
     {
       price: "₹5.5 Lakhs",

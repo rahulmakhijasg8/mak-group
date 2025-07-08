@@ -158,8 +158,8 @@ function services() {
 <PropertyCarousel
   title="Featured Properties"
   subtitle="Explore Our Latest Listings Across Prime Locations"
-  buttonText="View More Properties"
-  buttonLink="/properties"
+  // buttonText="View More Properties"
+  // buttonLink="/properties"
 
   items={[
   {

@@ -9,11 +9,12 @@ import CarListingCard from "./carcard";
 export default function PropertyCarousel({
   title,
   subtitle,
-  buttonText = "View All Properties",
-  buttonLink = "/properties",
+  buttonText,
+  buttonLink,
   items = [],
   type = "property", // "property" or "car"
-  darkMode = false
+  darkMode = false,
+  showButton = true // New prop to control button visibility
 }) {
   const carouselRef = useRef(null);
 
@@ -21,6 +22,9 @@ export default function PropertyCarousel({
   const bgColor = darkMode ? "bg-[#221241]" : "bg-[#FAFAFA]";
   const titleColor = darkMode ? "text-[#FFFFFF]" : "text-[#221241]";
   const subtitleColor = darkMode ? "text-[#B7C7E7]" : "text-[#000000D6]";
+
+  // Only show button if showButton is true AND both buttonText and buttonLink are provided
+  const shouldShowButton = showButton && buttonText && buttonLink;
 
   return (
     <section style={{
@@ -51,15 +55,17 @@ export default function PropertyCarousel({
               </div>
             </div>
             
-            {/* Button on the right */}
-            <div className="pl-6 md:pr-[calc(12px+2px)]">
-              <Link 
-                href={buttonLink}
-                className="inline-flex items-center px-5 py-4 md:py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all"
-              >
-                {buttonText}
-              </Link>
-            </div>
+            {/* Button on the right - only show if shouldShowButton is true */}
+            {shouldShowButton && (
+              <div className="pl-6 md:pr-[calc(12px+2px)]">
+                <Link 
+                  href={buttonLink}
+                  className="inline-flex items-center px-5 py-4 md:py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all"
+                >
+                  {buttonText}
+                </Link>
+              </div>
+            )}
           </div>
           
           {/* Carousel container */}
@@ -100,7 +106,7 @@ export default function PropertyCarousel({
           {/* Carousel for desktop */}
           <div 
             ref={carouselRef}
-            className="flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-16 pr-4 mb-[46px]"
+            className={`flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-16 pr-4 ${shouldShowButton ? 'mb-[46px]' : 'mb-8'}`}
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             <style jsx>{`
@@ -119,15 +125,17 @@ export default function PropertyCarousel({
             ))}
           </div>
 
-          {/* Centered button below carousel for desktop */}
-          <div className="flex justify-center">
-            <Link 
-              href={buttonLink}
-              className="inline-flex items-center px-5 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
-            >
-              {buttonText}
-            </Link>
-          </div>
+          {/* Centered button below carousel for desktop - only show if shouldShowButton is true */}
+          {shouldShowButton && (
+            <div className="flex justify-center">
+              <Link 
+                href={buttonLink}
+                className="inline-flex items-center px-5 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all"
+              >
+                {buttonText}
+              </Link>
+            </div>
+          )}
         </div>
 
       </div>

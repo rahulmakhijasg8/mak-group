@@ -12,10 +12,13 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const menuRef = useRef(null);
   const servicesRef = useRef(null);
+  const insuranceRef = useRef(null);
   const pathname = usePathname();
   
   // Add delay for dropdown closing
   const closeTimeout = useRef(null);
+  const insuranceTimeout = useRef(null);
+  const hoverAreaTimeout = useRef(null);
 
   // Handle scroll effect for navbar
   useEffect(() => {
@@ -61,6 +64,12 @@ export default function Navbar() {
       if (closeTimeout.current) {
         clearTimeout(closeTimeout.current);
       }
+      if (insuranceTimeout.current) {
+        clearTimeout(insuranceTimeout.current);
+      }
+      if (hoverAreaTimeout.current) {
+        clearTimeout(hoverAreaTimeout.current);
+      }
     };
   }, []); // Remove dependency array issues
   
@@ -70,6 +79,10 @@ export default function Navbar() {
     if (closeTimeout.current) {
       clearTimeout(closeTimeout.current);
       closeTimeout.current = null;
+    }
+    if (insuranceTimeout.current) {
+      clearTimeout(insuranceTimeout.current);
+      insuranceTimeout.current = null;
     }
     setServicesOpen(true);
   };
@@ -85,17 +98,49 @@ export default function Navbar() {
 
   // Function to handle insurance submenu
   const handleInsuranceMouseEnter = () => {
-    // Clear any pending close timeout
+    // Clear ALL pending timeouts
     if (closeTimeout.current) {
       clearTimeout(closeTimeout.current);
       closeTimeout.current = null;
+    }
+    if (insuranceTimeout.current) {
+      clearTimeout(insuranceTimeout.current);
+      insuranceTimeout.current = null;
+    }
+    if (hoverAreaTimeout.current) {
+      clearTimeout(hoverAreaTimeout.current);
+      hoverAreaTimeout.current = null;
     }
     setInsuranceSubmenuOpen(true);
   };
 
   const handleInsuranceMouseLeave = () => {
-    // Don't immediately close submenu, let the main services handler manage it
-    closeTimeout.current = setTimeout(() => {
+    // Use a longer timeout for insurance submenu to handle quick movements
+    insuranceTimeout.current = setTimeout(() => {
+      setInsuranceSubmenuOpen(false);
+    }, 400);
+  };
+
+  // New function to handle insurance submenu content hover
+  const handleInsuranceSubmenuEnter = () => {
+    // Clear ALL pending timeouts when entering submenu
+    if (insuranceTimeout.current) {
+      clearTimeout(insuranceTimeout.current);
+      insuranceTimeout.current = null;
+    }
+    if (closeTimeout.current) {
+      clearTimeout(closeTimeout.current);
+      closeTimeout.current = null;
+    }
+    if (hoverAreaTimeout.current) {
+      clearTimeout(hoverAreaTimeout.current);
+      hoverAreaTimeout.current = null;
+    }
+  };
+
+  const handleInsuranceSubmenuLeave = () => {
+    // Close submenu when leaving the submenu area with a delay
+    hoverAreaTimeout.current = setTimeout(() => {
       setInsuranceSubmenuOpen(false);
     }, 300);
   };
@@ -184,13 +229,13 @@ export default function Navbar() {
         .insurance-submenu {
           position: absolute;
           left: 100%;
-          top: 0;
+          top: -4px;
           width: 220px;
           background: white;
           border: 1px solid #e5e7eb;
           border-radius: 0.375rem;
           box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-          margin-left: 4px;
+          margin-left: 0px;
           z-index: 60;
         }
 
@@ -198,8 +243,27 @@ export default function Navbar() {
           position: relative;
         }
 
-        .insurance-item:hover .insurance-submenu {
-          display: block;
+        /* Enhanced hover bridge for better UX */
+        .insurance-item::before {
+          content: '';
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          width: 16px;
+          height: calc(100% + 16px);
+          background: transparent;
+          z-index: 55;
+        }
+
+        .insurance-item::after {
+          content: '';
+          position: absolute;
+          top: 0;
+          right: -8px;
+          width: 12px;
+          height: 100%;
+          background: transparent;
+          z-index: 55;
         }
       `}</style>
 
@@ -325,6 +389,7 @@ export default function Navbar() {
                             // Insurance Solutions with submenu
                             <div
                               className="insurance-item relative"
+                              ref={insuranceRef}
                               onMouseEnter={handleInsuranceMouseEnter}
                               onMouseLeave={handleInsuranceMouseLeave}
                             >
@@ -354,8 +419,8 @@ export default function Navbar() {
                               {insuranceSubmenuOpen && (
                                 <div 
                                   className="insurance-submenu"
-                                  onMouseEnter={handleInsuranceMouseEnter}
-                                  onMouseLeave={handleInsuranceMouseLeave}
+                                  onMouseEnter={handleInsuranceSubmenuEnter}
+                                  onMouseLeave={handleInsuranceSubmenuLeave}
                                 >
                                   <div className="py-2">
                                     {insuranceLinks.map((insurance) => (
