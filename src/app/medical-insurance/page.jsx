@@ -146,7 +146,7 @@ function page() {
       }}>
         <Navbar/>
         <InsuranceHero greentitle="Medical Insurance:" title="Protecting Your Health and Finances"
-            description="At MAK GROUP, we offer a wide range of services to cater to all your car-related needs. Whether you're looking to buy a new or used car, sell your existing vehicle, or secure a car loan or insurance, we've got you covered."
+            description="At MAK GROUP, we understand that your health is your most valuable asset. That's why we offer comprehensive medical insurance solutions to help you and your family stay protected against the high costs of healthcare."
             imageSrc="/Rectangle 53.jpg"
             imageAlt="insurance"
             reverseLayout={false} />
