@@ -113,24 +113,28 @@ function page() {
         const insuranceFaqs = [
     {
       question: "Is travel insurance mandatory for international trips?",
-      answer: "Term life insurance provides coverage for a specific period (such as 10, 20, or 30 years), while whole life insurance offers coverage for your entire lifetime, typically up to age 100. Term plans are generally more affordable but expire at the end of the term without any return if unused. Whole life insurance, though more expensive, builds cash value over time and provides lifelong protection regardless of health changes."
-    },
-    {
-      question: "What is the difference between single-trip and multi-trip travel insurance?",
-      answer: "Single-trip travel insurance covers you for one specific trip, while multi-trip insurance provides coverage for multiple trips within a specified period, usually one year."
-    },
-    {
-      question: "Are pre-existing medical conditions covered under travel insurance?",
-      answer: "No, premiums paid for personal life insurance policies are not tax-deductible. However, the life insurance benefits offer significant tax advantages. The death benefit paid to your beneficiaries is completely tax-free. Additionally, if your policy offers maturity benefits, these proceeds are also tax-exempt under current tax laws, making life insurance an effective tax-free wealth transfer tool."
+      answer: "Many embassies do require it for visa approval—especially Schengen countries, the USA, the UK, and others.\n\nRegardless of requirement, having travel insurance is highly recommended as medical expenses abroad can be extremely high. Travel insurance protects you from unforeseen costs like hospital bills, trip cancellations, baggage loss, or personal liability during your trip."
     },
     {
       question: "Can I extend my travel insurance coverage during my trip?",
-      answer: "The appropriate amount of life insurance coverage should be determined by evaluating three key factors: your outstanding liabilities (such as mortgage, loans, and debts), your financial goals (children's education, spouse's retirement, etc.), and your current income level. A common approach is to secure coverage that's 10-15 times your annual income, but your specific circumstances may require adjustments to this formula. Consider consulting with a financial advisor who can help assess your unique situation."
+      answer: "Yes, you can often extend your travel insurance coverage during your trip, but there are conditions and limitations.\n\nYou will typically need to request the extension before your current policy expires and often while you are still abroad, subject to eligibility criteria and submitting required documents like a good health declaration."
     },
     {
       question: "How do I file a claim under my travel insurance policy?",
-      answer: "If you outlive a standard term life insurance policy, the coverage simply ends and no benefits are paid. However, there are specialized term policies that offer a Return of Premium (ROP) feature. With an ROP policy, if you survive the term period, the insurer returns all or a significant portion of the premiums you've paid throughout the policy term. These ROP policies typically have higher premiums than standard term policies but provide this money-back benefit if you outlive the policy term."
-    }
+      answer: "1. For Cashless Hospitalization:\nIf hospitalization is for more than 24 hours, and the hospital is in the network, the claim can be processed on a cashless basis. Submit your Health ID or policy details at the hospital's insurance desk, and they will coordinate with the insurer directly.\n\n2. For Reimbursement Claims:\nIf you were unable to file a cashless claim while abroad, you can file a reimbursement claim once you're back in India.\n\nCollect all required documents such as:\n• Hospital bills & medical reports\n• Passport copy with immigration stamp\n• Flight tickets or boarding pass\n• Duly filled claim form\n\nOn reaching back, you can send all the documents to us and we will handle it from there."
+    },
+    {
+      question: "Are pre-existing medical conditions covered under travel insurance?",
+      answer: "Yes, but with limited coverage. Most travel insurance plans cover life-threatening situations arising from pre-existing diseases (PEDs).\n\nFor example, some TATA AIG policies cover PEDs up to USD 20,000, depending on the sum insured and plan selected. It's important to disclose all pre-existing conditions at the time of policy purchase to ensure claim eligibility and transparency."
+    },
+    {
+      question: "Is there a limit on how much the travel insurance will pay for medical treatment abroad?",
+      answer: "The policy offers Unlimited Sum Insured, with coverage of up to sum insured per incident or loss, arising from any different illness or injury. This means that each medical emergency is treated as a separate event, and upto the sum insured it can be claimed for each of such event, subject to policy terms and conditions."
+    },
+    // {
+    //   question: "What is the difference between single-trip and multi-trip travel insurance?",
+    //   answer: "Single-trip travel insurance covers you for one specific trip, while multi-trip insurance provides coverage for multiple trips within a specified period, usually one year."
+    // },
   ];
 
 

@@ -372,52 +372,114 @@ function page() {
   subtitle="Handpicked, Certified Vehicles with Verified History"
   items={[
     {
-      price: "₹5.5 Lakhs",
-      title: "Maruti Suzuki Swift",
-      imageSrc: "/Rectangle 46.jpg",
-      year: "2018",
-      transmission: "Manual",
-      fuel: "Petrol",
-      distance: "50,000 km"
+      price: "₹25 Lakhs",
+      title: "Audi A6",
+      imageSrc: "/Audi A6.jpg",
+      year: "2017",
+      transmission: "Automatic",
+      fuel: "Diesel",
+      distance: "25,000 km"
     },
     {
-      price: "₹5.5 Lakhs",
-      title: "Honda City",
-      imageSrc: "/Rectangle 47.jpg",
-      year: "2018",
-      transmission: "Manual",
+      price: "₹42 Lakhs",
+      title: "Audi TT",
+      imageSrc: "/Audi TT.jpg",
+      year: "2017",
+      transmission: "Automatic",
       fuel: "Petrol",
-      distance: "50,000 km"
+      distance: "12,000 km"
     },
     {
-      price: "₹5.5 Lakhs",
-      title: "Maruti Suzuki Swift",
-      imageSrc: "/Rectangle 48.jpg",
-      year: "2018",
-      transmission: "Manual",
-      fuel: "Petrol",
-      distance: "50,000 km"
+      price: "₹50 Lakhs",
+      title: "BMW M4",
+      imageSrc: "/BMW M4.jpg",
+      year: "2014",
+      transmission: "Automatic",
+      fuel: "Diesel",
+      distance: "28,000 km"
     },
     {
-      price: "₹5.5 Lakhs",
-      title: "Maruti Suzuki Swift",
-      imageSrc: "/Rectangle 49.jpg",
+      price: "₹17 Lakhs",
+      title: "Ford Endevour",
+      imageSrc: "/Ford Endevour.jpeg",
       year: "2018",
-      transmission: "Manual",
-      fuel: "Petrol",
-      distance: "50,000 km"
+      transmission: "Automatic",
+      fuel: "Diesel",
+      distance: "35,000 km"
     },
     {
-      price: "₹5.5 Lakhs",
-      title: "Maruti Suzuki Swift",
-      imageSrc: "/Rectangle 49.jpg",
-      year: "2018",
-      transmission: "Manual",
-      fuel: "Petrol",
-      distance: "50,000 km"
+      price: "₹5.25 Lakhs",
+      title: "Hyundai Creta",
+      imageSrc: "/Hyundai Creta.jpeg",
+      year: "2016",
+      transmission: "Automatic",
+      fuel: "Diesel",
+      distance: "53,000 km"
     },
-    // More car items...
-  ]}
+    {
+      price: "₹13.75 Lakhs",
+      title: "Innova Crysta",
+      imageSrc: "/Innova Crysta.jpeg",
+      year: "2019",
+      transmission: "Automatic",
+      fuel: "Diesel",
+      distance: "35,000 km"
+    },
+    {
+      price: "₹14 Lakhs",
+      title: "Jeep Compass",
+      imageSrc: "/Jeep Compass.jpg",
+      year: "2017",
+      transmission: "Automatic",
+      fuel: "Diesel",
+      distance: "45,000 km"
+    },
+    {
+      price: "₹95 Lakhs",
+      title: "Mercedes GLE 53 AMG",
+      imageSrc: "/Mercedes GLE 53 AMG.jpg",
+      year: "2021",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      distance: "38,000 km"
+    },
+    {
+      price: "₹1.5 Crores",
+      title: "Mercedes S Class",
+      imageSrc: "/Mercedes S Class.jpg",
+      year: "2021",
+      transmission: "Automatic",
+      fuel: "Diesel",
+      distance: "6,000 km"
+    },
+    {
+      price: "₹38 Lakhs",
+      title: "Mini Cooper",
+      imageSrc: "/Mini Cooper.jpeg",
+      year: "2020",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      distance: "5,000 km"
+    },
+    {
+      price: "₹2.5 Lakhs",
+      title: "Mitsubishi Pajero",
+      imageSrc: "/Mitsubishi Pajero.jpeg",
+      year: "2006",
+      transmission: "Manual",
+      fuel: "Diesel",
+      distance: "1,25,000 km"
+    },
+    {
+      price: "₹1 Crore",
+      title: "Range Rover Sports SVR",
+      imageSrc: "/Range Rover Sports SVR.jpg",
+      year: "2017",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      distance: "45,000 km"
+    }
+]}
   type="car"
   darkMode={true}
 />
