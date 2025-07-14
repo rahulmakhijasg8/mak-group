@@ -131,27 +131,27 @@ function page() {
       ];
 
       const loanFaqs = [
-        {
-          question: "What is the minimum credit score required to apply for a loan?",
-          answer: "You can schedule a property viewing by contacting our customer service team through our website, calling our office, or using the 'Schedule Viewing' button on any property listing. We typically arrange viewings within 24-48 hours of your request."
-        },
-        {
-          question: "How long does it take to process a loan application?",
-          answer: "The loan processing time depends on the type of loan and the completeness of the documentation provided. Generally, personal loans and car loans can be processed within 24-48 hours, while home loans may take 7-14 days."
-        },
-        {
-          question: "Can I apply for a loan if I am self-employed?",
-          answer: "Yes, we charge a standard brokerage fee of one month's rent for residential properties and 2% of the annual rent for commercial properties. This fee covers all our services including property search, viewings, paperwork, and move-in support."
-        },
-        {
-          question: "Are there any prepayment charges for loans?",
-          answer: "The rental process typically takes 3-7 days from application to move-in. This includes property selection, documentation verification, agreement preparation, and key handover. The timeline may vary depending on property availability and documentation readiness."
-        },
-        {
-          question: "Can I apply for a loan online?",
-          answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
-        }
-      ];
+  {
+    question: "What is the minimum credit score required to apply for a loan?",
+    answer: "The minimum CIBIL score required is 625 for loan applications."
+  },
+  {
+    question: "How long does it take to process a loan application?",
+    answer: "If all the documents are available, it takes approximately one week's time for sanction."
+  },
+  {
+    question: "Can I apply for a loan if I am self-employed?",
+    answer: "Yes, self-employed individuals can apply for loans with us."
+  },
+  {
+    question: "Are there any prepayment charges for loans?",
+    answer: "Prepayment charges depend on the specific loan product and vary from loan to loan."
+  },
+  {
+    question: "Can I apply for a loan online?",
+    answer: "Yes, you can apply for loans through our online application process."
+  }
+];
 
   return (
     <div>
@@ -171,21 +171,25 @@ function page() {
       bulletPoints={[
         {
           title: "Maximum Tenure",
-          description: "We offer loan tenures up to the maximum allowed by the lending institutions, giving you the flexibility to repay at your own pace."
+          description: "We offer loan tenures up to the maximum allowed by the lending institutions, giving you the flexibility to repay at your own pace.",
+          hasAsterisk: true
         },
         {
           title: "No Foreclosure Charges",
-          description: "We believe in transparency and do not charge any foreclosure fees if you choose to prepay your loan."
+          description: "We believe in transparency and do not charge any foreclosure fees if you choose to prepay your loan.",
+          hasAsterisk: true
         },
         {
           title: "No ITR Required",
-          description: "We understand that not everyone files an Income Tax Return (ITR). We offer loan options that do not require ITR, making the process more accessible."
+          description: "We understand that not everyone files an Income Tax Return (ITR). We offer loan options that do not require ITR, making the process more accessible.",
+          hasAsterisk: true
         }
       ]}
       primaryButtonText="Apply for a Loan Now"
       primaryButtonLink="/contact"
       imageSrc="/financial.svg"
       imageAlt="Financial services illustration"
+      showDisclaimer = 'true'
     />
     <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP?" subtitle="Financing Made Simple, Fast, and Transparent" />
     <StatsGrid cards={statCards} />

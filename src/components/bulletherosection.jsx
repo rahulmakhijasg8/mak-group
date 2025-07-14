@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // A custom bullet point component with lightMode support
-const BulletPoint = ({ title, description, lightMode = false }) => (
+const BulletPoint = ({ title, description, lightMode = false, hasAsterisk = false }) => (
   <div className="flex items-start">
     <span className={`text-xl flex-shrink-0 ${lightMode ? 'text-[#000000D6]' : 'text-white'}`} style={{ width: '20px', minWidth: '20px' }}>•</span>
     <div className="flex-1">
@@ -11,10 +11,16 @@ const BulletPoint = ({ title, description, lightMode = false }) => (
         <>
           <span className={`font-bold ${lightMode ? 'text-[#000000D6]' : 'text-white'}`}>{title}</span>
           {lightMode ? " " : <span className={`mx-2`}>:</span>}
-          <span className={`${lightMode ? 'text-[#000000D6]' : 'text-[#FFFFFF]'}`}>{description}</span>
+          <span className={`${lightMode ? 'text-[#000000D6]' : 'text-[#FFFFFF]'}`}>
+            {hasAsterisk && <span className="text-red-500">*</span>}
+            {description}
+          </span>
         </>
       ) : (
-        <span className={`md:text-[20px] ${lightMode ? 'text-[#000000D6]' : 'text-[#B7C7E7] md:text-[#FFFFFF] font-[400]'}`}>{description}</span>
+        <span className={`md:text-[20px] ${lightMode ? 'text-[#000000D6]' : 'text-[#B7C7E7] md:text-[#FFFFFF] font-[400]'}`}>
+          {hasAsterisk && <span className="text-red-500">*</span>}
+          {description}
+        </span>
       )}
     </div>
   </div>
@@ -30,7 +36,9 @@ export default function BulletHeroSection({
   reverseLayout = false,
   secondaryButtonText,
   secondaryButtonLink,
-  lightMode = false
+  lightMode = false,
+  showDisclaimer = false,
+  disclaimerText = "Subject to approval from the Financial Institutions"
 }) {
   return (
     <section 
@@ -59,8 +67,18 @@ export default function BulletHeroSection({
                     title={bullet.title} 
                     description={bullet.description}
                     lightMode={lightMode}
+                    hasAsterisk={bullet.hasAsterisk}
                   />
                 ))}
+                
+                {/* Disclaimer text */}
+                {showDisclaimer && (
+                  <div className="mt-6 pt-4">
+                    <p className={`text-sm italic ${lightMode ? 'text-[#000000D6]' : 'text-[#B7C7E7]'}`}>
+                      <span className="text-red-500">*</span>{disclaimerText}
+                    </p>
+                  </div>
+                )}
               </div>
             )}
           </div>

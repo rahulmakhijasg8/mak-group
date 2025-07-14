@@ -139,23 +139,23 @@ const WhatsAppIcon = ({ className }) => (
   const insuranceFaqs = [
     {
       question: "What types of insurance does MAK GROUP offer?",
-      answer: "You can schedule a property viewing by contacting our customer service team through our website, calling our office, or using the 'Schedule Viewing' button on any property listing. We typically arrange viewings within 24-48 hours of your request."
+      answer: "At MAK GROUP, we offer a comprehensive range of insurance solutions to suit both personal and commercial needs.\n\nOur offerings include:\n• Health Insurance (Individual, Family, Senior Citizens)\n• Motor Insurance (Car, Bike, Commercial Vehicles)\n• Life Insurance\n• Travel Insurance\n• Commercial & Corporate Insurance\n• Fire & Marine Insurance\n\nWhether you're safeguarding your family, vehicle, travels, or business, our expert team is here to guide you to the right policy."
     },
     {
-      question: "How do I choose the right insurance plan?",
-      answer: "Choosing the right insurance plan depends on your specific needs, budget, and risk profile. Our experienced team at MAK GROUP can help you assess your requirements and guide you towards the most suitable insurance solutions. Feel free to contact us for personalized advice."
+      question: "How can I choose the right insurance plan?",
+      answer: "Choosing the right plan depends on your specific needs, lifestyle, and budget.\n\nAt MAK GROUP, our experienced advisors will:\n• Understand your requirements\n• Assess your risk profile\n• Compare suitable options across multiple insurers\n• Help you select a plan that provides maximum value and coverage\n\nFeel free to reach out to us for personalized recommendations."
     },
     {
       question: "Can I customize my insurance coverage?",
-      answer: "Yes, we charge a standard brokerage fee of one month's rent for residential properties and 2% of the annual rent for commercial properties. This fee covers all our services including property search, viewings, paperwork, and move-in support."
+      answer: "Yes, most insurance policies can be tailored to your specific needs. Depending on the product, you can:\n• Choose your sum insured\n• Add riders or add-ons (like maternity cover, critical illness, zero depreciation, etc.)\n• Select flexible tenures and premium options\n\nOur team will guide you through all customization possibilities to ensure your plan is just right for you."
     },
     {
       question: "How can I get a free insurance quote from MAK GROUP?",
-      answer: "The rental process typically takes 3-7 days from application to move-in. This includes property selection, documentation verification, agreement preparation, and key handover. The timeline may vary depending on property availability and documentation readiness."
+      answer: "Getting a quote is quick and easy! You can:\n• Call or WhatsApp our team\n• Fill out a simple form on our website\n• Visit our office for one-on-one consultation\n\nWe'll compare plans from multiple insurers and share the best options tailored to your budget and requirements—with no obligation."
     },
     {
       question: "What should I do if I need to file an insurance claim?",
-      answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
+      answer: "If you need to file a claim, here's what to do:\n\nHealth or Motor Insurance: Contact our claims assistance team or the insurer's helpline immediately.\n• For cashless claims, visit a network hospital/garage and present your policy details.\n• For reimbursement, Contact us and collect all original bills and submit them along with the claim form to us! Rest we will take care.\n\nMAK GROUP offers end-to-end support in claim filing—from documentation to coordination with the insurer—to ensure a smooth and timely process."
     }
   ];
 

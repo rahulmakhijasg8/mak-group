@@ -332,44 +332,10 @@ function page() {
   />
       <StackedHeading  title="Buy New or Certified Used Cars" subtitle="Explore Our Trusted Network of Vehicles at the Best Prices" />
       <TwoCardRow card1={newCar} card2={usedCar} />
-      <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
-      <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
-      Sell Your Car Hassle-Free 
-        </h2>
-        
-        <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
-        Get the Best Value with Our Quick & Easy Process
-        </h3>
-      {submitStatus?.type === 'success' ? (
-    <FormStatusMessage 
-      status={submitStatus} 
-      onReset={resetStatus} 
-    />
-  ) : (
-    <>
-      {/* Show loading/error status above the form */}
-      {submitStatus && (
-        <FormStatusMessage status={submitStatus} />
-      )}
-      
-      {/* Your SingleForm component */}
-      <SingleForm 
-        config={carFormConfig} 
-        onComplete={handleFormSubmit}
-        submitButtonText="Submit Car Details"
-        submitButtonIconType="mail"
-        submitButtonAlign="center"
-      />
-    </>
-  )}
-</div>
-    <HeroSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
-                  primaryButtonText="Apply for a Car Loan" paddingClass='md:pt-30 md:pb-8' primaryButtonIconType='gamepad' secondaryButtonLink="#" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
-    <HeroSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."
-                  primaryButtonText="Get a Car Insurance Quote" paddingClass='md:pb-30' primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="/vehicle-insurance" imageContainerClass='h-[370px] w-[100%]' />
-    <PropertyCarousel
+      <PropertyCarousel
   title="Browse Featured Used Cars"
   subtitle="Handpicked, Certified Vehicles with Verified History"
+  showNavButtons = 'true'
   items={[
     {
       price: "₹25 Lakhs",
@@ -383,7 +349,7 @@ function page() {
     {
       price: "₹42 Lakhs",
       title: "Audi TT",
-      imageSrc: "/Audi TT.jpg",
+      imageSrc: "/Audi TT.JPG",
       year: "2017",
       transmission: "Automatic",
       fuel: "Petrol",
@@ -392,7 +358,7 @@ function page() {
     {
       price: "₹50 Lakhs",
       title: "BMW M4",
-      imageSrc: "/BMW M4.jpg",
+      imageSrc: "/BMW M4.JPG",
       year: "2014",
       transmission: "Automatic",
       fuel: "Diesel",
@@ -446,7 +412,7 @@ function page() {
     {
       price: "₹1.5 Crores",
       title: "Mercedes S Class",
-      imageSrc: "/Mercedes S Class.jpg",
+      imageSrc: "/Mercedes S Class.JPG",
       year: "2021",
       transmission: "Automatic",
       fuel: "Diesel",
@@ -483,6 +449,41 @@ function page() {
   type="car"
   darkMode={true}
 />
+      <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+      <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
+      Sell Your Car Hassle-Free 
+        </h2>
+        
+        <h3 className="font-['Lato'] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
+        Get the Best Value with Our Quick & Easy Process
+        </h3>
+      {submitStatus?.type === 'success' ? (
+    <FormStatusMessage 
+      status={submitStatus} 
+      onReset={resetStatus} 
+    />
+  ) : (
+    <>
+      {/* Show loading/error status above the form */}
+      {submitStatus && (
+        <FormStatusMessage status={submitStatus} />
+      )}
+      
+      {/* Your SingleForm component */}
+      <SingleForm 
+        config={carFormConfig} 
+        onComplete={handleFormSubmit}
+        submitButtonText="Submit Car Details"
+        submitButtonIconType="mail"
+        submitButtonAlign="center"
+      />
+    </>
+  )}
+</div>
+    <HeroSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
+                  primaryButtonText="Apply for a Car Loan" paddingClass='md:pt-30 md:pb-8' primaryButtonIconType='gamepad' secondaryButtonLink="#" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
+    <HeroSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."
+                  primaryButtonText="Get a Car Insurance Quote" paddingClass='md:pb-30' primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="/vehicle-insurance" imageContainerClass='h-[370px] w-[100%]' />
 
 <StackedHeading title="Why Choose MAK GROUP for Your Car Needs?" subtitle="One Place. Multiple Solutions. Total Peace of Mind." />
 <StatsGrid cards={statCards} />

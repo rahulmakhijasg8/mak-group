@@ -184,7 +184,7 @@ function page() {
         const insuranceFaqs = [
     {
       question: "Is third-party liability insurance mandatory?",
-      answer: "You can schedule a property viewing by contacting our customer service team through our website, calling our office, or using the 'Schedule Viewing' button on any property listing. We typically arrange viewings within 24-48 hours of your request."
+      answer: "It is a legal requirement to have third-party insurance when driving a vehicle in India. Third-party insurance covers damages or injuries caused to a third party or their property by the insured vehicle."
     },
     {
       question: "What is the difference between own damage and third-party liability coverage? ",
@@ -192,15 +192,15 @@ function page() {
     },
     {
       question: "Can I customize my vehicle insurance policy with add-ons?",
-      answer: "Yes, we charge a standard brokerage fee of one month's rent for residential properties and 2% of the annual rent for commercial properties. This fee covers all our services including property search, viewings, paperwork, and move-in support."
+      answer: "Add-ons are optional benefits that extend the protection of your standard comprehensive or standalone own damage car insurance policy by covering specific risks that may not be included in the basic policy, such as engine damage, roadside assistance, or zero depreciation cover."
     },
     {
       question: "How do I file a claim for my vehicle insurance?",
-      answer: "The rental process typically takes 3-7 days from application to move-in. This includes property selection, documentation verification, agreement preparation, and key handover. The timeline may vary depending on property availability and documentation readiness."
+      answer: "Contact your insurer as soon as possible after the incident, providing details of the accident, location, and extent of the damage. You can usually do this via their helpline or website."
     },
     {
       question: "How is the premium for my vehicle insurance calculated?",
-      answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
+      answer: "This is based on your car's Insured Declared Value (IDV), which is essentially its current market value minus depreciation based on its age."
     }
   ];
 

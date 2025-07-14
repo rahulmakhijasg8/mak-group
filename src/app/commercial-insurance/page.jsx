@@ -52,7 +52,7 @@ function page() {
     const insuranceFaqs = [
     {
       question: "What types of businesses can benefit from commercial insurance?",
-      answer: "You can schedule a property viewing by contacting our customer service team through our website, calling our office, or using the 'Schedule Viewing' button on any property listing. We typically arrange viewings within 24-48 hours of your request."
+      answer: "Whether a large corporation or a small startup, commercial insurance provides essential financial protection against unexpected events."
     },
     {
       question: "Is commercial insurance mandatory for businesses?",
@@ -60,15 +60,15 @@ function page() {
     },
     {
       question: "Can I customize my commercial insurance policy based on my business needs?",
-      answer: "Yes, we charge a standard brokerage fee of one month's rent for residential properties and 2% of the annual rent for commercial properties. This fee covers all our services including property search, viewings, paperwork, and move-in support."
+      answer: "Enhance your coverage by adding specific features like business interruption insurance, cyber security coverage, or specific protection for equipment or stock."
     },
     {
-      question: "How do I determine the right amount of coverage for my business?",
-      answer: "The rental process typically takes 3-7 days from application to move-in. This includes property selection, documentation verification, agreement preparation, and key handover. The timeline may vary depending on property availability and documentation readiness."
+      question: "How can I determine the right amount of coverage for my business?",
+      answer: "A startup will have different insurance needs than an established, growing enterprise, so tailor your coverage to your current and projected business activities. Seek advice from an insurance agent or broker who can help you analyze your specific business and recommend appropriate coverage limits based on your unique needs and industry standards."
     },
     {
-      question: "How do I file a claim under my commercial insurance policy?",
-      answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
+      question: "How can I file a claim under my commercial insurance policy?",
+      answer: "Contact your insurance company or agent as soon as possible after the incident occurs, as delays can complicate or even lead to denial of your claim."
     }
   ];
 

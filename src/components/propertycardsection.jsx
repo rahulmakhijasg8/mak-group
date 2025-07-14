@@ -1,10 +1,11 @@
 // components/PropertyCarousel.jsx
 "use client"
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import PropertyListingCard from "./propertycard";
 import CarListingCard from "./carcard";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function PropertyCarousel({
   title,
@@ -14,9 +15,12 @@ export default function PropertyCarousel({
   items = [],
   type = "property", // "property" or "car"
   darkMode = false,
-  showButton = true // New prop to control button visibility
+  showButton = true, // New prop to control button visibility
+  showNavButtons = true // New prop to control navigation buttons
 }) {
   const carouselRef = useRef(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
 
   // Dark mode styling
   const bgColor = darkMode ? "bg-[#221241]" : "bg-[#FAFAFA]";
@@ -25,6 +29,87 @@ export default function PropertyCarousel({
 
   // Only show button if showButton is true AND both buttonText and buttonLink are provided
   const shouldShowButton = showButton && buttonText && buttonLink;
+
+  // Check scroll position to show/hide navigation buttons
+  const checkScrollPosition = () => {
+    const container = carouselRef.current;
+    if (!container) return;
+
+    setCanScrollLeft(container.scrollLeft > 0);
+    setCanScrollRight(
+      container.scrollLeft < container.scrollWidth - container.clientWidth
+    );
+  };
+
+  useEffect(() => {
+    if (showNavButtons) {
+      checkScrollPosition();
+      
+      const container = carouselRef.current;
+      if (container) {
+        container.addEventListener('scroll', checkScrollPosition);
+        return () => container.removeEventListener('scroll', checkScrollPosition);
+      }
+    }
+  }, [showNavButtons]);
+
+  // Custom smooth scroll with speed control
+  const smoothScrollTo = (container, targetScrollLeft, duration = 250) => {
+    const startScrollLeft = container.scrollLeft;
+    const distance = targetScrollLeft - startScrollLeft;
+    const startTime = performance.now();
+
+    const animateScroll = (currentTime) => {
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeInOutQuad = progress < 0.5 
+        ? 2 * progress * progress 
+        : 1 - Math.pow(-2 * progress + 2, 2) / 2;
+
+      container.scrollLeft = startScrollLeft + distance * easeInOutQuad;
+
+      if (progress < 1) {
+        requestAnimationFrame(animateScroll);
+      }
+    };
+
+    requestAnimationFrame(animateScroll);
+  };
+
+  const scrollLeft = () => {
+    const container = carouselRef.current;
+    if (!container) return;
+    
+    // Calculate one card width + gap
+    const cardElement = container.querySelector('div > div');
+    if (!cardElement) return;
+    
+    const cardWidth = cardElement.offsetWidth;
+    const gap = 24; // gap-4 = 16px on mobile, gap-6 = 24px on desktop
+    const scrollAmount = cardWidth + gap;
+    
+    const targetScrollLeft = container.scrollLeft - scrollAmount;
+    smoothScrollTo(container, Math.max(0, targetScrollLeft));
+  };
+
+  const scrollRight = () => {
+    const container = carouselRef.current;
+    if (!container) return;
+    
+    // Calculate one card width + gap
+    const cardElement = container.querySelector('div > div');
+    if (!cardElement) return;
+    
+    const cardWidth = cardElement.offsetWidth;
+    const gap = 24; // gap-4 = 16px on mobile, gap-6 = 24px on desktop
+    const scrollAmount = cardWidth + gap;
+    
+    const targetScrollLeft = container.scrollLeft + scrollAmount;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+    smoothScrollTo(container, Math.min(maxScrollLeft, targetScrollLeft));
+  };
 
   return (
     <section style={{
@@ -103,26 +188,51 @@ export default function PropertyCarousel({
             </h3>
           </div>
 
-          {/* Carousel for desktop */}
-          <div 
-            ref={carouselRef}
-            className={`flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-16 pr-4 ${shouldShowButton ? 'mb-[46px]' : 'mb-8'}`}
-            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
-          >
-            <style jsx>{`
-              .scrollbar-hide::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
-            {items.map((item, index) => (
-              <div key={index} className="">
-                {type === "property" ? (
-                  <PropertyListingCard {...item} />
-                ) : (
-                  <CarListingCard {...item} />
-                )}
-              </div>
-            ))}
+          {/* Desktop Carousel with Navigation Buttons */}
+          <div className="relative">
+            {/* Left scroll button - Desktop only */}
+            {showNavButtons && canScrollLeft && (
+              <button
+                onClick={scrollLeft}
+                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
+                aria-label="Scroll left"
+              >
+                <ChevronLeft className="h-5 w-5 text-gray-600" />
+              </button>
+            )}
+
+            {/* Right scroll button - Desktop only */}
+            {showNavButtons && canScrollRight && (
+              <button
+                onClick={scrollRight}
+                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
+                aria-label="Scroll right"
+              >
+                <ChevronRight className="h-5 w-5 text-gray-600" />
+              </button>
+            )}
+
+            {/* Carousel for desktop */}
+            <div 
+              ref={carouselRef}
+              className={`flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-16 pr-4 ${shouldShowButton ? 'mb-[46px]' : 'mb-8'}`}
+              style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+            >
+              <style jsx>{`
+                .scrollbar-hide::-webkit-scrollbar {
+                  display: none;
+                }
+              `}</style>
+              {items.map((item, index) => (
+                <div key={index} className="">
+                  {type === "property" ? (
+                    <PropertyListingCard {...item} />
+                  ) : (
+                    <CarListingCard {...item} />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Centered button below carousel for desktop - only show if shouldShowButton is true */}
