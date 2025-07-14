@@ -18,45 +18,45 @@ export default function Home() {
     icon: <Image src="/insurance-removebg-preview.png" alt="Insurance" width={60} height={60} />,
     title: "Insurance",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
-    primaryButtonText: "Book A Free Call Now",
+    primaryButtonText: "Book A Call Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
   },
   {
     icon: <Image src="/sm-removebg-preview.png" alt="Investments" width={60} height={60} />,
     title: "Stock Market",
     description: "Invest wisely in the stock market with guidance from our highly experienced sub-brokers at IIFL Securities.",
-    primaryButtonText: "Book A Free Call Now",
+    primaryButtonText: "Book A Call Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
   },
   {
     icon: <Image src="/car.png" alt="Insurance" width={60} height={60} />,
     title: "Cars",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
-    primaryButtonText: "Book A Free Call Now",
+    primaryButtonText: "Book A Call Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonText: "Whatsapp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
   },
   {
     icon: <Image src="/loan_products-removebg-preview.png" alt="Investments" width={60} height={60} />,
     title: "Loans",
     description: "Grow your wealth with our expertly managed investment portfolios tailored to your goals.",
-    primaryButtonText: "Book A Free Call Now",
+    primaryButtonText: "Book A Call Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonText: "Whatsapp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
   },
   {
     icon: <Image src="/liquidity-removebg-preview.png" alt="Insurance" width={60} height={60} />,
     title: "Investment",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
-    primaryButtonText: "Book A Free Call Now",
+    primaryButtonText: "Book A Call Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Chat with us on WhatsApp",
+    secondaryButtonText: "Whatsapp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
   }
 ];
@@ -183,7 +183,7 @@ export default function Home() {
   />
 </div>
     <SectionHeading className="mt-[60px] md:mt-[100px]" title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
-    <FiveCardRow cards={cardsArray} />
+    <FiveCardRow cards={cardsArray} layout="grid" />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
     <StatsGrid cards={statCards} />
     <HeroSection title="Ready to Take Control of Your Financial Future?" darkMode={true} imageContainerClass="w-[120%] h-[100%]" description="Let’s work together to plan, protect, and grow your wealth. Schedule your free consultation now." 

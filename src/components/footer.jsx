@@ -4,7 +4,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React, { useState, useRef } from 'react';
-import NewsletterForm from './newsletterform';
 
 export default function Footer({ 
   title = "Contact Us",
@@ -136,10 +135,10 @@ export default function Footer({
       {/* Dark Purple Footer Section - Adjusted for 50% overlap */}
       <div className="bg-[#221241] w-full pt-64 pb-12 px-6 md:px-22 mt-[-180px]">
         <div className="mx-auto">
-          {/* Modified grid with different column widths on desktop */}
-          <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-8">
-            {/* Support Links - reduced to 1/6 on desktop */}
-            <div className="md:col-span-1">
+          {/* Grid layout - side by side on mobile, keep original desktop layout */}
+          <div className="grid grid-cols-2 gap-8 md:flex md:flex-row md:justify-center md:items-start md:space-x-96 md:gap-0 mb-8">
+            {/* Support Links */}
+            <div className="">
               <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
                 Support
               </h3>
@@ -162,8 +161,8 @@ export default function Footer({
               </ul>
             </div>
             
-            {/* Company Links with Services Dropdown - reduced to 1/6 on desktop */}
-            <div className="md:col-span-1 relative">
+            {/* Company Links with Services Dropdown */}
+            <div className="relative">
               <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
                 Company
               </h3>
@@ -186,7 +185,7 @@ export default function Footer({
                     onMouseLeave={handleServicesMouseLeave}
                   >
                     <div className="flex items-center cursor-pointer">
-                      <p  className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
+                      <p className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                         Services
                       </p>
                       <svg 
@@ -222,14 +221,6 @@ export default function Footer({
                   </div>
                 </li>
               </ul>
-            </div>
-            
-            {/* Newsletter Subscription - expanded to 4/6 on desktop */}
-            <div className="col-span-2 md:col-span-4 mt-6 md:mt-0">
-              <h3 className="font-['Lexend'] text-white font-medium text-[18px] mb-4">
-                Subscribe Our Newsletter
-              </h3>
-              <NewsletterForm />
             </div>
           </div>
           
