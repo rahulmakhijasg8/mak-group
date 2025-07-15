@@ -8,98 +8,69 @@ import FaqSection from '@/components/FAQSection';
 import Footer from '@/components/footer';
 import BulletHeroSection from '@/components/bulletherosection';
 import Navbar from '@/components/navbar';
+import TabbedLoanLayout from '@/components/tabbedloanlayout';
 
 
 function page() {
 
-    const loangridItems = [
-        // Card items (like Home Loans)
+    const securedLoans = [
+      {
+          icon: '/car l.png',
+          title: 'Car Loans',
+          description: 'Get behind the wheel of your dream car with our car loan offerings. We have partnered with leading banks and financial institutions to provide you with the best deals and seamless financing.',
+          accentColor: '#4EBA64'
+        },
         {
-          type: 'card',
           icon: '/HOME 1.png',
           title: 'Home Loans',
           description: 'Turn your dream of homeownership into a reality with our competitive home loan options. We offer attractive interest rates, flexible features, and hassle-free processing.',
           accentColor: '#FF9F43'
         },
         {
-          type: 'card',
-          icon: '/car l.png',
-          title: 'Car Loans',
-          description: 'Get behind the wheel of your dream car with our car loan offerings. We have partnered with leading banks and financial institutions to provide you with the best deals and seamless financing.',
-          accentColor: '#4EBA64'
-        },
-        // Image item (like Investment)
-        {
-          type: 'image',
-          title: 'INVESTMENT',
-          imageSrc: '/Rectangle 59.jpg',
-          imageAlt: 'Investment options on laptop screen'
-        },
-        // More items to complete the grid...
-        {
-          type: 'card',
-          icon: '/secured l.png',
-          title: 'Secured Loans',
-          description: 'Leverage your assets to secure the funds you need. Our secured loan options include loans against property, gold loans, and more.',
-          accentColor: '#55A5FF'
-        },
-        {
-            type: 'card',
-            icon: '/us-removebg-preview (1).png',
-            title: 'Unscured Loans',
-            description: 'Meet your financial needs without pledging any collateral. We offer unsecured loans with minimum documentation and quick disbursal.',
-            accentColor: '#55A5FF'
+            icon: '/office-removebg-preview.png',
+            title: 'Loan Against Property',
+            description: 'Unlock the value of your property with our loan against property services. We offer substantial loan amounts at competitive interest rates against your residential or commercial property.',
+            accentColor: '#9B59B6'
           },
-          {
-            type: 'card',
-            icon: '/personal_loan-removebg-preview.png',
-            title: 'Personal Loans',
-            description: 'From unexpected expenses to planned celebrations, our personal loans are designed to help you meet your financial goals with ease.',
-            accentColor: '#55A5FF'
-          },
-          {
-            type: 'card',
-            icon: '/Business Loans.png',
-            title: 'Business Loans',
-            description: 'Fuel your business growth with our business loan options. We offer loans for working capital, equipment purchase, expansion, and more.',
-            accentColor: '#55A5FF'
-          },
-          {
-            type: 'card',
+        {
             icon: '/working capital.png',
             title: 'Working Capital',
             description: 'Ensure smooth cash flow for your business with our working capital solutions. We provide overdraft facilities, cash credit, and more to help you manage your day-to-day operations.',
             accentColor: '#55A5FF'
           },
           {
-            type: 'card',
             icon: '/Bank Guarantee.png',
             title: 'Bank Guarantee',
             description: 'Secure your business transactions with our bank guarantee services. We assist in obtaining performance guarantees, financial guarantees, and other types of bank guarantees.',
             accentColor: '#55A5FF'
           },
           {
-            type: 'image',
-            title: 'INVESTMENT',
-            imageSrc: '/Rectangle 60.jpg',
-            imageAlt: 'Investment options on laptop screen'
-          },
-          {
-            type: 'card',
             icon: '/Cash Credit (CC).png',
             title: 'Cash Credit (CC)',
             description: 'Meet your short-term business requirements with our cash credit facilities. We offer flexible limits and competitive interest rates.',
             accentColor: '#55A5FF'
           },
           {
-            type: 'card',
-            icon: '/sp-removebg-preview.png',
-            title: 'Surrogate Products',
-            description: 'Explore alternative financing options with our surrogate products. We offer innovative solutions tailored to your specific needs.',
+            icon: '/loan_products-removebg-preview.png',
+            title: 'Loan Against LIC Policy',
+            description: 'Leverage your LIC policy for immediate financial needs with our loan against LIC policy options. We provide quick processing and attractive interest rates against your insurance policy.',
+            accentColor: '#E74C3C'
+          }
+    ]
+
+    const unsecuredLoans = [
+          {
+            icon: '/personal_loan-removebg-preview.png',
+            title: 'Personal Loans',
+            description: 'From unexpected expenses to planned celebrations, our personal loans are designed to help you meet your financial goals with ease.',
             accentColor: '#55A5FF'
           },
-        // Add more items to fill the 3x4 grid (12 items total)
-        // ...
+          {
+            icon: '/Business Loans.png',
+            title: 'Business Loans',
+            description: 'Fuel your business growth with our business loan options. We offer loans for working capital, equipment purchase, expansion, and more.',
+            accentColor: '#55A5FF'
+          },
       ];
 
       const statCards = [
@@ -165,7 +136,7 @@ function page() {
   primaryButtonText="Chat with us on Whatsapp" primaryButtonIconType='whatsapp' primaryButtonLink="#"
 />
     <SectionHeader title="Explore Our Loan Solutions" description="Loans Designed to Fit Every Stage of Life and Business" />
-    <LoanGridLayout items={loangridItems} />
+    <TabbedLoanLayout securedLoans={securedLoans} unsecuredLoans={unsecuredLoans} />
     <BulletHeroSection
       title="Benefits of Choosing MAK GROUP"
       bulletPoints={[
