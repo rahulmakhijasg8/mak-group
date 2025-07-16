@@ -73,8 +73,8 @@ function about() {
         <HeroSection 
   title="Our Story" 
   description={"MAK Group was founded in 1952 with a clear vision: to support our clients in achieving their financial and lifestyle goals through trusted, comprehensive solutions. We started off in the automobile industry, specializing in the buying and selling of cars. As our clients’ needs evolved, so did we—expanding into insurance, the stock market, loans, and real estate.\n\nFrom these dynamic beginnings, we have grown into a full-service financial firm, offering a wide range of products and services under one roof. Over the years, we’ve earned a reputation for excellence, integrity, and personalized service. Today, we proudly serve over 400 clients—including many high-net-worth individuals—and manage assets worth over 500 crores."} 
-  primaryButtonText="Book A free Call Now" 
-  primaryButtonLink="#" 
+  primaryButtonText="Call Us Now" 
+  primaryButtonLink="tel:+918591353530" 
   imageSrc="/Rectangle 28.jpg" 
   imageAlt="test" 
   reverseLayout={true} 
@@ -86,8 +86,8 @@ function about() {
 <BlueHeroSection 
   title="Our Philosophy"
   description={"At MAK Group, we believe that everyone deserves access to reliable, high-quality financial guidance. Our commitment lies in building lasting relationships with our clients—grounded in trust, transparency, and mutual respect.\n\nWe take a personalized approach to every client engagement. By understanding your unique goals, needs, and aspirations, we craft tailored solutions designed to help you achieve long-term success. Whether it's protecting your family with the right insurance, growing your wealth through strategic investments, financing your dream home or car, navigating the stock market, or exploring opportunities in real estate—MAK Group is here to guide you every step of the way."} 
-  primaryButtonText="Book A free Call Now" 
-  primaryButtonLink="#" 
+  primaryButtonText="Call Us Now" 
+  primaryButtonLink="tel:+918591353530" 
   imageSrc="/Group 49.svg" 
   imageAlt="test" 
   reverseLayout={false} 

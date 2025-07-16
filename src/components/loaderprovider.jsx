@@ -1,9 +1,10 @@
 "use client";
 
-import { Suspense } from 'react';
+import { Suspense, useState, useEffect } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
 import Loading from './loader';
 
-// A simple wrapper component that doesn't use any hooks that need Suspense
+// Loading wrapper component
 function LoadingWrapper({ children, isVisible }) {
   return (
     <>
@@ -15,18 +16,53 @@ function LoadingWrapper({ children, isVisible }) {
   );
 }
 
-// The inner component that uses hooks that require Suspense
+// Client component that handles navigation loading
 function ClientNavLoader({ children }) {
-  // This will render only on the client side
-  // No need for usePathname, useSearchParams, or state management here
-  return <LoadingWrapper isVisible={false}>{children}</LoadingWrapper>;
+  const [isLoading, setIsLoading] = useState(false);
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    // Show loader when route changes
+    setIsLoading(true);
+    
+    // Hide loader after a short delay (simulating page load)
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 500); // Adjust timing as needed
+
+    return () => clearTimeout(timer);
+  }, [pathname, searchParams]);
+
+  return <LoadingWrapper isVisible={isLoading}>{children}</LoadingWrapper>;
 }
 
-// The main export is a Suspense boundary that renders the client component
-export default function LoadingProvider({ children }) {
+// Test component to manually trigger loading
+function LoaderTester({ children }) {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const testLoader = () => {
+    setIsLoading(true);
+    setTimeout(() => setIsLoading(false), 2000);
+  };
+
+  return (
+    <>
+      <LoadingWrapper isVisible={isLoading}>{children}</LoadingWrapper>
+      {/* Test button - remove in production */}
+    </>
+  );
+}
+
+// Main export with Suspense boundary
+export default function LoadingProvider({ children, enableTesting = false }) {
   return (
     <Suspense fallback={<Loading />}>
-      <ClientNavLoader>{children}</ClientNavLoader>
+      {enableTesting ? (
+        <LoaderTester>{children}</LoaderTester>
+      ) : (
+        <ClientNavLoader>{children}</ClientNavLoader>
+      )}
     </Suspense>
   );
 }

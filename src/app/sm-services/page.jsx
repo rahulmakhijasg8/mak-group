@@ -120,7 +120,7 @@ function page() {
 } = useFormSubmission({
   formType: 'Demat Account',
   emailSubject: 'New Demat Account Request',
-  emailRecipient: 'access.techdevs@gmail.com',
+  emailRecipient: 'contact@makgroup.co.in',
   
   // Status messages for different stages
   submittingMessage: 'Preparing your account request...',

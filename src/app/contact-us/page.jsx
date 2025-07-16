@@ -56,7 +56,7 @@ function Page() {
   } = useFormSubmission({
     formType: 'Contact Form',
     emailSubject: 'New Contact Form Submission',
-    emailRecipient: 'access.techdevs@gmail.com',
+    emailRecipient: 'contact@makgroup.co.in',
     submittingMessage: 'Sending your message...',
     successMessage: 'Your message has been sent successfully! We will get back to you shortly.',
     errorMessage: 'There was an error sending your message. Please try again or contact us directly.'

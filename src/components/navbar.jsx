@@ -489,10 +489,10 @@ export default function Navbar() {
             
             {/* Get Started Button */}
             <Link 
-              href="/get-started" 
+              href="tel:+918591353530" 
               className="ml-24 px-6 py-2 bg-[#4EBA64] text-white rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90"
             >
-              Get Started
+              Call Us Now
             </Link>
           </div>
 

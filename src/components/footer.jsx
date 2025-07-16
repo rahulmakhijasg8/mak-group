@@ -106,7 +106,7 @@ export default function Footer({
                 </svg>
               </div>
               <a 
-                href={`tel:${phone}`}
+                href={`tel:+918591353530`}
                 className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6 hover:text-[#4EBA64] transition-colors duration-300 hover:underline"
               >
                 {phone}

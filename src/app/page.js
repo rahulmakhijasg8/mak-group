@@ -18,7 +18,7 @@ export default function Home() {
     icon: <Image src="/insurance-removebg-preview.png" alt="Insurance" width={60} height={60} />,
     title: "Insurance",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
-    primaryButtonText: "Book A Call Now",
+    primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
@@ -27,7 +27,7 @@ export default function Home() {
     icon: <Image src="/sm-removebg-preview.png" alt="Investments" width={60} height={60} />,
     title: "Stock Market",
     description: "Invest wisely in the stock market with guidance from our highly experienced sub-brokers at IIFL Securities.",
-    primaryButtonText: "Book A Call Now",
+    primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
@@ -36,7 +36,7 @@ export default function Home() {
     icon: <Image src="/car.png" alt="Insurance" width={60} height={60} />,
     title: "Cars",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
-    primaryButtonText: "Book A Call Now",
+    primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Whatsapp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
@@ -45,7 +45,7 @@ export default function Home() {
     icon: <Image src="/loan_products-removebg-preview.png" alt="Investments" width={60} height={60} />,
     title: "Loans",
     description: "Grow your wealth with our expertly managed investment portfolios tailored to your goals.",
-    primaryButtonText: "Book A Call Now",
+    primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Whatsapp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
@@ -54,7 +54,7 @@ export default function Home() {
     icon: <Image src="/liquidity-removebg-preview.png" alt="Insurance" width={60} height={60} />,
     title: "Investment",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
-    primaryButtonText: "Book A Call Now",
+    primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Whatsapp",
     secondaryButtonLink: "https://wa.me/yourphonenumber"
@@ -141,11 +141,11 @@ export default function Home() {
       
       <div>
         <Link 
-          href="/learn-more" 
+          href="tel:+918591353530"
           className="inline-flex items-center justify-center gap-2 px-10 py-5 md:px-7 md:py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90 text-[18px] md:text-lg w-auto tracking-normal"
         >
           <Calendar className="h-6 w-6" />
-          Book A Free Call Now
+          Call Us Now
         </Link>
       </div>
     </div>
@@ -187,7 +187,7 @@ export default function Home() {
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
     <StatsGrid cards={statCards} />
     <HeroSection title="Ready to Take Control of Your Financial Future?" darkMode={true} imageContainerClass="w-[120%] h-[100%]" description="Let’s work together to plan, protect, and grow your wealth. Schedule your free consultation now." 
-    primaryButtonText="Book A free Call Now" primaryButtonLink="#" imageSrc="/Group 46.svg" imageAlt="test" reverseLayout={true} secondaryButtonText="Chat with us on Whatsapp" secondaryButtonLink="#"  />
+    primaryButtonText="Call Us Now" primaryButtonLink="tel:+918591353530" imageSrc="/Group 46.svg" imageAlt="test" reverseLayout={true} secondaryButtonText="Chat with us on Whatsapp" secondaryButtonLink="#"  />
     <SectionHeading className="md:pt-24" title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust and Integrity" />
     <TestimonialCarousel testimonials={testimonials} />
     <Footer />

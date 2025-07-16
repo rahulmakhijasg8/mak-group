@@ -24,7 +24,7 @@ function page() {
   } = useFormSubmission({
     formType: 'Car Sell',
     emailSubject: 'New Car Sell Request',
-    emailRecipient: 'access.techdevs@gmail.com', // Or use environment variable
+    emailRecipient: 'contact@makgroup.co.in', // Or use environment variable
     submittingMessage: 'Submitting your car details...',
     successMessage: 'Your car details have been submitted successfully! We will contact you soon.',
     errorMessage: 'There was an error submitting your car details. Please try again or contact support.'

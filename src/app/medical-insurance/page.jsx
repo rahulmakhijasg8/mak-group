@@ -229,7 +229,7 @@ function page() {
           emailConfig={{
             type: 'Medical Insurance Quote',
             subject: 'New Medical Insurance Quote Request',
-            recipient: 'access.techdevs@gmail.com',
+            recipient: 'contact@makgroup.co.in',
             successMessage: 'Your medical insurance quote request has been submitted successfully! Our team will contact you soon with personalized options.',
             errorMessage: 'There was an error submitting your request. Please try again or contact our support team directly.'
           }}

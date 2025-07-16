@@ -48,7 +48,7 @@ function page() {
   } = useFormSubmission({
     formType: 'Travel Insurance Quote',
     emailSubject: 'New Travel Insurance Quote Request',
-    emailRecipient: 'access.techdevs@gmail.com',
+    emailRecipient: 'contact@makgroup.co.in',
     submittingMessage: 'Submitting your travel insurance quote request...',
     successMessage: 'Your travel insurance quote request has been submitted successfully! Our team will get back to you soon.',
     errorMessage: 'There was an error submitting your request. Please try again or contact our support team.'

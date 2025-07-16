@@ -72,7 +72,7 @@ function page() {
   } = useFormSubmission({
     formType: 'Vehicle Insurance Quote',
     emailSubject: 'New Vehicle Insurance Quote Request',
-    emailRecipient: 'access.techdevs@gmail.com',
+    emailRecipient: 'contact@makgroup.co.in',
     submittingMessage: 'Submitting your insurance quote request...',
     successMessage: 'Your insurance quote request has been submitted successfully! Our team will get back to you soon.',
     errorMessage: 'There was an error submitting your request. Please try again or contact our support team.'
