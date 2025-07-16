@@ -175,7 +175,7 @@ const WhatsAppIcon = ({ className }) => (
            buttonLink="#"
            primaryButtonIconType='quote'
            secondaryButtonText="Whatsapp Our Team"
-           secondaryButtonLink="#"
+           secondaryButtonLink="https://wa.me/+918591353530"
            darkMode={true}
          />
 <StackedHeading className='md:pt-[0px] pt-[60px]' title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust, and Integrity." />

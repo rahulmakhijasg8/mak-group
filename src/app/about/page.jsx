@@ -79,7 +79,7 @@ function about() {
   imageAlt="test" 
   reverseLayout={true} 
   secondaryButtonText="Chat with us on Whatsapp" 
-  secondaryButtonLink="#"
+  secondaryButtonLink="https://wa.me/+918591353530"
   imageContainerClass="h-[80%] md:w-[100%]"
 />
 
@@ -92,7 +92,7 @@ function about() {
   imageAlt="test" 
   reverseLayout={false} 
   secondaryButtonText="Chat with us on Whatsapp" 
-  secondaryButtonLink="#"  
+  secondaryButtonLink="https://wa.me/+918591353530"  
   backgroundColor='#221241'
 />
 <StackedHeading className="md:pt-24" title="Our Expertise" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement. With specialists in insurance, stock market investing, finance, real estate, and more, we have the skills and resources to handle all your financial needs." />

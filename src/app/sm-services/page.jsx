@@ -99,7 +99,7 @@ function page() {
         primaryButtonText: "Start Trading",
         primaryButtonLink: "#",
         secondaryButtonText: "Chat with us on WhatsApp",
-        secondaryButtonLink: "https://wa.me/yourphonenumber",
+        secondaryButtonLink: "https://wa.me/+918591353530",
         primaryButtonIconType: null
       };
       
@@ -110,7 +110,7 @@ function page() {
         primaryButtonText: "Explore Mutual Funds",
         primaryButtonLink: "/#",
         secondaryButtonText: "Chat with us on WhatsApp",
-        secondaryButtonLink: "https://wa.me/yourphonenumber"
+        secondaryButtonLink: "https://wa.me/+918591353530"
       };
 
       const { 

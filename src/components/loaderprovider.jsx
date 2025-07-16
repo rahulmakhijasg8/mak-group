@@ -50,6 +50,13 @@ function LoaderTester({ children }) {
     <>
       <LoadingWrapper isVisible={isLoading}>{children}</LoadingWrapper>
       {/* Test button - remove in production */}
+      <button 
+        onClick={testLoader}
+        className="fixed bottom-4 right-4 bg-blue-500 text-white px-4 py-2 rounded z-50"
+        style={{ display: process.env.NODE_ENV === 'development' ? 'block' : 'none' }}
+      >
+        Test Loader
+      </button>
     </>
   );
 }

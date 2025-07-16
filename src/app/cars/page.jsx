@@ -254,7 +254,7 @@ function page() {
     primaryButtonText: "Explore New Cars",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Chat with us on WhatsApp",
-    secondaryButtonLink: "https://wa.me/yourphonenumber",
+    secondaryButtonLink: "https://wa.me/+918591353530",
     primaryButtonIconType:'none'
   };
   
@@ -265,7 +265,7 @@ function page() {
     primaryButtonText: "Browse Used Cars",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Chat with us on WhatsApp",
-    secondaryButtonLink: "https://wa.me/yourphonenumber",
+    secondaryButtonLink: "https://wa.me/+918591353530",
     primaryButtonIconType: 'none'
   };
 
@@ -481,7 +481,7 @@ function page() {
   )}
 </div>
     <HeroSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
-                  primaryButtonText="Apply for a Car Loan" paddingClass='md:pt-30 md:pb-8' primaryButtonIconType='gamepad' secondaryButtonLink="#" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
+                  primaryButtonText="Apply for a Car Loan" paddingClass='md:pt-30 md:pb-8' primaryButtonIconType='gamepad' secondaryButtonLink="https://wa.me/+918591353530" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
     <HeroSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."
                   primaryButtonText="Get a Car Insurance Quote" paddingClass='md:pb-30' primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="/vehicle-insurance" imageContainerClass='h-[370px] w-[100%]' />
 

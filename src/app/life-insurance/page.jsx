@@ -141,7 +141,7 @@ function page() {
   buttonLink="#"
   primaryButtonIconType='quote'
   secondaryButtonText="Whatsapp Our Team"
-  secondaryButtonLink="#"
+  secondaryButtonLink="https://wa.me/+918591353530"
   darkMode={true}
 />
 <FaqSection faqs={insuranceFaqs} />

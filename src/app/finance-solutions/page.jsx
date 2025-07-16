@@ -133,7 +133,7 @@ function page() {
   imageSrc="/Rectangle 51.jpg"
   imageAlt="Loans"
   reverseLayout={false}
-  primaryButtonText="Chat with us on Whatsapp" primaryButtonIconType='whatsapp' primaryButtonLink="#"
+  primaryButtonText="Chat with us on Whatsapp" primaryButtonIconType='whatsapp' primaryButtonLink="https://wa.me/+918591353530"
 />
     <SectionHeader title="Explore Our Loan Solutions" description="Loans Designed to Fit Every Stage of Life and Business" />
     <TabbedLoanLayout securedLoans={securedLoans} unsecuredLoans={unsecuredLoans} />
