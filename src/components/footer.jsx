@@ -123,7 +123,7 @@ export default function Footer({
               </div>
               <a 
                 href={`mailto:${email}`}
-                className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6 hover:text-[#4EBA64] transition-colors duration-300 hover:underline"
+                className="font-['Lato'] text-[#000000D6] font-normal text-[16px] leading-6 hover:text-[#4EBA64] transition-colors duration-300 hover:underline break-all"
               >
                 {email}
               </a>

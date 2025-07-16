@@ -10,6 +10,7 @@ import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import Image from 'next/image'
+import MedicalInsuranceHero from '@/components/medical-insurance-hero'
 
 
 function page() {
@@ -219,7 +220,7 @@ function page() {
       Get a Free Quote 
         </h2>
         
-        <h3 className="font-['Lato'] px-5 md:px-80 pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
+        <h3 className="font-['Lato'] px-5 md:px-[50px] lg:px-[300px] pb-8 text-[#000000D6] text-center text-[16px] md:text-[18px] w-full ">
         Interested in learning more about how our medical insurance plans can protect you and your family? Get a free quote today by providing us with the following details:
         </h3>
         <SingleForm 
@@ -235,6 +236,7 @@ function page() {
           }}
         />
         </div>
+        <MedicalInsuranceHero />
         <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Medical Insurance?" subtitle="A partner you can rely on — before, during, and after your coverage starts." />
         <StatsGrid cards={statCards} />
         <FaqSection faqs={Faqs} />

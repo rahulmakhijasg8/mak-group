@@ -11,6 +11,7 @@ import Navbar from '@/components/navbar'
 import FormStatusMessage from '@/components/FormStatusMessage';
 import useFormSubmission from '@/hooks/useFormSubmission';
 import Image from 'next/image'
+import VehicleInsuranceStats from '@/components/vehicle-insurance-stats'
 
 
 function page() {
@@ -239,6 +240,7 @@ function page() {
         <FlexGridLayout itemsPerRow={2} items={coverageItems} />
         <StackedHeading className='md:px-20' mobileAlign='center' title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />
         <StatsGrid cards={statCards} />
+        <VehicleInsuranceStats />
         <div className='bg-[#EBEBEB] w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
               <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
               Get a Free Quote Today 
