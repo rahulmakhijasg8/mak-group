@@ -13,9 +13,9 @@ export default function RECard({
           <Image 
             src={imageSrc}
             alt={title}
-            width={400}
-            height={250}
-            className="w-full h-full rounded-[10px] object-cover"
+            width={1000}
+            height={1000}
+            className="w-full h-full rounded-[10px] object-fit"
           />
         </div>
         

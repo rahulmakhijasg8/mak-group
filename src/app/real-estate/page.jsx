@@ -121,7 +121,7 @@ function services() {
   cards={[
     {
       title: "Residential Properties",
-      imageSrc: "/Rectangle 32.jpg",
+      imageSrc: "/Rectangle 38.jpg",
       listItems: [
         "Apartments",
         "Villas",
@@ -132,7 +132,7 @@ function services() {
     },
     {
       title: "Commercial Properties",
-      imageSrc: "/Rectangle 32.jpg",
+      imageSrc: "/Rectangle 39.jpg",
       listItems: [
         "Office Spaces",
         "Retail Shops",

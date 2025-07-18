@@ -11,6 +11,8 @@ import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import Image from 'next/image'
 import MedicalInsuranceHero from '@/components/medical-insurance-hero'
+import { motion } from 'framer-motion'
+import Companies from '@/components/companies'
 
 
 function page() {
@@ -137,6 +139,40 @@ function page() {
     // You can add additional processing here if needed
   };
 
+  const companyLogos = [
+  {
+    src: "/HDFC Ergo.png",
+    alt: "Company 1",
+    width: 180,
+    height: 80,
+    extraMargin: false
+  },
+  {
+    src: "/Niva Bupa.png",
+    alt: "Company 2",
+    width: 200,
+    height: 60,
+    extraMargin: false
+  },
+  {
+    src: "/tata-aig.png",
+    alt: "Company 3",
+    width: 160,
+    height: 70,
+    extraMargin: false
+  },
+  {
+    src: "/Care Insuranc.svg",
+    alt: "Company 3",
+    width: 160,
+    height: 70,
+    extraMargin: false
+  },
+];
+
+// You'll also need the loopedLogos array to create the infinite scroll effect
+const loopedLogos = [...companyLogos, ...companyLogos];
+
   return (
     <div>
       <div className='w-full' style={{
@@ -152,7 +188,7 @@ function page() {
             imageAlt="insurance"
             reverseLayout={false} />
       </div>
-      <div className="w-full object-cover h-[81px] md:h-[162px]">
+      {/* <div className="w-full object-cover h-[81px] md:h-[162px]">
         <Image 
           src="/gblockermobile.svg" 
           alt="Description of image"
@@ -165,9 +201,10 @@ function page() {
           alt="Description of image"
           width={2000}
           height={1000}
-          className="hidden md:block"
+          className="hidden md:hidden"
         />
-      </div>
+      </div> */}
+      <Companies />
         <StackedHeading mobileAlign='center' title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
         <TwoCardRow card1={hotel_costs} card2={protection} />
         <section 
