@@ -10,6 +10,7 @@ import TestimonialCarousel from "@/components/testimonialcarousal";
 import Footer from "@/components/footer";
 import { Calendar } from "lucide-react";
 import Navbar from "@/components/navbar";
+import Companies from "@/components/companies";
 
 
 export default function Home() {
@@ -116,6 +117,39 @@ export default function Home() {
     },
   ];
 
+  const companyLogos = [
+  {
+    src: "/HDFC Ergo.png",
+    alt: "HDFC Ergo",
+    width: 180,
+  },
+  {
+    src: "/Niva Bupa.png",
+    alt: "Niva Bupa",
+    width: 200,
+  },
+  {
+    src: "/tata-aig.png",
+    alt: "Tata AIG",
+    width: 160,
+  },
+  {
+    src: "/Care Insuranc.svg",
+    alt: "Care Insurance",
+    width: 160,
+  },
+  {
+    src: "/iifl-securities.png",
+    alt: "IIFL securites",
+    width: 180,
+  },
+  {
+    src: "/tata-aia.png",
+    alt: "Tata AIA",
+    width: 180,
+  }
+];
+
   return (
     <div>
       <div className='w-full' style={{
@@ -166,7 +200,7 @@ export default function Home() {
   </div>
 </section>
     </div>
-    <div className="w-full object-cover h-[81px] md:h-[162px]">
+    {/* <div className="w-full object-cover h-[81px] md:h-[162px]">
   <Image 
     src="/blockermobile.svg" 
     alt="Description of image"
@@ -181,7 +215,8 @@ export default function Home() {
     height={1000}
     className="hidden md:block"
   />
-</div>
+</div> */}
+    <Companies companyLogos={companyLogos} duration={9} />
     <SectionHeading className="mt-[60px] md:mt-[100px]" title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
     <FiveCardRow cards={cardsArray} layout="grid" />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />

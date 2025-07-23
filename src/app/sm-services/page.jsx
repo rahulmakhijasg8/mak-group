@@ -10,6 +10,7 @@ import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import FormStatusMessage from '@/components/FormStatusMessage';
 import useFormSubmission from '@/hooks/useFormSubmission';
+import Companies from '@/components/companies'
 
 
 function page() {
@@ -206,11 +207,20 @@ function page() {
   
         ]}
 
+        const companyLogos = [
+  {
+    src: "/iifl-securities.png",
+    alt: "HDFC Ergo",
+    width: 180,
+  }
+];
+
   return (
     <div>
       <Navbar/>
         <GreenImageHero title="Stock Market Services" description="At MAK GROUP, we offer comprehensive stock market services as a franchise (sub-brokers) of IIFL Securities. Our experienced team, with over 15 years of expertise, is committed to providing you with the best and most customized service and guidance to help you navigate the stock market with confidence."
                         imageSrc="/Rectangle 50.jpg" imageAlt="Stck Market Bull" />
+        <Companies companyLogos={companyLogos} duration={2} />
         <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Your Stock Market Investments?" subtitle="Trusted by Over 400 Clients. Powered by Experience." />
         <StatsGrid cards={smstats} />
         <StackedHeading mobileAlign='left' title="Our Stock Market Services" subtitle="A Full Spectrum of Investment Options to Match Your Goals" />

@@ -34,7 +34,7 @@ export default function StatsGrid({ cards }) {
         {/* Mobile: Column layout with spacing */}
         <div className="flex flex-col md:hidden space-y-6">
           {Array.isArray(cards) && cards.map((card, index) => (
-            <div key={`mobile-${index}`} className="w-[85%] flex justify-center mx-auto">
+            <div key={`mobile-${index}`} className="w-full flex justify-center">
               {renderCard(card, index)}
             </div>
           ))}

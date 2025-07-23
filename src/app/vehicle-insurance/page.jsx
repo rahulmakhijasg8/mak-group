@@ -10,7 +10,7 @@ import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import FormStatusMessage from '@/components/FormStatusMessage';
 import useFormSubmission from '@/hooks/useFormSubmission';
-import Image from 'next/image'
+import Companies from '@/components/companies'
 import VehicleInsuranceStats from '@/components/vehicle-insurance-stats'
 
 
@@ -205,6 +205,19 @@ function page() {
     }
   ];
 
+  const companyLogos = [
+  {
+    src: "/HDFC Ergo.png",
+    alt: "HDFC Ergo",
+    width: 180,
+  },
+  {
+    src: "/tata-aig.png",
+    alt: "Tata AIG",
+    width: 160,
+  }
+];
+
   return (
     <div>
       <div className='w-full' style={{
@@ -220,7 +233,7 @@ function page() {
                     imageAlt="vehicle-insurance"
                     reverseLayout={false} />
         </div>
-        <div className="w-full object-cover h-[81px] md:h-[162px]">
+        {/* <div className="w-full object-cover h-[81px] md:h-[162px]">
         <Image 
           src="/gblockermobile.svg" 
           alt="Description of image"
@@ -235,7 +248,8 @@ function page() {
           height={1000}
           className="hidden md:block"
         />
-      </div>
+      </div> */}
+      <Companies companyLogos={companyLogos} duration={3} />
         <StackedHeading mobileAlign='center' title="Know Your Coverage" subtitle="Understand the Protection We Offer" />
         <FlexGridLayout itemsPerRow={2} items={coverageItems} />
         <StackedHeading className='md:px-20' mobileAlign='center' title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />

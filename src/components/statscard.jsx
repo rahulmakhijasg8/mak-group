@@ -1,7 +1,8 @@
 // StatsCard.jsx
 export default function StatsCard({ iconSrc, iconAlt, text }) {
   return (
-    <div className="flex flex-col justify-center items-center bg-[#FAFAFA]  border border-[#EBEBEB] rounded-[50px] p-5 h-[290px] md:h-[240px] w-[80%] md:w-auto">
+    // In StatsCard.jsx, update the main container:
+<div className="flex flex-col justify-center items-center bg-[#FAFAFA] border border-[#EBEBEB] rounded-[50px] p-5 h-[290px] md:h-[240px] w-full min-w-[280px] md:min-w-0 md:w-auto">
       
       {/* Icon with fixed height */}
       <div className="mb-6">

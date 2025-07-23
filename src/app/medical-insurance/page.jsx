@@ -142,36 +142,25 @@ function page() {
   const companyLogos = [
   {
     src: "/HDFC Ergo.png",
-    alt: "Company 1",
+    alt: "HDFC Ergo",
     width: 180,
-    height: 80,
-    extraMargin: false
   },
   {
     src: "/Niva Bupa.png",
-    alt: "Company 2",
+    alt: "Niva Bupa",
     width: 200,
-    height: 60,
-    extraMargin: false
   },
   {
     src: "/tata-aig.png",
-    alt: "Company 3",
+    alt: "Tata AIG",
     width: 160,
-    height: 70,
-    extraMargin: false
   },
   {
     src: "/Care Insuranc.svg",
-    alt: "Company 3",
+    alt: "Care Insurance",
     width: 160,
-    height: 70,
-    extraMargin: false
   },
 ];
-
-// You'll also need the loopedLogos array to create the infinite scroll effect
-const loopedLogos = [...companyLogos, ...companyLogos];
 
   return (
     <div>
@@ -204,7 +193,7 @@ const loopedLogos = [...companyLogos, ...companyLogos];
           className="hidden md:hidden"
         />
       </div> */}
-      <Companies />
+      <Companies companyLogos={companyLogos} />
         <StackedHeading mobileAlign='center' title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
         <TwoCardRow card1={hotel_costs} card2={protection} />
         <section 
