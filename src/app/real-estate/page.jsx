@@ -163,51 +163,68 @@ function services() {
 
   items={[
   {
-    price: "Rs. 1.5 Crore",
-    title: "Apartment",
-    imageSrc: "/Rectangle 35.jpg",
-    location: "Mumbai",
-    beds: "2 Beds",
-    area: "1,200 sq. ft.",
+    price: "Rs. 18 Crore",
+    title: "Bungalow",
+    imageSrc: "/Prop 1.jpg",
+    location: "Lonavala",
+    beds: "5 BHK",
+    area: "7,000 sq. ft.",
     type: "Sale"
   },
   {
-    price: "Rs. 35,000/month",
-    title: "Apartment",
-    imageSrc: "/Rectangle 35.jpg",
-    location: "Mumbai",
-    beds: "2 Beds",
-    area: "1,200 sq. ft.",
+    price: "Rs. 4 Lakh/month",
+    title: "Commercial",
+    imageSrc: "/Prop 2.jpeg",
+    location: "Off BKC",
+    beds: "",
+    area: "2,800 sq. ft.",
     type: "Rent"
   },
   {
-    price: "Rs. 2.2 Crore",
-    title: "Apartment",
-    imageSrc: "/Rectangle 35.jpg",
-    location: "Mumbai",
-    beds: "2 Beds",
-    area: "1,200 sq. ft.",
-    type: "Sale"
-  },
-  {
-    price: "Rs. 42,000/month",
-    title: "Apartment",
-    imageSrc: "/Rectangle 35.jpg",
-    location: "Mumbai",
-    beds: "2 Beds",
-    area: "1,200 sq. ft.",
+    price: "Rs. 80,000/month",
+    title: "Residential",
+    imageSrc: "/Prop 3.jpg",
+    location: "Bandra West",
+    beds: "1 BHK",
+    area: "550 sq. ft.",
     type: "Rent"
   },
   {
-    price: "Rs. 1.8 Crore",
-    title: "Apartment",
-    imageSrc: "/Rectangle 35.jpg",
-    location: "Mumbai",
-    beds: "2 Beds",
-    area: "1,200 sq. ft.",
+    price: "Rs. 105 Crore",
+    title: "Commercial",
+    imageSrc: "/Prop 4.jpeg",
+    location: "Pune",
+    beds: "",
+    area: "44,000 sq. ft.",
     type: "Sale"
   },
-  // Add more properties...
+  {
+    price: "Rs. 1 Lakh/month",
+    title: "Residential",
+    imageSrc: "/Prop 5.jpg",
+    location: "Khar",
+    beds: "2 BHK",
+    area: "760 sq. ft.",
+    type: "Rent"
+  },
+  {
+    price: "Rs. 28 Crore",
+    title: "Commercial",
+    imageSrc: "/Prop 6.jpeg",
+    location: "Kalina",
+    beds: "",
+    area: "7,500 sq. ft.",
+    type: "Sale"
+  },
+  {
+    price: "Rs. 2.1 Crore",
+    title: "Residential",
+    imageSrc: "/Prop 7.jpg",
+    location: "Khar",
+    beds: "1 BHK",
+    area: "560 sq. ft.",
+    type: "Sale"
+  }
 ]}
 />
 <StackedHeading className='md:mt-[75px]' title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust, and Integrity." />
