@@ -251,8 +251,8 @@ function page() {
     icon: <img src="/new_cars.png" alt="New Cars" width={60} height={60} />,
     title: "New Cars",
     description: "We have partnerships with leading car manufacturers to help you find the perfect new car that suits your needs and budget.",
-    primaryButtonText: "Explore New Cars",
-    primaryButtonLink: "/book-call",
+    // primaryButtonText: "Explore New Cars",
+    // primaryButtonLink: "/book-call",
     secondaryButtonText: "Chat with us on WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     primaryButtonIconType:'none'
@@ -263,7 +263,7 @@ function page() {
     title: "Used Cars",
     description: "Browse our extensive catalog of pre-owned vehicles, all thoroughly inspected and certified for quality and reliability.",
     primaryButtonText: "Browse Used Cars",
-    primaryButtonLink: "/book-call",
+    primaryButtonLink: "#property-carousel",
     secondaryButtonText: "Chat with us on WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     primaryButtonIconType: 'none'
@@ -332,6 +332,7 @@ function page() {
   />
       <StackedHeading  title="Buy New or Certified Used Cars" subtitle="Explore Our Trusted Network of Vehicles at the Best Prices" />
       <TwoCardRow card1={newCar} card2={usedCar} />
+      <div id='property-carousel'>
       <PropertyCarousel
   title="Browse Featured Used Cars"
   subtitle="Handpicked, Certified Vehicles with Verified History"
@@ -449,6 +450,7 @@ function page() {
   type="car"
   darkMode={true}
 />
+</div>
       <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Sell Your Car Hassle-Free 

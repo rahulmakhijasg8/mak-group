@@ -228,7 +228,7 @@ function page() {
                   }}>
                     <Navbar/>
         <InsuranceHero greentitle="Vehicle Insurance:" title="Protecting Your Ride with MAK GROUP"
-                    description="As a vehicle owner, it's crucial to safeguard your investment and protect yourself from potential financial liabilities. MAK GROUP offers comprehensive vehicle insurance coverage to give you peace of mind on the road."
+                    description="As a vehicle owner, it's crucial to safeguard your investment and protect yourself from potential financial liabilities. MAK Insurance offers comprehensive vehicle insurance coverage to give you peace of mind on the road."
                     imageSrc="/Rectangle 54.jpg"
                     imageAlt="vehicle-insurance"
                     reverseLayout={false} />
@@ -249,13 +249,13 @@ function page() {
           className="hidden md:block"
         />
       </div> */}
-      <Companies companyLogos={companyLogos} duration={3} />
+      <Companies companyLogos={companyLogos} isStatic={true} />
         <StackedHeading mobileAlign='center' title="Know Your Coverage" subtitle="Understand the Protection We Offer" />
         <FlexGridLayout itemsPerRow={2} items={coverageItems} />
         <StackedHeading className='md:px-20' mobileAlign='center' title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />
         <StatsGrid cards={statCards} />
         <VehicleInsuranceStats />
-        <div className='bg-[#EBEBEB] w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
+        <div id='freequote' className='bg-[#EBEBEB] w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
               <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
               Get a Free Quote Today 
                 </h2>

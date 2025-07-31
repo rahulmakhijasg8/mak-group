@@ -76,7 +76,7 @@ const MedicalInsuranceHero = () => {
         <div className="text-center mt-12">
           <p className="text-white/90 font-['Lato'] text-lg mb-6">Ready to join thousands of satisfied customers?</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="#" target="_blank">
+            <a href="#free-quote">
             <button className="border-2 border-white font-['Lexend'] text-white px-8 py-3 rounded-full hover:bg-white hover:text-[#221241] transition-colors">
               Get a Free Quote Now
             </button>

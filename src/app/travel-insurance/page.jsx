@@ -12,6 +12,7 @@ import Navbar from '@/components/navbar';
 import FormStatusMessage from '@/components/FormStatusMessage';
 import useFormSubmission from '@/hooks/useFormSubmission';
 import Image from 'next/image';
+import Companies from '@/components/companies';
 
 
 function page() {
@@ -137,6 +138,29 @@ function page() {
     // },
   ];
 
+  const companyLogos = [
+  {
+    src: "/tata-aig.png",
+    alt: "Tata AIG",
+    width: 160,
+  },
+  {
+    src: "/NivaBupa1.png",
+    alt: "Niva Bupa",
+    width: 200,
+  },
+  {
+    src: "/HDFC Ergo.png",
+    alt: "HDFC Ergo",
+    width: 180,
+  },
+  {
+    src: "/Care Insuranc.svg",
+    alt: "Care Insurance",
+    width: 160,
+  }
+];
+
 
   return (
     <div>
@@ -147,28 +171,13 @@ function page() {
                     backgroundRepeat: 'no-repeat',
                   }}>
                     <Navbar/>
-        <InsuranceHero greentitle="Travel Insurance:" title="Explore the World Worry-Free with MAK GROUP" description="Embark on your adventures with confidence, knowing that you're protected against unforeseen circumstances. MAK GROUP's travel insurance plans offer comprehensive coverage to ensure that you can travel anywhere around the world without a worry on your mind."
+        <InsuranceHero greentitle="Travel Insurance:" title="Explore the World Worry-Free with MAK GROUP" description="Embark on your adventures with confidence, knowing that you're protected against unforeseen circumstances. MAK Insurance's travel insurance plans offer comprehensive coverage to ensure that you can travel anywhere around the world without a worry on your mind."
                     imageAlt="Travel Insurance" imageSrc="/Rectangle 56.jpg"/>
         </div>
-        <div className="w-full object-cover h-[81px] md:h-[162px]">
-        <Image 
-          src="/gblockermobile.svg" 
-          alt="Description of image"
-          width={2000}
-          height={1000}
-          className="block md:hidden"
-        />
-        <Image 
-          src="/gblocker.svg" 
-          alt="Description of image"
-          width={2000}
-          height={1000}
-          className="hidden md:block"
-        />
-      </div>
+        <Companies companyLogos={companyLogos} isStatic={true} />
         <StackedHeading mobileAlign='center' title="Why You Need Travel Insurance?" subtitle="Stay Protected Against Unexpected Events Abroad" />
         <AsymmetricCardRows firstRowCard1={personalLiability} firstRowCard2={lossordelay} secondRowCard1={trip_cancellation} secondRowCard2={medicalProtection} />
-        <BulletHeroSection imageSrc="/travel-insurance.png" primaryButtonText="Get Insured Today" primaryButtonLink="#" imageAlt="travel-insurance" title="Benefits of MAK GROUP's Travel Insurance" bulletPoints={[
+        <BulletHeroSection primaryButtonNewTab={false} imageSrc="/travel-insurance.png" primaryButtonText="Get Insured Today" primaryButtonLink="#freequote" imageAlt="travel-insurance" title="Benefits of MAK GROUP's Travel Insurance" bulletPoints={[
                 {
                   title: "",
                   description: "Comprehensive coverage for medical expenses, trip cancellations, baggage loss, and personal liability."
@@ -194,7 +203,7 @@ function page() {
 
         <div className='bg-[#FAFAFA] w-full pt-0 pb-16 mt-10 md:mt-30 px-4 '>
 
-      <div className='w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
+      <div id='freequote' className='w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
         <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
           Get a Free Travel Insurance Quote 
         </h2>

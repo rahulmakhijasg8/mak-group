@@ -31,11 +31,13 @@ export default function BulletHeroSection({
   bulletPoints = [],
   primaryButtonText,
   primaryButtonLink,
+  primaryButtonNewTab = true, // New prop with default value
   imageSrc,
   imageAlt,
   reverseLayout = false,
   secondaryButtonText,
   secondaryButtonLink,
+  secondaryButtonNewTab = false, // New prop for secondary button
   lightMode = false,
   showDisclaimer = false,
   disclaimerText = "Subject to approval from the Financial Institutions"
@@ -84,12 +86,23 @@ export default function BulletHeroSection({
           </div>
           
           <div className="flex flex-wrap gap-4">
-            {primaryButtonText && primaryButtonLink && (<Link href={primaryButtonLink} className="inline-block bg-[#4EBA64] font-['Lexend'] text-white py-4 md:py-3 text-center w-[70%] md:w-auto px-7 rounded-full hover:bg-[#3da953] transition-colors">
-              {primaryButtonText}
-            </Link>
+            {primaryButtonText && primaryButtonLink && (
+              <Link 
+                href={primaryButtonLink} 
+                target={primaryButtonNewTab ? '_blank' : '_self'}
+                rel={primaryButtonNewTab ? 'noopener noreferrer' : undefined}
+                className="inline-block bg-[#4EBA64] font-['Lexend'] text-white py-4 md:py-3 text-center w-[70%] md:w-auto px-7 rounded-full hover:bg-[#3da953] transition-colors"
+              >
+                {primaryButtonText}
+              </Link>
             )}
             {secondaryButtonText && secondaryButtonLink && (
-              <Link href={secondaryButtonLink} className="inline-block bg-transparent border-2 border-[#4EBA64] text-[#4EBA64] font-bold py-3 px-6 rounded-full hover:bg-[#4EBA64] hover:text-white transition-colors">
+              <Link 
+                href={secondaryButtonLink}
+                target={secondaryButtonNewTab ? '_blank' : '_self'}
+                rel={secondaryButtonNewTab ? 'noopener noreferrer' : undefined}
+                className="inline-block bg-transparent border-2 border-[#4EBA64] text-[#4EBA64] font-bold py-3 px-6 rounded-full hover:bg-[#4EBA64] hover:text-white transition-colors"
+              >
                 💬 {secondaryButtonText}
               </Link>
             )}

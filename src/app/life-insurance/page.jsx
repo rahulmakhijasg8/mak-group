@@ -9,6 +9,7 @@ import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import HeroWithButtons from '@/components/herowithbuttons'
 import Image from 'next/image'
+import Companies from '@/components/companies'
 
 
 function page() {
@@ -59,6 +60,14 @@ function page() {
     }
   ];
 
+  const companyLogos = [
+  {
+    src: "/tata-aia.png",
+    alt: "Tata AIA",
+    width: 180,
+  }
+];
+
   return (
     <div>
       <div className='w-full' style={{
@@ -68,25 +77,10 @@ function page() {
                     backgroundRepeat: 'no-repeat',
                   }}>
                     <Navbar/>
-        <InsuranceHero greentitle="Life Insurance:" title="Secure Your Family's Future with MAK GROUP" description="Life is full of uncertainties, and it's essential to ensure that your loved ones are financially protected even in your absence. MAK GROUP offers comprehensive life insurance solutions to help you safeguard your family's future and achieve your financial goals."
+        <InsuranceHero greentitle="Life Insurance:" title="Secure Your Family's Future with MAK GROUP" description="Life is full of uncertainties, and it's essential to ensure that your loved ones are financially protected even in your absence. MAK Insurance offers comprehensive life insurance solutions to help you safeguard your family's future and achieve your financial goals."
             imageAlt="Life Insurance" imageSrc="/Rectangle 55.jpg"/>
         </div>
-        <div className="w-full object-cover h-[81px] md:h-[162px]">
-        <Image 
-          src="/gblockermobile.svg" 
-          alt="Description of image"
-          width={2000}
-          height={1000}
-          className="block md:hidden"
-        />
-        <Image 
-          src="/gblocker.svg" 
-          alt="Description of image"
-          width={2000}
-          height={1000}
-          className="hidden md:block"
-        />
-      </div>
+        <Companies companyLogos={companyLogos} isStatic={true} />
         <StackedHeading mobileAlign='center' className='px-2' title="Why Choose Life Insurance?" subtitle="More Than Protection — It's a Smart Financial Strategy" />
         <GridItemsSection
   cards={[
@@ -111,7 +105,7 @@ function page() {
 
 <RESection title="Types of Life Insurance Investments" subtitle="Choose a Plan That Matches Your Life Stage & Goals"
                   page='life' cards={lifeInsuranceCards} />
-<BulletHeroSection imageSrc="/life-insurance.png" primaryButtonText="Get Insured Now" primaryButtonLink="#" imageAlt="test" title="Benefits of MAK GROUP’s Life Insurance Plans" bulletPoints={[
+<BulletHeroSection imageSrc="/life-insurance.png" imageAlt="test" title="Benefits of MAK GROUP’s Life Insurance Plans" bulletPoints={[
         {
           title: "",
           description: "Customizable plans to suit your specific needs and budget"
@@ -137,9 +131,9 @@ function page() {
       <HeroWithButtons
   title="Ready to Protect Your Loved Ones?"
   subtitle="Don't leave your family's future to chance. Contact MAK GROUP for a free life insurance quote tailored to your needs. Our experts will help you choose the right plan to secure your loved ones' financial well-being."
-  buttonText="Get a Free Quote Now"
+  buttonText="Request a Call"
   buttonLink="#"
-  primaryButtonIconType='quote'
+  primaryButtonIconType='phone'
   secondaryButtonText="Whatsapp Our Team"
   secondaryButtonLink="https://wa.me/+918591353530"
   darkMode={true}

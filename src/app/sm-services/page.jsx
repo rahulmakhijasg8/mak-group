@@ -94,25 +94,47 @@ function page() {
       ];
 
       const equityTrading = {
-        icon: <img src="/equity_trading-removebg-preview.png" alt="Equity Trading" width={60} height={60} />,
-        title: "Equity Trading",
-        description: "Invest in NSE & BSE-listed companies with expert guidance.",
-        primaryButtonText: "Start Trading",
-        primaryButtonLink: "#",
-        secondaryButtonText: "Chat with us on WhatsApp",
-        secondaryButtonLink: "https://wa.me/+918591353530",
-        primaryButtonIconType: null
-      };
-      
-      const mutualFunds = {
-        icon: <img src="/mf-removebg-preview 1.png" alt="Investments" width={60} height={60} />,
-        title: "Mutual Funds",
-        description: "Diversify your portfolio with curated fund schemes.",
-        primaryButtonText: "Explore Mutual Funds",
-        primaryButtonLink: "/#",
-        secondaryButtonText: "Chat with us on WhatsApp",
-        secondaryButtonLink: "https://wa.me/+918591353530"
-      };
+  icon: <img src="/equity_trading-removebg-preview.png" alt="Equity Trading" width={60} height={60} />,
+  title: "Equity Trading",
+  description: "Invest in NSE & BSE-listed companies with expert guidance.",
+  primaryButtonText: "Start Trading",
+  primaryButtonLink: "#demat-form",
+  secondaryButtonText: "Chat with us on WhatsApp",
+  secondaryButtonLink: "https://wa.me/+918591353530",
+  primaryButtonIconType: null
+};
+
+const mutualFunds = {
+  icon: <img src="/mf-removebg-preview 1.png" alt="Investments" width={60} height={60} />,
+  title: "Mutual Funds",
+  description: "Diversify your portfolio with curated fund schemes.",
+  // primaryButtonText: "Explore Mutual Funds",
+  // primaryButtonLink: "/#",
+  secondaryButtonText: "Chat with us on WhatsApp",
+  secondaryButtonLink: "https://wa.me/+918591353530"
+};
+
+      const aif = {
+  icon: <img src="/secured l.png" alt="Alternative Investment Fund" width={60} height={60} />,
+  title: "AIF",
+  description: "Access exclusive alternative investment opportunities for high-net-worth individuals.",
+  // primaryButtonText: "Explore AIF",
+  // primaryButtonLink: "#",
+  secondaryButtonText: "Chat with us on WhatsApp",
+  secondaryButtonLink: "https://wa.me/+918591353530",
+  primaryButtonIconType: null
+};
+
+const pms = {
+  icon: <img src="/us-removebg-preview (1).png" alt="Portfolio Management Services" width={60} height={60} />,
+  title: "PMS",
+  description: "Professional portfolio management tailored to your investment goals and risk profile.",
+  // primaryButtonText: "Learn About PMS",
+  // primaryButtonLink: "#",
+  secondaryButtonText: "Chat with us on WhatsApp",
+  secondaryButtonLink: "https://wa.me/+918591353530",
+  primaryButtonIconType: null
+};
 
       const { 
   handleFormSubmit, 
@@ -209,7 +231,7 @@ function page() {
 
         const companyLogos = [
   {
-    src: "/iifl-securities.png",
+    src: "/IIFL_Securities-removebg-preview.png",
     alt: "HDFC Ergo",
     width: 180,
   }
@@ -218,13 +240,13 @@ function page() {
   return (
     <div>
       <Navbar/>
-        <GreenImageHero title="Stock Market Services" description="At MAK GROUP, we offer comprehensive stock market services as a franchise (sub-brokers) of IIFL Securities. Our experienced team, with over 15 years of expertise, is committed to providing you with the best and most customized service and guidance to help you navigate the stock market with confidence."
+        <GreenImageHero title="Stock Market Services" description="At MAK MILES PVT. LTD., we offer comprehensive stock market services as a franchise (sub-brokers) of IIFL Securities. Our experienced team, with over 15 years of expertise, is committed to providing you with the best and most customized service and guidance to help you navigate the stock market with confidence."
                         imageSrc="/Rectangle 50.jpg" imageAlt="Stck Market Bull" />
-        <Companies companyLogos={companyLogos} duration={2} />
+        <Companies companyLogos={companyLogos} isStatic={true} />
         <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Your Stock Market Investments?" subtitle="Trusted by Over 400 Clients. Powered by Experience." />
         <StatsGrid cards={smstats} />
         <StackedHeading mobileAlign='left' title="Our Stock Market Services" subtitle="A Full Spectrum of Investment Options to Match Your Goals" />
-        <TwoCardRow card1={equityTrading} card2={mutualFunds} />
+        <TwoCardRow cards={[equityTrading, mutualFunds, aif, pms]} />
         {/* <div className='flex flex-col justify-center items-center'>
         <StackedHeading title="Expert Calls and Updates" subtitle="Stay ahead of the market with our expert calls and updates. Our team continuously analyzes market trends and individual stocks to provide you with timely recommendations on what to buy, when to buy, and when to sell." />
         <a 
@@ -235,7 +257,7 @@ function page() {
           </a>
         </div> */}
 
-        <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+        <div id='demat-form' className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Open Your Free IIFL Demat Account 
         </h2>

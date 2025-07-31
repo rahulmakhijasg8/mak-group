@@ -34,9 +34,6 @@ const CommercialInsuranceStats = () => {
           {/* Bottom CTA section */}
           <div className="bg-[#EBEBEB] p-8 text-center">
             <h5 className="text-lg font-bold font-['Lato'] text-[#221241] mb-4">Secure Your Business Assets</h5>
-            <button className="bg-[#221241] font-['Lexend'] text-white px-8 py-3 rounded-full hover:bg-[#2A1B4F] transition-colors">
-              Request a Free Quote
-            </button>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 "use client"
 import { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 import ServiceCard from './greycard';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -101,23 +102,40 @@ export default function FiveCardRow({
     smoothScrollTo(container, Math.min(maxScrollLeft, targetScrollLeft), 350);
   };
 
+  // Card wrapper component that handles clickability
+  const CardWrapper = ({ card, children, className = "" }) => {
+    if (card.link) {
+      return (
+        <Link
+          href={card.link}
+          target='_blank'
+          className={`block transition-transform duration-200 hover:scale-[1.02] cursor-pointer ${className}`}
+        >
+          {children}
+        </Link>
+      );
+    }
+    
+    return <div className={className}>{children}</div>;
+  };
+
   // Grid Layout Component
   const GridLayout = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
       {/* First row - 3 cards */}
       {cards.slice(0, 3).map((card, index) => (
-        <div key={index} className="w-full">
+        <CardWrapper key={index} card={card} className="w-full">
           <ServiceCard {...card} />
-        </div>
+        </CardWrapper>
       ))}
       
       {/* Second row - 2 cards centered */}
       {cards.length > 3 && (
         <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
           {cards.slice(3, 5).map((card, index) => (
-            <div key={index + 3} className="w-full">
+            <CardWrapper key={index + 3} card={card} className="w-full">
               <ServiceCard {...card} />
-            </div>
+            </CardWrapper>
           ))}
         </div>
       )}
@@ -156,9 +174,13 @@ export default function FiveCardRow({
         style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
       >
         {cards.map((card, index) => (
-          <div key={index} className="flex-shrink-0 w-[85%] md:w-[80%] lg:w-[calc(50%-44px)]">
+          <CardWrapper 
+            key={index} 
+            card={card} 
+            className="flex-shrink-0 w-[85%] md:w-[80%] lg:w-[calc(50%-44px)]"
+          >
             <ServiceCard {...card} />
-          </div>
+          </CardWrapper>
         ))}
       </div>
     </div>

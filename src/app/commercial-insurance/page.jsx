@@ -10,6 +10,7 @@ import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
 import CommercialInsuranceStats from '@/components/commercial-insurance-stats'
+import Companies from '@/components/companies'
 
 function page() {
 
@@ -73,6 +74,19 @@ function page() {
     }
   ];
 
+  const companyLogos = [
+  {
+    src: "/tata-aig.png",
+    alt: "Tata AIG",
+    width: 160,
+  },
+  {
+    src: "/HDFC Ergo.png",
+    alt: "HDFC Ergo",
+    width: 180,
+  }
+];
+
   return (
     <div>
       <div className='w-full' style={{
@@ -82,25 +96,10 @@ function page() {
                     backgroundRepeat: 'no-repeat',
                   }}>
                     <Navbar/>
-        <InsuranceHero greentitle="Commercial Insurance:" title="Safeguarding Your Business with MAK GROUP" description="Running a business comes with its share of risks and uncertainties. MAK GROUP offers a wide range of commercial insurance solutions to protect your venture from potential losses and liabilities, allowing you to focus on growing your business with peace of mind."
+        <InsuranceHero greentitle="Commercial Insurance:" title="Safeguarding Your Business with MAK GROUP" description="Running a business comes with its share of risks and uncertainties. MAK Insurance offers a wide range of commercial insurance solutions to protect your venture from potential losses and liabilities, allowing you to focus on growing your business with peace of mind."
                             imageAlt="Commercial Insurance" imageSrc="/Rectangle 57.jpg"/>
         </div>
-        <div className="w-full object-cover h-[81px] md:h-[162px]">
-        <Image 
-          src="/gblockermobile.svg" 
-          alt="Description of image"
-          width={2000}
-          height={1000}
-          className="block md:hidden"
-        />
-        <Image 
-          src="/gblocker.svg" 
-          alt="Description of image"
-          width={2000}
-          height={1000}
-          className="hidden md:block"
-        />
-      </div>
+        <Companies companyLogos={companyLogos} isStatic={true} />
         <StackedHeading mobileAlign='center' title="Protect Your Business Assets" subtitle="Comprehensive Coverage for Your Property, Goods, and Equipment" />
         <GridItemsSection
           cards={[
@@ -164,7 +163,7 @@ function page() {
               lightMode={true} />
     <CommercialInsuranceStats />
     <HeroWithButtons title="Tailored Insurance Plans to Match Your Business Needs" subtitle="Don't let unforeseen risks jeopardize your business. Contact MAK GROUP for a free commercial insurance quote tailored to your specific requirements. Our experts will guide you through the process and help you choose the best coverage for your business."
-      darkMode={true} primaryButtonIconType='quote' buttonText="Request a Free Quote" buttonLink="#" secondaryButtonText="Whatsapp Our Team" secondaryButtonLink="https://wa.me/+918591353530" />
+      darkMode={true} primaryButtonIconType='phone' buttonText="Request a Call Back" buttonLink="#" secondaryButtonText="Whatsapp Our Team" secondaryButtonLink="https://wa.me/+918591353530" />
       <FaqSection faqs={insuranceFaqs} />
       <Footer title='Get Started with MAK GROUP Commercial Insurance' description="Safeguard your business from potential risks and liabilities with MAK GROUP's comprehensive commercial insurance solutions. Get in touch with us today to discuss your needs and find the perfect coverage for your venture." />
     </div>

@@ -50,6 +50,11 @@ function about() {
       position: "Director"
     },
     {
+      image: "/KumarMakhija.jpeg",
+      name: "Pooja K. Makhija",
+      position: "Director"
+    },
+    {
       image: "/PinakAroskar.jpeg",
       name: "Pinak S. Aroskar",
       position: "Director for Loans/Financing"

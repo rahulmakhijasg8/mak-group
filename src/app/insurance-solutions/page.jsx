@@ -1,6 +1,5 @@
 import React from 'react'
 import GreenImageHero from '@/components/greenimagehero'
-import SectionHeader from '@/components/heading'
 import FlexGridLayout from '@/components/flexcardreusable'
 import StackedHeading from '@/components/stackedheading'
 import StatsGrid from '@/components/statsgrid'
@@ -8,10 +7,6 @@ import TestimonialCarousel from '@/components/testimonialcarousal'
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import HeroWithButtons from '@/components/herowithbuttons'
-import GridItemsSection from '@/components/insurancecardsec'
-import RESection from '@/components/propertycarsection'
-import BulletHeroSection from '@/components/bulletherosection'
-import AsymmetricCardRows from '@/components/twocardtworows'
 import Navbar from '@/components/navbar'
 
 
@@ -162,17 +157,19 @@ const WhatsAppIcon = ({ className }) => (
   return (
     <div>
       <Navbar/>
-        <GreenImageHero title="Protect What Matters Most with MAK GROUP" description="At MAK GROUP, we understand that life is full of uncertainties. That's why we offer a wide range of insurance solutions to help you protect your health, wealth, and everything in between. Our experienced team works with leading insurance providers to bring you the best coverage options at competitive prices."
+        <GreenImageHero title="Protect What Matters Most with MAK GROUP" description="At MAK Insurance, we understand that life is full of uncertainties. That's why we offer a wide range of insurance solutions to help you protect your health, wealth, and everything in between. Our experienced team works with leading insurance providers to bring you the best coverage options at competitive prices."
          imageSrc="/Rectangle 52.jpg" imageAlt="insurance solutions" />
+         <div id='insurance-offerings'>
          <StackedHeading title="Our Insurance Offerings" subtitle="Personalized Protection for Every Area of Your Life" />
          <FlexGridLayout itemsPerRow={3} items={insuranceItems} />
+         </div>
          <StackedHeading mobileAlign='center' title="Why Choose MAK GROUP for Your Insurance Needs?" subtitle="Expert Advice. Transparent Service. Trusted Coverage."/>
          <StatsGrid cards={statCards} />
          <HeroWithButtons
            title="Get a Free Insurance Quote"
            subtitle="Discover how MAK GROUP can help you protect what matters most. Submit your details and receive a tailored quote from our experts."
            buttonText="Get a Free Quote Now"
-           buttonLink="#"
+           buttonLink="#insurance-offerings"
            primaryButtonIconType='quote'
            secondaryButtonText="Whatsapp Our Team"
            secondaryButtonLink="https://wa.me/+918591353530"

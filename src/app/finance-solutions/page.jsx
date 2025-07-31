@@ -55,6 +55,12 @@ function page() {
             title: 'Loan Against LIC Policy',
             description: 'Leverage your LIC policy for immediate financial needs with our loan against LIC policy options. We provide quick processing and attractive interest rates against your insurance policy.',
             accentColor: '#E74C3C'
+          },
+          {
+            icon: '/finance-removebg-preview.png',
+            title: 'Loan Against Shares',
+            description: 'Monetize your equity portfolio with our loan against shares facility. Get instant liquidity against your shareholdings while retaining ownership. We offer competitive loan-to-value ratios and flexible repayment options.',
+            accentColor: '#1E88E5'
           }
     ]
 
@@ -157,7 +163,7 @@ function page() {
         }
       ]}
       primaryButtonText="Apply for a Loan Now"
-      primaryButtonLink="/contact"
+      primaryButtonLink="/contact-us"
       imageSrc="/financial.svg"
       imageAlt="Financial services illustration"
       showDisclaimer = 'true'

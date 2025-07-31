@@ -43,7 +43,7 @@ function services() {
     },
     {
       question: "Can I pay rent online?",
-      answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards through our secure payment portal. You can set up automatic monthly payments or pay manually each month."
+      answer: "Yes, we offer multiple online payment options for rent including bank transfers, UPI, and credit/debit cards. You can set up automatic monthly payments or pay manually each month."
     }
   ];
 

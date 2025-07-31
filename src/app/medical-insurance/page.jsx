@@ -9,9 +9,7 @@ import StatsGrid from '@/components/statsgrid'
 import FaqSection from '@/components/FAQSection'
 import Footer from '@/components/footer'
 import Navbar from '@/components/navbar'
-import Image from 'next/image'
 import MedicalInsuranceHero from '@/components/medical-insurance-hero'
-import { motion } from 'framer-motion'
 import Companies from '@/components/companies'
 
 
@@ -146,7 +144,7 @@ function page() {
     width: 180,
   },
   {
-    src: "/Niva Bupa.png",
+    src: "/NivaBupa1.png",
     alt: "Niva Bupa",
     width: 200,
   },
@@ -172,7 +170,7 @@ function page() {
       }}>
         <Navbar/>
         <InsuranceHero greentitle="Medical Insurance:" title="Protecting Your Health and Finances"
-            description="At MAK GROUP, we understand that your health is your most valuable asset. That's why we offer comprehensive medical insurance solutions to help you and your family stay protected against the high costs of healthcare."
+            description="At MAK Insurance, we understand that your health is your most valuable asset. That's why we offer comprehensive medical insurance solutions to help you and your family stay protected against the high costs of healthcare."
             imageSrc="/Rectangle 53.jpg"
             imageAlt="insurance"
             reverseLayout={false} />
@@ -193,7 +191,7 @@ function page() {
           className="hidden md:hidden"
         />
       </div> */}
-      <Companies companyLogos={companyLogos} />
+      <Companies companyLogos={companyLogos} isStatic={true}/>
         <StackedHeading mobileAlign='center' title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
         <TwoCardRow card1={hotel_costs} card2={protection} />
         <section 
@@ -241,7 +239,7 @@ function page() {
         </div>
       </div>
     </section>
-        <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+        <div id='free-quote' className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Get a Free Quote 
         </h2>

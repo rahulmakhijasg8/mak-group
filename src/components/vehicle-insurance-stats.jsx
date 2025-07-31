@@ -28,13 +28,14 @@ const VehicleInsuranceStats = () => {
 
         {/* Simple CTA */}
         <div className="bg-white/80 backdrop-blur-sm rounded-[25px] p-8 border border-white/50 shadow-lg">
-          <Link href="#">
-          <h4 className="text-xl font-bold text-[#221241] font-['Lato'] mb-4">Protect Your Vehicle Today</h4>
-          <button className="bg-[#4EBA64] font-['Lexend'] text-white px-8 py-3 rounded-full hover:bg-[#45A85A] transition-colors shadow-md">
-            Get Vehicle Insurance Quote
-          </button>
-          </Link>
-        </div>
+  <h4 className="text-xl font-bold text-[#221241] font-['Lato'] mb-4">Protect Your Vehicle Today</h4>
+  <Link 
+    href="#freequote"
+    className="inline-block bg-[#4EBA64] font-['Lexend'] text-white px-8 py-3 rounded-full hover:bg-[#45A85A] transition-colors shadow-md"
+  >
+    Get Vehicle Insurance Quote
+  </Link>
+</div>
       </div>
     </div>
   )

@@ -22,7 +22,8 @@ export default function Home() {
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "WhatsApp",
-    secondaryButtonLink: "https://wa.me/+918591353530"
+    secondaryButtonLink: "https://wa.me/+918591353530",
+    link: "/insurance-solutions"
   },
   {
     icon: <Image src="/sm-removebg-preview.png" alt="Investments" width={60} height={60} />,
@@ -31,7 +32,8 @@ export default function Home() {
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "WhatsApp",
-    secondaryButtonLink: "https://wa.me/+918591353530"
+    secondaryButtonLink: "https://wa.me/+918591353530",
+    link:"/sm-services"
   },
   {
     icon: <Image src="/car.png" alt="Insurance" width={60} height={60} />,
@@ -40,7 +42,8 @@ export default function Home() {
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Whatsapp",
-    secondaryButtonLink: "https://wa.me/+918591353530"
+    secondaryButtonLink: "https://wa.me/+918591353530",
+    link: "/cars"
   },
   {
     icon: <Image src="/loan_products-removebg-preview.png" alt="Investments" width={60} height={60} />,
@@ -49,7 +52,8 @@ export default function Home() {
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Whatsapp",
-    secondaryButtonLink: "https://wa.me/+918591353530"
+    secondaryButtonLink: "https://wa.me/+918591353530",
+    link: "/finance-solutions"
   },
   {
     icon: <Image src="/liquidity-removebg-preview.png" alt="Insurance" width={60} height={60} />,
@@ -58,7 +62,8 @@ export default function Home() {
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "Whatsapp",
-    secondaryButtonLink: "https://wa.me/+918591353530"
+    secondaryButtonLink: "https://wa.me/+918591353530",
+    link: "/insurance-solutions"
   }
 ];
 
@@ -124,7 +129,7 @@ export default function Home() {
     width: 180,
   },
   {
-    src: "/Niva Bupa.png",
+    src: "/NivaBupa1.png",
     alt: "Niva Bupa",
     width: 200,
   },
@@ -139,7 +144,7 @@ export default function Home() {
     width: 160,
   },
   {
-    src: "/iifl-securities.png",
+    src: "/IIFL_Securities-removebg-preview.png",
     alt: "IIFL securites",
     width: 180,
   },
@@ -216,7 +221,7 @@ export default function Home() {
     className="hidden md:block"
   />
 </div> */}
-    <Companies companyLogos={companyLogos} duration={9} />
+    <Companies companyLogos={companyLogos} duration={12} />
     <SectionHeading className="mt-[60px] md:mt-[100px]" title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
     <FiveCardRow cards={cardsArray} layout="grid" />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
