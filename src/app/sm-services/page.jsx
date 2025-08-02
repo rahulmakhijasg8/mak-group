@@ -231,8 +231,8 @@ const pms = {
 
         const companyLogos = [
   {
-    src: "/IIFL_Securities-removebg-preview.png",
-    alt: "HDFC Ergo",
+    src: "/no_change-Photoroom-removebg-preview.png",
+    alt: "IIFL Securites",
     width: 180,
   }
 ];

@@ -144,7 +144,7 @@ export default function Home() {
     width: 160,
   },
   {
-    src: "/IIFL_Securities-removebg-preview.png",
+    src: "/no_change-Photoroom-removebg-preview.png",
     alt: "IIFL securites",
     width: 180,
   },

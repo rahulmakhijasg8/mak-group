@@ -4,7 +4,7 @@ import BlueHeroSection from "@/components/blueherosection";
 import StackedHeading from "@/components/stackedheading";
 import React from 'react'
 import StatsGrid from "@/components/statsgrid";
-import SectionHeader from "@/components/heading";
+import CompaniesSection from "@/components/companies-section";
 import TeamSection from "@/components/teamsection";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -144,6 +144,7 @@ function about() {
   </div>
 </section>
 <StackedHeading className="md:pt-20" title="Our Team" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement." />
+<CompaniesSection />
 <TeamSection teamMembers={teamMembers} />
 <Footer />
 
