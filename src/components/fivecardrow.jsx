@@ -119,28 +119,34 @@ export default function FiveCardRow({
     return <div className={className}>{children}</div>;
   };
 
-  // Grid Layout Component
-  const GridLayout = () => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
-      {/* First row - 3 cards */}
-      {cards.slice(0, 3).map((card, index) => (
-        <CardWrapper key={index} card={card} className="w-full">
-          <ServiceCard {...card} />
-        </CardWrapper>
-      ))}
-      
-      {/* Second row - 2 cards centered */}
-      {cards.length > 3 && (
-        <div className="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
-          {cards.slice(3, 5).map((card, index) => (
-            <CardWrapper key={index + 3} card={card} className="w-full">
-              <ServiceCard {...card} />
-            </CardWrapper>
-          ))}
-        </div>
-      )}
-    </div>
-  );
+  // Grid Layout Component - Updated to handle more cards
+  const GridLayout = () => {
+    // Calculate how many complete rows of 3 we can make
+    const cardsPerRow = 3;
+    const rows = [];
+    
+    for (let i = 0; i < cards.length; i += cardsPerRow) {
+      rows.push(cards.slice(i, i + cardsPerRow));
+    }
+
+    return (
+      <div className="px-4 space-y-6">
+        {rows.map((row, rowIndex) => (
+          <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {row.map((card, cardIndex) => (
+              <CardWrapper 
+                key={rowIndex * cardsPerRow + cardIndex} 
+                card={card} 
+                className="w-full"
+              >
+                <ServiceCard {...card} />
+              </CardWrapper>
+            ))}
+          </div>
+        ))}
+      </div>
+    );
+  };
 
   // Carousel Layout Component
   const CarouselLayout = () => (

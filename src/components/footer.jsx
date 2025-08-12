@@ -149,12 +149,12 @@ export default function Footer({
                   </Link>
                 </li>
                 <li>
-                  <Link href="/privacy" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
+                  <Link href="/privacypolicy" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                     Privacy Policy
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
+                  <Link href="/terms-conditions" className="font-['Lato'] text-white text-opacity-80 hover:text-opacity-100 text-[14px] hover:underline transition-all duration-300">
                     Terms & Conditions
                   </Link>
                 </li>
@@ -230,7 +230,6 @@ export default function Footer({
               © {new Date().getFullYear()} <a 
                 href="https://www.techdevs.in/" 
                 target="_blank" 
-                rel="noopener noreferrer"
                 className="hover:text-white hover:underline transition-colors duration-300"
               >
                 MAKGroup

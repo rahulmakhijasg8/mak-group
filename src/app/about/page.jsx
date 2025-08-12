@@ -143,8 +143,8 @@ function about() {
     </p>
   </div>
 </section>
-<StackedHeading className="md:pt-20" title="Our Team" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement." />
 <CompaniesSection />
+<StackedHeading className="md:pt-20" title="Our Team" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement." />
 <TeamSection teamMembers={teamMembers} />
 <Footer />
 

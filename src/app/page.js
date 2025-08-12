@@ -11,6 +11,7 @@ import Footer from "@/components/footer";
 import { Calendar } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Companies from "@/components/companies";
+import AwardsAchievements from "@/components/awardsachievements";
 
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
   {
     icon: <Image src="/sm-removebg-preview.png" alt="Investments" width={60} height={60} />,
     title: "Stock Market",
-    description: "Invest wisely in the stock market with guidance from our highly experienced sub-brokers at IIFL Securities.",
+    description: "Expert stock market guidance with 15+ years experience, 500 Crores AUM, and comprehensive services in equity, mutual funds, AIF & PMS.",
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
     secondaryButtonText: "WhatsApp",
@@ -36,34 +37,43 @@ export default function Home() {
     link:"/sm-services"
   },
   {
-    icon: <Image src="/car.png" alt="Insurance" width={60} height={60} />,
+    icon: <Image src="/car.png" alt="Car" width={60} height={60} />,
     title: "Cars",
-    description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
+    description: "Complete car solutions - buy new/used vehicles, sell hassle-free, secure competitive loans, and get comprehensive insurance coverage.",
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Whatsapp",
+    secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     link: "/cars"
   },
   {
-    icon: <Image src="/loan_products-removebg-preview.png" alt="Investments" width={60} height={60} />,
+    icon: <Image src="/loan_products-removebg-preview.png" alt="Loans" width={60} height={60} />,
     title: "Loans",
     description: "Grow your wealth with our expertly managed investment portfolios tailored to your goals.",
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Whatsapp",
+    secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     link: "/finance-solutions"
   },
   {
-    icon: <Image src="/liquidity-removebg-preview.png" alt="Insurance" width={60} height={60} />,
+    icon: <Image src="/liquidity-removebg-preview.png" alt="Investment" width={60} height={60} />,
     title: "Investment",
-    description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
+    description: "Build long-term wealth through diversified investment strategies and professional portfolio management services.",
     primaryButtonText: "Call Us Now",
     primaryButtonLink: "/book-call",
-    secondaryButtonText: "Whatsapp",
+    secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
-    link: "/insurance-solutions"
+  },
+  {
+    icon: <Image src="/residential.png" alt="Real Estate" width={60} height={60} />,
+    title: "Real Estate",
+    description: "Discover prime residential and commercial properties with expert guidance for buying, selling, and investment opportunities.",
+    primaryButtonText: "Call Us Now",
+    primaryButtonLink: "/book-call",
+    secondaryButtonText: "WhatsApp",
+    secondaryButtonLink: "https://wa.me/+918591353530",
+    link: "/real-estate"
   }
 ];
 
@@ -155,6 +165,69 @@ export default function Home() {
   }
 ];
 
+const exampleAwards = [
+  {
+    title: "TATA AIG Giant Steps - Pillar of Success",
+    src: "/tataaig.jpg"
+  },
+  {
+    title: "TOT Qualification Award 2022",
+    src: "/TOT.jpg"
+  },
+  {
+    title: "Travel Connect - Pan India",
+    src: "/travelconnect.jpg"
+  },
+  {
+    title: "UTKARSH Gold Award - Commercial Lines FY'25",
+    src: "/utkarsh.jpg"
+  },
+  {
+    title: "Vienna Training Conclave 2024",
+    src: "/vienna.jpg"
+  },
+  {
+    title: "TATA AIA TOT",
+    src: "/tot1.jpg"
+  },
+  {
+    title: "TATA AIA TOT",
+    src: "/tataaia.jpg"
+  },
+  {
+    title: "Niva Bupa Special 30 Award - July 2022",
+    src: "/special30.jpg"
+  },
+  {
+    title: "Niva Bupa Champion's Meet FY 24-25",
+    src: "/nivabupa.jpg"
+  },
+  {
+    title: "TATA AIA COT 2024",
+    src: "/aiaoct'24.jpg"
+  },
+  {
+    title: "Giant Steps Emerald Award FY'23",
+    src: "/emrald.jpg"
+  },
+  {
+    title: "Greece Training Conclave Nov-24 Achievement",
+    src: "/greece.jpg"
+  },
+  {
+    title: "H2 Achievers Leader Summit Langkawi 2024",
+    src: "/h2achievers.jpg"
+  },
+  {
+    title: "IIFL Capital Excellence in Broking Q4-FY24",
+    src: "/iiflcapital-broking.jpg"
+  },
+  {
+    title: "COT-TOT Strategy Meet Sep'23",
+    src: "/mahagunam.jpg"
+  }
+];
+
   return (
     <div>
       <div className='w-full' style={{
@@ -230,6 +303,8 @@ export default function Home() {
     primaryButtonText="Call Us Now" primaryButtonLink="tel:+918591353530" imageSrc="/Group 46.svg" imageAlt="test" reverseLayout={true} secondaryButtonText="Chat with us on Whatsapp" secondaryButtonLink="https://wa.me/+918591353530"  />
     <SectionHeading className="md:pt-24" title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust and Integrity" />
     <TestimonialCarousel testimonials={testimonials} />
+    <SectionHeading title="Awards & Achievements" />
+    <AwardsAchievements awards={exampleAwards} />
     <Footer />
     </div>
   );
