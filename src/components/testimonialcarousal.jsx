@@ -53,56 +53,12 @@ export default function TestimonialCarousel({ testimonials }) {
 
   return (
     <section className="w-full mt-[32px] md:mt-[60px]">
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto">
         {/* Left Navigation Button */}
-        {canScrollLeft && (
-          <button
-            onClick={scrollLeft}
-            className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 shadow-lg rounded-full p-3 transition-all duration-200 border border-gray-200"
-            aria-label="Scroll left"
-          >
-            <svg 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              className="text-gray-600"
-            >
-              <path 
-                d="M15 18L9 12L15 6" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        )}
+  
 
         {/* Right Navigation Button */}
-        {canScrollRight && (
-          <button
-            onClick={scrollRight}
-            className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white hover:bg-gray-50 shadow-lg rounded-full p-3 transition-all duration-200 border border-gray-200"
-            aria-label="Scroll right"
-          >
-            <svg 
-              width="20" 
-              height="20" 
-              viewBox="0 0 24 24" 
-              fill="none" 
-              className="text-gray-600"
-            >
-              <path 
-                d="M9 18L15 12L9 6" 
-                stroke="currentColor" 
-                strokeWidth="2" 
-                strokeLinecap="round" 
-                strokeLinejoin="round"
-              />
-            </svg>
-          </button>
-        )}
+        
 
         {/* Scrollable container */}
         <div 
@@ -124,6 +80,30 @@ export default function TestimonialCarousel({ testimonials }) {
             </div>
           ))}
         </div>
+        {/* Navigation buttons below cards */}
+<div className="flex justify-center items-center space-x-4 mt-6">
+  <button
+    onClick={scrollLeft}
+    disabled={!canScrollLeft}
+    className="bg-white hover:bg-gray-50 shadow-lg rounded-full p-3 transition-all duration-200 border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+    aria-label="Scroll left"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+      <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </button>
+  
+  <button
+    onClick={scrollRight}
+    disabled={!canScrollRight}
+    className="bg-white hover:bg-gray-50 shadow-lg rounded-full p-3 transition-all duration-200 border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+    aria-label="Scroll right"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+      <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </button>
+</div>
       </div>
     </section>
   );

@@ -294,7 +294,7 @@ const exampleAwards = [
             }}>
               <Navbar/>
               <div className="flex">
-      <section className="w-full mx-auto mt-[36px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[40px]">
+      <section className="w-full mx-auto mt-[36px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[80px]">
   <div className="flex flex-col max-w-7xl mx-auto md:flex-row gap-0 md:gap-0">
     {/* Left Column */}
     <div className="w-full md:w-1/2 md:pr-6 flex flex-col justify-center">
@@ -362,7 +362,7 @@ const exampleAwards = [
     <SectionHeading title="Awards & Achievements" />
     <AwardsAchievements showViewMore={true} photos={exampleAwards} mobileInitialCount={2}
   desktopInitialCount={4} />
-  <div className="max-w-full px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[40px] mt-[60px] md:mt-[80px]">
+  <div className="max-w-full px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[80px] mt-[60px] md:mt-[80px]">
         <div className="mx-auto max-w-7xl">
         {/* Mobile title - only shows on mobile screens */}
         <div className="block flex justify-center md:hidden mb-6">
@@ -390,7 +390,7 @@ const exampleAwards = [
           {/* Second column - Contact Form (60% width) */}
           <div className="w-full md:w-3/5 mt-5 md:mt-0 px-0 md:px-6">
             {/* Desktop heading for the form section - only shows on desktop */}
-            <div className="hidden md:block mt-5 md:mt-0">
+            <div className="hidden md:block mt-5 md:-mt-2">
               <h2 className="font-['Lexend'] text-[#221241] pl-6 md:pl-4 font-normal text-[28px] md:text-[36px] leading-tight">
                 Contact Us
               </h2>
