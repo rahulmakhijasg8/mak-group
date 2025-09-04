@@ -3,7 +3,7 @@ import InsuranceCard from "./insurancecard"; // Import the custom card
 export default function GridItemsSection({ cards, cardWidth, page}) {
 
   return (
-    <section className="w-full py-8 md:py-12 px-4 md:px-[60px] lg:px-[80px]">
+    <section className="w-full max-w-7xl mx-auto py-8 md:py-12 px-4 md:px-[60px] lg:px-[80px]">
       <div className="max-w-full mx-auto">
 
         {/* Mobile: Column layout with spacing */}

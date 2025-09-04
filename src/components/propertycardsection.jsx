@@ -119,7 +119,7 @@ export default function PropertyCarousel({
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
       }}  className={`w-full mt-[60px] py-[36] md:py-[100px] ${bgColor}`}>
-      <div className=" max-w-7xl">
+      <div className=" max-w-7xl mx-auto">
         
         {/* Mobile Layout: Original design */}
         <div className="md:hidden">
@@ -156,7 +156,7 @@ export default function PropertyCarousel({
           {/* Carousel container */}
           <div 
             ref={carouselRef}
-            className="flex overflow-x-auto pb-6 scrollbar-hide gap-4 pl-4 md:pl-[60px] lg:pl-[80px] pr-4"
+            className="flex overflow-x-auto pb-6 scrollbar-hide gap-4 pl-0 md:pl-[0px] lg:pl-[0px] pr-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             <style jsx>{`

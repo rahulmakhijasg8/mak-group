@@ -99,7 +99,7 @@ export default function FeatureSection({
 
   return (
     <section 
-      className={`w-full max-w-7xl px-4 mt-10 md:px-[60px] lg:px-[80px] pt-18 pb-0 ${paddingClass} ${darkMode ? 'bg-[#221241] relative' : ''}`}
+      className={`w-full mx-auto max-w-7xl px-4 mt-10 md:px-[60px] lg:px-[80px] pt-18 pb-0 ${paddingClass} ${darkMode ? 'bg-[#221241] relative' : ''}`}
       style={sectionStyle}
     >
       {/* Optional overlay for better text contrast in dark mode */}

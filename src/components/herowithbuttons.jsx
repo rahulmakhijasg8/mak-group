@@ -96,7 +96,7 @@ export default function HeroWithButtons({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className={`w-full max-w-7xl px-[16px] md:px-[60px] lg:px-[80px] md:my-20 pt-15 pb-10 md:py-25 ${backgroundColor}`}>
+      }} className={`w-full max-w-7xl mx-auto px-[16px] md:px-[60px] lg:px-[80px] md:my-20 pt-15 pb-10 md:py-25 ${backgroundColor}`}>
       <div className="md:mx-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           {/* Heading section */}

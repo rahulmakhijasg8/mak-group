@@ -202,11 +202,11 @@ function page() {
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
       }} 
-      className="w-full md:p-12 px-4 md:px-[60px] lg:px-[80px] bg-[#221241]"
+      className="w-full max-w-7xl mx-auto md:p-12 px-4 md:px-[60px] lg:px-[80px] bg-[#221241]"
     >
       <div className={`max-w-full mx-auto flex flex-col`}>
         {/* Content Column */}
-        <div className="w-full flex flex-col justify-center">
+        <div className="w-full max-w-7xl mx-auto flex flex-col justify-center">
           
           {/* Replace the custom title/subtitle section with StackedHeading */}
           <StackedHeading
@@ -220,7 +220,7 @@ function page() {
             subtitleColor="text-[#B7C7E7]"
           />
           
-          <div className="font-['Lato'] text-[#B7C7E7] mt-15 ml-3 font-normal text-[18px] md:text-[20px] mb-8">
+          <div className="font-['Lato'] max-w-7xl pl-3 mx-auto text-[#B7C7E7] mt-15 font-normal text-[18px] md:text-[20px] mb-8">
             {/* Bullet points */}
             {bulletPoints.length > 0 && (
               <div className="space-y-1">

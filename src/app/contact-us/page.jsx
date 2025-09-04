@@ -71,7 +71,7 @@ function Page() {
         imageSrc="/Rectangle 58.jpg" 
         imageAlt="contact us" 
       />
-      <div className="mx-auto mt-3 px-4 md:px-[60px] lg:px-[80px] pb-16 pt-8 md:pb-24 md:pt-18">
+      <div className="mx-auto max-w-7xl mt-3 px-4 md:px-[60px] lg:px-[80px] pb-16 pt-8 md:pb-24 md:pt-18">
         {/* Mobile title - only shows on mobile screens */}
         <div className="block flex justify-center md:hidden mb-6">
           <h2 className="font-['Lexend'] text-[#221241] px-4 font-normal text-[34px] leading-tight">

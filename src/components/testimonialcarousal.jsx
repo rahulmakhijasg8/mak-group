@@ -52,8 +52,8 @@ export default function TestimonialCarousel({ testimonials }) {
   };
 
   return (
-    <section className="w-full mt-[32px] md:mt-[60px]">
-      <div className="max-w-7xl relative">
+    <section className="w-full flex mt-[32px] md:mt-[60px]">
+      <div className="max-w-7xl mx-auto relative">
         {/* Left Navigation Button */}
         {canScrollLeft && (
           <button

@@ -284,7 +284,7 @@ const exampleAwards = [
 
   return (
     <div>
-      <div className='w-full' style={{
+      <div className='' style={{
               backgroundImage: "url('/insuranceherobg.png')", // Fixed background image path
               backgroundSize: 'cover',
               backgroundPosition: 'center',
@@ -293,7 +293,8 @@ const exampleAwards = [
               opacity: 100
             }}>
               <Navbar/>
-      <section className="w-full mt-[36px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[80px]">
+              <div className="flex justify-center">
+      <section className="w-full max-w-7xl mt-[36px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[80px]">
   <div className="flex flex-col md:flex-row gap-0 md:gap-0">
     {/* Left Column */}
     <div className="w-full md:w-1/2 md:pr-6 flex flex-col justify-center">
@@ -331,6 +332,7 @@ const exampleAwards = [
     </div>
   </div>
 </section>
+</div>
     </div>
     {/* <div className="w-full object-cover h-[81px] md:h-[162px]">
   <Image 
@@ -350,7 +352,7 @@ const exampleAwards = [
 </div> */}
     <Companies companyLogos={companyLogos} duration={12} />
     <SectionHeading className="mt-[60px] md:mt-[100px]" title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
-    <FiveCardRow cards={cardsArray} cardsPerRow={2} layout="grid" />
+    <FiveCardRow cards={cardsArray} cardsPerRow={3} layout="grid" />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
     <StatsGrid cards={statCards} />
     <HeroSection title="Ready to Take Control of Your Financial Future?" darkMode={true} imageContainerClass="w-[120%] h-[100%]" description="Let’s work together to plan, protect, and grow your wealth. Schedule your free consultation now." 
@@ -360,7 +362,7 @@ const exampleAwards = [
     <SectionHeading title="Awards & Achievements" />
     <AwardsAchievements showViewMore={true} photos={exampleAwards} mobileInitialCount={2}
   desktopInitialCount={4} />
-  <div className="mx-auto px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[80px] mt-[60px] md:mt-[80px]">
+  <div className="mx-auto max-w-7xl px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[80px] mt-[60px] md:mt-[80px]">
         {/* Mobile title - only shows on mobile screens */}
         <div className="block flex justify-center md:hidden mb-6">
           <h2 className="font-['Lexend'] text-[#221241] px-4 font-normal text-[34px] leading-tight">

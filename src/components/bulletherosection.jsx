@@ -50,7 +50,7 @@ export default function BulletHeroSection({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className={`w-full mt-[60px] md:mt-[80px] max-w-7xl py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
+      }} className={`w-full mt-[60px] md:mt-[80px] max-w-7xl mx-auto py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
     >
       <div className={`container md:gap-[67px] px-4 md:px-[60px] lg:px-[80px] flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
         {/* Content Column */}

@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutHero = () => {
   return (
-    <div className="relative  w-full max-w-7xl mt-[24px] md:mt-[35px] h-[450px] md:h-[400px] overflow-hidden">
+    <div className="relative mx-auto w-full max-w-7xl mt-[24px] md:mt-[35px] h-[450px] md:h-[400px] overflow-hidden">
       {/* Mobile background image (hidden on md screens and up) */}
       <div 
         className="absolute inset-0 block md:hidden"
