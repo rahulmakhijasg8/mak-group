@@ -293,9 +293,9 @@ const exampleAwards = [
               opacity: 100
             }}>
               <Navbar/>
-              <div className="flex justify-center">
-      <section className="w-full max-w-7xl mt-[36px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[80px]">
-  <div className="flex flex-col md:flex-row gap-0 md:gap-0">
+              <div className="flex">
+      <section className="w-full mx-auto mt-[36px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[40px]">
+  <div className="flex flex-col max-w-7xl mx-auto md:flex-row gap-0 md:gap-0">
     {/* Left Column */}
     <div className="w-full md:w-1/2 md:pr-6 flex flex-col justify-center">
       <h1 className="font-['Lexend'] text-[#221241] font-normal text-[34px] md:text-[54px] mb-4 tracking-[0.6] leading-tight md:leading-[1.3]">
@@ -362,7 +362,8 @@ const exampleAwards = [
     <SectionHeading title="Awards & Achievements" />
     <AwardsAchievements showViewMore={true} photos={exampleAwards} mobileInitialCount={2}
   desktopInitialCount={4} />
-  <div className="mx-auto max-w-7xl px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[80px] mt-[60px] md:mt-[80px]">
+  <div className="max-w-full px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[40px] mt-[60px] md:mt-[80px]">
+        <div className="mx-auto max-w-7xl">
         {/* Mobile title - only shows on mobile screens */}
         <div className="block flex justify-center md:hidden mb-6">
           <h2 className="font-['Lexend'] text-[#221241] px-4 font-normal text-[34px] leading-tight">
@@ -423,6 +424,7 @@ const exampleAwards = [
               </>
             )}
           </div>
+        </div>
         </div>
       </div>
     <Footer />

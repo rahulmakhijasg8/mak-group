@@ -141,7 +141,7 @@ export default function FiveCardRow({
 
     return (
       <div className='w-full'>
-      <div className="max-w-7xl mx-auto px-[16px] md:px-[60px] lg:px-[80px] mt-[32px] md:mt-[60px] space-y-6">
+      <div className="px-[16px] md:px-[60px] lg:px-[40px] mt-[32px] md:mt-[60px] space-y-6">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className={getGridClasses()}>
             {row.map((card, cardIndex) => (
@@ -206,7 +206,7 @@ export default function FiveCardRow({
 
   return (
     <section className={`w-full  ${bgColor}`}>
-      <div className="mx-auto">
+      <div className="mx-auto max-w-7xl">
         
         {/* Header Section - only show if title or subtitle exists */}
         {(title || subtitle) && (

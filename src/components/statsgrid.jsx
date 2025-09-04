@@ -41,7 +41,7 @@ export default function StatsGrid({ cards }) {
         </div>
         
         {/* Desktop: Row layout with spacing */}
-        <div className="hidden max-w-7xl md:flex px-[16px] md:px-[60px] lg:px-[80px] flex-row justify-between space-x-5">
+        <div className="hidden max-w-7xl md:flex px-[16px] md:px-[60px] lg:px-[40px] flex-row justify-between space-x-5">
           {Array.isArray(cards) && cards.map((card, index) => (
             <div key={`desktop-${index}`} className="w-1/5">
               {renderCard(card, index)}

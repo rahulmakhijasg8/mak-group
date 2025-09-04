@@ -99,7 +99,7 @@ export default function HeroSection({
 
   return (
     <section 
-      className={`w-full px-[16px] md:px-[60px] lg:px-[80px] mt-[60px] md:mt-[100px] ${paddingClass} ${darkMode ? 'bg-[#221241] relative' : ''}`}
+      className={`w-full px-[16px] md:px-[60px] lg:px-[40px] mt-[60px] md:mt-[100px] ${paddingClass} ${darkMode ? 'md:bg-[#221241] relative' : ''}`}
       style={sectionStyle}
     >
       {/* Optional overlay for better text contrast in dark mode */}
