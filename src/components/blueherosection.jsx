@@ -35,7 +35,7 @@ export default function BlueHeroSection({
 }) {
   return (
     <section 
-      className="w-full mt-[60px] md:mt-[100px] py-[50px] md:py-[88px] px-4 md:px-[60px] lg:px-[80px] bg-[#221241]" // Lighter background color
+      className="w-full max-w-7xl mt-[60px] md:mt-[100px] py-[50px] md:py-[88px] px-4 md:px-[60px] lg:px-[80px] bg-[#221241]" // Lighter background color
       style={{
         backgroundImage: "url('/greeneffect.svg')",
         backgroundSize: 'cover',

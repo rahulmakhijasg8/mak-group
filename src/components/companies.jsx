@@ -9,7 +9,7 @@ export default function Companies({
   bgColor = "#FFFFFF",
   isStaticDesktop = false, // Control static behavior on desktop
   isStaticMobile = false,  // Control static behavior on mobile
-  staticThreshold = 5 // Automatically make static if logos <= this number (fallback)
+  staticThreshold = 3 // Automatically make static if logos <= this number (fallback)
 }) {
   const [isMobile, setIsMobile] = useState(false);
 

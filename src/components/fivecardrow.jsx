@@ -140,7 +140,7 @@ export default function FiveCardRow({
     };
 
     return (
-      <div className="px-[16px] md:px-[60px] lg:px-[80px] mt-[32px] md:mt-[60px] space-y-6">
+      <div className="max-w-7xl px-[16px] md:px-[60px] lg:px-[80px] mt-[32px] md:mt-[60px] space-y-6">
         {rows.map((row, rowIndex) => (
           <div key={rowIndex} className={getGridClasses()}>
             {row.map((card, cardIndex) => (

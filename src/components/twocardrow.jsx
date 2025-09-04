@@ -22,16 +22,16 @@ export default function TwoCardRow({ card1, card2, cards = [] }) {
             {/* Card row container */}
             <div 
               ref={rowIndex === 0 ? scrollContainerRef : null}
-              className="flex overflow-x-auto space-x-6 md:space-x-[50px] pb-6 scrollbar-hide"
+              className="flex flex-col space-y-6 md:flex-row md:overflow-x-auto md:space-y-0 md:space-x-[50px] pb-6 md:scrollbar-hide"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {row.map((card, cardIndex) => (
                 <div 
                   key={cardIndex} 
-                  className={`flex-shrink-0 ${
+                  className={`md:flex-shrink-0 ${
                     row.length === 1 
-                      ? "w-[85%] md:w-[calc(50%-24px)]" // Single card in row
-                      : "w-[85%] md:w-[calc(50%-24px)]" // Two cards in row
+                      ? "w-full md:w-[calc(50%-24px)]" // Single card in row
+                      : "w-full md:w-[calc(50%-24px)]" // Two cards in row
                   }`}
                 >
                   <ServiceCard {...card} />

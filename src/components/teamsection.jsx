@@ -4,7 +4,7 @@ import TeamMemberCard from './teamembercard';
 const TeamSection = ({ teamMembers }) => {
   return (
     <section className="py-12 md:py-0 px-[16px] md:px-[60px] lg:px-[60px] ">
-      <div className="w-full mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         
         {/* Modified grid to handle 5 members with gaps */}
         <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 mt-15 gap-6 md:gap-12 xl:gap-8">

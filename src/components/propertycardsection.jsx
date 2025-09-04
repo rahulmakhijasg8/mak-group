@@ -119,7 +119,7 @@ export default function PropertyCarousel({
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
       }}  className={`w-full mt-[60px] py-[36] md:py-[100px] ${bgColor}`}>
-      <div className="">
+      <div className=" max-w-7xl">
         
         {/* Mobile Layout: Original design */}
         <div className="md:hidden">

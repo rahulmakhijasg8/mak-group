@@ -13,7 +13,7 @@ export default function InsuranceHero({
       className="w-full py-12 md:py-20 px-4 md:px-[60px] lg:px-[80px] mb-4 md:mb-20 relative"
     >
       
-      <div className={`flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-20 relative z-10`}>
+      <div className={`flex flex-col max-w-7xl ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-20 relative z-10`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 flex flex-col justify-center">
           <h1 className="font-['Lexend'] text-[#221241] font-normal text-[32px] md:text-[40px] lg:text-[48px] mb-4">

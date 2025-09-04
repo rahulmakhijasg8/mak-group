@@ -115,7 +115,7 @@ const WhatsAppIcon = ({ className }) => (
       quote: "I was impressed by the professionalism and expertise shown by MAK GROUP when helping me with my financial planning.",
       name: "Rahul Sharma",
       location: "Mumbai",
-      avatarSrc: "/testimonial-photo.svg"
+      avatarSrc: "/RahulSharma.png"
     },
     {
       quote: "Working with MAK GROUP has transformed my business's financial strategy. Their advice was invaluable.",
@@ -127,7 +127,7 @@ const WhatsAppIcon = ({ className }) => (
       quote: "The investment options provided by MAK GROUP have significantly improved my portfolio performance.",
       name: "Kiran Reddy",
       location: "Hyderabad",
-      avatarSrc: "/testimonial-photo.svg"
+      avatarSrc: "/RahulSharma.png"
     },
   ];
 

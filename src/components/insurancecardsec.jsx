@@ -23,7 +23,7 @@ export default function GridItemsSection({ cards, cardWidth, page}) {
         </div>
 
         {/* Desktop: Row layout with spacing */}
-        <div className="hidden md:block">
+        <div className="hidden max-w-7xl md:block">
           {page === 'life' ? (
             // Life page: 4 cards in a single row
             <div className="flex justify-center flex-row space-x-6">

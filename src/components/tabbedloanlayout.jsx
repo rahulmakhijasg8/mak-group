@@ -38,7 +38,7 @@ const TabbedLoanLayout = ({ securedLoans = [], unsecuredLoans = [], className = 
   const [activeTab, setActiveTab] = useState("secured")
 
   return (
-    <div className={`px-4 md:px-[60px] lg:px-[80px] py-12 ${className}`}>
+    <div className={`px-4 md:px-[60px] lg:px-[80px] max-w-7xl py-12 ${className}`}>
       {/* Tab Navigation */}
       <div className="flex justify-center mb-8">
         <div className="bg-[#F5F5F5] rounded-full p-2 flex w-full max-w-md">

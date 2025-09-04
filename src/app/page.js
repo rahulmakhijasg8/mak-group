@@ -170,7 +170,7 @@ const {
       quote: "I was impressed by the professionalism and expertise shown by MAK GROUP when helping me with my financial planning.",
       name: "Rahul Sharma",
       location: "Mumbai",
-      avatarSrc: "/testimonial-photo.svg"
+      avatarSrc: "/RahulSharma.png"
     },
     {
       quote: "Working with MAK GROUP has transformed my business's financial strategy. Their advice was invaluable.",
@@ -182,7 +182,7 @@ const {
       quote: "The investment options provided by MAK GROUP have significantly improved my portfolio performance.",
       name: "Kiran Reddy",
       location: "Hyderabad",
-      avatarSrc: "/testimonial-photo.svg"
+      avatarSrc: "/RahulSharma.png"
     },
   ];
 
@@ -385,7 +385,7 @@ const exampleAwards = [
           </div>
           
           {/* Second column - Contact Form (60% width) */}
-          <div className="w-full md:w-3/5 px-4 md:px-6">
+          <div className="w-full md:w-3/5 mt-5 md:mt-0 px-0 md:px-6">
             {/* Desktop heading for the form section - only shows on desktop */}
             <div className="hidden md:block mt-5 md:mt-0">
               <h2 className="font-['Lexend'] text-[#221241] pl-6 md:pl-4 font-normal text-[28px] md:text-[36px] leading-tight">
@@ -415,8 +415,8 @@ const exampleAwards = [
                   submitButtonText="Send Message" 
                   submitButtonIconType='none' 
                   onComplete={handleFormSubmit}
-                  paddingDesktop='md:p-5 md:pt-0 md:pb-4'
-                  paddingMobile='px-6'
+                  paddingDesktop='md:p-5 md:pt-1 md:pb-4'
+                  paddingMobile='p-4 pt-2'
                 />
               </>
             )}

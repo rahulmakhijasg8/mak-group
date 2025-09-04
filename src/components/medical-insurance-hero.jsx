@@ -3,7 +3,7 @@ import { Award, Heart, Shield, Users, Banknote, CheckCircle, Link } from "lucide
 // Medical Insurance - Multi Stats Hero Banner
 const MedicalInsuranceHero = () => {
   return (
-    <div className="relative mt-[60px] md:mt-[100px] px-4 md:px-[60px] lg:px-[80px] py-16 overflow-hidden">
+    <div className="relative mt-[60px] md:mt-[100px] max-w-7xl px-4 md:px-[60px] lg:px-[80px] py-16 overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#221241] via-[#2A1B4F] to-[#4EBA64] opacity-95"></div>
 

@@ -2,7 +2,7 @@ const CompaniesSection = () => {
   const companies = ["Mak Motors Pvt. Ltd.", "Mak Miles Pvt. Ltd.", "Mak Insurance Services", "Mak Mints"]
 
   return (
-    <section className="w-full mt-[60px] md:mt-[100px] py-[32px] py-[60px] md:py-16 px-4 md:px-[60px] lg:px-[80px] bg-gradient-to-br from-[#FAFAFA] to-[#F5F5F5]">
+    <section className="w-full max-w-7xl mt-[60px] md:mt-[100px] py-[32px] py-[60px] md:py-16 px-4 md:px-[60px] lg:px-[80px] bg-gradient-to-br from-[#FAFAFA] to-[#F5F5F5]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
