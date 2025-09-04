@@ -267,7 +267,7 @@ export default function Navbar() {
         }
       `}</style>
 
-      <div className="pt-2 md:mb-3 md:pt-4">
+      <div className="pt-[30px] md:pt-[35px]">
         <nav 
           className={`
             w-full 
@@ -275,7 +275,7 @@ export default function Navbar() {
             items-center 
             justify-between 
             h-20
-            px-4 sm:px-6 md:px-8 lg:px-12
+            px-[16px] md:px-[60px] lg:px-[80px]
             bg-transparent
             transition-all
             duration-300

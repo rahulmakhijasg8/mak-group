@@ -734,7 +734,7 @@ const handleSubmit = async () => {
         <button
           type="button"
           onClick={handleSubmit}
-          className={`px-3 md:px-8 py-4 md:py-3 w-[60%] md:w-auto mx-auto md:mx-0 bg-green-500 font-['Lexend'] text-white rounded-full hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center`}
+          className={`px-3 md:px-8 py-4 md:py-3 w-[60%] md:w-auto mx-auto md:mx-0 bg-[#4EBA64] border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] font-['Lexend'] text-white rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 flex items-center justify-center`}
         >
           {submitIcon}
           <span>{submitButtonText}</span>

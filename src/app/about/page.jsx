@@ -100,10 +100,10 @@ function about() {
   secondaryButtonLink="https://wa.me/+918591353530"  
   backgroundColor='#221241'
 />
-<StackedHeading className="md:pt-24" title="Our Expertise" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement. With specialists in insurance, stock market investing, finance, real estate, and more, we have the skills and resources to handle all your financial needs." />
+<StackedHeading title="Our Expertise" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement. With specialists in insurance, stock market investing, finance, real estate, and more, we have the skills and resources to handle all your financial needs." />
 <StatsGrid cards={statCards} />
-<StackedHeading className="md:pt-16" title="Our Commitment to You" subtitle="At MAK GROUP, our clients are at the heart of everything we do. We are committed to providing you with the highest level of service, support, and guidance, and to helping you achieve your financial goals." />
-<section className="bg-[#FAFAFA] w-[90%] md:w-6xl mx-auto rounded-[50px] border-[1px] border-[#EBEBEB] mt-15 py-6 md:py-16">
+<StackedHeading title="Our Commitment to You" subtitle="At MAK GROUP, our clients are at the heart of everything we do. We are committed to providing you with the highest level of service, support, and guidance, and to helping you achieve your financial goals." />
+<section className="bg-[#F1F1F1] w-[90%] md:w-7xl mx-auto rounded-[50px] border-[1px] border-[#EBEBEB] mt-15 py-6 md:py-16">
   <div className="max-w-6xl mx-auto px-4 md:px-12">
     <div className="mb-8">
       <p className={`font-lato text-[#4EBA64] text-lg`}>
@@ -144,7 +144,7 @@ function about() {
   </div>
 </section>
 <CompaniesSection />
-<StackedHeading className="md:pt-20" title="Our Team" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement." />
+<StackedHeading title="Our Team" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement." />
 <TeamSection teamMembers={teamMembers} />
 <Footer />
 

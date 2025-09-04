@@ -13,7 +13,8 @@ export default function FiveCardRow({
   buttonLink,
   showButton = true,
   darkMode = false,
-  showNavButtons = true
+  showNavButtons = true,
+  cardsPerRow = 3
 }) {
   const scrollContainerRef = useRef(null);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
@@ -122,17 +123,26 @@ export default function FiveCardRow({
   // Grid Layout Component - Updated to handle more cards
   const GridLayout = () => {
     // Calculate how many complete rows of 3 we can make
-    const cardsPerRow = 3;
     const rows = [];
     
     for (let i = 0; i < cards.length; i += cardsPerRow) {
       rows.push(cards.slice(i, i + cardsPerRow));
     }
 
+    // Dynamic grid classes based on cardsPerRow
+    const getGridClasses = () => {
+      switch(cardsPerRow) {
+        case 2: return "grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-[50px]";
+        case 3: return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[50px]";
+        case 4: return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-[50px]";
+        default: return "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-[50px]";
+      }
+    };
+
     return (
-      <div className="px-4 space-y-6">
+      <div className="px-[16px] md:px-[60px] lg:px-[80px] mt-[32px] md:mt-[60px] space-y-6">
         {rows.map((row, rowIndex) => (
-          <div key={rowIndex} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div key={rowIndex} className={getGridClasses()}>
             {row.map((card, cardIndex) => (
               <CardWrapper 
                 key={rowIndex * cardsPerRow + cardIndex} 
@@ -193,7 +203,7 @@ export default function FiveCardRow({
   );
 
   return (
-    <section className={`w-full py-8 md:py-12 ${bgColor}`}>
+    <section className={`w-full  ${bgColor}`}>
       <div className="mx-auto">
         
         {/* Header Section - only show if title or subtitle exists */}

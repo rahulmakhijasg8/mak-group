@@ -23,7 +23,7 @@ export default function PropertyCarousel({
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   // Dark mode styling
-  const bgColor = darkMode ? "bg-[#221241]" : "bg-[#FAFAFA]";
+  const bgColor = darkMode ? "bg-[#221241]" : "bg-[#F1F1F1]";
   const titleColor = darkMode ? "text-[#FFFFFF]" : "text-[#221241]";
   const subtitleColor = darkMode ? "text-[#B7C7E7]" : "text-[#000000D6]";
 
@@ -118,7 +118,7 @@ export default function PropertyCarousel({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }}  className={`w-full py-12 md:py-20 ${bgColor}`}>
+      }}  className={`w-full mt-[60px] py-[36] md:py-[100px] ${bgColor}`}>
       <div className="">
         
         {/* Mobile Layout: Original design */}
@@ -156,7 +156,7 @@ export default function PropertyCarousel({
           {/* Carousel container */}
           <div 
             ref={carouselRef}
-            className="flex overflow-x-auto pb-6 scrollbar-hide gap-4 pl-6 md:pl-16 pr-4 md:pr-[calc(12px+2px)]"
+            className="flex overflow-x-auto pb-6 scrollbar-hide gap-4 pl-4 md:pl-[60px] lg:pl-[80px] pr-4"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             <style jsx>{`
@@ -194,7 +194,7 @@ export default function PropertyCarousel({
             {showNavButtons && canScrollLeft && (
               <button
                 onClick={scrollLeft}
-                className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
+                className="absolute left-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
                 aria-label="Scroll left"
               >
                 <ChevronLeft className="h-5 w-5 text-gray-600" />
@@ -205,7 +205,7 @@ export default function PropertyCarousel({
             {showNavButtons && canScrollRight && (
               <button
                 onClick={scrollRight}
-                className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
+                className="absolute right-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
                 aria-label="Scroll right"
               >
                 <ChevronRight className="h-5 w-5 text-gray-600" />
@@ -215,7 +215,7 @@ export default function PropertyCarousel({
             {/* Carousel for desktop */}
             <div 
               ref={carouselRef}
-              className={`flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-16 pr-4 ${shouldShowButton ? 'mb-[46px]' : 'mb-8'}`}
+              className={`flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-4 md:pl-[60px] lg:pl-[80px] ${shouldShowButton ? 'mb-[46px]' : 'mb-8'}`}
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <style jsx>{`

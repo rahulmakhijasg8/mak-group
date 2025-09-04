@@ -60,7 +60,7 @@ export default function HeroWithButtons({
   // Determine colors based on darkMode
   const titleColor = darkMode ? 'text-[#FFFFFF]' : 'text-[#221241]';
   const subtitleColor = darkMode ? 'text-[#B7C7E7]' : 'text-[#000000D6]';
-  const backgroundColor = darkMode ? 'bg-[#221241]' : 'bg-[#FAFAFA]';
+  const backgroundColor = darkMode ? 'bg-[#221241]' : 'bg-[#F1F1F1]';
 
   // Function to get the correct icon based on the iconType string
   const getPrimaryButtonIcon = () => {
@@ -96,11 +96,11 @@ export default function HeroWithButtons({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className={`w-full md:my-20 pt-15 pb-10 md:py-25 ${backgroundColor}`}>
+      }} className={`w-full px-[16px] md:px-[60px] lg:px-[80px] md:my-20 pt-15 pb-10 md:py-25 ${backgroundColor}`}>
       <div className="md:mx-10">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           {/* Heading section */}
-          <div className="mb-6 md:w-[60%] pr-10 md:mb-0 pl-6 md:pl-[calc(12px+2px)]">
+          <div className="mb-6 md:w-[60%] md:mb-0">
             <div className="w-full">
               <div className="flex flex-col">
                 <h2 className={`font-['Lexend'] ${titleColor} md:pr-35 font-normal text-[28px] md:text-[40px] leading-tight mb-8`}>
@@ -120,7 +120,7 @@ export default function HeroWithButtons({
             {buttonText && buttonLink && (
               <Link 
                 href={buttonLink}
-                className={`inline-flex w-[85%] md:w-[300px] items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all `}
+                className={`inline-flex w-[85%] md:w-[300px] items-center px-5 py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all `}
               >
                 {primaryIcon}
                 <span className={`${primaryIcon ? 'pr-3' : 'text-center'}`}>{buttonText}</span>
@@ -131,7 +131,7 @@ export default function HeroWithButtons({
             {secondaryButtonText && secondaryButtonLink && (
               <Link 
                 href={secondaryButtonLink}
-                className="inline-flex w-[85%] md:w-[300px] items-center px-5 py-4 bg-[#FFFFFF] text-[#4EBA64] rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all"
+                className="inline-flex w-[85%] md:w-[300px] items-center px-5 py-4 bg-[#FFFFFF] text-[#4EBA64] border-[1px] border-[#4EBA64] hover:text-white hover:bg-[#4EBA64] rounded-full font-['Lexend'] text-[18px] font-medium hover:bg-opacity-90 transition-all"
               >
                 <WhatsAppIcon className="h-5 w-5 mr-3" />
                 <span className="pr-3">{secondaryButtonText}</span>

@@ -26,16 +26,16 @@ function Page() {
             required: true
           },
           {
-            id: "mail",
-            type: "email",
-            label: "Email Address",
-            required: true
-          },
-          {
             id: "phone number",
             type: "number",
             label: "Phone Number",
             required: true,
+          },
+          {
+            id: "mail",
+            type: "email",
+            label: "Email Address",
+            required: true
           },
           {
             id: "message",
@@ -71,7 +71,7 @@ function Page() {
         imageSrc="/Rectangle 58.jpg" 
         imageAlt="contact us" 
       />
-      <div className="mx-auto pb-16 pt-8 md:pb-24 md:pt-18">
+      <div className="mx-auto mt-3 px-4 md:px-[60px] lg:px-[80px] pb-16 pt-8 md:pb-24 md:pt-18">
         {/* Mobile title - only shows on mobile screens */}
         <div className="block flex justify-center md:hidden mb-6">
           <h2 className="font-['Lexend'] text-[#221241] px-4 font-normal text-[34px] leading-tight">
@@ -81,7 +81,7 @@ function Page() {
 
         <div className="flex flex-col md:flex-row">
           {/* First column - iframe (40% width) */}
-          <div className="w-full md:w-2/5 mb-0 md:mb-0 px-4 md:pl-8">
+          <div className="w-full md:w-2/5 mb-0 md:mb-0">
             <div className="relative w-full h-[565px] md:h-[620px] flex items-start">
               <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.944438193771!2d72.83493347425149!3d19.06618035228257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9005295272f%3A0xf2add47abf21e008!2sAMORE%20EDGE!5e0!3m2!1sen!2sin!4v1747262479586!5m2!1sen!2sin"

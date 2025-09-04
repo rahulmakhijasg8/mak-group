@@ -47,7 +47,7 @@ export default function Footer({
   };
 
   return (
-    <footer className="w-full mt-12 md:mt-[100px] relative">
+    <footer className="w-full mt-[60px] md:mt-[100px] relative">
       {/* White Contact Card Section */}
       <div className="relative px-6 md:px-12 z-10">
         <div className="max-w-[100%] md:max-w-[80%] mx-auto bg-white border-[2px] border-[#221241] rounded-[20px] p-10 md:p-12 relative">

@@ -3,7 +3,7 @@ import InsuranceCard from "./insurancecard"; // Import the custom card
 export default function GridItemsSection({ cards, cardWidth, page}) {
 
   return (
-    <section className="w-full py-8 md:py-12 px-6 md:px-12">
+    <section className="w-full py-8 md:py-12 px-4 md:px-[60px] lg:px-[80px]">
       <div className="max-w-full mx-auto">
 
         {/* Mobile: Column layout with spacing */}
@@ -26,9 +26,9 @@ export default function GridItemsSection({ cards, cardWidth, page}) {
         <div className="hidden md:block">
           {page === 'life' ? (
             // Life page: 4 cards in a single row
-            <div className="flex justify-center flex-row space-x-20">
+            <div className="flex justify-center flex-row space-x-6">
               {Array.isArray(cards) && cards.map((card, index) => (
-                <div key={index} className="w-[25%] h-auto">
+                <div key={index} className="w-[32%] h-auto">
                   <InsuranceCard
                     icon={card.icon}
                     title={card.title}

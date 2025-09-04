@@ -13,6 +13,7 @@ import Footer from '@/components/footer';
 import Navbar from '@/components/navbar';
 import FormStatusMessage from '@/components/FormStatusMessage';
 import useFormSubmission from '@/hooks/useFormSubmission';
+import FeatureSection from '@/components/carsloanhero';
 
 
 function page() {
@@ -451,7 +452,7 @@ function page() {
   darkMode={true}
 />
 </div>
-      <div className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+      <div className='bg-[#EBEBEB] w-full mt-[60px] md:mt-[100px] pt-8 pb-16 px-4 md:px-[60px] lg:px-[80px]'>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Sell Your Car Hassle-Free 
         </h2>
@@ -482,10 +483,10 @@ function page() {
     </>
   )}
 </div>
-    <HeroSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
-                  primaryButtonText="Apply for a Car Loan" paddingClass='md:pt-30 md:pb-8' primaryButtonIconType='gamepad' secondaryButtonLink="https://wa.me/+918591353530" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
-    <HeroSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."
-                  primaryButtonText="Get a Car Insurance Quote" paddingClass='md:pb-30' primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="/vehicle-insurance" imageContainerClass='h-[370px] w-[100%]' />
+    <FeatureSection title="Car Loans" imageSrc="/Rectangle 44.jpg" imageAlt="Car Loans" description="We have partnered with leading banks and financial institutions to offer competitive car loan options. Our experienced team will guide you through the process and help you secure the best loan terms based on your needs and eligibility."
+                  primaryButtonText="Apply for a Car Loan" primaryButtonIconType='gamepad' secondaryButtonLink="https://wa.me/+918591353530" secondaryButtonText="Message Us on Whatsapp" reverseLayout={true} imageContainerClass='h-[370px] w-[100%]' primaryButtonLink="#" />
+    <FeatureSection title="Car Insurance" imageSrc="/Rectangle 45.jpg" imageAlt="Car Insurance" description="Protect your vehicle with comprehensive car insurance plans from top insurers. We offer a range of options, including third-party liability, own damage, and add-on covers, to ensure your car is fully protected against unforeseen circumstances."
+                  primaryButtonText="Get a Car Insurance Quote" paddingClass='' primaryButtonIconType='quote' reverseLayout={false} primaryButtonLink="/vehicle-insurance" imageContainerClass='h-[370px] w-[100%]' />
 
 <StackedHeading title="Why Choose MAK GROUP for Your Car Needs?" subtitle="One Place. Multiple Solutions. Total Peace of Mind." />
 <StatsGrid cards={statCards} />

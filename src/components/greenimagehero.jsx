@@ -88,7 +88,7 @@ export default function GreenImageHero({
 
   return (
     <section 
-      className="w-full py-12 md:py-20 px-4 mb-4 md:mb-20 md:px-12 bg-[#221241]"
+      className="w-full mt-[24px] md:mt-[35px] py-12 md:py-[100px] px-4 md:px-[60px] lg:px-[80px] bg-[#221241]"
     >
       <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-20`}>
         {/* Content Column */}
@@ -106,7 +106,7 @@ export default function GreenImageHero({
             <div className="mt-6">
               <Link 
                 href={primaryButtonLink} 
-                className={`flex items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg md:w-fit w-fit ${primaryIcon ? '' : 'justify-center'}`}
+                className={`flex items-center px-5 py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg md:w-fit w-fit ${primaryIcon ? '' : 'justify-center'}`}
               >
                 {primaryIcon}
                 <span className={`text-[16px] md:text-[14px] ${primaryIcon ? 'flex-grow text-center pr-3' : 'text-center'}`}>

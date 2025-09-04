@@ -12,6 +12,9 @@ import { Calendar } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Companies from "@/components/companies";
 import AwardsAchievements from "@/components/awardsachievements";
+import SingleForm from "@/components/singleform";
+import useFormSubmission from "@/hooks/useFormSubmission";
+import FormStatusMessage from "@/components/FormStatusMessage";
 
 
 export default function Home() {
@@ -76,6 +79,57 @@ export default function Home() {
     link: "/real-estate"
   }
 ];
+
+const { 
+    handleFormSubmit, 
+    submitStatus, 
+    resetStatus 
+  } = useFormSubmission({
+    formType: 'Contact Form',
+    emailSubject: 'New Contact Form Submission',
+    emailRecipient: 'contact@makgroup.co.in',
+    submittingMessage: 'Sending your message...',
+    successMessage: 'Your message has been sent successfully! We will get back to you shortly.',
+    errorMessage: 'There was an error sending your message. Please try again or contact us directly.'
+  });
+
+  const carFormConfig = {
+    steps: [
+      {
+        id: "travelInsurance",
+        // title: "Travel Details",
+        // subtitle: "Our experts will help you choose the best travel insurance plan to suit your needs and budget.",
+        fieldsPerRow: 2,
+        fields: [
+          {
+            id: "name",
+            type: "text",
+            label: "Full Name",
+            required: true
+          },
+          {
+            id: "phone number",
+            type: "number",
+            label: "Phone Number",
+            required: true,
+          },
+          {
+            id: "mail",
+            type: "email",
+            label: "Email Address",
+            required: true
+          },
+          {
+            id: "message",
+            type: "textarea",
+            label: "Message",
+            required: true,
+          },
+          // ...other fields
+        ]
+      },
+    ]
+  }
 
   const statCards = [
     {
@@ -239,7 +293,7 @@ const exampleAwards = [
               opacity: 100
             }}>
               <Navbar/>
-      <section className="w-full py-12 md:py-20 px-4 md:px-14">
+      <section className="w-full mt-[36px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[80px]">
   <div className="flex flex-col md:flex-row gap-0 md:gap-0">
     {/* Left Column */}
     <div className="w-full md:w-1/2 md:pr-6 flex flex-col justify-center">
@@ -254,7 +308,7 @@ const exampleAwards = [
       <div>
         <Link 
           href="tel:+918591353530"
-          className="inline-flex items-center justify-center gap-2 px-10 py-5 md:px-7 md:py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90 text-[18px] md:text-lg w-auto tracking-normal"
+          className="inline-flex items-center justify-center gap-2 px-10 py-5 md:px-7 md:py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90 text-[18px] md:text-lg w-auto tracking-normal"
         >
           <Calendar className="h-6 w-6" />
           Call Us Now
@@ -264,9 +318,9 @@ const exampleAwards = [
     
     {/* Right Column with Image */}
     <div className="w-full md:w-1/2 pt-10 md:pt-0 flex items-center justify-center">
-      <div className="w-full md:w-[100%] h-[100%] md:h-[70%] [@media(min-width:776px)_and_(max-width:817px)]:h-[35%] [@media(min-width:818px)_and_(max-width:903px)]:h-[45%] [@media(min-width:904px)_and_(max-width:995px)]:h-[50%] [@media(min-width:941px)_and_(max-width:995px)]:h-[55%] [@media(min-width:971px)_and_(max-width:995px)]:h-[60%] lg:h-[100%] relative rounded-[50px]">
+      <div className="w-full md:w-[100%] z-10 h-[100%] md:h-[70%] [@media(min-width:776px)_and_(max-width:817px)]:h-[35%] [@media(min-width:818px)_and_(max-width:903px)]:h-[45%] [@media(min-width:904px)_and_(max-width:995px)]:h-[50%] [@media(min-width:941px)_and_(max-width:995px)]:h-[55%] [@media(min-width:971px)_and_(max-width:995px)]:h-[60%] lg:h-[100%] relative rounded-[50px]">
         <Image
-          src="/Group 27.png" // Replace with your actual image path
+          src="/Group 27.webp" // Replace with your actual image path
           alt="Business solutions illustration"
           width={1000}
           height={1000}
@@ -296,15 +350,79 @@ const exampleAwards = [
 </div> */}
     <Companies companyLogos={companyLogos} duration={12} />
     <SectionHeading className="mt-[60px] md:mt-[100px]" title="Our Financial Solutions" subtitle="Personalized services designed to meet you financial goals." />
-    <FiveCardRow cards={cardsArray} layout="grid" />
+    <FiveCardRow cards={cardsArray} cardsPerRow={2} layout="grid" />
     <SectionHeading title="Why Choose MAK Group?" subtitle="Empowering You with Experience, Trust and Integrity." />
     <StatsGrid cards={statCards} />
     <HeroSection title="Ready to Take Control of Your Financial Future?" darkMode={true} imageContainerClass="w-[120%] h-[100%]" description="Let’s work together to plan, protect, and grow your wealth. Schedule your free consultation now." 
-    primaryButtonText="Call Us Now" primaryButtonLink="tel:+918591353530" imageSrc="/Group 46.svg" imageAlt="test" reverseLayout={true} secondaryButtonText="Chat with us on Whatsapp" secondaryButtonLink="https://wa.me/+918591353530"  />
-    <SectionHeading className="md:pt-24" title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust and Integrity" />
+    primaryButtonText="Call Us Now" primaryButtonLink="tel:+918591353530" imageSrc="/Frame 38.webp" imageAlt="test" reverseLayout={true} secondaryButtonText="Chat with us on Whatsapp" secondaryButtonLink="https://wa.me/+918591353530"  />
+    <SectionHeading title="Trusted by Clients Across Industries" subtitle="Empowering You with Experience, Trust and Integrity" />
     <TestimonialCarousel testimonials={testimonials} />
     <SectionHeading title="Awards & Achievements" />
-    <AwardsAchievements awards={exampleAwards} />
+    <AwardsAchievements showViewMore={true} photos={exampleAwards} mobileInitialCount={2}
+  desktopInitialCount={4} />
+  <div className="mx-auto px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[80px] mt-[60px] md:mt-[80px]">
+        {/* Mobile title - only shows on mobile screens */}
+        <div className="block flex justify-center md:hidden mb-6">
+          <h2 className="font-['Lexend'] text-[#221241] px-4 font-normal text-[34px] leading-tight">
+            Contact Us
+          </h2>
+        </div>
+
+        <div className="flex flex-col md:flex-row">
+          {/* First column - iframe (40% width) */}
+          <div className="w-full md:w-2/5 mb-0 md:mb-0">
+            <div className="relative w-full h-[565px] md:h-[620px] flex items-start">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.944438193771!2d72.83493347425149!3d19.06618035228257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9005295272f%3A0xf2add47abf21e008!2sAMORE%20EDGE!5e0!3m2!1sen!2sin!4v1747262479586!5m2!1sen!2sin"
+                title="AMORE EDGE Location"
+                className="w-full h-full rounded-[18px]"
+                style={{ border: 'none' }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                allowFullScreen
+              />
+            </div>
+          </div>
+          
+          {/* Second column - Contact Form (60% width) */}
+          <div className="w-full md:w-3/5 px-4 md:px-6">
+            {/* Desktop heading for the form section - only shows on desktop */}
+            <div className="hidden md:block mt-5 md:mt-0">
+              <h2 className="font-['Lexend'] text-[#221241] pl-6 md:pl-4 font-normal text-[28px] md:text-[36px] leading-tight">
+                Contact Us
+              </h2>
+            </div>
+            
+            {submitStatus?.type === 'success' ? (
+              <div className="mt-12">
+                <FormStatusMessage 
+                  status={submitStatus} 
+                  onReset={resetStatus} 
+                />
+              </div>
+            ) : (
+              <>
+                {/* Show loading/error status above the form */}
+                {submitStatus && (
+                  <div className="mt-4 mb-2">
+                    <FormStatusMessage status={submitStatus} />
+                  </div>
+                )}
+                
+                <SingleForm 
+                  config={carFormConfig} 
+                  submitButtonAlign='left'  
+                  submitButtonText="Send Message" 
+                  submitButtonIconType='none' 
+                  onComplete={handleFormSubmit}
+                  paddingDesktop='md:p-5 md:pt-0 md:pb-4'
+                  paddingMobile='px-6'
+                />
+              </>
+            )}
+          </div>
+        </div>
+      </div>
     <Footer />
     </div>
   );

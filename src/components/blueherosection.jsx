@@ -35,7 +35,7 @@ export default function BlueHeroSection({
 }) {
   return (
     <section 
-      className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]" // Lighter background color
+      className="w-full mt-[60px] md:mt-[100px] py-[50px] md:py-[88px] px-4 md:px-[60px] lg:px-[80px] bg-[#221241]" // Lighter background color
       style={{
         backgroundImage: "url('/greeneffect.svg')",
         backgroundSize: 'cover',
@@ -44,7 +44,7 @@ export default function BlueHeroSection({
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
       }}
     >
-      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-30`}>
+      <div className={`max-w-7xl mx-auto flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-[35px] md:gap-[77px]`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 md:pl-6 flex flex-col justify-center">
           <h1 className="font-['Lexend'] text-[#FFFFFF] font-normal text-[32px] md:text-[40px] lg:text-[48px] mb-4">
@@ -58,7 +58,7 @@ export default function BlueHeroSection({
           <div className="flex flex-col sm:flex-row gap-5 w-full sm:w-auto">
             <Link 
               href={primaryButtonLink} 
-              className="flex items-center px-5 py-4 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[16px] font-medium hover:bg-opacity-90 transition-all w-[80%] md:w-full"
+              className="flex items-center px-5 py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] text-[16px] font-medium hover:bg-opacity-90 transition-all w-[80%] md:w-full"
             >
               <Calendar className="h-5 w-5 mr-3" />
               <span className="flex-grow text-center pr-3">{primaryButtonText}</span>
@@ -67,7 +67,7 @@ export default function BlueHeroSection({
             {secondaryButtonText && secondaryButtonLink && (
               <Link 
                 href={secondaryButtonLink} 
-                className="flex items-center px-5 py-4 bg-[#FFFFFF] text-[#4EBA64] rounded-full font-['Lexend'] text-[15px] font-medium hover:bg-opacity-90 transition-all w-[90%] md:w-full whitespace-nowrap"
+                className="flex items-center px-5 py-4 bg-[#FFFFFF] text-[#4EBA64] hover:bg-[#4EBA64] hover:text-white rounded-full font-['Lexend'] text-[15px] font-medium hover:bg-opacity-90 transition-all w-[90%] md:w-full whitespace-nowrap"
               >
                 <WhatsAppIcon className="h-5 w-5 mr-3" />
                 <span className="flex-grow text-center pr-3">{secondaryButtonText}</span>

@@ -10,7 +10,7 @@ export default function InsuranceHero({
 }) {
   return (
     <section 
-      className="w-full py-12 md:py-20 px-4 mb-4 md:mb-20 md:px-20 relative"
+      className="w-full py-12 md:py-20 px-4 md:px-[60px] lg:px-[80px] mb-4 md:mb-20 relative"
     >
       
       <div className={`flex flex-col ${reverseLayout ? 'flex-col-reverse md:flex-row-reverse' : 'flex-col md:flex-row'} gap-6 md:gap-20 relative z-10`}>

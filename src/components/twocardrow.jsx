@@ -15,14 +15,14 @@ export default function TwoCardRow({ card1, card2, cards = [] }) {
   }
 
   return (
-    <section className="w-full py-8 md:py-12 px-4 md:px-12">
+    <section className="w-full py-8 md:py-12 px-4 md:px-[60px] lg:px-[80px]">
       <div className="max-w-7xl mx-auto">
         {cardRows.map((row, rowIndex) => (
           <div key={rowIndex} className={rowIndex > 0 ? "mt-8 md:mt-12" : ""}>
             {/* Card row container */}
             <div 
               ref={rowIndex === 0 ? scrollContainerRef : null}
-              className="flex overflow-x-auto space-x-6 md:space-x-12 pb-6 -mx-4 px-4 scrollbar-hide"
+              className="flex overflow-x-auto space-x-6 md:space-x-[50px] pb-6 scrollbar-hide"
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               {row.map((card, cardIndex) => (

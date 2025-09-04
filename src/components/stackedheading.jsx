@@ -36,13 +36,13 @@ export default function StackedHeading({
   const titleDesktopMargin = desktopAlign === 'center' ? 'md:mx-auto' : desktopAlign === 'right' ? 'md:ml-auto' : '';
 
   return (
-    <div className={`w-full pt-8 md:pt-12 md:px-12 ${className}`}>
+    <div className={`w-full mt-[60px] md:mt-[100px] px-[16px] md:px-[60px] lg:px-[100px] md:px-12 ${className}`}>
       <div className={`max-w-full md:max-w-full ${containerClasses}`}>
-        <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[28px] md:text-[44px] leading-tight mb-4 px-5 sm:max-w-full ${titleMobileMargin} ${titleDesktopMargin}`}>
+        <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[28px] md:text-[44px] leading-tight sm:max-w-full ${titleMobileMargin} ${titleDesktopMargin}`}>
           {title}
         </h2>
         
-        <h3 className={`font-['Lato'] px-5 md:px-30 ${subtitleColor} font-normal text-[16px] md:text-[18px] max-w-full sm:max-w-full`}>
+        <h3 className={`font-['Lato'] mt-[12px] md:mt-[16px] md:px-30 ${subtitleColor} font-normal text-[16px] md:text-[18px] max-w-full sm:max-w-full`}>
           {subtitle}
         </h3>
       </div>

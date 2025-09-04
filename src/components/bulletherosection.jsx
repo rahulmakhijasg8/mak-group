@@ -50,12 +50,12 @@ export default function BulletHeroSection({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className={`w-full py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
+      }} className={`w-full mt-[60px] md:mt-[80px] py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
     >
-      <div className={`container mx-auto px-4 md:px-6 flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
+      <div className={`container md:gap-[67px] px-4 md:px-[60px] lg:px-[80px] flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
-          <h1 className={`text-3xl font-['Lexend'] pr-15 md:pr-0 leading-[100%] md:text-4xl lg:text-5xl mb-6 ${lightMode ? 'text-[#221241]' : 'text-[#FFFFFF] font-[400]'}`}>
+          <h1 className={`text-3xl font-['Lexend'] leading-[100%] md:text-4xl lg:text-5xl mb-6 ${lightMode ? 'text-[#221241]' : 'text-[#FFFFFF] font-[400]'}`}>
             {title}
           </h1>
           
@@ -90,8 +90,7 @@ export default function BulletHeroSection({
               <Link 
                 href={primaryButtonLink} 
                 target={primaryButtonNewTab ? '_blank' : '_self'}
-                rel={primaryButtonNewTab ? 'noopener noreferrer' : undefined}
-                className="inline-block bg-[#4EBA64] font-['Lexend'] text-white py-4 md:py-3 text-center w-[70%] md:w-auto px-7 rounded-full hover:bg-[#3da953] transition-colors"
+                className="inline-block bg-[#4EBA64] font-['Lexend'] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] py-4 md:py-3 text-center w-[70%] md:w-auto px-7 rounded-full hover:bg-[#3da953] transition-colors"
               >
                 {primaryButtonText}
               </Link>
@@ -101,7 +100,7 @@ export default function BulletHeroSection({
                 href={secondaryButtonLink}
                 target={secondaryButtonNewTab ? '_blank' : '_self'}
                 rel={secondaryButtonNewTab ? 'noopener noreferrer' : undefined}
-                className="inline-block bg-transparent border-2 border-[#4EBA64] text-[#4EBA64] font-bold py-3 px-6 rounded-full hover:bg-[#4EBA64] hover:text-white transition-colors"
+                className="inline-block bg-transparent border-2 border-[#4EBA64] text-[#4EBA64] hover:text-white font-bold py-3 px-6 rounded-full hover:bg-[#4EBA64] hover:text-white transition-colors"
               >
                 💬 {secondaryButtonText}
               </Link>

@@ -15,7 +15,7 @@ export default function AsymmetricCardRows({
   secondRowCard2 
 }) {
   return (
-    <section className="w-full py-8 md:py-12 px-4 md:px-12">
+    <section className="w-full py-8 md:py-12 px-4 md:px-[60px] lg:px-[80px]">
       <div className="max-w-7xl mx-auto space-y-6">
         {/* First Row: 60/40 split */}
         <div className="flex flex-col md:flex-row w-full gap-4 md:gap-6">

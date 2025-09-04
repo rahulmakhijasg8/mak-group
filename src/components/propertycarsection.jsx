@@ -11,7 +11,7 @@ export default function RESection({
   // Determine grid columns class based on page type
   const gridColumnsClass = page === 'life' 
     ? "grid grid-cols-1 md:mt-[20px] md:grid-cols-4 gap-6 md:gap-4" 
-    : "grid grid-cols-1 md:mt-[20px] md:grid-cols-3 gap-6 md:gap-0";
+    : "grid grid-cols-1 md:mt-[40px] md:grid-cols-3 gap-6 md:gap-0";
 
   return (
     <section style={{
@@ -20,7 +20,7 @@ export default function RESection({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className="w-full py-12 md:py-20 px-4 md:px-12 bg-[#221241]">
+      }} className="w-full mt-[60px] md:mt-[80px] pb-[50px] md:pt-[1px] md:pb-[100px] px-4 md:px-[60px] lg:px-[80px] bg-[#221241]">
       <div className="max-w-7xl mx-auto">
         
         {/* Use StackedHeading for both page types */}

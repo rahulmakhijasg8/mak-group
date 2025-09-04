@@ -191,7 +191,7 @@ function page() {
           className="hidden md:hidden"
         />
       </div> */}
-      <Companies companyLogos={companyLogos} isStatic={true}/>
+      <Companies companyLogos={companyLogos} isStaticDesktop={true} isStaticMobile={false} />
         <StackedHeading mobileAlign='center' title="Why Medical Insurance Is Essential" subtitle="Shield yourself and your family from unexpected medical expenses." />
         <TwoCardRow card1={hotel_costs} card2={protection} />
         <section 
@@ -202,7 +202,7 @@ function page() {
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
       }} 
-      className="w-full py-12 md:py-20 px-2 md:px-12 bg-[#221241]"
+      className="w-full md:p-12 px-4 md:px-[60px] lg:px-[80px] bg-[#221241]"
     >
       <div className={`max-w-full mx-auto flex flex-col`}>
         {/* Content Column */}
@@ -239,7 +239,7 @@ function page() {
         </div>
       </div>
     </section>
-        <div id='free-quote' className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+        <div id='free-quote' className='bg-[#EBEBEB] w-full mt-[60px] md:mt-[100px] pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Get a Free Quote 
         </h2>

@@ -13,8 +13,8 @@ export default function FaqSection({
   };
 
   return (
-    <section className="w-full py-12 md:py-20 px-4 md:px-12 bg-white">
-      <div className="max-w-5xl mx-auto">
+    <section className="w-full mt-[60px] md:mt-[100px] px-4 md:px-[60px] lg:px-[80px] bg-white">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="font-['Lexend'] text-[#221241] font-[400] text-[30px] md:text-[36px] leading-tight mb-4">
@@ -23,7 +23,7 @@ export default function FaqSection({
         </div>
         
         {/* FAQ Items */}
-        <div className="bg-white rounded-lg overflow-hidden">
+        <div className="bg-white mt-[25px] md:mt-[50px] rounded-[30px] overflow-hidden">
           {faqs.map((faq, index) => (
             <FaqItem
               key={index}

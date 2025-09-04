@@ -139,7 +139,7 @@ const FlexGridLayout = ({
   }
 
   return (
-    <div className={`px-8 mt-15 mb-15 md:px-15 w-full ${className}`}>
+    <div className={`px-4 mt-15 mb-15 md:px-[60px] lg:px-[80px] w-full ${className}`}>
       {rows.map((row, rowIndex) => {
         // Determine grid columns for this specific row
         let rowGridCols;
@@ -174,7 +174,7 @@ const FlexGridLayout = ({
         }
         
         return (
-          <div key={rowIndex} className={`grid grid-cols-1 ${rowGridCols} gap-6 mb-6`}>
+          <div key={rowIndex} className={`grid grid-cols-1 ${rowGridCols} gap-5 mb-6`}>
             {row.map((item, colIndex) => (
               <div key={colIndex} className={itemClassName}>
                 <GridItem {...item} />

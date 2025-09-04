@@ -4,7 +4,7 @@ import Link from "next/link"
 // Option 1: Light Gradient Background (Recommended)
 const VehicleInsuranceStats = () => {
   return (
-    <div className="px-8 md:px-20 pt-20 pb-10 bg-gradient-to-br from-[#1B4D3E] via-[#2D5A4F] to-[#4EBA64]">
+    <div className="mt-[60px] md:mt-[100px] px-8 md:px-[60px] lg:px-[80px] pt-20 pb-10 bg-gradient-to-br from-[#1B4D3E] via-[#2D5A4F] to-[#4EBA64]">
       {/* Clean centered layout */}
       <div className="max-w-4xl mx-auto text-center">
         {/* Header */}

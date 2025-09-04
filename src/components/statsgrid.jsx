@@ -17,7 +17,7 @@ export default function StatsGrid({ cards }) {
         <a 
           href={card.link}
           target='_blank'
-          className="block transition-transform hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-[50px]"
+          className="block transition-transform hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 rounded-[34px]"
         >
           {cardElement}
         </a>
@@ -41,7 +41,7 @@ export default function StatsGrid({ cards }) {
         </div>
         
         {/* Desktop: Row layout with spacing */}
-        <div className="hidden md:flex flex-row justify-between space-x-8">
+        <div className="hidden md:flex px-[16px] md:px-[60px] lg:px-[80px] flex-row justify-between space-x-5">
           {Array.isArray(cards) && cards.map((card, index) => (
             <div key={`desktop-${index}`} className="w-1/5">
               {renderCard(card, index)}

@@ -257,7 +257,7 @@ const pms = {
           </a>
         </div> */}
 
-        <div id='demat-form' className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+        <div id='demat-form' className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 md:px-[60px] lg:px-[80px]'>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Open Your Free IIFL Demat Account 
         </h2>

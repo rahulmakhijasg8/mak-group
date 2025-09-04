@@ -6,7 +6,7 @@ export default function SectionHeader({
   className = "" 
 }) {
   return (
-    <section className={`w-full pt-4 md:pt-6 px-6 md:px-12 ${className}`}>
+    <section className={`w-full mt-[60px] md:mt-[50px] pt-4 md:pt-6 px-6 md:px-[60px] lg:px-[80px] ${className}`}>
       <div className="w-full mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between">
           {/* Title Column - Extreme left on desktop */}
