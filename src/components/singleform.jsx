@@ -640,13 +640,51 @@ const handleSubmit = async () => {
   };
 
   // Render fields in a step, handling textareas differently
-  const renderFields = (fields, fieldsPerRow = 3) => {
-    // Create a new array to store the result
-    const renderedFields = [];
+const renderFields = (fields, fieldsPerRow = 3) => {
+  // Create a new array to store the result
+  const renderedFields = [];
+  
+  // First pass: render all non-textarea fields in the grid
+  const gridFields = fields.filter(field => !isTextArea(field));
+  
+  if (gridFields.length > 0) {
+    // Check if last row has only one field and it's an email field
+    const remainder = gridFields.length % fieldsPerRow;
+    const hasLastRowSingleField = remainder === 1;
+    const lastField = gridFields[gridFields.length - 1];
+    const isLastFieldEmail = lastField?.type === 'email';
     
-    // First pass: render all non-textarea fields in the grid
-    const gridFields = fields.filter(field => !isTextArea(field));
-    if (gridFields.length > 0) {
+    if (hasLastRowSingleField && isLastFieldEmail && gridFields.length > 1) {
+      // Split fields: all but last in grid, last email field full width
+      const gridFieldsExceptLast = gridFields.slice(0, -1);
+      
+      // Render grid for all fields except the last email field
+      renderedFields.push(
+        <div key="grid-fields" className={`grid ${getGridColumnsClass(fieldsPerRow)} md:gap-x-10 gap-y-6`}>
+          {gridFieldsExceptLast.map(field => (
+            <div key={field.id} className="flex pb-2 flex-col">
+              <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
+                {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
+              </label>
+              {renderField(field)}
+              {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
+            </div>
+          ))}
+        </div>
+      );
+      
+      // Render the last email field full width
+      renderedFields.push(
+        <div key={lastField.id} className="flex pb-2 flex-col mt-6 w-full">
+          <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
+            {lastField.label} {lastField.required && <span className="font-[600] text-[#4EBA64]">*</span>}
+          </label>
+          {renderFieldFullWidth(lastField)}
+          {errors[lastField.id] && <p className="mt-1 text-xs text-red-600">{errors[lastField.id]}</p>}
+        </div>
+      );
+    } else {
+      // Default behavior: render all grid fields in the grid
       renderedFields.push(
         <div key="grid-fields" className={`grid ${getGridColumnsClass(fieldsPerRow)} md:gap-x-10 gap-y-6`}>
           {gridFields.map(field => (
@@ -661,25 +699,51 @@ const handleSubmit = async () => {
         </div>
       );
     }
-    
-    // Second pass: render all textarea fields full width, each in its own row
-    const textareaFields = fields.filter(field => isTextArea(field));
-    if (textareaFields.length > 0) {
-      textareaFields.forEach(field => {
-        renderedFields.push(
-          <div key={field.id} className="flex pb-2 flex-col mt-6 w-full">
-            <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
-              {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
-            </label>
-            {renderField(field)}
-            {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
-          </div>
-        );
-      });
-    }
-    
-    return renderedFields;
-  };
+  }
+  
+  // Second pass: render all textarea fields full width, each in its own row
+  const textareaFields = fields.filter(field => isTextArea(field));
+  if (textareaFields.length > 0) {
+    textareaFields.forEach(field => {
+      renderedFields.push(
+        <div key={field.id} className="flex pb-2 flex-col mt-6 w-full">
+          <label className="pb-3 text-sm font-[600] text-[#4EBA64]">
+            {field.label} {field.required && <span className="font-[600] text-[#4EBA64]">*</span>}
+          </label>
+          {renderField(field)}
+          {errors[field.id] && <p className="mt-1 text-xs text-red-600">{errors[field.id]}</p>}
+        </div>
+      );
+    });
+  }
+  
+  return renderedFields;
+};
+
+
+const renderFieldFullWidth = (field) => {
+  const value = formData[field.id] || '';
+  const errorMessage = errors[field.id];
+  
+  // For email fields, render with full width
+  if (field.type === 'email') {
+    return (
+      <input
+        type="email"
+        value={value}
+        onChange={e => handleChange(field.id, e.target.value)}
+        placeholder={field.placeholder || 'example@domain.com'}
+        className={`w-[98%] px-3 py-4 border text-sm placeholder:text-sm rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 ${
+          errorMessage ? 'border-red-500' : 'border-gray-300'
+        }`}
+        style={{ boxShadow: '0px 2px 6px 0px rgba(19, 18, 66, 0.07)' }}
+      />
+    );
+  }
+  
+  // Fallback to regular rendering for other field types
+  return renderField(field);
+};
   
   return (
     <div>
