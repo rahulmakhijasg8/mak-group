@@ -201,9 +201,9 @@ function page() {
               ]}
               lightMode={false} />
 
-        <div className='bg-[#F1F1F1] w-full pt-0 pb-16 mt-10 md:mt-30 px-4 '>
+        <div className='bg-[#F1F1F1] w-full pt-0 pb-16 px-4 '>
 
-      <div id='freequote' className='w-full pt-8 pb-16 mt-10 md:mt-30 px-4 '>
+      <div id='freequote' className='w-full pt-8 md:pt-16 pb-16 px-4 '>
         <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
           Get a Free Travel Insurance Quote 
         </h2>

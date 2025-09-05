@@ -106,7 +106,7 @@ export default function GreenImageHero({
             <div className="mt-6">
               <Link 
                 href={primaryButtonLink} 
-                className={`flex items-center px-5 py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg md:w-fit w-fit ${primaryIcon ? '' : 'justify-center'}`}
+                className={`flex items-center px-6 py-[14px] md:px-7 md:py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 hover:scale-105 transition-all duration-300 shadow-lg md:w-fit w-fit ${primaryIcon ? '' : 'justify-center'}`}
               >
                 {primaryIcon}
                 <span className={`text-[16px] md:text-[14px] ${primaryIcon ? 'flex-grow text-center pr-3' : 'text-center'}`}>

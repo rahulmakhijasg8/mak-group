@@ -18,7 +18,7 @@ export default function TwoCardRow({ card1, card2, cards = [] }) {
     <section className="w-full py-8 md:py-12 px-4 md:px-[60px] lg:px-[80px]">
       <div className="max-w-7xl mx-auto">
         {cardRows.map((row, rowIndex) => (
-          <div key={rowIndex} className={rowIndex > 0 ? "mt-8 md:mt-12" : ""}>
+          <div key={rowIndex} className={rowIndex > 0 ? "mt-0 md:mt-6" : ""}>
             {/* Card row container */}
             <div 
               ref={rowIndex === 0 ? scrollContainerRef : null}

@@ -50,13 +50,11 @@ export default function PhotoGallery({
                   </div>
 
                   {/* Photo Title (if provided) */}
-                  {photo.title && (
-                    <div className="p-4 flex-shrink-0">
-                      <h3 className="font-['Lato'] text-[#221241] font-medium text-[14px] md:text-[16px] text-center leading-tight">
-                        {photo.title}
-                      </h3>
-                    </div>
-                  )}
+                  <div className="p-4 flex-shrink-0 md:h-[80px] flex items-center justify-center">
+  <h3 className="font-['Lato'] text-[#221241] font-medium text-[14px] md:text-[16px] text-center leading-tight line-clamp-2">
+    {photo.title}
+  </h3>
+</div>
                 </div>
               </div>
             );

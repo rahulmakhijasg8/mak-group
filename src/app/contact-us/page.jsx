@@ -98,7 +98,7 @@ function Page() {
           {/* Second column - Contact Form (60% width) */}
           <div className="w-full md:w-3/5 px-4 md:px-6">
             {/* Desktop heading for the form section - only shows on desktop */}
-            <div className="hidden md:block mt-5 md:mt-0">
+            <div className="hidden md:block mt-5 md:-mt-2">
               <h2 className="font-['Lexend'] text-[#221241] pl-6 md:pl-4 font-normal text-[28px] md:text-[36px] leading-tight">
                 Contact Us
               </h2>

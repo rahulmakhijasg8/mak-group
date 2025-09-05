@@ -137,6 +137,7 @@ function page() {
   secondaryButtonText="Whatsapp Our Team"
   secondaryButtonLink="https://wa.me/+918591353530"
   darkMode={true}
+  extraclass='!my-0 !md:my-0'
 />
 <FaqSection faqs={insuranceFaqs} />
 <Footer title='Get Started with MAK GROUP Life Insurance' description="Secure your family's financial future with MAK GROUP's comprehensive life insurance solutions. Get in touch with us today to discuss your needs, find the perfect plan for you." />

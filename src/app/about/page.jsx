@@ -86,6 +86,7 @@ function about() {
   secondaryButtonText="Chat with us on Whatsapp" 
   secondaryButtonLink="https://wa.me/+918591353530"
   imageContainerClass="h-[80%] md:w-[100%]"
+  paddingClass="md:pt-[0px]"
 />
 
 <BlueHeroSection 
@@ -103,8 +104,9 @@ function about() {
 <StackedHeading title="Our Expertise" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement. With specialists in insurance, stock market investing, finance, real estate, and more, we have the skills and resources to handle all your financial needs." />
 <StatsGrid cards={statCards} />
 <StackedHeading title="Our Commitment to You" subtitle="At MAK GROUP, our clients are at the heart of everything we do. We are committed to providing you with the highest level of service, support, and guidance, and to helping you achieve your financial goals." />
-<section className="bg-[#F1F1F1] w-[90%] md:w-7xl mx-auto rounded-[50px] border-[1px] border-[#EBEBEB] mt-15 py-6 md:py-16">
-  <div className="max-w-6xl mx-auto px-4 md:px-12">
+<div className="px-[16px] md:px-[60px] lg:px-[80px] w-full">
+<div className="bg-[#F1F1F1] w-[90%] md:w-full max-w-7xl mx-auto rounded-[20px] md:rounded-[34px] border-[1px] border-[#EBEBEB] mt-15 py-6 md:py-16">
+  <div className="px-4 md:px-6">
     <div className="mb-8">
       <p className={`font-lato text-[#4EBA64] text-lg`}>
         When you work with us, you can expect&nbsp;:
@@ -142,7 +144,8 @@ function about() {
       Contact us today to learn more about how MAK GROUP can help you secure your financial future. We look forward to serving you.
     </p>
   </div>
-</section>
+</div>
+</div>
 <CompaniesSection />
 <StackedHeading title="Our Team" subtitle="Our team of experienced professionals brings a wealth of knowledge and expertise to every client engagement." />
 <TeamSection teamMembers={teamMembers} />

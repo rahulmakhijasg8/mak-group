@@ -23,7 +23,7 @@ export default function FaqSection({
         </div>
         
         {/* FAQ Items */}
-        <div className="bg-white mt-[25px] md:mt-[50px] rounded-[30px] overflow-hidden">
+        <div className="bg-white mt-[25px] md:mt-[50px] rounded-[10px] md:rounded-[20px] overflow-hidden">
           {faqs.map((faq, index) => (
             <FaqItem
               key={index}

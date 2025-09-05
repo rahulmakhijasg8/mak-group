@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutHero = () => {
   return (
-    <div className="relative mx-auto w-full max-w-7xl mt-[24px] md:mt-[35px] h-[450px] md:h-[400px] overflow-hidden">
+    <div className="relative w-full mt-[24px] md:mt-[35px] h-[450px] md:h-[400px] overflow-hidden">
       {/* Mobile background image (hidden on md screens and up) */}
       <div 
         className="absolute inset-0 block md:hidden"
@@ -30,7 +30,7 @@ const AboutHero = () => {
       </div>
       
       {/* Content Container - Unchanged */}
-      <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4">
+      <div className="relative max-w-7xl mx-auto z-10 h-full flex flex-col justify-center items-center text-center px-4">
         <h1 className="font-['Lexend'] text-white text-3xl md:text-4xl font-medium mb-3 drop-shadow-lg">
           About MAK GROUP
         </h1>

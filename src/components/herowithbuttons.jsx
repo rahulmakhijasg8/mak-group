@@ -56,6 +56,7 @@ export default function HeroWithButtons({
   secondaryButtonLink,
   darkMode = false, // Boolean prop for dark/light mode
   primaryButtonIconType = 'calendar', // Default to calendar icon
+  extraclass =''
 }) {
   // Determine colors based on darkMode
   const titleColor = darkMode ? 'text-[#FFFFFF]' : 'text-[#221241]';
@@ -96,8 +97,8 @@ export default function HeroWithButtons({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className={`w-full max-w-7xl mx-auto px-[16px] md:px-[60px] lg:px-[80px] md:my-20 pt-15 pb-10 md:py-25 ${backgroundColor}`}>
-      <div className="md:mx-10">
+      }} className={`w-full px-[16px] md:px-[60px] lg:px-[80px] md:my-20 ${extraclass} pt-15 pb-10 md:py-25 ${backgroundColor}`}>
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-12">
           {/* Heading section */}
           <div className="mb-6 md:w-[60%] md:mb-0">

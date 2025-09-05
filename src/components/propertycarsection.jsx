@@ -20,7 +20,7 @@ export default function RESection({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className="w-full mt-[60px] md:mt-[80px] pb-[50px] md:pt-[1px] md:pb-[100px] px-4 md:px-[60px] lg:px-[80px] bg-[#221241]">
+      }} className="w-full mt-[60px] md:mt-[80px] pb-[50px] md:pt-[1px] md:pb-[100px] px-4 md:px-4 lg:px-[80px] bg-[#221241]">
       <div className="max-w-7xl mx-auto">
         
         {/* Use StackedHeading for both page types */}

@@ -116,10 +116,10 @@ export default function FeatureSection({
             {description}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-8 md:w-full">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-8 md:w-full">
             <Link 
               href={primaryButtonLink} 
-              className={`flex items-center px-5 py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-[#F1F1F1] hover:text-[#4EBA64] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all md:w-fit w-fit ${darkMode ? 'hover:scale-105 duration-300 shadow-lg' : ''} ${primaryIcon ? '' : 'justify-center'}`}
+              className={`flex items-center px-6 py-[14px] md:px-7 md:py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-[#F1F1F1] hover:text-[#4EBA64] rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all md:w-fit w-fit ${darkMode ? 'hover:scale-105 duration-300 shadow-lg' : ''} ${primaryIcon ? '' : 'justify-center'}`}
             >
               {primaryIcon}
               <span className={`text-[16px] md:text-[14px] ${primaryIcon ? 'flex-grow text-center pr-3' : 'text-center'}`}>{primaryButtonText}</span>
@@ -128,7 +128,7 @@ export default function FeatureSection({
             {secondaryButtonText && secondaryButtonLink && (
               <Link 
                 href={secondaryButtonLink} 
-                className={`flex items-center px-5 py-4 ${
+                className={`flex items-center px-6 py-[14px] md:px-7 md:py-4 ${
                   darkMode 
                     ? 'bg-white bg-opacity-10 text-[#4EBA64] border border-white border-opacity-20 hover:bg-opacity-20 hover:scale-105 shadow-lg' 
                     : 'bg-[#F1F1F1] text-[#4EBA64] hover:bg-[#4EBA64] hover:text-white hover:bg-opacity-5'

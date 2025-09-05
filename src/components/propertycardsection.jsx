@@ -5,7 +5,6 @@ import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import PropertyListingCard from "./propertycard";
 import CarListingCard from "./carcard";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 export default function PropertyCarousel({
   title,
@@ -32,26 +31,33 @@ export default function PropertyCarousel({
 
   // Check scroll position to show/hide navigation buttons
   const checkScrollPosition = () => {
+  const container = carouselRef.current;
+  if (!container) return;
+
+  setCanScrollLeft(container.scrollLeft > 0);
+  setCanScrollRight(
+    container.scrollLeft < container.scrollWidth - container.clientWidth
+  );
+};
+
+useEffect(() => {
+  if (showNavButtons) {
+    checkScrollPosition(); // This was missing the initial call
+    
     const container = carouselRef.current;
-    if (!container) return;
-
-    setCanScrollLeft(container.scrollLeft > 0);
-    setCanScrollRight(
-      container.scrollLeft < container.scrollWidth - container.clientWidth
-    );
-  };
-
-  useEffect(() => {
-    if (showNavButtons) {
-      checkScrollPosition();
+    if (container) {
+      container.addEventListener('scroll', checkScrollPosition);
+      // Also check on resize to handle responsive changes
+      const handleResize = () => checkScrollPosition();
+      window.addEventListener('resize', handleResize);
       
-      const container = carouselRef.current;
-      if (container) {
-        container.addEventListener('scroll', checkScrollPosition);
-        return () => container.removeEventListener('scroll', checkScrollPosition);
-      }
+      return () => {
+        container.removeEventListener('scroll', checkScrollPosition);
+        window.removeEventListener('resize', handleResize);
+      };
     }
-  }, [showNavButtons]);
+  }
+}, [showNavButtons, items]); // Add items as dependency
 
   // Custom smooth scroll with speed control
   const smoothScrollTo = (container, targetScrollLeft, duration = 250) => {
@@ -118,7 +124,7 @@ export default function PropertyCarousel({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }}  className={`w-full mt-[60px] py-[36] md:py-[100px] ${bgColor}`}>
+      }}  className={`w-full py-[36] md:py-[100px] ${bgColor}`}>
       <div className=" max-w-7xl mx-auto">
         
         {/* Mobile Layout: Original design */}
@@ -126,7 +132,7 @@ export default function PropertyCarousel({
           {/* Header Section with precise alignment */}
           <div className="flex flex-col mr-16 md:mx-16 md:flex-row md:items-center md:justify-between mb-12">
             {/* StackedHeading aligned with first card */}
-            <div className="mb-6 md:mb-0 pl-6 pr-4 md:pl-[calc(12px+2px)]">
+            <div className="mb-6 mt-10 md:mb-0 pl-6 pr-4 md:pl-[calc(12px+2px)]">
               <div className="w-full">
                 <div className="flex flex-col">
                   <h2 className={`font-['Lexend'] ${titleColor} font-normal text-[28px] md:text-[40px] leading-tight mb-4`}>
@@ -190,32 +196,10 @@ export default function PropertyCarousel({
 
           {/* Desktop Carousel with Navigation Buttons */}
           <div className="relative">
-            {/* Left scroll button - Desktop only */}
-            {showNavButtons && canScrollLeft && (
-              <button
-                onClick={scrollLeft}
-                className="absolute left-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
-                aria-label="Scroll left"
-              >
-                <ChevronLeft className="h-5 w-5 text-gray-600" />
-              </button>
-            )}
-
-            {/* Right scroll button - Desktop only */}
-            {showNavButtons && canScrollRight && (
-              <button
-                onClick={scrollRight}
-                className="absolute right-8 top-1/2 -translate-y-1/2 z-10 bg-white rounded-full p-2 shadow-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200"
-                aria-label="Scroll right"
-              >
-                <ChevronRight className="h-5 w-5 text-gray-600" />
-              </button>
-            )}
-
             {/* Carousel for desktop */}
             <div 
               ref={carouselRef}
-              className={`flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 pl-4 md:pl-[60px] lg:pl-[80px] ${shouldShowButton ? 'mb-[46px]' : 'mb-8'}`}
+              className={`flex overflow-x-auto pb-6 md:mt-[60px] scrollbar-hide gap-6 px-4 md:px-[60px] lg:px-[80px] ${shouldShowButton ? 'mb-[46px]' : 'mb-8'}`}
               style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
             >
               <style jsx>{`
@@ -234,6 +218,30 @@ export default function PropertyCarousel({
               ))}
             </div>
           </div>
+          {/* Navigation buttons below cards */}
+<div className="flex justify-center items-center space-x-4 mt-6">
+  <button
+    onClick={scrollLeft}
+    disabled={!canScrollLeft}
+    className="bg-white hover:bg-gray-50 shadow-lg rounded-full p-3 transition-all duration-200 border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+    aria-label="Scroll left"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+      <path d="M15 18L9 12L15 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </button>
+  
+  <button
+    onClick={scrollRight}
+    disabled={!canScrollRight}
+    className="bg-white hover:bg-gray-50 shadow-lg rounded-full p-3 transition-all duration-200 border border-gray-200 disabled:opacity-50 disabled:cursor-not-allowed"
+    aria-label="Scroll right"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="text-gray-600">
+      <path d="M9 18L15 12L9 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+  </button>
+</div>
 
           {/* Centered button below carousel for desktop - only show if shouldShowButton is true */}
           {shouldShowButton && (

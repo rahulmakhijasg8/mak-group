@@ -309,7 +309,7 @@ const exampleAwards = [
       <div>
         <Link 
           href="tel:+918591353530"
-          className="inline-flex items-center justify-center gap-2 px-10 py-5 md:px-7 md:py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90 text-[18px] md:text-lg w-auto tracking-normal"
+          className="inline-flex items-center justify-center gap-2 px-6 py-[14px] md:px-7 md:py-4 bg-[#4EBA64] text-white border-[1px] border-[#4EBA64] hover:bg-white hover:text-[#4EBA64] rounded-full font-['Lexend'] font-medium transition-all duration-300 hover:bg-opacity-90 text-[18px] md:text-lg w-auto tracking-normal"
         >
           <Calendar className="h-6 w-6" />
           Call Us Now

@@ -50,9 +50,9 @@ export default function BulletHeroSection({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundBlendMode: 'soft-light', // This helps make the effect lighter
-      }} className={`w-full mt-[60px] md:mt-[80px] max-w-7xl mx-auto py-12 md:py-20 ${lightMode ? 'bg-white' : 'bg-[#221241]'}`}
+      }} className={`w-full mt-[60px] md:mt-[80px] w-full py-12 md:py-20 ${lightMode ? 'bg-[#F1F1F1] !mt-[0px] !md:mt-[0px] py-20 md:py-30' : 'bg-[#221241]'}`}
     >
-      <div className={`container md:gap-[67px] px-4 md:px-[60px] lg:px-[80px] flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
+      <div className={`container max-w-7xl mx-auto md:gap-[67px] px-4 md:px-[60px] lg:px-[80px] flex flex-col ${reverseLayout ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}>
         {/* Content Column */}
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
           <h1 className={`text-3xl font-['Lexend'] leading-[100%] md:text-4xl lg:text-5xl mb-6 ${lightMode ? 'text-[#221241]' : 'text-[#FFFFFF] font-[400]'}`}>
