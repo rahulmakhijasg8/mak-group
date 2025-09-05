@@ -3,7 +3,7 @@ import { Building } from "lucide-react"
 // Commercial Insurance - Professional Card Design
 const CommercialInsuranceStats = () => {
   return (
-    <div className="px-4 md:px-[60px] lg:px-[80px] py-20 bg-[#F1F1F1]">
+    <div className="px-4 md:px-[60px] lg:px-[80px] py-20">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
