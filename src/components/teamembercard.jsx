@@ -5,7 +5,7 @@ const TeamMemberCard = ({ image, name, position }) => {
   return (
     <div className="flex flex-col items-center mx-auto md:mx-0 w-full">
       {/* Circle image container - only width adjusted for 5 columns */}
-      <div className="w-[90%] sm:w-[280px] md:w-[240px] lg:w-[180px] xl:w-[240px] 2xl:w-[280px] h-[430px] md:h-[375px] mb-4 rounded-[40px] md:rounded-[24px] overflow-hidden">
+      <div className="w-[90%] sm:w-[280px] md:w-[240px] lg:w-[180px] xl:w-[240px] 2xl:w-[280px] h-[430px] md:h-[375px] mb-4 rounded-[30px] md:rounded-[20px] overflow-hidden">
         <Image 
           src={image} 
           alt={name}

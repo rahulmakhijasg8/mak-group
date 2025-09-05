@@ -53,7 +53,7 @@ export default function ServiceCard({
   const primaryIcon = getPrimaryButtonIcon();
   
   return (
-    <div className="flex flex-col bg-[#F1F1F1] border border-[#EBEBEB] rounded-[34px] p-6 h-full w-full">
+    <div className="flex flex-col bg-[#F1F1F1] border border-[#EBEBEB] rounded-[30px] p-6 h-full w-full">
       {/* Icon */}
       <div className='flex rounded-[8px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-6 md:mb-4 bg-[#FFFFFF] md:h-18 md:w-18'>
         {icon}

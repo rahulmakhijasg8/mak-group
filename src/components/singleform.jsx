@@ -683,7 +683,7 @@ const handleSubmit = async () => {
   
   return (
     <div>
-      <div className={`bg-white mt-[15px] max-w-full md:max-w-6xl md:mx-auto ${paddingMobile} ${paddingDesktop} rounded-[34px]`}>
+      <div className={`bg-white mt-[15px] max-w-full md:max-w-6xl md:mx-auto ${paddingMobile} ${paddingDesktop} rounded-[29px]`}>
         {/* Title & Subtitle using StackedHeading */}
         {(title || subtitle) && (
           <StackedHeading 
