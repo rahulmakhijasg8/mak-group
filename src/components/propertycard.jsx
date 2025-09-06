@@ -64,7 +64,7 @@ export default function PropertyListingCard({
         </h3>
         
         {/* Divider */}
-        <div className="h-[1.5px] bg-[#EBEBEB] mb-3"></div>
+        <div className="h-[1.5px] bg-[#FAFAFA] mb-3"></div>
         
         {/* Property Details */}
         <div className="flex items-center justify-between w-full mb-4 flex-grow">

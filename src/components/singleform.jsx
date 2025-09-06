@@ -770,7 +770,7 @@ const renderFieldFullWidth = (field) => {
             
             {/* Show divider if this is not the first step */}
             {stepIndex > 0 && (
-              <div className="h-px w-full bg-[#EBEBEB] mt-6 mb-8"></div>
+              <div className="h-px w-full bg-[#FAFAFA] mt-6 mb-8"></div>
             )}
             
             {/* Add space between step title and form fields */}

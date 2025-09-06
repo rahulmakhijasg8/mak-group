@@ -60,7 +60,7 @@ const GridItem = ({
   // Card layout (like Home Loans example)
   if (type === 'card') {
     const cardContent = (
-      <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-full overflow-auto transition-transform duration-200 hover:scale-[1.02]">
+      <div className="bg-[#FAFAFA] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-full overflow-auto transition-transform duration-200 hover:scale-[1.02]">
         {/* Icon with accent color background */}
         {icon && (
           <div className='flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18'>

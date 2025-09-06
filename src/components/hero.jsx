@@ -130,8 +130,8 @@ export default function HeroSection({
                 href={secondaryButtonLink} 
                 className={`flex items-center px-6 py-[14px] md:px-7 md:py-4 ${
                   darkMode 
-                    ? 'bg-[#F1F1F1] md:bg-white bg-opacity-10 text-[#4EBA64] border-[1px] md:border-[#4EBA64] hover:bg-[#4EBA64] hover:text-white border border-white border-opacity-20 hover:bg-opacity-20 hover:scale-105' 
-                    : 'bg-[#F1F1F1] text-[#4EBA64] hover:bg-[#4EBA64] hover:text-white hover:bg-opacity-5'
+                    ? 'bg-[#FAFAFA] md:bg-white bg-opacity-10 text-[#4EBA64] border-[1px] md:border-[#4EBA64] hover:bg-[#4EBA64] hover:text-white border border-white border-opacity-20 hover:bg-opacity-20 hover:scale-105' 
+                    : 'bg-[#FAFAFA] text-[#4EBA64] hover:bg-[#4EBA64] hover:text-white hover:bg-opacity-5'
                 } rounded-full font-['Lexend'] text-[14px] font-medium transition-all ${darkMode ? 'duration-300' : ''} md:w-fit w-fit`}
               >
                 <WhatsAppIcon className="h-5 w-5 mr-3" />

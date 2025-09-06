@@ -132,7 +132,7 @@ function page() {
   title="Ready to Protect Your Loved Ones?"
   subtitle="Don't leave your family's future to chance. Contact MAK GROUP for a free life insurance quote tailored to your needs. Our experts will help you choose the right plan to secure your loved ones' financial well-being."
   buttonText="Request a Call"
-  buttonLink="#"
+  buttonLink="tel:+918591353530"
   primaryButtonIconType='phone'
   secondaryButtonText="Whatsapp Our Team"
   secondaryButtonLink="https://wa.me/+918591353530"

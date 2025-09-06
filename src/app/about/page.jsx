@@ -105,7 +105,7 @@ function about() {
 <StatsGrid cards={statCards} />
 <StackedHeading title="Our Commitment to You" subtitle="At MAK GROUP, our clients are at the heart of everything we do. We are committed to providing you with the highest level of service, support, and guidance, and to helping you achieve your financial goals." />
 <div className="px-[16px] md:px-[60px] lg:px-[80px] w-full">
-<div className="bg-[#F1F1F1] w-[90%] md:w-full max-w-7xl mx-auto rounded-[20px] md:rounded-[34px] border-[1px] border-[#EBEBEB] mt-15 py-6 md:py-16">
+<div className="bg-[#FAFAFA] w-[90%] md:w-full max-w-7xl mx-auto rounded-[20px] md:rounded-[34px] border-[1px] border-[#EBEBEB] mt-15 py-6 md:py-16">
   <div className="px-4 md:px-6">
     <div className="mb-8">
       <p className={`font-lato text-[#4EBA64] text-lg`}>

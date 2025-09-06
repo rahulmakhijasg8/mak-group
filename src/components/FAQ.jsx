@@ -3,7 +3,7 @@ export default function FaqItem({ question, answer, isOpen, onClick }) {
     return (
       <div className="rounded-[10px] md:rounded-[20px] overflow-hidden">
         <button
-          className={`w-full flex items-center justify-between py-5 px-4 text-left focus:outline-none transition-colors duration-200 ${isOpen ? 'bg-[#F1F1F1]' : ''}`}
+          className={`w-full flex items-center justify-between py-5 px-4 text-left focus:outline-none transition-colors duration-200 ${isOpen ? 'bg-[#FAFAFA]' : ''}`}
           onClick={onClick}
         >
           <span className="font-['Lexend'] text-[#000000] text-lg font-[400]">
@@ -25,7 +25,7 @@ export default function FaqItem({ question, answer, isOpen, onClick }) {
         
         {isOpen ? (
           <div 
-            className="animate-slideDown bg-[#F1F1F1] px-4 pb-5"
+            className="animate-slideDown bg-[#FAFAFA] px-4 pb-5"
             style={{ animationDuration: '500ms' }}
           >
             <p style={{ whiteSpace: 'pre-wrap' }} className="font-['Lato'] text-[#000000D6] text-base">

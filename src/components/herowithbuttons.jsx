@@ -61,7 +61,7 @@ export default function HeroWithButtons({
   // Determine colors based on darkMode
   const titleColor = darkMode ? 'text-[#FFFFFF]' : 'text-[#221241]';
   const subtitleColor = darkMode ? 'text-[#B7C7E7]' : 'text-[#000000D6]';
-  const backgroundColor = darkMode ? 'bg-[#221241]' : 'bg-[#F1F1F1]';
+  const backgroundColor = darkMode ? 'bg-[#221241]' : 'bg-[#FAFAFA]';
 
   // Function to get the correct icon based on the iconType string
   const getPrimaryButtonIcon = () => {

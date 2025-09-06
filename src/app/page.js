@@ -24,7 +24,7 @@ export default function Home() {
     title: "Insurance",
     description: "Protect yourself, your family, and your assets with our wide range of insurance products.",
     primaryButtonText: "Call Us Now",
-    primaryButtonLink: "/book-call",
+    primaryButtonLink: "tel:+918591353530",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     link: "/insurance-solutions"
@@ -34,7 +34,7 @@ export default function Home() {
     title: "Stock Market",
     description: "Expert stock market guidance with 15+ years experience, 500 Crores AUM, and comprehensive services in equity, mutual funds, AIF & PMS.",
     primaryButtonText: "Call Us Now",
-    primaryButtonLink: "/book-call",
+    primaryButtonLink: "tel:+918591353530",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     link:"/sm-services"
@@ -44,7 +44,7 @@ export default function Home() {
     title: "Cars",
     description: "Complete car solutions - buy new/used vehicles, sell hassle-free, secure competitive loans, and get comprehensive insurance coverage.",
     primaryButtonText: "Call Us Now",
-    primaryButtonLink: "/book-call",
+    primaryButtonLink: "tel:+918591353530",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     link: "/cars"
@@ -54,7 +54,7 @@ export default function Home() {
     title: "Loans",
     description: "Grow your wealth with our expertly managed investment portfolios tailored to your goals.",
     primaryButtonText: "Call Us Now",
-    primaryButtonLink: "/book-call",
+    primaryButtonLink: "tel:+918591353530",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     link: "/finance-solutions"
@@ -64,7 +64,7 @@ export default function Home() {
     title: "Investment",
     description: "Build long-term wealth through diversified investment strategies and professional portfolio management services.",
     primaryButtonText: "Call Us Now",
-    primaryButtonLink: "/book-call",
+    primaryButtonLink: "tel:+918591353530",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
   },
@@ -73,7 +73,7 @@ export default function Home() {
     title: "Real Estate",
     description: "Discover prime residential and commercial properties with expert guidance for buying, selling, and investment opportunities.",
     primaryButtonText: "Call Us Now",
-    primaryButtonLink: "/book-call",
+    primaryButtonLink: "tel:+918591353530",
     secondaryButtonText: "WhatsApp",
     secondaryButtonLink: "https://wa.me/+918591353530",
     link: "/real-estate"
@@ -362,7 +362,7 @@ const exampleAwards = [
     <SectionHeading title="Awards & Achievements" />
     <AwardsAchievements showViewMore={true} photos={exampleAwards} mobileInitialCount={2}
   desktopInitialCount={4} />
-  <div className="max-w-full px-4 bg-[#F1F1F1] md:px-[60px] py-[60px] md:py-[100px] lg:px-[80px] mt-[60px] md:mt-[80px]">
+  <div className="max-w-full px-4 bg-[#FAFAFA] md:px-[60px] py-[60px] md:py-[100px] lg:px-[80px] mt-[60px] md:mt-[80px]">
         <div className="mx-auto max-w-7xl">
         {/* Mobile title - only shows on mobile screens */}
         <div className="block flex justify-center md:hidden mb-6">

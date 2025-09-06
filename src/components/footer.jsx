@@ -66,6 +66,7 @@ export default function Footer({
             <div className="md:w-4/12 flex justify-start md:justify-center">
               <div className="bg-[#221241] rounded-full w-32 h-32 md:w-44 md:h-44 flex flex-col items-center justify-center text-center p-2">
                 {/* Using Next.js Image component */}
+                <a href='/contact-us/#contact-us'>
                 <Image 
                   src="/Frame.svg" 
                   alt="Send Message Icon" 
@@ -73,6 +74,7 @@ export default function Footer({
                   height={36}
                   className="md:w-[44px] md:h-[44px]"
                 />
+                </a>
                 <span className="text-[#FFFFFF] font-[500] text-[15px] md:text-lg mt-2 md:mt-3 font-['Plus_Jakarta_Sans']">Send Message</span>
               </div>
             </div>

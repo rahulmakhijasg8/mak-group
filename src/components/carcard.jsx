@@ -131,7 +131,7 @@ export default function CarListingCard({
          </div>
        </div>
        
-       <div className="h-[1.5px] bg-[#EBEBEB] my-3"></div>
+       <div className="h-[1.5px] bg-[#FAFAFA] my-3"></div>
 
        {/* WhatsApp Inquiry Button */}
         <a

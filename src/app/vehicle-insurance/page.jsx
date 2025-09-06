@@ -255,7 +255,7 @@ function page() {
         <StackedHeading  mobileAlign='center' title="Why Choose MAK GROUP Vehicle Insurance?" subtitle="Experience Unmatched Service and Support" />
         <StatsGrid cards={statCards} />
         <VehicleInsuranceStats />
-        <div id='freequote' className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+        <div id='freequote' className='bg-[#FAFAFA] w-full pt-8 pb-16 px-4 '>
               <h2 className="font-['Lexend'] pt-12 md:pt-20 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
               Get a Free Quote Today 
                 </h2>

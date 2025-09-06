@@ -239,7 +239,7 @@ function page() {
         </div>
       </div>
     </section>
-        <div id='free-quote' className='bg-[#EBEBEB] w-full pt-8 pb-16 px-4 '>
+        <div id='free-quote' className='bg-[#FAFAFA] w-full pt-8 pb-16 px-4 '>
       <h2 className="font-['Lexend'] pt-8 text-[#221241] text-center font-normal text-[28px] md:text-[40px] leading-tight mb-4 w-full">
       Get a Free Quote 
         </h2>

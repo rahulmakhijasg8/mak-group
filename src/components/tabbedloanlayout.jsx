@@ -7,7 +7,7 @@ import Link from "next/link"
 // Your original GridItem component (cards only, no image support)
 const GridItem = ({ icon, title, description, link, accentColor = "#4EBA64" }) => {
   const cardContent = (
-    <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-[280px] hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
+    <div className="bg-[#FAFAFA] rounded-[40px] md:rounded-[20px] p-5 md:p-6 h-[280px] hover:shadow-lg transition-all duration-300 hover:transform hover:scale-105">
       {/* Icon with white background */}
       {icon && (
         <div className="flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18">

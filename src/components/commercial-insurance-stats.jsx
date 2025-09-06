@@ -32,7 +32,7 @@ const CommercialInsuranceStats = () => {
           </div>
 
           {/* Bottom CTA section */}
-          <div className="bg-[#EBEBEB] p-8 text-center">
+          <div className="bg-[#FAFAFA] p-8 text-center">
             <h5 className="text-lg font-bold font-['Lato'] text-[#221241] mb-4">Secure Your Business Assets</h5>
           </div>
         </div>

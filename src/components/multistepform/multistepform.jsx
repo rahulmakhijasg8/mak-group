@@ -155,7 +155,7 @@ const MultiStepForm = ({
         />
         
         {/* Divider */}
-        <div className="h-px w-full bg-[#EBEBEB] my-6"></div>
+        <div className="h-px w-full bg-[#FAFAFA] my-6"></div>
         
         <FormStep
           key={currentStep.id}

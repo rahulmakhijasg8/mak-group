@@ -10,7 +10,7 @@ const InsuranceCard = ({
 }) => {
   return (
     <div
-      className="bg-[#F1F1F1] w-full border-[1px] border-[#EBEBEB] rounded-[40px] md:rounded-[34px] p-5 md:p-4 overflow-auto mx-auto flex flex-col justify-center align-center h-[320px] md:h-[350px] 2xl:h-[355px]"
+      className="bg-[#FAFAFA] w-full border-[1px] border-[#EBEBEB] rounded-[40px] md:rounded-[34px] p-5 md:p-4 overflow-auto mx-auto flex flex-col justify-center align-center h-[320px] md:h-[350px] 2xl:h-[355px]"
     >
       {/* Icon */}
       {icon && (

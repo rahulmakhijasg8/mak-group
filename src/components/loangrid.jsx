@@ -16,7 +16,7 @@ const GridItem = ({
 }) => {
   // Card content
   const cardContent = (
-    <div className="bg-[#EBEBEB] rounded-[40px] md:rounded-[20px] md:max-w-[400px] p-5 md:p-6 h-[280px]">
+    <div className="bg-[#FAFAFA] rounded-[40px] md:rounded-[20px] md:max-w-[400px] p-5 md:p-6 h-[280px]">
       {/* Icon with accent color background */}
       {icon && (
         <div className='flex rounded-[10px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-8 bg-[#FFFFFF] md:h-18 md:w-18'>

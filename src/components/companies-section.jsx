@@ -41,7 +41,7 @@ const CompaniesSection = () => {
 
         {/* Compliance Note */}
         <div className="mt-12 text-center">
-          <div className="bg-white rounded-[15px] p-6 border border-[#EBEBEB] max-w-4xl mx-auto">
+          <div className="bg-white rounded-[15px] p-6 border border-[#FAFAFA] max-w-4xl mx-auto">
             <p className="font-['Lato'] text-[#000000D6] font-normal text-[14px] md:text-[16px] leading-relaxed">
               <span className="font-medium text-[#221241]">Compliance Notice:</span> All subsidiaries operate under the
               MAK GROUP umbrella and are committed to maintaining the highest standards of regulatory compliance and

@@ -22,7 +22,7 @@ export default function PropertyCarousel({
   const [canScrollRight, setCanScrollRight] = useState(true);
 
   // Dark mode styling
-  const bgColor = darkMode ? "bg-[#221241]" : "bg-[#F1F1F1]";
+  const bgColor = darkMode ? "bg-[#221241]" : "bg-[#FAFAFA]";
   const titleColor = darkMode ? "text-[#FFFFFF]" : "text-[#221241]";
   const subtitleColor = darkMode ? "text-[#B7C7E7]" : "text-[#000000D6]";
 

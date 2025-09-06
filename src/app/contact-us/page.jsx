@@ -71,7 +71,7 @@ function Page() {
         imageSrc="/Rectangle 58.jpg" 
         imageAlt="contact us" 
       />
-      <div className="mx-auto max-w-7xl mt-3 px-4 md:px-[60px] lg:px-[80px] pb-16 pt-8 md:pb-24 md:pt-18">
+      <div id='contact-us' className="mx-auto max-w-7xl mt-3 px-4 md:px-[60px] lg:px-[80px] pb-16 pt-8 md:pb-24 md:pt-18">
         {/* Mobile title - only shows on mobile screens */}
         <div className="block flex justify-center md:hidden mb-6">
           <h2 className="font-['Lexend'] text-[#221241] px-4 font-normal text-[34px] leading-tight">
@@ -96,7 +96,7 @@ function Page() {
           </div>
           
           {/* Second column - Contact Form (60% width) */}
-          <div className="w-full md:w-3/5 px-4 md:px-6">
+          <div className="w-full md:w-3/5 md:px-6">
             {/* Desktop heading for the form section - only shows on desktop */}
             <div className="hidden md:block mt-5 md:-mt-2">
               <h2 className="font-['Lexend'] text-[#221241] pl-6 md:pl-4 font-normal text-[28px] md:text-[36px] leading-tight">
@@ -127,7 +127,7 @@ function Page() {
                   submitButtonIconType='none' 
                   onComplete={handleFormSubmit}
                   paddingDesktop='md:p-5 md:pt-0 md:pb-4'
-                  paddingMobile='px-6'
+                  paddingMobile='px-0'
                 />
               </>
             )}

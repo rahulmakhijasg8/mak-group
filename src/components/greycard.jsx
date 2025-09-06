@@ -53,7 +53,7 @@ export default function ServiceCard({
   const primaryIcon = getPrimaryButtonIcon();
   
   return (
-    <div className="flex flex-col bg-[#F1F1F1] border border-[#EBEBEB] rounded-[30px] p-6 h-full w-full">
+    <div className="flex flex-col bg-[#FAFAFA] border border-[#EBEBEB] rounded-[30px] p-6 h-full w-full">
       {/* Icon */}
       <div className='flex rounded-[8px] justify-center w-20 md:w-18 h-18 md:justify-center items-center mb-6 md:mb-4 bg-[#FFFFFF] md:h-18 md:w-18'>
         {icon}
@@ -74,7 +74,7 @@ export default function ServiceCard({
         {primaryButtonText && primaryButtonLink && (
           <a 
             href={primaryButtonLink}
-            className={`flex hover:bg-[#F1F1F1] hover:text-[#4EBA64] border-[1px] border-[#4EBA64] items-center px-4 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-[50%] ${primaryIcon ? 'justify-between' : 'justify-center'}`}
+            className={`flex hover:bg-[#FAFAFA] hover:text-[#4EBA64] border-[1px] border-[#4EBA64] items-center px-4 py-3 bg-[#4EBA64] text-white rounded-full font-['Lexend'] text-[14px] font-medium hover:bg-opacity-90 transition-all w-full sm:w-[50%] ${primaryIcon ? 'justify-between' : 'justify-center'}`}
           >
             <span>{primaryButtonText}</span>
             {primaryIcon}
